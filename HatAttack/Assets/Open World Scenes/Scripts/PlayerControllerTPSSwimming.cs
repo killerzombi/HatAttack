@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 [RequireComponent(typeof(Animator))]
-public class PlayerControllerTPS : MonoBehaviour {
+public class PlayerControllerTPSSwimming : MonoBehaviour {
 
     
 

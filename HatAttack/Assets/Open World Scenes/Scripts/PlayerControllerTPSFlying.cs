@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 [RequireComponent(typeof(Animator))]
-public class PlayerControllerTPS : MonoBehaviour {
+public class PlayerControllerTPSFlying : MonoBehaviour {
 
     
 
@@ -213,11 +213,4 @@ public class PlayerControllerTPS : MonoBehaviour {
 
         m_wasGrounded = m_isGrounded;
     }
-    [System.Serializable]
-	public struct Arsenal {
-		public string name;
-		public GameObject rightGun;
-		public GameObject leftGun;
-		public RuntimeAnimatorController controller;
-	}
 }

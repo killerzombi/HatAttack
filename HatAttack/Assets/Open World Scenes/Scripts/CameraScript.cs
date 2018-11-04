@@ -6,6 +6,8 @@ public class CameraScript : MonoBehaviour {
 
     [SerializeField] private float speedHorizontal = 2f;
     [SerializeField] private float speedVertical = 2f;
+    [SerializeField] private float MaxAngle = 80f;
+    [SerializeField] private float MinAngle = -80f;
 
     private Vector3 offset;
 
@@ -24,14 +26,14 @@ public class CameraScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Cursor.lockState = CursorLockMode.Locked;
-        //float z = 0f;
         float H = 0f;
         //if (anim.GetBool("CanMove") == true && false)
         //    H = Input.GetAxis("Horizontal") + Input.GetAxis("Mouse X");
         //else
             H = Input.GetAxis("Mouse X");
         leftRight += speedHorizontal * H;
-        upDown += speedVertical * Input.GetAxis("Mouse Y");
+        upDown = Mathf.Clamp(upDown + speedVertical * Input.GetAxis("Mouse Y"), MinAngle, MaxAngle);
+        
         transform.eulerAngles = new Vector3(-upDown, leftRight, 0f);
 
         //transform.Rotate()
