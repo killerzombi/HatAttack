@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-[RequireComponent(typeof(Animator))]
 public class PlayerControllerTPS : MonoBehaviour {
 
     
@@ -9,7 +8,6 @@ public class PlayerControllerTPS : MonoBehaviour {
     [SerializeField] private float m_moveSpeed = 2;
     //[SerializeField] private float m_turnSpeed = 200;
     [SerializeField] private float m_jumpForce = 4;
-    //[SerializeField] private Animator animator;
     [SerializeField] private Rigidbody m_rigidBody;
     [SerializeField] private bool DirectMove = true;
     public Camera cam;
@@ -29,7 +27,6 @@ public class PlayerControllerTPS : MonoBehaviour {
 
 
     void Awake() {
-        //animator = GetComponent<Animator>();
         m_drag = m_rigidBody.drag;
     }
 
@@ -109,7 +106,8 @@ public class PlayerControllerTPS : MonoBehaviour {
         Vector3 move = new Vector3(h, 0, v);
         move = cam.transform.TransformDirection(move);
         float m = move.magnitude;
-        m_rigidBody.drag = m_drag;
+        if(m_isGrounded)
+            m_rigidBody.drag = m_drag;
         if (m > 0.01f || m < -0.01f)
         {
             m_rigidBody.drag = 0.2f;
@@ -120,7 +118,8 @@ public class PlayerControllerTPS : MonoBehaviour {
             move *= (m / move.magnitude);
         }
         move *= m_moveSpeed;
-        transform.forward = move;
+        if (move != Vector3.zero)
+            transform.forward = move;
 
         // walk or run?
         //bool crouch = Input.GetKey(KeyCode.LeftControl);
@@ -155,7 +154,8 @@ public class PlayerControllerTPS : MonoBehaviour {
             move *= (m / move.magnitude);
         }
         move *= m_moveSpeed;
-        transform.forward = move;
+        if (move != Vector3.zero)
+            transform.forward = move;
         // walk or run?
         //bool crouch = Input.GetKey(KeyCode.LeftControl);
         bool walk = Input.GetKey(KeyCode.LeftShift);
@@ -213,11 +213,4 @@ public class PlayerControllerTPS : MonoBehaviour {
 
         m_wasGrounded = m_isGrounded;
     }
-    [System.Serializable]
-	public struct Arsenal {
-		public string name;
-		public GameObject rightGun;
-		public GameObject leftGun;
-		public RuntimeAnimatorController controller;
-	}
 }
