@@ -2,53 +2,68 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TerrainType : MonoBehaviour {
+public class TerrainType : MonoBehaviour
+{
 
-    public int TerrainTypeNum;
-    public string TerrainName;
-    Material material;
+  public int TerrainTypeNum;
+  public string TerrainName;
+  Material material;
 
-	// Use this for initialization
-	void Start () {
+  public GameObject cube;
+  public GameObject tree;
+  public GameObject rock;
+  public GameObject bush;
 
-        material = GetComponent<Renderer>().material;
 
-        TerrainTypeNum = Random.Range(1, 5);
-        if (TerrainTypeNum == 1)
-        {
-            plain();
-        }
-        else if (TerrainTypeNum == 2)
-        {
-            ice();
-        }
-        else if (TerrainTypeNum == 3)
-        {
-            mountain();
-        }
-        else if (TerrainTypeNum == 4)
-        {
-            forest();
-        }
-    }
+  // Use this for initialization
+  void Start()
+  {
 
-    void plain()
+    // material = GetComponent<Renderer>().material;
+
+
+  }
+
+  public GameObject randomizer()
+  {
+    TerrainTypeNum = Random.Range(1, 5);
+    if (TerrainTypeNum == 1)
     {
-        material.color = Color.green;
+      return cube;
+    }
+    else if (TerrainTypeNum == 2)
+    {
+      return tree;
+    }
+    else if (TerrainTypeNum == 3)
+    {
+      return rock;
+    }
+    else if (TerrainTypeNum == 4)
+    {
+      return bush;
     }
 
-    void ice()
-    {
-        material.color = Color.blue;
-    }
+    return cube;
+  }
 
-    void mountain()
-    {
-        material.color = Color.red;
-    }
+  void plain()
+  {
+    material.color = Color.green;
+  }
 
-    void forest()
-    {
-        material.color = Color.cyan;
-    }
+  void ice()
+  {
+    material.color = Color.blue;
+  }
+
+  void mountain()
+  {
+    material.color = Color.red;
+  }
+
+  void forest()
+  {
+    material.color = Color.cyan;
+  }
 }
