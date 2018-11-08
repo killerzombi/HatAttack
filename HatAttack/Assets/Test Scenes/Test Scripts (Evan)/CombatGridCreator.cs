@@ -23,7 +23,8 @@ public class CombatGridCreator : MonoBehaviour
       {
         // Creates block.
         GameObject block = Instantiate(cube, Vector3.zero, cube.transform.rotation) as GameObject;
-        block.AddComponent(Types.GetType(""))
+
+        block.AddComponent<TerrainType>();
         block.transform.parent = transform;
         block.transform.localPosition = new Vector3(x, 0, z);
         // Sets block object to it's position in the array so we can access it.
