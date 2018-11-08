@@ -1,0 +1,410 @@
+fileFormatVersion: 2
+guid: e16e7552b0b7b6d4c8f057efc84309f5
+timeCreated: 1434721585
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Awning
+    100002: beads
+    100004: black_Mineral
+    100006: Book
+    100008: candle
+    100010: candle 1
+    100012: candle 2
+    100014: candle 3
+    100016: candle 4
+    100018: candle001
+    100020: candle002
+    100022: Eye
+    100024: fang002
+    100026: fang003
+    100028: fang012
+    100030: fang013
+    100032: floor002
+    100034: Lectern
+    100036: //RootNode
+    100038: Plane019
+    100040: ritual_circle
+    100042: rope_candle002
+    100044: 'Shrine '
+    100046: skull003
+    100048: skull004
+    100050: skull017
+    100052: Stairs
+    100054: walls
+    100056: wood_pilar003
+    100058: wood_pilar004
+    100060: wood_pilar007
+    100062: wood_pilar011
+    100064: wood_pilar012
+    100066: wood_pilar013
+    100068: wood_pilar014
+    100070: wood_pilar015
+    100072: wood_pilar016
+    100074: wood_pilar017
+    100076: wood_pilar018
+    100078: rope_candle
+    100080: rope_candle 1
+    100082: rope_candle 2
+    100084: rope_candle 3
+    100086: rope_candle 4
+    100088: rope_candle001
+    400000: Awning
+    400002: beads
+    400004: black_Mineral
+    400006: Book
+    400008: candle
+    400010: candle 1
+    400012: candle 2
+    400014: candle 3
+    400016: candle 4
+    400018: candle001
+    400020: candle002
+    400022: Eye
+    400024: fang002
+    400026: fang003
+    400028: fang012
+    400030: fang013
+    400032: floor002
+    400034: Lectern
+    400036: //RootNode
+    400038: Plane019
+    400040: ritual_circle
+    400042: rope_candle002
+    400044: 'Shrine '
+    400046: skull003
+    400048: skull004
+    400050: skull017
+    400052: Stairs
+    400054: walls
+    400056: wood_pilar003
+    400058: wood_pilar004
+    400060: wood_pilar007
+    400062: wood_pilar011
+    400064: wood_pilar012
+    400066: wood_pilar013
+    400068: wood_pilar014
+    400070: wood_pilar015
+    400072: wood_pilar016
+    400074: wood_pilar017
+    400076: wood_pilar018
+    400078: rope_candle
+    400080: rope_candle 1
+    400082: rope_candle 2
+    400084: rope_candle 3
+    400086: rope_candle 4
+    400088: rope_candle001
+    2300000: Awning
+    2300002: beads
+    2300004: black_Mineral
+    2300006: Book
+    2300008: candle
+    2300010: candle 1
+    2300012: candle 2
+    2300014: candle 3
+    2300016: candle 4
+    2300018: candle001
+    2300020: candle002
+    2300022: Eye
+    2300024: fang002
+    2300026: fang003
+    2300028: fang012
+    2300030: fang013
+    2300032: floor002
+    2300034: Lectern
+    2300036: Plane019
+    2300038: ritual_circle
+    2300040: rope_candle002
+    2300042: 'Shrine '
+    2300044: skull003
+    2300046: skull004
+    2300048: skull017
+    2300050: Stairs
+    2300052: walls
+    2300054: wood_pilar003
+    2300056: wood_pilar004
+    2300058: wood_pilar007
+    2300060: wood_pilar011
+    2300062: wood_pilar012
+    2300064: wood_pilar013
+    2300066: wood_pilar014
+    2300068: wood_pilar015
+    2300070: wood_pilar016
+    2300072: wood_pilar017
+    2300074: wood_pilar018
+    2300076: rope_candle
+    2300078: rope_candle 1
+    2300080: rope_candle 2
+    2300082: rope_candle 3
+    2300084: rope_candle 4
+    2300086: rope_candle001
+    3300000: Awning
+    3300002: beads
+    3300004: black_Mineral
+    3300006: Book
+    3300008: candle
+    3300010: candle 1
+    3300012: candle 2
+    3300014: candle 3
+    3300016: candle 4
+    3300018: candle001
+    3300020: candle002
+    3300022: Eye
+    3300024: fang002
+    3300026: fang003
+    3300028: fang012
+    3300030: fang013
+    3300032: floor002
+    3300034: Lectern
+    3300036: Plane019
+    3300038: ritual_circle
+    3300040: rope_candle002
+    3300042: 'Shrine '
+    3300044: skull003
+    3300046: skull004
+    3300048: skull017
+    3300050: Stairs
+    3300052: walls
+    3300054: wood_pilar003
+    3300056: wood_pilar004
+    3300058: wood_pilar007
+    3300060: wood_pilar011
+    3300062: wood_pilar012
+    3300064: wood_pilar013
+    3300066: wood_pilar014
+    3300068: wood_pilar015
+    3300070: wood_pilar016
+    3300072: wood_pilar017
+    3300074: wood_pilar018
+    3300076: rope_candle
+    3300078: rope_candle 1
+    3300080: rope_candle 2
+    3300082: rope_candle 3
+    3300084: rope_candle 4
+    3300086: rope_candle001
+    4300000: wood_pilar003
+    4300002: wood_pilar004
+    4300004: walls
+    4300006: Stairs
+    4300008: candle
+    4300010: skull017
+    4300012: wood_pilar007
+    4300014: Awning
+    4300016: fang012
+    4300018: fang013
+    4300020: fang002
+    4300022: fang003
+    4300024: Lectern
+    4300026: Eye
+    4300028: skull003
+    4300030: wood_pilar011
+    4300032: wood_pilar012
+    4300034: wood_pilar013
+    4300036: wood_pilar014
+    4300038: wood_pilar015
+    4300040: wood_pilar016
+    4300042: wood_pilar017
+    4300044: Plane019
+    4300046: floor002
+    4300048: candle
+    4300050: candle
+    4300052: candle
+    4300054: candle
+    4300056: beads
+    4300058: black_Mineral
+    4300060: skull004
+    4300062: 'Shrine '
+    4300064: ritual_circle
+    4300066: wood_pilar018
+    4300068: candle001
+    4300070: candle002
+    4300072: rope_candle002
+    4300074: Book
+    4300076: rope_candle
+    4300078: rope_candle
+    4300080: rope_candle
+    4300082: rope_candle
+    4300084: rope_candle
+    4300086: rope_candle001
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 95
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Awning
+        weight: 1
+      - path: beads
+        weight: 1
+      - path: black_Mineral
+        weight: 1
+      - path: Book
+        weight: 1
+      - path: candle
+        weight: 1
+      - path: candle 1
+        weight: 1
+      - path: candle 2
+        weight: 1
+      - path: candle 3
+        weight: 1
+      - path: candle 4
+        weight: 1
+      - path: candle001
+        weight: 1
+      - path: candle002
+        weight: 1
+      - path: Eye
+        weight: 1
+      - path: fang002
+        weight: 1
+      - path: fang003
+        weight: 1
+      - path: fang012
+        weight: 1
+      - path: fang013
+        weight: 1
+      - path: floor002
+        weight: 1
+      - path: Lectern
+        weight: 1
+      - path: Plane019
+        weight: 1
+      - path: ritual_circle
+        weight: 1
+      - path: rope_candle
+        weight: 1
+      - path: rope_candle 1
+        weight: 1
+      - path: rope_candle 2
+        weight: 1
+      - path: rope_candle 3
+        weight: 1
+      - path: rope_candle 4
+        weight: 1
+      - path: rope_candle001
+        weight: 1
+      - path: rope_candle002
+        weight: 1
+      - path: 'Shrine '
+        weight: 1
+      - path: skull003
+        weight: 1
+      - path: skull004
+        weight: 1
+      - path: skull017
+        weight: 1
+      - path: Stairs
+        weight: 1
+      - path: walls
+        weight: 1
+      - path: wood_pilar003
+        weight: 1
+      - path: wood_pilar004
+        weight: 1
+      - path: wood_pilar007
+        weight: 1
+      - path: wood_pilar011
+        weight: 1
+      - path: wood_pilar012
+        weight: 1
+      - path: wood_pilar013
+        weight: 1
+      - path: wood_pilar014
+        weight: 1
+      - path: wood_pilar015
+        weight: 1
+      - path: wood_pilar016
+        weight: 1
+      - path: wood_pilar017
+        weight: 1
+      - path: wood_pilar018
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

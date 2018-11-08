@@ -61,32 +61,66 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Lava_Flowing_Shader\Scripts\ScrollingUVs_Layers.cs" />
+    <Compile Include="Assets\ManyWorlds\Common\Scripts\Camera\CameraMovement.cs" />
+    <Compile Include="Assets\ManyWorlds\Common\Scripts\Creation\Building.cs" />
+    <Compile Include="Assets\ManyWorlds\Common\Scripts\Creation\ClickBehaviour.cs" />
+    <Compile Include="Assets\ManyWorlds\Common\Scripts\Creation\ConstructionBehaviour.cs" />
+    <Compile Include="Assets\ManyWorlds\Common\Scripts\Creation\DemoManagerBehaviour.cs" />
+    <Compile Include="Assets\ManyWorlds\Common\Scripts\Towers\FollowTarget.cs" />
+    <Compile Include="Assets\ManyWorlds\Common\Scripts\Towers\ShootBehaviour.cs" />
+    <Compile Include="Assets\ManyWorlds\Common\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
+    <Compile Include="Assets\ManyWorlds\Common\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientObscurance.cs" />
+    <Compile Include="Assets\ManyWorlds\Common\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientOcclusion.cs" />
     <Compile Include="Assets\Open World Scenes\Materials\IceWorldAssets\Rocks and Boulders 2\Shaders\RotateGameObject.cs" />
     <Compile Include="Assets\Open World Scenes\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Open World Scenes\Scripts\PlayerControllerTPS.cs" />
     <Compile Include="Assets\Open World Scenes\Scripts\PlayerControllerTPSFlying.cs" />
     <Compile Include="Assets\Open World Scenes\Scripts\PlayerControllerTPSSwimming.cs" />
+    <Compile Include="Assets\PyroParticles\Demo\DemoScript.cs" />
+    <Compile Include="Assets\PyroParticles\Demo\DemoScriptEditor.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireBaseScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireConstantBaseScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireLightScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireProjectileScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Evan)\CombatGridCreator.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Evan)\TerrainType.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Evan)\UnitController.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Ian)\CreateCombat.cs" />
     <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Packs\BirchPackVol1\Works For Fun.txt" />
+    <None Include="Assets\ManyWorlds\Common\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Rocks and Boulders 2\Shaders\shader info.txt" />
+    <None Include="Assets\ManyWorlds\Common\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
+    <None Include="Assets\Lava_Flowing_Shader\Shaders\Unlit_Lava_Simple.shader" />
+    <None Include="Assets\Lava_Flowing_Shader\Shaders\Diffuse_Lava_Distort.shader" />
+    <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
+    <None Include="Assets\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort.shader" />
+    <None Include="Assets\ManyWorlds\Common\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
+    <None Include="Assets\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort_Transparent.shader" />
     <None Include="Assets\Test Scenes\Test Assets (Evan)\Materials\Seamless Textures (Realistic)\Read Me.txt" />
+    <None Include="Assets\ManyWorlds\Common\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\Test Scenes\Test Assets (Evan)\Textures\Read Me.txt" />
+    <None Include="Assets\ManyWorlds\Common\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
+    <None Include="Assets\Lava_Flowing_Shader\ReadMe.txt" />
+    <None Include="Assets\PyroParticles\Readme.txt" />
+    <None Include="Assets\ManyWorlds\Common\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+    <None Include="Assets\ManyWorlds\Common\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
     <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Rocks and Boulders 2\Shaders\Blend SM3.shader" />
     <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Rocks and Boulders 2\Shaders\Blend SM2.shader" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/nbaines/Desktop/HatAttack/HatAttack/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/eenglish13820/Documents/GitHub/HatAttack/HatAttack/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/nbaines/Desktop/HatAttack/HatAttack/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/eenglish13820/Documents/GitHub/HatAttack/HatAttack/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/nbaines/Desktop/HatAttack/HatAttack/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/eenglish13820/Documents/GitHub/HatAttack/HatAttack/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/nbaines/Desktop/HatAttack/HatAttack/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/eenglish13820/Documents/GitHub/HatAttack/HatAttack/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -266,7 +300,7 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Unity.Locator.dll</HintPath>
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
-      <HintPath>C:/Users/nbaines/Desktop/HatAttack/HatAttack/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+      <HintPath>C:/Users/eenglish13820/Documents/GitHub/HatAttack/HatAttack/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -290,10 +324,10 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/nbaines/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/eenglish13820/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/nbaines/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/eenglish13820/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>

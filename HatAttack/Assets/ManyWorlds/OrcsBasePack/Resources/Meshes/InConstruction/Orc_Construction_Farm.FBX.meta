@@ -1,0 +1,206 @@
+fileFormatVersion: 2
+guid: 837db5a56c3783846adcea49000b5edf
+timeCreated: 1434958369
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: beam
+    100002: beam003
+    100004: beam004
+    100006: beam005
+    100008: Cauldron002
+    100010: cross009
+    100012: Cylinder001
+    100014: floor004
+    100016: large_wood009
+    100018: large_wood010
+    100020: large_wood013
+    100022: large_wood014
+    100024: //RootNode
+    100026: Plane021
+    100028: rod002
+    100030: rod003
+    100032: rod_004
+    100034: rod_005
+    100036: rope
+    100038: rope003
+    100040: rope_cauldron018
+    100042: rope_cauldron019
+    100044: rope_cauldron020
+    100046: rope_cauldron021
+    100048: rope_cauldron022
+    100050: trunk013
+    100052: wood_table012
+    100054: wood_table012 1
+    400000: beam
+    400002: beam003
+    400004: beam004
+    400006: beam005
+    400008: Cauldron002
+    400010: cross009
+    400012: Cylinder001
+    400014: floor004
+    400016: large_wood009
+    400018: large_wood010
+    400020: large_wood013
+    400022: large_wood014
+    400024: //RootNode
+    400026: Plane021
+    400028: rod002
+    400030: rod003
+    400032: rod_004
+    400034: rod_005
+    400036: rope
+    400038: rope003
+    400040: rope_cauldron018
+    400042: rope_cauldron019
+    400044: rope_cauldron020
+    400046: rope_cauldron021
+    400048: rope_cauldron022
+    400050: trunk013
+    400052: wood_table012
+    400054: wood_table012 1
+    2300000: beam
+    2300002: beam003
+    2300004: beam004
+    2300006: beam005
+    2300008: Cauldron002
+    2300010: cross009
+    2300012: Cylinder001
+    2300014: floor004
+    2300016: large_wood009
+    2300018: large_wood010
+    2300020: large_wood013
+    2300022: large_wood014
+    2300024: Plane021
+    2300026: rod002
+    2300028: rod003
+    2300030: rod_004
+    2300032: rod_005
+    2300034: rope
+    2300036: rope003
+    2300038: rope_cauldron018
+    2300040: rope_cauldron019
+    2300042: rope_cauldron020
+    2300044: rope_cauldron021
+    2300046: rope_cauldron022
+    2300048: trunk013
+    2300050: wood_table012
+    2300052: wood_table012 1
+    3300000: beam
+    3300002: beam003
+    3300004: beam004
+    3300006: beam005
+    3300008: Cauldron002
+    3300010: cross009
+    3300012: Cylinder001
+    3300014: floor004
+    3300016: large_wood009
+    3300018: large_wood010
+    3300020: large_wood013
+    3300022: large_wood014
+    3300024: Plane021
+    3300026: rod002
+    3300028: rod003
+    3300030: rod_004
+    3300032: rod_005
+    3300034: rope
+    3300036: rope003
+    3300038: rope_cauldron018
+    3300040: rope_cauldron019
+    3300042: rope_cauldron020
+    3300044: rope_cauldron021
+    3300046: rope_cauldron022
+    3300048: trunk013
+    3300050: wood_table012
+    3300052: wood_table012 1
+    4300000: Cauldron002
+    4300002: rod002
+    4300004: rod003
+    4300006: rod_004
+    4300008: rod_005
+    4300010: beam003
+    4300012: beam
+    4300014: beam004
+    4300016: beam005
+    4300018: rope_cauldron018
+    4300020: rope_cauldron019
+    4300022: rope_cauldron020
+    4300024: rope_cauldron021
+    4300026: rope_cauldron022
+    4300028: floor004
+    4300030: large_wood013
+    4300032: large_wood014
+    4300034: rope003
+    4300036: rope
+    4300038: large_wood009
+    4300040: wood_table012
+    4300042: wood_table012
+    4300044: large_wood010
+    4300046: trunk013
+    4300048: cross009
+    4300050: Plane021
+    4300052: Cylinder001
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

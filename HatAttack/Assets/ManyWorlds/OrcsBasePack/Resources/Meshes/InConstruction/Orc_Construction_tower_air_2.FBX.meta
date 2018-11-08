@@ -1,0 +1,206 @@
+fileFormatVersion: 2
+guid: 688b98472c69d0944b1b23df6c02ebb4
+timeCreated: 1434958694
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: animal_Skull001
+    100002: bone-spike77
+    100004: bone-spike78
+    100006: bone-spike82
+    100008: cross019
+    100010: handle-bar01
+    100012: handle-bar02
+    100014: handle-bar03
+    100016: handle-bar04
+    100018: handle-bar05
+    100020: handle-bar06
+    100022: handle-bar07
+    100024: handle-bar08
+    100026: metal_barrel
+    100028: metal_base_01
+    100030: metal_ring
+    100032: metal_ring 1
+    100034: metal_ring 2
+    100036: metal_ring 3
+    100038: //RootNode
+    100040: painted_horn_04
+    100042: Plane004
+    100044: rotator_03
+    100046: trunk_plank_
+    100048: trunk_plank_01
+    100050: trunk_plank_03
+    100052: wood-plank07
+    100054: wood-plank11
+    400000: animal_Skull001
+    400002: bone-spike77
+    400004: bone-spike78
+    400006: bone-spike82
+    400008: cross019
+    400010: handle-bar01
+    400012: handle-bar02
+    400014: handle-bar03
+    400016: handle-bar04
+    400018: handle-bar05
+    400020: handle-bar06
+    400022: handle-bar07
+    400024: handle-bar08
+    400026: metal_barrel
+    400028: metal_base_01
+    400030: metal_ring
+    400032: metal_ring 1
+    400034: metal_ring 2
+    400036: metal_ring 3
+    400038: //RootNode
+    400040: painted_horn_04
+    400042: Plane004
+    400044: rotator_03
+    400046: trunk_plank_
+    400048: trunk_plank_01
+    400050: trunk_plank_03
+    400052: wood-plank07
+    400054: wood-plank11
+    2300000: animal_Skull001
+    2300002: bone-spike77
+    2300004: bone-spike78
+    2300006: bone-spike82
+    2300008: cross019
+    2300010: handle-bar01
+    2300012: handle-bar02
+    2300014: handle-bar03
+    2300016: handle-bar04
+    2300018: handle-bar05
+    2300020: handle-bar06
+    2300022: handle-bar07
+    2300024: handle-bar08
+    2300026: metal_barrel
+    2300028: metal_base_01
+    2300030: metal_ring
+    2300032: metal_ring 1
+    2300034: metal_ring 2
+    2300036: metal_ring 3
+    2300038: painted_horn_04
+    2300040: Plane004
+    2300042: rotator_03
+    2300044: trunk_plank_
+    2300046: trunk_plank_01
+    2300048: trunk_plank_03
+    2300050: wood-plank07
+    2300052: wood-plank11
+    3300000: animal_Skull001
+    3300002: bone-spike77
+    3300004: bone-spike78
+    3300006: bone-spike82
+    3300008: cross019
+    3300010: handle-bar01
+    3300012: handle-bar02
+    3300014: handle-bar03
+    3300016: handle-bar04
+    3300018: handle-bar05
+    3300020: handle-bar06
+    3300022: handle-bar07
+    3300024: handle-bar08
+    3300026: metal_barrel
+    3300028: metal_base_01
+    3300030: metal_ring
+    3300032: metal_ring 1
+    3300034: metal_ring 2
+    3300036: metal_ring 3
+    3300038: painted_horn_04
+    3300040: Plane004
+    3300042: rotator_03
+    3300044: trunk_plank_
+    3300046: trunk_plank_01
+    3300048: trunk_plank_03
+    3300050: wood-plank07
+    3300052: wood-plank11
+    4300000: trunk_plank_03
+    4300002: bone-spike82
+    4300004: metal_ring
+    4300006: bone-spike78
+    4300008: bone-spike77
+    4300010: animal_Skull001
+    4300012: metal_ring
+    4300014: metal_ring
+    4300016: rotator_03
+    4300018: handle-bar08
+    4300020: handle-bar03
+    4300022: handle-bar02
+    4300024: handle-bar01
+    4300026: handle-bar04
+    4300028: handle-bar07
+    4300030: handle-bar06
+    4300032: handle-bar05
+    4300034: painted_horn_04
+    4300036: wood-plank11
+    4300038: metal_base_01
+    4300040: trunk_plank_01
+    4300042: metal_ring
+    4300044: trunk_plank_
+    4300046: metal_barrel
+    4300048: wood-plank07
+    4300050: Plane004
+    4300052: cross019
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

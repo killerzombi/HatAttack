@@ -1,0 +1,181 @@
+fileFormatVersion: 2
+guid: 7d4e5588aa215c14b9b74c39c8e44aaa
+timeCreated: 1434958694
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: build004
+    100002: ceiling005
+    100004: column003
+    100006: cross013
+    100008: femur036
+    100010: flag002
+    100012: foundation009
+    100014: foundation010
+    100016: foundation012
+    100018: large_wood025
+    100020: large_wood026
+    100022: large_wood027
+    100024: //RootNode
+    100026: roofing008
+    100028: rope
+    100030: rope009
+    100032: rope010
+    100034: rope011
+    100036: trunk017
+    100038: vertebra004
+    100040: wood_table018
+    100042: Wood_wall009
+    100044: Wood_wall010
+    400000: build004
+    400002: ceiling005
+    400004: column003
+    400006: cross013
+    400008: femur036
+    400010: flag002
+    400012: foundation009
+    400014: foundation010
+    400016: foundation012
+    400018: large_wood025
+    400020: large_wood026
+    400022: large_wood027
+    400024: //RootNode
+    400026: roofing008
+    400028: rope
+    400030: rope009
+    400032: rope010
+    400034: rope011
+    400036: trunk017
+    400038: vertebra004
+    400040: wood_table018
+    400042: Wood_wall009
+    400044: Wood_wall010
+    2300000: build004
+    2300002: ceiling005
+    2300004: column003
+    2300006: cross013
+    2300008: femur036
+    2300010: flag002
+    2300012: foundation009
+    2300014: foundation010
+    2300016: foundation012
+    2300018: large_wood025
+    2300020: large_wood026
+    2300022: large_wood027
+    2300024: roofing008
+    2300026: rope
+    2300028: rope009
+    2300030: rope010
+    2300032: rope011
+    2300034: trunk017
+    2300036: vertebra004
+    2300038: wood_table018
+    2300040: Wood_wall009
+    2300042: Wood_wall010
+    3300000: build004
+    3300002: ceiling005
+    3300004: column003
+    3300006: cross013
+    3300008: femur036
+    3300010: flag002
+    3300012: foundation009
+    3300014: foundation010
+    3300016: foundation012
+    3300018: large_wood025
+    3300020: large_wood026
+    3300022: large_wood027
+    3300024: roofing008
+    3300026: rope
+    3300028: rope009
+    3300030: rope010
+    3300032: rope011
+    3300034: trunk017
+    3300036: vertebra004
+    3300038: wood_table018
+    3300040: Wood_wall009
+    3300042: Wood_wall010
+    4300000: roofing008
+    4300002: ceiling005
+    4300004: vertebra004
+    4300006: column003
+    4300008: build004
+    4300010: foundation009
+    4300012: femur036
+    4300014: Wood_wall009
+    4300016: large_wood025
+    4300018: rope009
+    4300020: rope
+    4300022: trunk017
+    4300024: cross013
+    4300026: flag002
+    4300028: large_wood026
+    4300030: rope010
+    4300032: rope011
+    4300034: large_wood027
+    4300036: Wood_wall010
+    4300038: foundation010
+    4300040: wood_table018
+    4300042: foundation012
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

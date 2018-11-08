@@ -1,0 +1,178 @@
+fileFormatVersion: 2
+guid: 8bef600884d34f147a919139798a8fea
+timeCreated: 1434720991
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: bedrock
+    100002: Chimney
+    100004: coal001
+    100006: femur018
+    100008: femur034
+    100010: femurs
+    100012: hook
+    100014: leather_ring001
+    100016: leather_ring002
+    100018: //RootNode
+    100020: pile_of_bones
+    100022: Plane008
+    100024: ribs
+    100026: riibs_1
+    100028: skull010
+    100030: skull016
+    100032: skulls
+    100034: stairs
+    100036: swords
+    100038: table_wood
+    100040: wood_pilar001
+    100042: wood_pilar002
+    400000: bedrock
+    400002: Chimney
+    400004: coal001
+    400006: femur018
+    400008: femur034
+    400010: femurs
+    400012: hook
+    400014: leather_ring001
+    400016: leather_ring002
+    400018: //RootNode
+    400020: pile_of_bones
+    400022: Plane008
+    400024: ribs
+    400026: riibs_1
+    400028: skull010
+    400030: skull016
+    400032: skulls
+    400034: stairs
+    400036: swords
+    400038: table_wood
+    400040: wood_pilar001
+    400042: wood_pilar002
+    2300000: bedrock
+    2300002: Chimney
+    2300004: coal001
+    2300006: femur018
+    2300008: femur034
+    2300010: femurs
+    2300012: hook
+    2300014: leather_ring001
+    2300016: leather_ring002
+    2300018: pile_of_bones
+    2300020: Plane008
+    2300022: ribs
+    2300024: riibs_1
+    2300026: skull010
+    2300028: skull016
+    2300030: skulls
+    2300032: stairs
+    2300034: swords
+    2300036: table_wood
+    2300038: wood_pilar001
+    2300040: wood_pilar002
+    3300000: bedrock
+    3300002: Chimney
+    3300004: coal001
+    3300006: femur018
+    3300008: femur034
+    3300010: femurs
+    3300012: hook
+    3300014: leather_ring001
+    3300016: leather_ring002
+    3300018: pile_of_bones
+    3300020: Plane008
+    3300022: ribs
+    3300024: riibs_1
+    3300026: skull010
+    3300028: skull016
+    3300030: skulls
+    3300032: stairs
+    3300034: swords
+    3300036: table_wood
+    3300038: wood_pilar001
+    3300040: wood_pilar002
+    4300000: bedrock
+    4300002: Chimney
+    4300004: hook
+    4300006: pile_of_bones
+    4300008: skull010
+    4300010: wood_pilar001
+    4300012: leather_ring001
+    4300014: femur018
+    4300016: swords
+    4300018: riibs_1
+    4300020: ribs
+    4300022: coal001
+    4300024: femurs
+    4300026: skulls
+    4300028: stairs
+    4300030: skull016
+    4300032: wood_pilar002
+    4300034: leather_ring002
+    4300036: Plane008
+    4300038: femur034
+    4300040: table_wood
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

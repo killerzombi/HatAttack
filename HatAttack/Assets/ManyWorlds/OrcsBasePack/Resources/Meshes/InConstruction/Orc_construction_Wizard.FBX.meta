@@ -1,0 +1,221 @@
+fileFormatVersion: 2
+guid: a422175a95bb2ce4697e3127210588a4
+timeCreated: 1434958695
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: black_Mineral001
+    100002: cross011
+    100004: fang017
+    100006: fang018
+    100008: floor005
+    100010: large_wood017
+    100012: large_wood018
+    100014: large_wood019
+    100016: large_wood020
+    100018: //RootNode
+    100020: Plane024
+    100022: ritual_circle001
+    100024: rope
+    100026: rope007
+    100028: Shelf002
+    100030: Shrine 001
+    100032: Stairs001
+    100034: trunk015
+    100036: walls001
+    100038: wood_pilar019
+    100040: wood_pilar020
+    100042: wood_pilar021
+    100044: wood_pilar022
+    100046: wood_pilar023
+    100048: wood_pilar024
+    100050: wood_pilar025
+    100052: wood_pilar026
+    100054: wood_pilar027
+    100056: wood_pilar028
+    100058: wood_table014
+    100060: wood_table015
+    400000: black_Mineral001
+    400002: cross011
+    400004: fang017
+    400006: fang018
+    400008: floor005
+    400010: large_wood017
+    400012: large_wood018
+    400014: large_wood019
+    400016: large_wood020
+    400018: //RootNode
+    400020: Plane024
+    400022: ritual_circle001
+    400024: rope
+    400026: rope007
+    400028: Shelf002
+    400030: Shrine 001
+    400032: Stairs001
+    400034: trunk015
+    400036: walls001
+    400038: wood_pilar019
+    400040: wood_pilar020
+    400042: wood_pilar021
+    400044: wood_pilar022
+    400046: wood_pilar023
+    400048: wood_pilar024
+    400050: wood_pilar025
+    400052: wood_pilar026
+    400054: wood_pilar027
+    400056: wood_pilar028
+    400058: wood_table014
+    400060: wood_table015
+    2300000: black_Mineral001
+    2300002: cross011
+    2300004: fang017
+    2300006: fang018
+    2300008: floor005
+    2300010: large_wood017
+    2300012: large_wood018
+    2300014: large_wood019
+    2300016: large_wood020
+    2300018: Plane024
+    2300020: ritual_circle001
+    2300022: rope
+    2300024: rope007
+    2300026: Shelf002
+    2300028: Shrine 001
+    2300030: Stairs001
+    2300032: trunk015
+    2300034: walls001
+    2300036: wood_pilar019
+    2300038: wood_pilar020
+    2300040: wood_pilar021
+    2300042: wood_pilar022
+    2300044: wood_pilar023
+    2300046: wood_pilar024
+    2300048: wood_pilar025
+    2300050: wood_pilar026
+    2300052: wood_pilar027
+    2300054: wood_pilar028
+    2300056: wood_table014
+    2300058: wood_table015
+    3300000: black_Mineral001
+    3300002: cross011
+    3300004: fang017
+    3300006: fang018
+    3300008: floor005
+    3300010: large_wood017
+    3300012: large_wood018
+    3300014: large_wood019
+    3300016: large_wood020
+    3300018: Plane024
+    3300020: ritual_circle001
+    3300022: rope
+    3300024: rope007
+    3300026: Shelf002
+    3300028: Shrine 001
+    3300030: Stairs001
+    3300032: trunk015
+    3300034: walls001
+    3300036: wood_pilar019
+    3300038: wood_pilar020
+    3300040: wood_pilar021
+    3300042: wood_pilar022
+    3300044: wood_pilar023
+    3300046: wood_pilar024
+    3300048: wood_pilar025
+    3300050: wood_pilar026
+    3300052: wood_pilar027
+    3300054: wood_pilar028
+    3300056: wood_table014
+    3300058: wood_table015
+    4300000: wood_pilar019
+    4300002: wood_pilar020
+    4300004: walls001
+    4300006: Stairs001
+    4300008: wood_pilar021
+    4300010: fang017
+    4300012: wood_pilar022
+    4300014: wood_pilar023
+    4300016: wood_pilar024
+    4300018: wood_pilar025
+    4300020: wood_pilar026
+    4300022: wood_pilar027
+    4300024: floor005
+    4300026: black_Mineral001
+    4300028: Shrine 001
+    4300030: ritual_circle001
+    4300032: wood_pilar028
+    4300034: fang018
+    4300036: Shelf002
+    4300038: large_wood017
+    4300040: large_wood018
+    4300042: rope007
+    4300044: rope
+    4300046: large_wood019
+    4300048: wood_table014
+    4300050: wood_table015
+    4300052: large_wood020
+    4300054: trunk015
+    4300056: cross011
+    4300058: Plane024
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

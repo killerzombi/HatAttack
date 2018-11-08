@@ -1,0 +1,178 @@
+fileFormatVersion: 2
+guid: fc3e5b9c7777c1e45a125e949aa8a4f4
+timeCreated: 1434958370
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: bedrock001
+    100002: Box202
+    100004: Box203
+    100006: Box204
+    100008: Box205
+    100010: Chimney001
+    100012: cross015
+    100014: femur037
+    100016: hook001
+    100018: large_wood030
+    100020: large_wood031
+    100022: //RootNode
+    100024: Plane028
+    100026: rope
+    100028: rope013
+    100030: stairs008
+    100032: step027
+    100034: table_wood001
+    100036: trunks002
+    100038: wood_pilar030
+    100040: wood_pilar031
+    100042: wood_table021
+    400000: bedrock001
+    400002: Box202
+    400004: Box203
+    400006: Box204
+    400008: Box205
+    400010: Chimney001
+    400012: cross015
+    400014: femur037
+    400016: hook001
+    400018: large_wood030
+    400020: large_wood031
+    400022: //RootNode
+    400024: Plane028
+    400026: rope
+    400028: rope013
+    400030: stairs008
+    400032: step027
+    400034: table_wood001
+    400036: trunks002
+    400038: wood_pilar030
+    400040: wood_pilar031
+    400042: wood_table021
+    2300000: bedrock001
+    2300002: Box202
+    2300004: Box203
+    2300006: Box204
+    2300008: Box205
+    2300010: Chimney001
+    2300012: cross015
+    2300014: femur037
+    2300016: hook001
+    2300018: large_wood030
+    2300020: large_wood031
+    2300022: Plane028
+    2300024: rope
+    2300026: rope013
+    2300028: stairs008
+    2300030: step027
+    2300032: table_wood001
+    2300034: trunks002
+    2300036: wood_pilar030
+    2300038: wood_pilar031
+    2300040: wood_table021
+    3300000: bedrock001
+    3300002: Box202
+    3300004: Box203
+    3300006: Box204
+    3300008: Box205
+    3300010: Chimney001
+    3300012: cross015
+    3300014: femur037
+    3300016: hook001
+    3300018: large_wood030
+    3300020: large_wood031
+    3300022: Plane028
+    3300024: rope
+    3300026: rope013
+    3300028: stairs008
+    3300030: step027
+    3300032: table_wood001
+    3300034: trunks002
+    3300036: wood_pilar030
+    3300038: wood_pilar031
+    3300040: wood_table021
+    4300000: bedrock001
+    4300002: Chimney001
+    4300004: hook001
+    4300006: wood_pilar030
+    4300008: stairs008
+    4300010: wood_pilar031
+    4300012: femur037
+    4300014: table_wood001
+    4300016: trunks002
+    4300018: step027
+    4300020: large_wood030
+    4300022: large_wood031
+    4300024: rope013
+    4300026: rope
+    4300028: wood_table021
+    4300030: cross015
+    4300032: Plane028
+    4300034: Box202
+    4300036: Box203
+    4300038: Box204
+    4300040: Box205
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
