@@ -1,0 +1,297 @@
+fileFormatVersion: 2
+guid: ba03df3d2d5faf543a3356dca2e16303
+timeCreated: 1434720369
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: awning002
+    100002: awning_tower
+    100004: awning_tower001
+    100006: build001
+    100008: ceiling001
+    100010: chains005
+    100012: coal
+    100014: coal002
+    100016: column
+    100018: door002
+    100020: doorframe
+    100022: doorframe001
+    100024: fang001
+    100026: fang001 1
+    100028: fang004
+    100030: femur
+    100032: femur001
+    100034: foundation001
+    100036: foundation001 1
+    100038: hollow
+    100040: hollow001
+    100042: hollow002
+    100044: hollow003
+    100046: hollow004
+    100048: hollow005
+    100050: manacles001
+    100052: manacles001 1
+    100054: manacles002
+    100056: //RootNode
+    100058: Perfume_Burner001
+    100060: Perfume_burner001
+    100062: Plane009
+    100064: Plane009 1
+    100066: roofing004
+    100068: stairs002
+    100070: stairs003
+    100072: vertebra001
+    100074: window001
+    100076: window002
+    100078: window004
+    100080: window005
+    100082: window006
+    100084: Wood_wall
+    100086: Wood_wall001
+    100088: fang023
+    100090: manacles010
+    400000: awning002
+    400002: awning_tower
+    400004: awning_tower001
+    400006: build001
+    400008: ceiling001
+    400010: chains005
+    400012: coal
+    400014: coal002
+    400016: column
+    400018: door002
+    400020: doorframe
+    400022: doorframe001
+    400024: fang001
+    400026: fang001 1
+    400028: fang004
+    400030: femur
+    400032: femur001
+    400034: foundation001
+    400036: foundation001 1
+    400038: hollow
+    400040: hollow001
+    400042: hollow002
+    400044: hollow003
+    400046: hollow004
+    400048: hollow005
+    400050: manacles001
+    400052: manacles001 1
+    400054: manacles002
+    400056: //RootNode
+    400058: Perfume_Burner001
+    400060: Perfume_burner001
+    400062: Plane009
+    400064: Plane009 1
+    400066: roofing004
+    400068: stairs002
+    400070: stairs003
+    400072: vertebra001
+    400074: window001
+    400076: window002
+    400078: window004
+    400080: window005
+    400082: window006
+    400084: Wood_wall
+    400086: Wood_wall001
+    400088: fang023
+    400090: manacles010
+    2300000: awning002
+    2300002: awning_tower
+    2300004: awning_tower001
+    2300006: build001
+    2300008: ceiling001
+    2300010: chains005
+    2300012: coal
+    2300014: coal002
+    2300016: column
+    2300018: door002
+    2300020: doorframe
+    2300022: doorframe001
+    2300024: fang001
+    2300026: fang001 1
+    2300028: fang004
+    2300030: femur
+    2300032: femur001
+    2300034: foundation001
+    2300036: foundation001 1
+    2300038: hollow
+    2300040: hollow001
+    2300042: hollow002
+    2300044: hollow003
+    2300046: hollow004
+    2300048: hollow005
+    2300050: manacles001
+    2300052: manacles001 1
+    2300054: manacles002
+    2300056: Perfume_Burner001
+    2300058: Perfume_burner001
+    2300060: Plane009
+    2300062: Plane009 1
+    2300064: roofing004
+    2300066: stairs002
+    2300068: stairs003
+    2300070: vertebra001
+    2300072: window001
+    2300074: window002
+    2300076: window004
+    2300078: window005
+    2300080: window006
+    2300082: Wood_wall
+    2300084: Wood_wall001
+    2300086: fang023
+    2300088: manacles010
+    3300000: awning002
+    3300002: awning_tower
+    3300004: awning_tower001
+    3300006: build001
+    3300008: ceiling001
+    3300010: chains005
+    3300012: coal
+    3300014: coal002
+    3300016: column
+    3300018: door002
+    3300020: doorframe
+    3300022: doorframe001
+    3300024: fang001
+    3300026: fang001 1
+    3300028: fang004
+    3300030: femur
+    3300032: femur001
+    3300034: foundation001
+    3300036: foundation001 1
+    3300038: hollow
+    3300040: hollow001
+    3300042: hollow002
+    3300044: hollow003
+    3300046: hollow004
+    3300048: hollow005
+    3300050: manacles001
+    3300052: manacles001 1
+    3300054: manacles002
+    3300056: Perfume_Burner001
+    3300058: Perfume_burner001
+    3300060: Plane009
+    3300062: Plane009 1
+    3300064: roofing004
+    3300066: stairs002
+    3300068: stairs003
+    3300070: vertebra001
+    3300072: window001
+    3300074: window002
+    3300076: window004
+    3300078: window005
+    3300080: window006
+    3300082: Wood_wall
+    3300084: Wood_wall001
+    3300086: fang023
+    3300088: manacles010
+    4300000: column
+    4300002: roofing004
+    4300004: ceiling001
+    4300006: door002
+    4300008: Perfume_burner001
+    4300010: Perfume_Burner001
+    4300012: manacles001
+    4300014: coal002
+    4300016: fang001
+    4300018: hollow
+    4300020: vertebra001
+    4300022: chains005
+    4300024: awning002
+    4300026: coal
+    4300028: manacles001
+    4300030: fang001
+    4300032: build001
+    4300034: hollow001
+    4300036: window001
+    4300038: window002
+    4300040: Wood_wall
+    4300042: awning_tower
+    4300044: foundation001
+    4300046: Plane009
+    4300048: doorframe
+    4300050: stairs002
+    4300052: fang004
+    4300054: manacles002
+    4300056: femur
+    4300058: hollow002
+    4300060: hollow003
+    4300062: window004
+    4300064: window005
+    4300066: hollow004
+    4300068: hollow005
+    4300070: window006
+    4300072: awning_tower001
+    4300074: foundation001
+    4300076: Plane009
+    4300078: doorframe001
+    4300080: stairs003
+    4300082: femur001
+    4300084: Wood_wall001
+    4300086: manacles010
+    4300088: fang023
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,321 @@
+fileFormatVersion: 2
+guid: 64d88dbc5f527b1408b2317a40f98b4b
+timeCreated: 1434958694
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: awning_tower004
+    100002: awning_tower005
+    100004: block
+    100006: build003
+    100008: ceiling003
+    100010: ceiling003 1
+    100012: chains007
+    100014: column002
+    100016: cross010
+    100018: door008
+    100020: doorframe011
+    100022: doorframe012
+    100024: fang015
+    100026: fang016
+    100028: femur007
+    100030: femur009
+    100032: femur010
+    100034: flag001
+    100036: foundation007
+    100038: foundation008
+    100040: hollow013
+    100042: hollow013 1
+    100044: hollow014
+    100046: hollow014 1
+    100048: hollow015
+    100050: large_wood015
+    100052: large_wood016
+    100054: //RootNode
+    100056: Plane022
+    100058: Plane023
+    100060: roofing006
+    100062: rope004
+    100064: rope004 1
+    100066: rope005
+    100068: rope006
+    100070: stairs006
+    100072: stairs007
+    100074: step
+    100076: step002
+    100078: step004
+    100080: step021
+    100082: trunk014
+    100084: vertebra003
+    100086: wall_up
+    100088: window013
+    100090: window013 1
+    100092: window014
+    100094: window015
+    100096: wood_table013
+    100098: Wood_wall007
+    100100: Wood_wall008
+    400000: awning_tower004
+    400002: awning_tower005
+    400004: block
+    400006: build003
+    400008: ceiling003
+    400010: ceiling003 1
+    400012: chains007
+    400014: column002
+    400016: cross010
+    400018: door008
+    400020: doorframe011
+    400022: doorframe012
+    400024: fang015
+    400026: fang016
+    400028: femur007
+    400030: femur009
+    400032: femur010
+    400034: flag001
+    400036: foundation007
+    400038: foundation008
+    400040: hollow013
+    400042: hollow013 1
+    400044: hollow014
+    400046: hollow014 1
+    400048: hollow015
+    400050: large_wood015
+    400052: large_wood016
+    400054: //RootNode
+    400056: Plane022
+    400058: Plane023
+    400060: roofing006
+    400062: rope004
+    400064: rope004 1
+    400066: rope005
+    400068: rope006
+    400070: stairs006
+    400072: stairs007
+    400074: step
+    400076: step002
+    400078: step004
+    400080: step021
+    400082: trunk014
+    400084: vertebra003
+    400086: wall_up
+    400088: window013
+    400090: window013 1
+    400092: window014
+    400094: window015
+    400096: wood_table013
+    400098: Wood_wall007
+    400100: Wood_wall008
+    2300000: awning_tower004
+    2300002: awning_tower005
+    2300004: block
+    2300006: build003
+    2300008: ceiling003
+    2300010: ceiling003 1
+    2300012: chains007
+    2300014: column002
+    2300016: cross010
+    2300018: door008
+    2300020: doorframe011
+    2300022: doorframe012
+    2300024: fang015
+    2300026: fang016
+    2300028: femur007
+    2300030: femur009
+    2300032: femur010
+    2300034: flag001
+    2300036: foundation007
+    2300038: foundation008
+    2300040: hollow013
+    2300042: hollow013 1
+    2300044: hollow014
+    2300046: hollow014 1
+    2300048: hollow015
+    2300050: large_wood015
+    2300052: large_wood016
+    2300054: Plane022
+    2300056: Plane023
+    2300058: roofing006
+    2300060: rope004
+    2300062: rope004 1
+    2300064: rope005
+    2300066: rope006
+    2300068: stairs006
+    2300070: stairs007
+    2300072: step
+    2300074: step002
+    2300076: step004
+    2300078: step021
+    2300080: trunk014
+    2300082: vertebra003
+    2300084: wall_up
+    2300086: window013
+    2300088: window013 1
+    2300090: window014
+    2300092: window015
+    2300094: wood_table013
+    2300096: Wood_wall007
+    2300098: Wood_wall008
+    3300000: awning_tower004
+    3300002: awning_tower005
+    3300004: block
+    3300006: build003
+    3300008: ceiling003
+    3300010: ceiling003 1
+    3300012: chains007
+    3300014: column002
+    3300016: cross010
+    3300018: door008
+    3300020: doorframe011
+    3300022: doorframe012
+    3300024: fang015
+    3300026: fang016
+    3300028: femur007
+    3300030: femur009
+    3300032: femur010
+    3300034: flag001
+    3300036: foundation007
+    3300038: foundation008
+    3300040: hollow013
+    3300042: hollow013 1
+    3300044: hollow014
+    3300046: hollow014 1
+    3300048: hollow015
+    3300050: large_wood015
+    3300052: large_wood016
+    3300054: Plane022
+    3300056: Plane023
+    3300058: roofing006
+    3300060: rope004
+    3300062: rope004 1
+    3300064: rope005
+    3300066: rope006
+    3300068: stairs006
+    3300070: stairs007
+    3300072: step
+    3300074: step002
+    3300076: step004
+    3300078: step021
+    3300080: trunk014
+    3300082: vertebra003
+    3300084: wall_up
+    3300086: window013
+    3300088: window013 1
+    3300090: window014
+    3300092: window015
+    3300094: wood_table013
+    3300096: Wood_wall007
+    3300098: Wood_wall008
+    4300000: column002
+    4300002: roofing006
+    4300004: ceiling003
+    4300006: door008
+    4300008: hollow013
+    4300010: chains007
+    4300012: build003
+    4300014: window013
+    4300016: hollow013
+    4300018: hollow014
+    4300020: window014
+    4300022: window015
+    4300024: hollow015
+    4300026: hollow014
+    4300028: window013
+    4300030: vertebra003
+    4300032: femur007
+    4300034: trunk014
+    4300036: cross010
+    4300038: flag001
+    4300040: rope004
+    4300042: rope005
+    4300044: large_wood015
+    4300046: wood_table013
+    4300048: large_wood016
+    4300050: rope006
+    4300052: rope004
+    4300054: step
+    4300056: block
+    4300058: fang015
+    4300060: fang016
+    4300062: step002
+    4300064: step021
+    4300066: step004
+    4300068: wall_up
+    4300070: ceiling003
+    4300072: awning_tower004
+    4300074: foundation007
+    4300076: Plane022
+    4300078: doorframe011
+    4300080: stairs006
+    4300082: femur009
+    4300084: Wood_wall007
+    4300086: awning_tower005
+    4300088: foundation008
+    4300090: doorframe012
+    4300092: stairs007
+    4300094: femur010
+    4300096: Wood_wall008
+    4300098: Plane023
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

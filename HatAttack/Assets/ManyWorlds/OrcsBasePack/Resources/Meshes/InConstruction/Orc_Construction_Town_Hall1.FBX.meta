@@ -1,0 +1,271 @@
+fileFormatVersion: 2
+guid: a9a10bfcd1125d7478bb92adbfcb5965
+timeCreated: 1434958695
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: animal_Skull
+    100002: base_build001
+    100004: block001
+    100006: block001 1
+    100008: block002
+    100010: build
+    100012: ceiling004
+    100014: chains
+    100016: chains008
+    100018: cornice
+    100020: cross012
+    100022: door009
+    100024: door_metallic008
+    100026: fang019
+    100028: fang020
+    100030: fang021
+    100032: fang022
+    100034: hollow
+    100036: hollow016
+    100038: large_wood021
+    100040: large_wood022
+    100042: large_wood023
+    100044: large_wood024
+    100046: //RootNode
+    100048: Plane025
+    100050: Plane026
+    100052: Pyramid001
+    100054: Pyramid002
+    100056: Pyramid004
+    100058: roofing007
+    100060: rope
+    100062: rope008
+    100064: step022
+    100066: step023
+    100068: step024
+    100070: step025
+    100072: trunk016
+    100074: window
+    100076: window 1
+    100078: wood_table016
+    100080: wood_table017
+    400000: animal_Skull
+    400002: base_build001
+    400004: block001
+    400006: block001 1
+    400008: block002
+    400010: build
+    400012: ceiling004
+    400014: chains
+    400016: chains008
+    400018: cornice
+    400020: cross012
+    400022: door009
+    400024: door_metallic008
+    400026: fang019
+    400028: fang020
+    400030: fang021
+    400032: fang022
+    400034: hollow
+    400036: hollow016
+    400038: large_wood021
+    400040: large_wood022
+    400042: large_wood023
+    400044: large_wood024
+    400046: //RootNode
+    400048: Plane025
+    400050: Plane026
+    400052: Pyramid001
+    400054: Pyramid002
+    400056: Pyramid004
+    400058: roofing007
+    400060: rope
+    400062: rope008
+    400064: step022
+    400066: step023
+    400068: step024
+    400070: step025
+    400072: trunk016
+    400074: window
+    400076: window 1
+    400078: wood_table016
+    400080: wood_table017
+    2300000: animal_Skull
+    2300002: base_build001
+    2300004: block001
+    2300006: block001 1
+    2300008: block002
+    2300010: build
+    2300012: ceiling004
+    2300014: chains
+    2300016: chains008
+    2300018: cornice
+    2300020: cross012
+    2300022: door009
+    2300024: door_metallic008
+    2300026: fang019
+    2300028: fang020
+    2300030: fang021
+    2300032: fang022
+    2300034: hollow
+    2300036: hollow016
+    2300038: large_wood021
+    2300040: large_wood022
+    2300042: large_wood023
+    2300044: large_wood024
+    2300046: Plane025
+    2300048: Plane026
+    2300050: Pyramid001
+    2300052: Pyramid002
+    2300054: Pyramid004
+    2300056: roofing007
+    2300058: rope
+    2300060: rope008
+    2300062: step022
+    2300064: step023
+    2300066: step024
+    2300068: step025
+    2300070: trunk016
+    2300072: window
+    2300074: window 1
+    2300076: wood_table016
+    2300078: wood_table017
+    3300000: animal_Skull
+    3300002: base_build001
+    3300004: block001
+    3300006: block001 1
+    3300008: block002
+    3300010: build
+    3300012: ceiling004
+    3300014: chains
+    3300016: chains008
+    3300018: cornice
+    3300020: cross012
+    3300022: door009
+    3300024: door_metallic008
+    3300026: fang019
+    3300028: fang020
+    3300030: fang021
+    3300032: fang022
+    3300034: hollow
+    3300036: hollow016
+    3300038: large_wood021
+    3300040: large_wood022
+    3300042: large_wood023
+    3300044: large_wood024
+    3300046: Plane025
+    3300048: Plane026
+    3300050: Pyramid001
+    3300052: Pyramid002
+    3300054: Pyramid004
+    3300056: roofing007
+    3300058: rope
+    3300060: rope008
+    3300062: step022
+    3300064: step023
+    3300066: step024
+    3300068: step025
+    3300070: trunk016
+    3300072: window
+    3300074: window 1
+    3300076: wood_table016
+    3300078: wood_table017
+    4300000: build
+    4300002: roofing007
+    4300004: base_build001
+    4300006: step022
+    4300008: animal_Skull
+    4300010: door009
+    4300012: chains
+    4300014: window
+    4300016: window
+    4300018: Pyramid001
+    4300020: Pyramid002
+    4300022: Pyramid004
+    4300024: fang019
+    4300026: hollow016
+    4300028: hollow
+    4300030: cornice
+    4300032: door_metallic008
+    4300034: Plane025
+    4300036: chains008
+    4300038: block001
+    4300040: block001
+    4300042: block002
+    4300044: fang020
+    4300046: fang021
+    4300048: fang022
+    4300050: step023
+    4300052: step024
+    4300054: step025
+    4300056: ceiling004
+    4300058: large_wood021
+    4300060: large_wood022
+    4300062: rope008
+    4300064: rope
+    4300066: large_wood023
+    4300068: wood_table016
+    4300070: wood_table017
+    4300072: large_wood024
+    4300074: trunk016
+    4300076: cross012
+    4300078: Plane026
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

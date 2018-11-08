@@ -1,0 +1,755 @@
+fileFormatVersion: 2
+guid: 83db6acd440f8ac4ea2c39335dc4258c
+timeCreated: 1434959354
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: animal_Skull002
+    100002: bone-spike111
+    100004: bone-spike112
+    100006: bone-spike113
+    100008: bone-spike15
+    100010: bone-spike16
+    100012: bone-spike17
+    100014: bone-spike18
+    100016: bone-spike19
+    100018: bone-spike20
+    100020: bone-spike21
+    100022: bone-spike22
+    100024: bone-spike23
+    100026: bone-spike24
+    100028: bone-spike25
+    100030: bone-spike26
+    100032: bone-spike27
+    100034: bone-spike28
+    100036: bone-spike29
+    100038: bone-spike30
+    100040: bone-spike31
+    100042: bone-spike32
+    100044: bone-spike33
+    100046: bone-spike34
+    100048: bone-spike35
+    100050: bone-spike36
+    100052: bone-spike37
+    100054: bone-spike38
+    100056: bone-spike39
+    100058: bone-spike40
+    100060: bone-spike41
+    100062: bone-spike42
+    100064: bone-spike43
+    100066: bone-spike44
+    100068: bone-spike45
+    100070: bone-spike46
+    100072: bone-spike47
+    100074: bone-spike48
+    100076: bone-spike49
+    100078: bone-spike72
+    100080: bone-spike73
+    100082: bone-spike74
+    100084: bone-spike75
+    100086: bone-spike76
+    100088: bone-spike79
+    100090: bone-spike80
+    100092: bone-spike81
+    100094: bone-spike83
+    100096: chains009
+    100098: chains01
+    100100: chains02
+    100102: chains03
+    100104: chains04
+    100106: chains05
+    100108: chains06
+    100110: Cone109
+    100112: Cone111
+    100114: Cone150
+    100116: cross021
+    100118: gumboil
+    100120: gumboil 1
+    100122: handle-bar052
+    100124: handle-bar053
+    100126: handle-bar054
+    100128: handle-bar055
+    100130: handle-bar056
+    100132: handle-bar057
+    100134: handle-bar058
+    100136: handle-bar059
+    100138: metal_barrel
+    100140: metal_base_
+    100142: metal_base_021
+    100144: metal_ring
+    100146: metal_ring 1
+    100148: metal_ring 2
+    100150: metal_ring 3
+    100152: metal_ring 4
+    100154: //RootNode
+    100156: painted_horn_010
+    100158: painted_horn_03
+    100160: Plane032
+    100162: rotator_007
+    100164: Torus012
+    100166: trunk_01
+    100168: trunk_plank_004
+    100170: trunk_plank_005
+    100172: trunk_plank_006
+    100174: trunk_plank_02
+    100176: wood-plank024
+    100178: wood-plank025
+    100180: wood-plank12
+    400000: animal_Skull002
+    400002: bone-spike111
+    400004: bone-spike112
+    400006: bone-spike113
+    400008: bone-spike15
+    400010: bone-spike16
+    400012: bone-spike17
+    400014: bone-spike18
+    400016: bone-spike19
+    400018: bone-spike20
+    400020: bone-spike21
+    400022: bone-spike22
+    400024: bone-spike23
+    400026: bone-spike24
+    400028: bone-spike25
+    400030: bone-spike26
+    400032: bone-spike27
+    400034: bone-spike28
+    400036: bone-spike29
+    400038: bone-spike30
+    400040: bone-spike31
+    400042: bone-spike32
+    400044: bone-spike33
+    400046: bone-spike34
+    400048: bone-spike35
+    400050: bone-spike36
+    400052: bone-spike37
+    400054: bone-spike38
+    400056: bone-spike39
+    400058: bone-spike40
+    400060: bone-spike41
+    400062: bone-spike42
+    400064: bone-spike43
+    400066: bone-spike44
+    400068: bone-spike45
+    400070: bone-spike46
+    400072: bone-spike47
+    400074: bone-spike48
+    400076: bone-spike49
+    400078: bone-spike72
+    400080: bone-spike73
+    400082: bone-spike74
+    400084: bone-spike75
+    400086: bone-spike76
+    400088: bone-spike79
+    400090: bone-spike80
+    400092: bone-spike81
+    400094: bone-spike83
+    400096: chains009
+    400098: chains01
+    400100: chains02
+    400102: chains03
+    400104: chains04
+    400106: chains05
+    400108: chains06
+    400110: Cone109
+    400112: Cone111
+    400114: Cone150
+    400116: cross021
+    400118: gumboil
+    400120: gumboil 1
+    400122: handle-bar052
+    400124: handle-bar053
+    400126: handle-bar054
+    400128: handle-bar055
+    400130: handle-bar056
+    400132: handle-bar057
+    400134: handle-bar058
+    400136: handle-bar059
+    400138: metal_barrel
+    400140: metal_base_
+    400142: metal_base_021
+    400144: metal_ring
+    400146: metal_ring 1
+    400148: metal_ring 2
+    400150: metal_ring 3
+    400152: metal_ring 4
+    400154: //RootNode
+    400156: painted_horn_010
+    400158: painted_horn_03
+    400160: Plane032
+    400162: rotator_007
+    400164: Torus012
+    400166: trunk_01
+    400168: trunk_plank_004
+    400170: trunk_plank_005
+    400172: trunk_plank_006
+    400174: trunk_plank_02
+    400176: wood-plank024
+    400178: wood-plank025
+    400180: wood-plank12
+    2300000: animal_Skull002
+    2300002: bone-spike111
+    2300004: bone-spike112
+    2300006: bone-spike113
+    2300008: bone-spike15
+    2300010: bone-spike16
+    2300012: bone-spike17
+    2300014: bone-spike18
+    2300016: bone-spike19
+    2300018: bone-spike20
+    2300020: bone-spike21
+    2300022: bone-spike22
+    2300024: bone-spike23
+    2300026: bone-spike24
+    2300028: bone-spike25
+    2300030: bone-spike26
+    2300032: bone-spike27
+    2300034: bone-spike28
+    2300036: bone-spike29
+    2300038: bone-spike30
+    2300040: bone-spike31
+    2300042: bone-spike32
+    2300044: bone-spike33
+    2300046: bone-spike34
+    2300048: bone-spike35
+    2300050: bone-spike36
+    2300052: bone-spike37
+    2300054: bone-spike38
+    2300056: bone-spike39
+    2300058: bone-spike40
+    2300060: bone-spike41
+    2300062: bone-spike42
+    2300064: bone-spike43
+    2300066: bone-spike44
+    2300068: bone-spike45
+    2300070: bone-spike46
+    2300072: bone-spike47
+    2300074: bone-spike48
+    2300076: bone-spike49
+    2300078: bone-spike72
+    2300080: bone-spike73
+    2300082: bone-spike74
+    2300084: bone-spike75
+    2300086: bone-spike76
+    2300088: bone-spike79
+    2300090: bone-spike80
+    2300092: bone-spike81
+    2300094: bone-spike83
+    2300096: chains009
+    2300098: chains01
+    2300100: chains02
+    2300102: chains03
+    2300104: chains04
+    2300106: chains05
+    2300108: chains06
+    2300110: Cone109
+    2300112: Cone111
+    2300114: Cone150
+    2300116: cross021
+    2300118: gumboil
+    2300120: gumboil 1
+    2300122: handle-bar052
+    2300124: handle-bar053
+    2300126: handle-bar054
+    2300128: handle-bar055
+    2300130: handle-bar056
+    2300132: handle-bar057
+    2300134: handle-bar058
+    2300136: handle-bar059
+    2300138: metal_barrel
+    2300140: metal_base_
+    2300142: metal_base_021
+    2300144: metal_ring
+    2300146: metal_ring 1
+    2300148: metal_ring 2
+    2300150: metal_ring 3
+    2300152: metal_ring 4
+    2300154: painted_horn_010
+    2300156: painted_horn_03
+    2300158: Plane032
+    2300160: rotator_007
+    2300162: Torus012
+    2300164: trunk_01
+    2300166: trunk_plank_004
+    2300168: trunk_plank_005
+    2300170: trunk_plank_006
+    2300172: trunk_plank_02
+    2300174: wood-plank024
+    2300176: wood-plank025
+    2300178: wood-plank12
+    3300000: animal_Skull002
+    3300002: bone-spike111
+    3300004: bone-spike112
+    3300006: bone-spike113
+    3300008: bone-spike15
+    3300010: bone-spike16
+    3300012: bone-spike17
+    3300014: bone-spike18
+    3300016: bone-spike19
+    3300018: bone-spike20
+    3300020: bone-spike21
+    3300022: bone-spike22
+    3300024: bone-spike23
+    3300026: bone-spike24
+    3300028: bone-spike25
+    3300030: bone-spike26
+    3300032: bone-spike27
+    3300034: bone-spike28
+    3300036: bone-spike29
+    3300038: bone-spike30
+    3300040: bone-spike31
+    3300042: bone-spike32
+    3300044: bone-spike33
+    3300046: bone-spike34
+    3300048: bone-spike35
+    3300050: bone-spike36
+    3300052: bone-spike37
+    3300054: bone-spike38
+    3300056: bone-spike39
+    3300058: bone-spike40
+    3300060: bone-spike41
+    3300062: bone-spike42
+    3300064: bone-spike43
+    3300066: bone-spike44
+    3300068: bone-spike45
+    3300070: bone-spike46
+    3300072: bone-spike47
+    3300074: bone-spike48
+    3300076: bone-spike49
+    3300078: bone-spike72
+    3300080: bone-spike73
+    3300082: bone-spike74
+    3300084: bone-spike75
+    3300086: bone-spike76
+    3300088: bone-spike79
+    3300090: bone-spike80
+    3300092: bone-spike81
+    3300094: bone-spike83
+    3300096: chains009
+    3300098: chains01
+    3300100: chains02
+    3300102: chains03
+    3300104: chains04
+    3300106: chains05
+    3300108: chains06
+    3300110: Cone109
+    3300112: Cone111
+    3300114: Cone150
+    3300116: cross021
+    3300118: gumboil
+    3300120: gumboil 1
+    3300122: handle-bar052
+    3300124: handle-bar053
+    3300126: handle-bar054
+    3300128: handle-bar055
+    3300130: handle-bar056
+    3300132: handle-bar057
+    3300134: handle-bar058
+    3300136: handle-bar059
+    3300138: metal_barrel
+    3300140: metal_base_
+    3300142: metal_base_021
+    3300144: metal_ring
+    3300146: metal_ring 1
+    3300148: metal_ring 2
+    3300150: metal_ring 3
+    3300152: metal_ring 4
+    3300154: painted_horn_010
+    3300156: painted_horn_03
+    3300158: Plane032
+    3300160: rotator_007
+    3300162: Torus012
+    3300164: trunk_01
+    3300166: trunk_plank_004
+    3300168: trunk_plank_005
+    3300170: trunk_plank_006
+    3300172: trunk_plank_02
+    3300174: wood-plank024
+    3300176: wood-plank025
+    3300178: wood-plank12
+    4300000: rotator_007
+    4300002: trunk_01
+    4300004: wood-plank12
+    4300006: trunk_plank_005
+    4300008: metal_ring
+    4300010: bone-spike113
+    4300012: bone-spike76
+    4300014: bone-spike79
+    4300016: bone-spike112
+    4300018: trunk_plank_006
+    4300020: metal_barrel
+    4300022: wood-plank025
+    4300024: gumboil
+    4300026: bone-spike40
+    4300028: bone-spike38
+    4300030: bone-spike36
+    4300032: bone-spike35
+    4300034: bone-spike37
+    4300036: bone-spike34
+    4300038: bone-spike33
+    4300040: bone-spike32
+    4300042: bone-spike31
+    4300044: Cone150
+    4300046: bone-spike47
+    4300048: bone-spike44
+    4300050: bone-spike42
+    4300052: bone-spike46
+    4300054: bone-spike45
+    4300056: bone-spike43
+    4300058: bone-spike41
+    4300060: bone-spike39
+    4300062: gumboil
+    4300064: bone-spike25
+    4300066: bone-spike17
+    4300068: bone-spike15
+    4300070: bone-spike16
+    4300072: bone-spike24
+    4300074: bone-spike22
+    4300076: bone-spike21
+    4300078: bone-spike27
+    4300080: bone-spike23
+    4300082: bone-spike18
+    4300084: Cone109
+    4300086: bone-spike26
+    4300088: Cone111
+    4300090: bone-spike28
+    4300092: bone-spike29
+    4300094: bone-spike30
+    4300096: bone-spike19
+    4300098: bone-spike20
+    4300100: metal_ring
+    4300102: bone-spike72
+    4300104: bone-spike75
+    4300106: bone-spike73
+    4300108: bone-spike74
+    4300110: bone-spike48
+    4300112: bone-spike49
+    4300114: metal_base_021
+    4300116: trunk_plank_004
+    4300118: wood-plank024
+    4300120: metal_ring
+    4300122: painted_horn_010
+    4300124: metal_ring
+    4300126: painted_horn_03
+    4300128: bone-spike111
+    4300130: bone-spike83
+    4300132: animal_Skull002
+    4300134: metal_ring
+    4300136: chains04
+    4300138: chains01
+    4300140: chains03
+    4300142: chains02
+    4300144: chains009
+    4300146: Torus012
+    4300148: chains06
+    4300150: chains05
+    4300152: metal_base_
+    4300154: trunk_plank_02
+    4300156: bone-spike80
+    4300158: bone-spike81
+    4300160: handle-bar053
+    4300162: handle-bar054
+    4300164: handle-bar055
+    4300166: handle-bar056
+    4300168: handle-bar057
+    4300170: handle-bar058
+    4300172: handle-bar059
+    4300174: handle-bar052
+    4300176: Plane032
+    4300178: cross021
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: rotator_007
+        weight: 1
+      - path: rotator_007/animal_Skull002
+        weight: 1
+      - path: rotator_007/animal_Skull002/metal_ring
+        weight: 1
+      - path: rotator_007/animal_Skull002/metal_ring/chains04
+        weight: 1
+      - path: rotator_007/animal_Skull002/metal_ring/chains04/chains01
+        weight: 1
+      - path: rotator_007/animal_Skull002/metal_ring/chains04/chains01/chains03
+        weight: 1
+      - path: rotator_007/animal_Skull002/metal_ring/chains04/chains01/chains03/chains02
+        weight: 1
+      - path: rotator_007/animal_Skull002/metal_ring/chains05
+        weight: 1
+      - path: rotator_007/animal_Skull002/metal_ring/chains009
+        weight: 1
+      - path: rotator_007/animal_Skull002/metal_ring/chains009/Torus012
+        weight: 1
+      - path: rotator_007/animal_Skull002/metal_ring/chains009/Torus012/chains06
+        weight: 1
+      - path: rotator_007/cross021
+        weight: 1
+      - path: rotator_007/handle-bar052
+        weight: 1
+      - path: rotator_007/handle-bar053
+        weight: 1
+      - path: rotator_007/handle-bar054
+        weight: 1
+      - path: rotator_007/handle-bar055
+        weight: 1
+      - path: rotator_007/handle-bar056
+        weight: 1
+      - path: rotator_007/handle-bar057
+        weight: 1
+      - path: rotator_007/handle-bar058
+        weight: 1
+      - path: rotator_007/handle-bar059
+        weight: 1
+      - path: rotator_007/metal_base_
+        weight: 1
+      - path: rotator_007/metal_base_/bone-spike80
+        weight: 1
+      - path: rotator_007/metal_base_/bone-spike81
+        weight: 1
+      - path: rotator_007/metal_base_/trunk_plank_02
+        weight: 1
+      - path: rotator_007/metal_base_021
+        weight: 1
+      - path: rotator_007/metal_base_021/bone-spike83
+        weight: 1
+      - path: rotator_007/metal_base_021/bone-spike111
+        weight: 1
+      - path: rotator_007/metal_base_021/trunk_plank_004
+        weight: 1
+      - path: rotator_007/metal_base_021/trunk_plank_004/wood-plank024
+        weight: 1
+      - path: rotator_007/metal_base_021/trunk_plank_004/wood-plank024/metal_ring
+          1
+        weight: 1
+      - path: rotator_007/metal_base_021/trunk_plank_004/wood-plank024/metal_ring
+          1/painted_horn_010
+        weight: 1
+      - path: rotator_007/metal_base_021/trunk_plank_004/wood-plank024/metal_ring
+          2
+        weight: 1
+      - path: rotator_007/metal_base_021/trunk_plank_004/wood-plank024/metal_ring
+          2/painted_horn_03
+        weight: 1
+      - path: rotator_007/Plane032
+        weight: 1
+      - path: rotator_007/trunk_01
+        weight: 1
+      - path: rotator_007/trunk_01/bone-spike48
+        weight: 1
+      - path: rotator_007/trunk_01/bone-spike49
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_005
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_005/metal_ring 3
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_005/metal_ring 3/bone-spike76
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_005/metal_ring 3/bone-spike79
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_005/metal_ring 3/bone-spike112
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_005/metal_ring 3/bone-spike113
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/bone-spike31
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/bone-spike32
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/bone-spike33
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/bone-spike34
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/bone-spike35
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/bone-spike36
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/bone-spike37
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/bone-spike38
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/bone-spike39
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/bone-spike40
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/bone-spike41
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/bone-spike42
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/bone-spike43
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/bone-spike44
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/bone-spike45
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/bone-spike46
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/bone-spike47
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil/Cone150
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/bone-spike15
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/bone-spike16
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/bone-spike17
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/bone-spike18
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/bone-spike19
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/bone-spike20
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/bone-spike21
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/bone-spike22
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/bone-spike23
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/bone-spike24
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/bone-spike25
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/bone-spike26
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/bone-spike27
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/bone-spike28
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/bone-spike29
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/bone-spike30
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/Cone109
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_barrel/wood-plank025/gumboil
+          1/Cone111
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_ring 4
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_ring 4/bone-spike72
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_ring 4/bone-spike73
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_ring 4/bone-spike74
+        weight: 1
+      - path: rotator_007/trunk_01/wood-plank12/trunk_plank_006/metal_ring 4/bone-spike75
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

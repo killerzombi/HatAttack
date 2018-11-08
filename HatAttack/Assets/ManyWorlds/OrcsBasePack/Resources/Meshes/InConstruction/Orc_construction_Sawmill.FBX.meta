@@ -1,0 +1,186 @@
+fileFormatVersion: 2
+guid: af57530378d311145add8413afbcf22e
+timeCreated: 1434958696
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: block003
+    100002: cross014
+    100004: fangs001
+    100006: fangs001 1
+    100008: fangs002
+    100010: fangs003
+    100012: floor006
+    100014: foundation011
+    100016: large_wood028
+    100018: large_wood029
+    100020: leather_ring003
+    100022: //RootNode
+    100024: Plane027
+    100026: rope
+    100028: rope012
+    100030: step026
+    100032: trnk_big012
+    100034: trnk_big013
+    100036: trnk_big014
+    100038: trunks001
+    100040: wood_column001
+    100042: wood_pilar029
+    100044: wood_table019
+    100046: wood_table020
+    400000: block003
+    400002: cross014
+    400004: fangs001
+    400006: fangs001 1
+    400008: fangs002
+    400010: fangs003
+    400012: floor006
+    400014: foundation011
+    400016: large_wood028
+    400018: large_wood029
+    400020: leather_ring003
+    400022: //RootNode
+    400024: Plane027
+    400026: rope
+    400028: rope012
+    400030: step026
+    400032: trnk_big012
+    400034: trnk_big013
+    400036: trnk_big014
+    400038: trunks001
+    400040: wood_column001
+    400042: wood_pilar029
+    400044: wood_table019
+    400046: wood_table020
+    2300000: block003
+    2300002: cross014
+    2300004: fangs001
+    2300006: fangs001 1
+    2300008: fangs002
+    2300010: fangs003
+    2300012: floor006
+    2300014: foundation011
+    2300016: large_wood028
+    2300018: large_wood029
+    2300020: leather_ring003
+    2300022: Plane027
+    2300024: rope
+    2300026: rope012
+    2300028: step026
+    2300030: trnk_big012
+    2300032: trnk_big013
+    2300034: trnk_big014
+    2300036: trunks001
+    2300038: wood_column001
+    2300040: wood_pilar029
+    2300042: wood_table019
+    2300044: wood_table020
+    3300000: block003
+    3300002: cross014
+    3300004: fangs001
+    3300006: fangs001 1
+    3300008: fangs002
+    3300010: fangs003
+    3300012: floor006
+    3300014: foundation011
+    3300016: large_wood028
+    3300018: large_wood029
+    3300020: leather_ring003
+    3300022: Plane027
+    3300024: rope
+    3300026: rope012
+    3300028: step026
+    3300030: trnk_big012
+    3300032: trnk_big013
+    3300034: trnk_big014
+    3300036: trunks001
+    3300038: wood_column001
+    3300040: wood_pilar029
+    3300042: wood_table019
+    3300044: wood_table020
+    4300000: floor006
+    4300002: foundation011
+    4300004: wood_column001
+    4300006: wood_table019
+    4300008: fangs001
+    4300010: trunks001
+    4300012: trnk_big012
+    4300014: trnk_big013
+    4300016: trnk_big014
+    4300018: wood_pilar029
+    4300020: leather_ring003
+    4300022: fangs001
+    4300024: fangs002
+    4300026: fangs003
+    4300028: block003
+    4300030: step026
+    4300032: large_wood028
+    4300034: large_wood029
+    4300036: rope012
+    4300038: rope
+    4300040: wood_table020
+    4300042: cross014
+    4300044: Plane027
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
