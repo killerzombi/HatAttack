@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Open World Scenes/Scenes/HubWorld.unity
+  isLoaded: 1
+  isActive: 1
