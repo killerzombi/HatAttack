@@ -61,7 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Open World Scenes\Materials\IceWorldAssets\Mezanix\RealisticWoodTextures\0_Demo_Scene\Scripts\SimpleRotate.cs" />
     <Compile Include="Assets\Open World Scenes\Materials\IceWorldAssets\Rocks and Boulders 2\Shaders\RotateGameObject.cs" />
     <Compile Include="Assets\Open World Scenes\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Open World Scenes\Scripts\PlayerControllerTPS.cs" />
@@ -75,9 +74,7 @@
     <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Rocks and Boulders 2\Shaders\shader info.txt" />
     <None Include="Assets\Test Scenes\Test Assets (Evan)\Materials\Seamless Textures (Realistic)\Read Me.txt" />
     <None Include="Assets\Test Scenes\Test Assets (Evan)\Textures\Read Me.txt" />
-    <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Mezanix\RealisticWoodTextures\0_1_Documentation\Textures_List.txt" />
     <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Rocks and Boulders 2\Shaders\Blend SM3.shader" />
-    <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Mezanix\RealisticWoodTextures\0_1_Documentation\Read_me.txt" />
     <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Rocks and Boulders 2\Shaders\Blend SM2.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/nbaines/Desktop/HatAttack/HatAttack/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
