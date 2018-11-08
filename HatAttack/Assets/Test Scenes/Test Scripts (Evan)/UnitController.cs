@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,32 +47,41 @@ public class UnitController : MonoBehaviour
 
     if (Input.GetKeyDown("w"))
     {
-      uZ++;
       if (!isMoving)
       {
-        isMoving = true;
-        StartCoroutine(MoveToPosition(grid[uX, uZ].transform.position + new Vector3(0, 1, 0), 0.1f));
+        if (uZ < grid.GetLength(0) - 1)
+        {
+          uZ++;
+          isMoving = true;
+          StartCoroutine(MoveToPosition(grid[uX, uZ].transform.position + new Vector3(0, 1, 0), 0.1f));
+        }
       }
     }
+
 
     if (Input.GetKeyDown("s"))
     {
       if (!isMoving)
       {
-        uZ--;
-        isMoving = true;
-        StartCoroutine(MoveToPosition(grid[uX, uZ].transform.position + new Vector3(0, 1, 0), 0.1f));
+        if (uZ > 0)
+        {
+          uZ--;
+          isMoving = true;
+          StartCoroutine(MoveToPosition(grid[uX, uZ].transform.position + new Vector3(0, 1, 0), 0.1f));
+        }
       }
-
     }
 
     if (Input.GetKeyDown("d"))
     {
       if (!isMoving)
       {
-        uX++;
-        isMoving = true;
-        StartCoroutine(MoveToPosition(grid[uX, uZ].transform.position + new Vector3(0, 1, 0), 0.1f));
+        if (uX < grid.GetLength(0) - 1)
+        {
+          uX++;
+          isMoving = true;
+          StartCoroutine(MoveToPosition(grid[uX, uZ].transform.position + new Vector3(0, 1, 0), 0.1f));
+        }
       }
     }
 
@@ -79,9 +89,12 @@ public class UnitController : MonoBehaviour
     {
       if (!isMoving)
       {
-        uX--;
-        isMoving = true;
-        StartCoroutine(MoveToPosition(grid[uX, uZ].transform.position + new Vector3(0, 1, 0), 0.1f));
+        if (uX > 0)
+        {
+          uX--;
+          isMoving = true;
+          StartCoroutine(MoveToPosition(grid[uX, uZ].transform.position + new Vector3(0, 1, 0), 0.1f));
+        }
       }
     }
   }

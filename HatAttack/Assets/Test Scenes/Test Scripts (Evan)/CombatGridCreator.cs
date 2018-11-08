@@ -10,10 +10,6 @@ public class CombatGridCreator : MonoBehaviour
 
   public GameObject TerrainType;
 
-  public GameObject tree;
-  public GameObject rock;
-  public GameObject bush;
-
 
   // Width, Length
   private GameObject[,] grid = new GameObject[30, 30];
@@ -30,7 +26,7 @@ public class CombatGridCreator : MonoBehaviour
     {
       for (int z = 0; z < grid.GetLength(1); z++)
       {
-        // Creates block.
+        // Calls TerrainType and returns us a random terrain type block.
         GameObject block = Instantiate(GetComponent<TerrainType>().randomizer(), Vector3.zero, cube.transform.rotation) as GameObject;
 
         block.AddComponent<TerrainType>();
@@ -42,6 +38,7 @@ public class CombatGridCreator : MonoBehaviour
     }
   }
 
+  // This function creates the "chess-like" effect on the combatmap board.
   void createGridEffect()
   {
     int offset = 0;

@@ -9,6 +9,9 @@ public class TerrainType : MonoBehaviour
   public string TerrainName;
   Material material;
 
+  // =============================
+  // Terrain Types
+  // =============================
   public GameObject cube;
   public GameObject tree;
   public GameObject rock;
@@ -18,28 +21,25 @@ public class TerrainType : MonoBehaviour
   // Use this for initialization
   void Start()
   {
-
     // material = GetComponent<Renderer>().material;
-
-
   }
 
   public GameObject randomizer()
   {
-    TerrainTypeNum = Random.Range(1, 5);
-    if (TerrainTypeNum == 1)
+    TerrainTypeNum = Random.Range(0, 17);
+    if (TerrainTypeNum < 14)
     {
       return cube;
     }
-    else if (TerrainTypeNum == 2)
+    else if (TerrainTypeNum == 14)
     {
       return tree;
     }
-    else if (TerrainTypeNum == 3)
+    else if (TerrainTypeNum == 15)
     {
       return rock;
     }
-    else if (TerrainTypeNum == 4)
+    else if (TerrainTypeNum == 16)
     {
       return bush;
     }
