@@ -50,4 +50,25 @@ public class CameraScript : MonoBehaviour {
         //transform.LookAt(character.transform.position+(new Vector3(0.5f,1,0.5f)));
     }
 
+    public void setCamerPlayer(GameObject NewPlayer)
+    {
+        character = NewPlayer;
+    }
+
+    public void setOffset()
+    {
+        offset = character.transform.InverseTransformPoint(transform.position);
+    }
+
+    public void setCPO(GameObject NewPlayer)
+    {
+        setCamerPlayer(NewPlayer);
+        setOffset();
+    }
+
+    public void setAngles(float UD, float LR)
+    {
+        leftRight = LR;
+        upDown = UD;
+    }
 }
