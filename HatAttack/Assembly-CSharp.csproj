@@ -86,12 +86,14 @@
     <Compile Include="Assets\PyroParticles\Prefab\Script\FireProjectileScript.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
     <Compile Include="Assets\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
-    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\ArrayScriptCombat.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\assets\CombatController\OverheadControl.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\assets\CombatController\SelectionController.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\assets\cube\cubeScript.cs" />
-    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\LandUnit.cs" />
-    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\UnitControllerInterface.cs" />
+    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\assets\land unit\LandUnit.cs" />
+    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\ArrayScriptCombat.cs" />
+    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\interfaces\MapInterface.cs" />
+    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\interfaces\SelectionInterface.cs" />
+    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\interfaces\UnitControllerInterface.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Evan)\CombatGridCreator.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Evan)\TerrainType.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Evan)\UnitController.cs" />

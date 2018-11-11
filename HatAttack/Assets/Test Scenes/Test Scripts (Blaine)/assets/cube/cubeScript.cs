@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-public class cubeScript {
-
+public class cubeScript : MonoBehaviour{
     public GameObject Node;
 }

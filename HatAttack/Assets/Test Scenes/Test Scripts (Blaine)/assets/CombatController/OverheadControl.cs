@@ -34,6 +34,7 @@ public class OverheadControl : MonoBehaviour {
             else
             {
                 transform.eulerAngles = new Vector3(90, 0, 0);
+                transform.position = cam.transform.position;
                 camScript.setCPO(this.gameObject);
                 camScript.setAngles(-70, 0);
             }
