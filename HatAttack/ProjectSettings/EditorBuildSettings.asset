@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Open World Scenes/Scenes/IceWorld.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Open World Scenes/Scenes/HubWorld.unity
+    guid: a60a73514f375a749870dc1f9d7dc7eb
+  - enabled: 1
+    path: Assets/Open World Scenes/Scenes/FireWorld.unity
+    guid: f0d1e7c0d8b61d341ba536c7e0dab8fc
   m_configObjects: {}

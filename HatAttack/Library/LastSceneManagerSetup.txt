@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Test Scenes/Text Scene (Evan).unity
-=======
-- path: Assets/fireworld.unity
->>>>>>> ea1fc9cccaf8c74c479c39c7b3ec0a28c834f401
+- path: Assets/Open World Scenes/Scenes/FireWorld.unity
   isLoaded: 1
   isActive: 1
