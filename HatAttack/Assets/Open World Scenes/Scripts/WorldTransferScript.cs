@@ -6,10 +6,17 @@ using UnityEngine.SceneManagement;
 public class WorldTransferScript : MonoBehaviour {
 	public GameObject player;
 	public Camera camera;
+    GameObject fireSpawn;
+    GameObject iceSpawn;
+    GameObject hubSpawn;
     private void Awake()
     {
         player = GameObject.Find("Player");
         camera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        fireSpawn = GameObject.Find("FireWorldSpawnPoint");
+        iceSpawn = GameObject.Find("IceWorldSpawnPoint");
+        hubSpawn = GameObject.Find("HubWorldSpawnPoint");
+
     }
 
     void OnCollisionEnter(Collision collision)
@@ -21,7 +28,6 @@ public class WorldTransferScript : MonoBehaviour {
             if (this.gameObject.name == "FireWorldPortal")
             {
                 SceneManager.LoadScene("FireWorld");
-                GameObject fireSpawn = GameObject.Find("FireWorldSpawnPoint");
                 if (fireSpawn != null)
                 {
                     Debug.Log(fireSpawn.transform.position);
@@ -37,7 +43,6 @@ public class WorldTransferScript : MonoBehaviour {
             {
 
                 SceneManager.LoadScene("IceWorld");
-                GameObject iceSpawn = GameObject.Find("IceWorldSpawnPoint");
                 if (iceSpawn != null)
                 {
                     Debug.Log(iceSpawn.transform.position);

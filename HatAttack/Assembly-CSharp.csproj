@@ -85,6 +85,15 @@
     <Compile Include="Assets\Open World Scenes\Materials\FireWorldAssets\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
     <Compile Include="Assets\Open World Scenes\Materials\FireWorldAssets\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
     <Compile Include="Assets\Open World Scenes\Materials\IceWorldAssets\Rocks and Boulders 2\Shaders\RotateGameObject.cs" />
+    <Compile Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water (Basic)\Scripts\WaterBasic.cs" />
+    <Compile Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\Water\Scripts\Displace.cs" />
+    <Compile Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\Water\Scripts\GerstnerDisplace.cs" />
+    <Compile Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\Water\Scripts\MeshContainer.cs" />
+    <Compile Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\Water\Scripts\PlanarReflection.cs" />
+    <Compile Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\Water\Scripts\SpecularLighting.cs" />
+    <Compile Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\Water\Scripts\Water.cs" />
+    <Compile Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\Water\Scripts\WaterBase.cs" />
+    <Compile Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\Water\Scripts\WaterTile.cs" />
     <Compile Include="Assets\Open World Scenes\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Open World Scenes\Scripts\PlayerControllerTPS.cs" />
     <Compile Include="Assets\Open World Scenes\Scripts\PlayerControllerTPSFlying.cs" />
@@ -95,21 +104,28 @@
     <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\ManyWorlds\Common\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Rocks and Boulders 2\Shaders\shader info.txt" />
     <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\ManyWorlds\Common\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
+    <None Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water (Basic)\DO_NOT_WORK_IN_VR.txt" />
     <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\Lava_Flowing_Shader\Shaders\Unlit_Lava_Simple.shader" />
     <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\Lava_Flowing_Shader\Shaders\Diffuse_Lava_Distort.shader" />
     <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
     <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort.shader" />
+    <None Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\Water4\Shaders\FXWater4Simple.shader" />
     <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\ManyWorlds\Common\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
     <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort_Transparent.shader" />
     <None Include="Assets\Test Scenes\Test Assets (Evan)\Materials\Seamless Textures (Realistic)\Read Me.txt" />
     <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\ManyWorlds\Common\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
+    <None Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\DO_NOT_WORK_IN_VR.txt" />
     <None Include="Assets\Test Scenes\Test Assets (Evan)\Textures\Read Me.txt" />
     <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\ManyWorlds\Common\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
+    <None Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water (Basic)\Shaders\FXWaterBasic.shader" />
     <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\Lava_Flowing_Shader\ReadMe.txt" />
     <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\PyroParticles\Readme.txt" />
     <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\ManyWorlds\Common\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
     <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\ManyWorlds\Common\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+    <None Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Rocks and Boulders 2\Shaders\Blend SM3.shader" />
+    <None Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\Water4\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\Water4\Shaders\FXWater4Advanced.shader" />
     <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Rocks and Boulders 2\Shaders\Blend SM2.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/nbaines/Desktop/HatAttack/HatAttack/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
@@ -357,12 +373,6 @@
     <Reference Include="Boo.Lang">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{17DA9B5A-CC8B-0423-35FD-927771140346}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

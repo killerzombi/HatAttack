@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: d683fa57f916dca4c960c23857a8f144,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -7313,7 +7314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e99abe6d92468c549a649d87447bf4a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSpawn: {fileID: 1747248576}
 --- !u!4 &1753679103 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 460542, guid: 4484978719bae3245b9fcea5df3f31e5,
