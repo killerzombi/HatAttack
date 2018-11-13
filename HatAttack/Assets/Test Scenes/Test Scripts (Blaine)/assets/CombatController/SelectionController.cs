@@ -7,18 +7,36 @@ public class SelectionController : MonoBehaviour {
 
     [SerializeField]private KeyCode click = KeyCode.Mouse0;
     [SerializeField] private float range = 100f;
+    [SerializeField] private float HighlightStrength = .1f;
+    [SerializeField] private Color USelectColor;
+    [SerializeField] private Color ESelectColor;
+    [SerializeField] private GameObject ChoiceUI;
 
 
     private SelectionInterface selected = null;
+    private Queue<SelectionInterface> S2;
     private bool watching = true;
     private CameraScript CS = null;
     private UnitControllerInterface UCI = null;
 
+    public void startMovement(bool t)
+    {
+        if (ChoiceUI != null) ChoiceUI.SetActive(false);
+        if (CS != null)
+        {
+            CS.startMovement();
+        }
+        else { Debug.Log("selectionscript cannot access camerascript"); }
+        if(UCI!= null && t)
+        {
 
+        }
+    }
 	// Use this for initialization
 	void Start () {
         if (CS == null) CS = this.GetComponent<CameraScript>();
         if (CS == null) Debug.Log("selectionscript cannot access camerascript");
+        S2 = new Queue<SelectionInterface>();
 	}
 	// Update is called once per frame
 	void Update () {
@@ -27,7 +45,9 @@ public class SelectionController : MonoBehaviour {
             RaycastHit hitRay = new RaycastHit();
             if(Physics.Raycast(transform.position, transform.forward, out hitRay, range))
             {
+                Debug.Log("clicked: " + hitRay.collider.gameObject.name);
                 SelectionInterface SI = hitRay.collider.GetComponent<SelectionInterface>();
+                UnitControllerInterface cUCI = hitRay.collider.GetComponent<UnitControllerInterface>();
                 if (SI != null)
                 {
                     if (selected == null)
@@ -38,24 +58,57 @@ public class SelectionController : MonoBehaviour {
                             CS.startMovement();
                         }
                         else { Debug.Log("selectionscript cannot access camerascript"); }
+                        selected.selected(USelectColor * HighlightStrength);
+                        //Debug.Log("Selected 1");
+                        if(cUCI != null)
+                        {
+                            UCI = cUCI;
+                            UCI.highlightGrid(USelectColor * HighlightStrength * 0.8f);
+                        }
                     }
                     else
                     {
-                        if (CS != null)
+                        S2.Enqueue(SI);
+                        if (cUCI != null)
                         {
-                            CS.stopMovement();
+                            if (ChoiceUI != null) ChoiceUI.SetActive(true);
+                            if (CS != null)
+                            {
+                                CS.stopMovement();
+                            }
+                            else { Debug.Log("selectionscript cannot access camerascript"); }
+                            SI.selected(ESelectColor * HighlightStrength);
                         }
-                        else { Debug.Log("selectionscript cannot access camerascript"); }
+                        else
+                        {
+
+                        }
+                        //Debug.Log("Selected 2");
                     }
                 }
                 else {
-                    selected = null; UCI = null;
+                    if(selected != null) selected.deselected();
+                    while (S2.Count > 0) S2.Dequeue().deselected();
+                    selected = null; UCI = null; S2 = null;
                     if (CS != null)
                     {
                         CS.startMovement();
                     }
                     else { Debug.Log("selectionscript cannot access camerascript"); }
+                    //Debug.Log("Selected 0");
                 }
+            }
+            else
+            {
+                if (selected != null) selected.deselected();
+                while (S2.Count > 0) S2.Dequeue().deselected();
+                selected = null; UCI = null; S2 = null;
+                if (CS != null)
+                {
+                    CS.startMovement();
+                }
+                else { Debug.Log("selectionscript cannot access camerascript"); }
+                //Debug.Log("Selected 0");
             }
         }	
 	}

@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 33518118088131456}
   - component: {fileID: 23285542763237916}
   - component: {fileID: 65433085701064832}
+  - component: {fileID: 114603862152399956}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -83,7 +84,7 @@ Transform:
   m_GameObject: {fileID: 1486914091063670}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.09000015, y: 0.107, z: 0.059}
-  m_LocalScale: {x: 0.24377565, y: 0.24377565, z: 0.24377565}
+  m_LocalScale: {x: 0.17064299, y: 0.19502056, z: 0.17064299}
   m_Children: []
   m_Father: {fileID: 4775318820167834}
   m_RootOrder: 1
@@ -200,6 +201,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114603862152399956
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1589285367844330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d5e2e72f4b6fa4a8df12b26b4f0aca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Node: {fileID: 1448315475313970}
 --- !u!193 &193143399619412708
 Tree:
   m_ObjectHideFlags: 1
