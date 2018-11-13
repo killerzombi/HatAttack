@@ -14,6 +14,7 @@ public class LandUnit : MonoBehaviour, UnitControllerInterface, SelectionInterfa
 
     private CombatGridCreator CGC;
     private Vector2Int position;
+    private bool MovingNow=false;
 
 
     private MeshRenderer MeshR;
@@ -24,15 +25,18 @@ public class LandUnit : MonoBehaviour, UnitControllerInterface, SelectionInterfa
         while(path.Count>0)
         {
             Vector3 target = path.Dequeue().position;
+            Debug.Log(target);
             var currentPos = this.transform.position;
             var t = 0f;
             while (t < 1)
             {
                 t += Time.deltaTime / cTimeToMove;
                 this.transform.position = Vector3.Lerp(currentPos, target, t);
+                yield return null;
             }
+
         }
-        yield return null;
+        MovingNow = false;
     }
 
     public void MoveUnit(Vector2Int target)
@@ -40,7 +44,10 @@ public class LandUnit : MonoBehaviour, UnitControllerInterface, SelectionInterfa
         Queue<Transform> Path = CGC.getPath(target.x, target.y);
         if (Path.Count > 0)
         {
+            while (MovingNow) { }
+            MovingNow = true;
             StartCoroutine(MoveDownPath(Path, moveTime));
+            position = target;
         }
     }
 

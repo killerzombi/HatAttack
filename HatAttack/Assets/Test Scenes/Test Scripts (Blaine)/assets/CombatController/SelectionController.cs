@@ -81,7 +81,7 @@ public class SelectionController : MonoBehaviour {
                         }
                         else
                         {
-
+                            UCI.MoveUnit(SI.getPosition());
                         }
                         //Debug.Log("Selected 2");
                     }

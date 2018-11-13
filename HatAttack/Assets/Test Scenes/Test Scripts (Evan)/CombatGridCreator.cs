@@ -146,6 +146,12 @@ public class CombatGridCreator : MonoBehaviour
     private void highlightGrid(int x, int z, Color C, int count, Queue<Transform> path)
     {
         if (x < 0 || x >= gridSizeX || z < 0 || z >= gridSizeZ || count <=0) return;
+        Debug.Log("path so far:");
+        foreach(Transform T in path)
+        {
+            Debug.Log("Transform: " + T);
+        }
+
         {
             cubeScript tcs = grid[x, z].GetComponent<cubeScript>();
             if (tcs == null)
@@ -155,11 +161,13 @@ public class CombatGridCreator : MonoBehaviour
             path.Enqueue(tcs.Node.transform);
             tcs.selected(C);
         }
-        if (bestPaths[x, z].Count == 0 || bestPaths[x, z].Count > path.Count) bestPaths[x, z] = path;
+        if ((bestPaths[x, z].Count == 0) ||( bestPaths[x, z].Count > path.Count)) bestPaths[x, z] = path;
 
-        highlightGrid(x, z + 1,C, count - 1, path);
-        highlightGrid(x + 1, z,C, count - 1, path);
-        highlightGrid(x, z - 1,C, count - 1, path);
-        highlightGrid(x - 1, z,C, count - 1, path);
+        Debug.Log("Highlighted " + x + "," + z + " Count:"+count);
+
+        highlightGrid(x, z + 1,C, count - 1, new Queue<Transform>(path));
+        highlightGrid(x + 1, z,C, count - 1, new Queue<Transform>(path));
+        highlightGrid(x, z - 1,C, count - 1, new Queue<Transform>(path));
+        highlightGrid(x - 1, z,C, count - 1, new Queue<Transform>(path));
     }
 }
