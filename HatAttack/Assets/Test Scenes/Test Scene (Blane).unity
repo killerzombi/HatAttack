@@ -1106,6 +1106,7 @@ MonoBehaviour:
   USelectColor: {r: 0.078431375, g: 0.98039216, b: 0.627451, a: 0.98039216}
   ESelectColor: {r: 0.9411765, g: 0.54901963, b: 0.54901963, a: 0.98039216}
   ChoiceUI: {fileID: 2023209864}
+  cgc: {fileID: 901871723}
 --- !u!1 &2023209864
 GameObject:
   m_ObjectHideFlags: 0

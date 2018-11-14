@@ -35,10 +35,30 @@ public class CombatGridCreator : MonoBehaviour
     createCombatMap();
     createGridEffect();
         if (Unit1 != null) {
-            Transform TU1 = grid[1, 1].GetComponent<cubeScript>().Node.transform;
+            int U1x = 3, U1z = 3;
+            Transform TU1 = grid[U1x, U1z].GetComponent<cubeScript>().Node.transform;
             GameObject U1 = (GameObject)Instantiate(Unit1, TU1.position, TU1.rotation);
-            U1.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(1, 1));
-                }
+            U1.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U1x, U1z));
+
+            {
+                int U2x = 5, U2z = 3;
+                Transform TU2 = grid[U2x, U2z].GetComponent<cubeScript>().Node.transform;
+                GameObject U2 = (GameObject)Instantiate(Unit1, TU2.position, TU2.rotation);
+                U2.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U2x, U2z));
+            }
+            {
+                int U3x = 5, U3z = 5;
+                Transform TU3 = grid[U3x, U3z].GetComponent<cubeScript>().Node.transform;
+                GameObject U3 = (GameObject)Instantiate(Unit1, TU3.position, TU3.rotation);
+                U3.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U3x, U3z));
+            }
+            {
+                int U4x = 3, U4z = 5;
+                Transform TU4 = grid[U4x, U4z].GetComponent<cubeScript>().Node.transform;
+                GameObject U4 = (GameObject)Instantiate(Unit1, TU4.position, TU4.rotation);
+                U4.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U4x, U4z));
+            }
+        }
   }
 
   void generateWaterSpots()
@@ -94,6 +114,7 @@ public class CombatGridCreator : MonoBehaviour
         block.transform.localPosition = new Vector3(x, 0, z);
         // Sets block object to it's position in the array so we can access it.
         grid[x, z] = block;
+                block.GetComponent<cubeScript>().SetPosition(x, z);
                 bestPaths[x, z] = new Queue<Transform>();
       }
     }
@@ -146,11 +167,11 @@ public class CombatGridCreator : MonoBehaviour
     private void highlightGrid(int x, int z, Color C, int count, Queue<Transform> path)
     {
         if (x < 0 || x >= gridSizeX || z < 0 || z >= gridSizeZ || count <=0) return;
-        Debug.Log("path so far:");
-        foreach(Transform T in path)
-        {
-            Debug.Log("Transform: " + T);
-        }
+        //Debug.Log("path so far:");
+        //foreach(Transform T in path)
+        //{
+        //    Debug.Log("Transform: " + T);
+        //}
 
         {
             cubeScript tcs = grid[x, z].GetComponent<cubeScript>();
@@ -163,7 +184,7 @@ public class CombatGridCreator : MonoBehaviour
         }
         if ((bestPaths[x, z].Count == 0) ||( bestPaths[x, z].Count > path.Count)) bestPaths[x, z] = path;
 
-        Debug.Log("Highlighted " + x + "," + z + " Count:"+count);
+        //Debug.Log("Highlighted " + x + "," + z + " Count:"+count);
 
         highlightGrid(x, z + 1,C, count - 1, new Queue<Transform>(path));
         highlightGrid(x + 1, z,C, count - 1, new Queue<Transform>(path));

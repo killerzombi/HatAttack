@@ -8,8 +8,8 @@ public class LandUnit : MonoBehaviour, UnitControllerInterface, SelectionInterfa
     private float health;
     private float attack;
     private float defense;
-    private int moveSpeed = 3;
-    private float moveTime = 3f;
+    private int moveSpeed = 5;
+    private float moveTime = 1f;
 
 
     private CombatGridCreator CGC;
@@ -25,7 +25,7 @@ public class LandUnit : MonoBehaviour, UnitControllerInterface, SelectionInterfa
         while(path.Count>0)
         {
             Vector3 target = path.Dequeue().position;
-            Debug.Log(target);
+            //Debug.Log(target);
             var currentPos = this.transform.position;
             var t = 0f;
             while (t < 1)

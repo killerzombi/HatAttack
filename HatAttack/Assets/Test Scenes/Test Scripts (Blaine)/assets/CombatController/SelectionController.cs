@@ -13,6 +13,8 @@ public class SelectionController : MonoBehaviour {
     [SerializeField] private GameObject ChoiceUI;
 
 
+    public CombatGridCreator cgc;  // to be removed
+
     private SelectionInterface selected = null;
     private Queue<SelectionInterface> S2;
     private bool watching = true;
@@ -81,15 +83,34 @@ public class SelectionController : MonoBehaviour {
                         }
                         else
                         {
-                            UCI.MoveUnit(SI.getPosition());
-                        }
+                            if(cgc!=null)
+                            { 
+                            Queue<Transform> path = cgc.getPath(SI.getPosition().x, SI.getPosition().y);
+                            foreach (Transform T in path)
+                            {
+                                Debug.Log(T.position);
+                            }}
+                            Debug.Log(SI.getPosition());
+                            
+                            if(UCI!=null) { 
+                                UCI.MoveUnit(SI.getPosition());
+                                if (selected != null) selected.deselected();
+                                while (S2.Count > 0) S2.Dequeue().deselected();
+                                selected = null; UCI = null; S2 = new Queue<SelectionInterface>();
+                                if (CS != null)
+                                {
+                                    CS.startMovement();
+                                }
+                                else { Debug.Log("selectionscript cannot access camerascript"); }
+                            }
+                    }
                         //Debug.Log("Selected 2");
                     }
                 }
                 else {
                     if(selected != null) selected.deselected();
                     while (S2.Count > 0) S2.Dequeue().deselected();
-                    selected = null; UCI = null; S2 = null;
+                    selected = null; UCI = null; S2 = new Queue<SelectionInterface>();
                     if (CS != null)
                     {
                         CS.startMovement();
@@ -102,7 +123,7 @@ public class SelectionController : MonoBehaviour {
             {
                 if (selected != null) selected.deselected();
                 while (S2.Count > 0) S2.Dequeue().deselected();
-                selected = null; UCI = null; S2 = null;
+                selected = null; UCI = null; S2 = new Queue<SelectionInterface>();
                 if (CS != null)
                 {
                     CS.startMovement();
