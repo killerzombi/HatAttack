@@ -95,11 +95,15 @@
      <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Packs\BirchPackVol1\Works For Fun.txt" />
      <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\ManyWorlds\Common\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Rocks and Boulders 2\Shaders\shader info.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\ManyWorlds\Common\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
      <None Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water (Basic)\DO_NOT_WORK_IN_VR.txt" />
      <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\Lava_Flowing_Shader\Shaders\Unlit_Lava_Simple.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\Lava_Flowing_Shader\Shaders\Diffuse_Lava_Distort.shader" />
      <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort.shader" />
      <None Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\ManyWorlds\Common\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
@@ -109,16 +113,29 @@
      <None Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\DO_NOT_WORK_IN_VR.txt" />
      <None Include="Assets\Test Scenes\Test Assets (Evan)\Textures\Read Me.txt" />
      <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\ManyWorlds\Common\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water (Basic)\Shaders\FXWaterBasic.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\Lava_Flowing_Shader\ReadMe.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\PyroParticles\Readme.txt" />
      <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\ManyWorlds\Common\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
      <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\ManyWorlds\Common\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\Water\Shaders\FXWaterPro.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Rocks and Boulders 2\Shaders\Blend SM3.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\Water4\Shaders\WaterInclude.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
      <None Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\Water4\Shaders\FXWater4Advanced.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Rocks and Boulders 2\Shaders\Blend SM2.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/evan/Desktop/GameDesign_Repositories/HatAttack/HatAttack/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
