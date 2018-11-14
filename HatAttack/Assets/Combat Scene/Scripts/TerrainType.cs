@@ -24,27 +24,33 @@ public class TerrainType : MonoBehaviour
     // material = GetComponent<Renderer>().material;
   }
 
-  public GameObject randomizer()
+  public GameObject randomizer(bool notWater)
   {
-    TerrainTypeNum = Random.Range(0, 17);
-    if (TerrainTypeNum < 14)
-    {
-      return cube;
-    }
-    else if (TerrainTypeNum == 14)
-    {
-      return tree;
-    }
-    else if (TerrainTypeNum == 15)
-    {
-      return rock;
-    }
-    else if (TerrainTypeNum == 16)
-    {
-      return bush;
-    }
-
-    return cube;
+        if (notWater)
+        {
+            TerrainTypeNum = Random.Range(0, 17);
+            if (TerrainTypeNum < 14)
+            {
+                return cube;
+            }
+            else if (TerrainTypeNum == 14)
+            {
+                return tree;
+            }
+            else if (TerrainTypeNum == 15)
+            {
+                return rock;
+            }
+            else if (TerrainTypeNum == 16)
+            {
+                return bush;
+            }
+        }
+        else
+        {
+            return cube;
+        }
+        return cube;
   }
 
   void plain()

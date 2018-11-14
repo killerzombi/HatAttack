@@ -18,12 +18,13 @@ public class CombatGridCreator : MonoBehaviour
   // Width, Length
   private GameObject[,] grid = new GameObject[gridSizeX, gridSizeZ];
   private bool[,] waterPlacer = new bool[gridSizeX, gridSizeZ];
+    private bool[,] waterSpots = new bool[gridSizeX, gridSizeZ];
 
 
   void Start()
   {
     // Temp disabled this because of infinite loop.
-    // generateWaterSpots();
+    generateWaterSpots();
     createCombatMap();
     createGridEffect();
   }
@@ -60,10 +61,39 @@ public class CombatGridCreator : MonoBehaviour
     int waterTryCount = 0;
     int xPos;
     int zPos;
-    while (waterNum <= 3 || waterTryCount <= 8)
+
+
+        for (int x = 0; x < gridSizeX; x++)
+        {
+            for (int z = 0; z < gridSizeZ; z++)
+            {
+                waterSpots[x, z] = false;
+            }
+        }
+
+                while (waterNum <= 3 && waterTryCount <= 8)
     {
+            waterTryCount++;
       xPos = Random.Range(1, gridSizeX);
       zPos = Random.Range(1, gridSizeZ);
+            if (waterPlacer[xPos, zPos])
+            {
+                waterNum++;
+                for (int x = xPos - 2; x <= xPos + 2; x++)
+                {
+                    for (int z = zPos - 2; z <= zPos + 2; z++)
+                    {
+                        if ((x == xPos - 2 && z == zPos - 2) || (x == xPos - 2 && z == zPos + 2) || (x == xPos + 2 && z == zPos - 2) || (x == xPos + 2 && z == zPos + 2))
+                        {
+
+                        }
+                        else
+                        {
+                            waterSpots[x, z] = true;
+                        }
+                    }
+                }
+            }
     }
   }
 
@@ -73,14 +103,30 @@ public class CombatGridCreator : MonoBehaviour
     {
       for (int z = 0; z < gridSizeX; z++)
       {
-        // Calls TerrainType and returns us a random terrain type block.
-        GameObject block = Instantiate(GetComponent<TerrainType>().randomizer(), Vector3.zero, cube.transform.rotation) as GameObject;
+                if (!waterSpots[x, z])
+                {
+                    Object prefab = GetComponent<TerrainType>().randomizer(true);
+                    // Calls TerrainType and returns us a random terrain type block.
+                    GameObject block = Instantiate(prefab, Vector3.zero, cube.transform.rotation) as GameObject;
 
-        block.AddComponent<TerrainType>();
-        block.transform.parent = transform;
-        block.transform.localPosition = new Vector3(x, 0, z);
-        // Sets block object to it's position in the array so we can access it.
-        grid[x, z] = block;
+                    block.AddComponent<TerrainType>();
+                    block.transform.parent = transform;
+                    block.transform.localPosition = new Vector3(x, 0, z);
+                    // Sets block object to it's position in the array so we can access it.
+                    grid[x, z] = block;
+                }
+                else
+                {
+                    Object prefab = GetComponent<TerrainType>().randomizer(false);
+                    // Calls TerrainType and returns us a random terrain type block.
+                    GameObject block = Instantiate(prefab, Vector3.zero, cube.transform.rotation) as GameObject;
+
+                    block.AddComponent<TerrainType>();
+                    block.transform.parent = transform;
+                    block.transform.localPosition = new Vector3(x, -.75f, z);
+                    // Sets block object to it's position in the array so we can access it.
+                    grid[x, z] = block;
+                }
       }
     }
   }
@@ -98,8 +144,14 @@ public class CombatGridCreator : MonoBehaviour
         {
           GameObject block = Instantiate(gridcube, Vector3.zero, cube.transform.rotation) as GameObject;
           block.transform.parent = transform;
-          block.transform.localPosition = new Vector3(x, 0.02f, z);
-
+                    if (waterSpots[x, z])
+                    {
+                        block.transform.localPosition = new Vector3(x, -.3f, z);
+                    }
+                    else
+                    {
+                        block.transform.localPosition = new Vector3(x, 0.02f, z);
+                    }
         }
         offset++;
         if (offset % 30 - x == 0)
