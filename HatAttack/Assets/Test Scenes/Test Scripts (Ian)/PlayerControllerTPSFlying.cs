@@ -13,6 +13,7 @@ public class PlayerControllerTPSFlying : MonoBehaviour {
     [SerializeField] private bool DirectMove = true;
     public Camera cam;
 
+    public Animator anim;
     
     private readonly float m_interpolation = 10;
     private readonly float m_walkScale = 0.4f;
@@ -96,6 +97,7 @@ public class PlayerControllerTPSFlying : MonoBehaviour {
         else
             MoveForce();
 
+        animate();
         jump();
         
     }
@@ -213,5 +215,10 @@ public class PlayerControllerTPSFlying : MonoBehaviour {
         }
 
         m_wasGrounded = m_isGrounded;
+    }
+
+    void animate()
+    {
+
     }
 }
