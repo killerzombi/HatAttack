@@ -59,6 +59,7 @@ public class CombatGridCreator : MonoBehaviour
                 U4.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U4x, U4z));
             }
         }
+        TickManager.instance.StartTicking();
   }
 
   void generateWaterSpots()
@@ -163,7 +164,22 @@ public class CombatGridCreator : MonoBehaviour
             }
         }
     }
-    public void startHighlight(int x, int z, Color C, int count) { highlightGrid(x, z, C, count, new Queue<Transform>()); }
+    public void startHighlight(int x, int z, Color C, int count)
+    {
+        if (x < 0 || x >= gridSizeX || z < 0 || z >= gridSizeZ || count <= 0) return;
+        {
+            cubeScript tcs = grid[x, z].GetComponent<cubeScript>();
+            if (tcs == null)
+            {
+                Debug.Log("no cubescript on grid:" + x + "," + z); return;
+            }
+            tcs.selected(C);
+        }
+        highlightGrid(x, z + 1, C, count - 1, new Queue<Transform>());
+        highlightGrid(x + 1, z, C, count - 1, new Queue<Transform>());
+        highlightGrid(x, z - 1, C, count - 1, new Queue<Transform>());
+        highlightGrid(x - 1, z, C, count - 1, new Queue<Transform>());
+    }
     private void highlightGrid(int x, int z, Color C, int count, Queue<Transform> path)
     {
         if (x < 0 || x >= gridSizeX || z < 0 || z >= gridSizeZ || count <=0) return;
@@ -190,5 +206,24 @@ public class CombatGridCreator : MonoBehaviour
         highlightGrid(x + 1, z,C, count - 1, new Queue<Transform>(path));
         highlightGrid(x, z - 1,C, count - 1, new Queue<Transform>(path));
         highlightGrid(x - 1, z,C, count - 1, new Queue<Transform>(path));
+    }
+    private bool checkGrid(Vector2Int X) { return (X.x>0&&X.y>0&&X.x<gridSizeX&&X.y<gridSizeZ); }
+    public Queue<Vector2Int> PathAtoB(Vector2Int A, Vector2Int B)
+    {
+        Queue<Vector2Int> path = new Queue<Vector2Int>();
+        if (checkGrid(A) && checkGrid(B) && A != B)
+        {
+            Vector2Int temp = A;
+            while (temp != B)
+            {
+                if(temp.x==B.x&&temp.y==B.y) { Debug.Log("temp does == B but registered otherwise"); return path; }
+                if (B.x > temp.x) temp.x++;
+                else if (B.x < temp.x) temp.x--;
+                else if (B.y > temp.y) temp.y++;
+                else if (B.y < temp.y) temp.y--;
+                path.Enqueue(temp);
+            }
+        }
+        return path;
     }
 }

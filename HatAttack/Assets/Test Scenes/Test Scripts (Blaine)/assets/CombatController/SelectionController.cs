@@ -6,6 +6,7 @@ using UnityEngine;
 public class SelectionController : MonoBehaviour {
 
     [SerializeField]private KeyCode click = KeyCode.Mouse0;
+    [SerializeField] private KeyCode escapeKey = KeyCode.F;
     [SerializeField] private float range = 100f;
     [SerializeField] private float HighlightStrength = .1f;
     [SerializeField] private Color USelectColor;
@@ -83,25 +84,30 @@ public class SelectionController : MonoBehaviour {
                         }
                         else
                         {
-                            if(cgc!=null)
-                            { 
-                            Queue<Transform> path = cgc.getPath(SI.getPosition().x, SI.getPosition().y);
-                            foreach (Transform T in path)
-                            {
-                                Debug.Log(T.position);
-                            }}
-                            Debug.Log(SI.getPosition());
+                            //if(cgc!=null)
+                            //{ 
+                            //Queue<Transform> path = cgc.getPath(SI.getPosition().x, SI.getPosition().y);
+                            //foreach (Transform T in path)
+                            //{
+                            //    Debug.Log(T.position);
+                            //}}
+                            //Debug.Log(SI.getPosition());
                             
-                            if(UCI!=null) { 
+                            if(UCI!=null)
+                            { 
                                 UCI.MoveUnit(SI.getPosition());
-                                if (selected != null) selected.deselected();
-                                while (S2.Count > 0) S2.Dequeue().deselected();
-                                selected = null; UCI = null; S2 = new Queue<SelectionInterface>();
-                                if (CS != null)
-                                {
-                                    CS.startMovement();
-                                }
-                                else { Debug.Log("selectionscript cannot access camerascript"); }
+                                UCI.unHighlightGrid();
+                                UCI.highlightGrid(USelectColor * HighlightStrength * 0.8f, SI.getPosition());
+                                
+
+                                //if (selected != null) selected.deselected();
+                                //while (S2.Count > 0) S2.Dequeue().deselected();
+                                //selected = null; UCI = null; S2 = new Queue<SelectionInterface>();
+                                //if (CS != null)
+                                //{
+                                //    CS.startMovement();
+                                //}
+                                //else { Debug.Log("selectionscript cannot access camerascript"); }
                             }
                     }
                         //Debug.Log("Selected 2");
@@ -131,6 +137,18 @@ public class SelectionController : MonoBehaviour {
                 else { Debug.Log("selectionscript cannot access camerascript"); }
                 //Debug.Log("Selected 0");
             }
-        }	
+        }
+        else if (Input.GetKeyDown(escapeKey) && watching)
+        {
+            if (selected != null) selected.deselected();
+            while (S2.Count > 0) S2.Dequeue().deselected();
+            selected = null; UCI = null; S2 = new Queue<SelectionInterface>();
+            if (CS != null)
+            {
+                CS.startMovement();
+            }
+            else { Debug.Log("selectionscript cannot access camerascript"); }
+        }
+
 	}
 }

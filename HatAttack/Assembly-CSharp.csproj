@@ -94,6 +94,7 @@
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\interfaces\MapInterface.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\interfaces\SelectionInterface.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\interfaces\UnitControllerInterface.cs" />
+    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\TickManager.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Evan)\CombatGridCreator.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Evan)\TerrainType.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Evan)\UnitController.cs" />
