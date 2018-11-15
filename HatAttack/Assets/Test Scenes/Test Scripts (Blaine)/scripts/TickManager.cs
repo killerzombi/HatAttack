@@ -18,7 +18,6 @@ public class TickManager : MonoBehaviour {
     private float Timer = 0f;
 
     [SerializeField, Range(0.5f,15f)] private float tickDelay = 3f;
-    [SerializeField] private bool noTimer = false;
     //[SerializeField] private KeyCode tickNow = KeyCode.Space;
 
     public delegate void Tick ();
@@ -56,7 +55,7 @@ public class TickManager : MonoBehaviour {
         if (ticking)
         {
             Timer += Time.deltaTime;
-            if(Timer >= tickDelay && !(tickDelay == 0f||noTimer))
+            if(Timer >= tickDelay && tickDelay != 0f)
             {
                 while(Timer>=tickDelay)
                     Timer -= tickDelay;

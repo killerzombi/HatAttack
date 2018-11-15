@@ -8,7 +8,8 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     public GameObject Unit2;
     public GameObject Unit3;
     public GameObject Unit4;
-    [Range(0,15)]public float tickDelay = 3f;
+    [Range(0.25f,15f)]public float tickDelay = 3f;
+    [SerializeField] private bool noTimer = false;
     //public bool easyMode = false;
 
     // =============================
@@ -111,7 +112,9 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         {
             this.gameObject.AddComponent<TickManager>();
         }
-        TickManager.instance.StartTicking(tickDelay);
+        if(!noTimer)
+            TickManager.instance.StartTicking(tickDelay);
+        else TickManager.instance.StartTicking(0);
 
     }
 
