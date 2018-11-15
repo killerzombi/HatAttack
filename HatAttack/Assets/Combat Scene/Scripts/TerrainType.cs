@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TerrainType : MonoBehaviour
+public class TerrainType1 : MonoBehaviour
 {
 
   public int TerrainTypeNum;

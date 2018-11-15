@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Test Scenes/Text Scene (Ian).unity
+- path: Assets/Open World Scenes/Scenes/HubWorld.unity
   isLoaded: 1
   isActive: 1

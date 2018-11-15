@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitController : MonoBehaviour
+public class UnitController1 : MonoBehaviour
 {
 
   public CombatGridCreator combatGridCreator;

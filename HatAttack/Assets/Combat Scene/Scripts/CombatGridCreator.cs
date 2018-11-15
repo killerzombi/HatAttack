@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CombatGridCreator : MonoBehaviour
+public class CombatGridCreator1 : MonoBehaviour
 {
 
   public GameObject cube;
@@ -105,11 +105,11 @@ public class CombatGridCreator : MonoBehaviour
       {
                 if (!waterSpots[x, z])
                 {
-                    Object prefab = GetComponent<TerrainType>().randomizer(true);
+                    Object prefab = GetComponent<TerrainType1>().randomizer(true);
                     // Calls TerrainType and returns us a random terrain type block.
                     GameObject block = Instantiate(prefab, Vector3.zero, cube.transform.rotation) as GameObject;
 
-                    block.AddComponent<TerrainType>();
+                    block.AddComponent<TerrainType1>();
                     block.transform.parent = transform;
                     block.transform.localPosition = new Vector3(x, 0, z);
                     // Sets block object to it's position in the array so we can access it.
@@ -117,11 +117,11 @@ public class CombatGridCreator : MonoBehaviour
                 }
                 else
                 {
-                    Object prefab = GetComponent<TerrainType>().randomizer(false);
+                    Object prefab = GetComponent<TerrainType1>().randomizer(false);
                     // Calls TerrainType and returns us a random terrain type block.
                     GameObject block = Instantiate(prefab, Vector3.zero, cube.transform.rotation) as GameObject;
 
-                    block.AddComponent<TerrainType>();
+                    block.AddComponent<TerrainType1>();
                     block.transform.parent = transform;
                     block.transform.localPosition = new Vector3(x, -.75f, z);
                     // Sets block object to it's position in the array so we can access it.
