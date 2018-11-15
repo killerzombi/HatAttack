@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CombatGridCreator1 : MonoBehaviour
+public class CombatGridCreator : MonoBehaviour
 {
 
   public GameObject cube;
@@ -24,9 +24,12 @@ public class CombatGridCreator1 : MonoBehaviour
   void Start()
   {
     // Temp disabled this because of infinite loop.
-    generateWaterSpots();
-    createCombatMap();
-    createGridEffect();
+
+        //MOVED TO public GameObject[,] makeGrid();
+
+    //generateWaterSpots();
+    //createCombatMap();
+    //createGridEffect();
   }
 
   void generateWaterSpots()
@@ -105,7 +108,7 @@ public class CombatGridCreator1 : MonoBehaviour
       {
                 if (!waterSpots[x, z])
                 {
-                    Object prefab = GetComponent<TerrainType1>().randomizer(true);
+                    Object prefab = GetComponent<TerrainType>().randomizer(true);
                     // Calls TerrainType and returns us a random terrain type block.
                     GameObject block = Instantiate(prefab, Vector3.zero, cube.transform.rotation) as GameObject;
 
@@ -117,11 +120,11 @@ public class CombatGridCreator1 : MonoBehaviour
                 }
                 else
                 {
-                    Object prefab = GetComponent<TerrainType1>().randomizer(false);
+                    Object prefab = GetComponent<TerrainType>().randomizer(false);
                     // Calls TerrainType and returns us a random terrain type block.
                     GameObject block = Instantiate(prefab, Vector3.zero, cube.transform.rotation) as GameObject;
 
-                    block.AddComponent<TerrainType1>();
+                    block.AddComponent<TerrainType>();
                     block.transform.parent = transform;
                     block.transform.localPosition = new Vector3(x, -.75f, z);
                     // Sets block object to it's position in the array so we can access it.
@@ -167,4 +170,11 @@ public class CombatGridCreator1 : MonoBehaviour
     return grid;
   }
 
+    public GameObject[,] makeGrid()
+    {
+        generateWaterSpots();
+        createCombatMap();
+        createGridEffect();
+        return grid;
+    }
 }

@@ -111,9 +111,6 @@
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\interfaces\SelectionInterface.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\interfaces\UnitControllerInterface.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\TickManager.cs" />
-    <Compile Include="Assets\Test Scenes\Test Scripts (Evan)\CombatGridCreator.cs" />
-    <Compile Include="Assets\Test Scenes\Test Scripts (Evan)\TerrainType.cs" />
-    <Compile Include="Assets\Test Scenes\Test Scripts (Evan)\UnitController.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Ian)\CreateCombat.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Ian)\PlayerControllerTPSFlying.cs" />
     <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Packs\BirchPackVol1\Works For Fun.txt" />
@@ -161,16 +158,16 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/iryan/Desktop/GitHub/HatAttack/HatAttack/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/bhubbert/Downloads/unity/GitHub/HatAttack/HatAttack/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/iryan/Desktop/GitHub/HatAttack/HatAttack/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/bhubbert/Downloads/unity/GitHub/HatAttack/HatAttack/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/iryan/Desktop/GitHub/HatAttack/HatAttack/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/bhubbert/Downloads/unity/GitHub/HatAttack/HatAttack/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/iryan/Desktop/GitHub/HatAttack/HatAttack/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/bhubbert/Downloads/unity/GitHub/HatAttack/HatAttack/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -353,7 +350,7 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Unity.Locator.dll</HintPath>
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
-      <HintPath>C:/Users/iryan/Desktop/GitHub/HatAttack/HatAttack/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+      <HintPath>C:/Users/bhubbert/Downloads/unity/GitHub/HatAttack/HatAttack/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -377,10 +374,10 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/iryan/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/bhubbert/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/iryan/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/bhubbert/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
