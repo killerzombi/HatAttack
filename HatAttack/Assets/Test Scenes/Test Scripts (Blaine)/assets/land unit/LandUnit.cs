@@ -12,7 +12,7 @@ public class LandUnit : MonoBehaviour, UnitControllerInterface, SelectionInterfa
     private float moveTime = 1f;
 
 
-    private CombatGridCreator CGC;
+    private MapInterface MInterface;
     private Vector2Int position;
     private bool MovingNow=false;
     private bool inMoveSys = false;
@@ -44,7 +44,7 @@ public class LandUnit : MonoBehaviour, UnitControllerInterface, SelectionInterfa
 
     public void MoveUnit(Vector2Int target)
     {
-        Queue<Transform> Path = CGC.getPath(target.x, target.y);
+        Queue<Transform> Path = MInterface.getPath(target.x, target.y);
         if (Path.Count > 0)
         {
             allPaths.Enqueue(Path);
@@ -67,30 +67,30 @@ public class LandUnit : MonoBehaviour, UnitControllerInterface, SelectionInterfa
 
     public Queue<Vector2Int> pathFrom(Vector2Int startingPoint)
     {
-        if (CGC != null) return CGC.PathAtoB(startingPoint, position);
+        if (MInterface != null) return MInterface.PathAtoB(startingPoint, position);
         else Debug.Log("CombatGridCreator not found");
         return new Queue<Vector2Int>();
     }
 
-    public void setGrid(CombatGridCreator cgc, Vector2Int pos)
+    public void setGrid(MapInterface cgc, Vector2Int pos)
     {
-        CGC = cgc; position = pos;
+        MInterface = cgc; position = pos;
     }
 
     public void highlightGrid(Color C, Vector2Int pos)
     {
-        if (CGC != null) CGC.startHighlight(pos.x, pos.y, C, moveSpeed);
+        if (MInterface != null) MInterface.startHighlight(pos.x, pos.y, C, moveSpeed);
         else Debug.Log("CombatGridCreator not found");
     }
 
     public void highlightGrid(Color C)
     {
-        if (CGC != null) CGC.startHighlight(position.x, position.y, C, moveSpeed);
+        if (MInterface != null) MInterface.startHighlight(position.x, position.y, C, moveSpeed);
         else Debug.Log("CombatGridCreator not found");
     }
     public void unHighlightGrid()
     {
-        if (CGC != null) CGC.unHighlight();
+        if (MInterface != null) MInterface.unHighlight();
         else Debug.Log("CombatGridCreator not found");
     }
 
@@ -107,7 +107,7 @@ public class LandUnit : MonoBehaviour, UnitControllerInterface, SelectionInterfa
 
     public void deselected()
     {
-        if (CGC != null) CGC.unHighlight();
+        if (MInterface != null) MInterface.unHighlight();
         else Debug.Log("CombatGridCreator not found");
         if (MeshR != null)
         {

@@ -18,8 +18,7 @@ public class TickManager : MonoBehaviour {
     private float Timer = 0f;
 
     [SerializeField, Range(0.5f,15f)] private float tickDelay = 3f;
-    [SerializeField] private bool noTimer = false;
-    [SerializeField] private KeyCode tickNow = KeyCode.Space;
+    //[SerializeField] private KeyCode tickNow = KeyCode.Space;
 
     public delegate void Tick ();
     public static event Tick tick;
@@ -35,6 +34,16 @@ public class TickManager : MonoBehaviour {
     public void StartTicking(float tDelay) { ticking = true; tickDelay = tDelay; }
     public void StartTicking() { ticking = true; }
 
+    public void tickNow()
+    {
+        if (ticking)
+        {
+            Timer -= tickDelay;
+            if (Timer < 0) Timer = 0;
+            if (tick != null) tick();
+        }
+    }
+
 	// Use this for initialization
 	void Start ()
     {
@@ -46,7 +55,7 @@ public class TickManager : MonoBehaviour {
         if (ticking)
         {
             Timer += Time.deltaTime;
-            if(Timer >= tickDelay && !(tickDelay == 0f||noTimer))
+            if(Timer >= tickDelay && tickDelay != 0f)
             {
                 while(Timer>=tickDelay)
                     Timer -= tickDelay;
@@ -54,12 +63,12 @@ public class TickManager : MonoBehaviour {
                 if(tick != null)
                     tick();
             }
-            if (Input.GetKeyDown(tickNow))
-            {
-                Timer -= tickDelay;
-                if (Timer < 0) Timer = 0;
-                if (tick != null) tick();
-            }
+            //if (Input.GetKeyDown(tickNow))
+            //{
+            //    Timer -= tickDelay;
+            //    if (Timer < 0) Timer = 0;
+            //    if (tick != null) tick();
+            //}
         }
 	}
 }
