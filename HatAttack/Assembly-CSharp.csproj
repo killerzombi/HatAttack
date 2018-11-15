@@ -96,7 +96,10 @@
     <Compile Include="Assets\Open World Scenes\Materials\SharedAssets\StandardWater\Water\Water\Scripts\WaterTile.cs" />
     <Compile Include="Assets\Open World Scenes\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Open World Scenes\Scripts\PlayerControllerTPS.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\Open World Scenes\Scripts\PlayerControllerTPSFlying.cs" />
+=======
+>>>>>>> d7b956d750bc68a2646d8b343c98b119a48164ef
     <Compile Include="Assets\Open World Scenes\Scripts\PlayerControllerTPSSwimming.cs" />
     <Compile Include="Assets\Open World Scenes\Scripts\WorldTransferScript.cs" />
     <Compile Include="Assets\Test Scenes\living birds\demo\livingBirdsDemoScript.cs" />
@@ -116,6 +119,10 @@
     <Compile Include="Assets\Test Scenes\Test Scripts (Evan)\TerrainType.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Evan)\UnitController.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Ian)\CreateCombat.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Assets\Test Scenes\Test Scripts (Ian)\PlayerControllerTPSFlying.cs" />
+>>>>>>> d7b956d750bc68a2646d8b343c98b119a48164ef
     <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Packs\BirchPackVol1\Works For Fun.txt" />
     <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\ManyWorlds\Common\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Rocks and Boulders 2\Shaders\shader info.txt" />
@@ -161,6 +168,7 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="UnityEditor.StandardEvents">
+<<<<<<< HEAD
       <HintPath>C:/Users/nbaines/Desktop/HatAttack/HatAttack/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
@@ -171,6 +179,18 @@
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/nbaines/Desktop/HatAttack/HatAttack/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+=======
+      <HintPath>C:/Users/iryan/Desktop/GitHub/HatAttack/HatAttack/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>C:/Users/iryan/Desktop/GitHub/HatAttack/HatAttack/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>C:/Users/iryan/Desktop/GitHub/HatAttack/HatAttack/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/iryan/Desktop/GitHub/HatAttack/HatAttack/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+>>>>>>> d7b956d750bc68a2646d8b343c98b119a48164ef
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -353,7 +373,11 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Unity.Locator.dll</HintPath>
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
+<<<<<<< HEAD
       <HintPath>C:/Users/nbaines/Desktop/HatAttack/HatAttack/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+=======
+      <HintPath>C:/Users/iryan/Desktop/GitHub/HatAttack/HatAttack/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+>>>>>>> d7b956d750bc68a2646d8b343c98b119a48164ef
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -377,10 +401,17 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
+<<<<<<< HEAD
       <HintPath>C:/Users/nbaines/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/nbaines/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+=======
+      <HintPath>C:/Users/iryan/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StandardEvents">
+      <HintPath>C:/Users/iryan/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+>>>>>>> d7b956d750bc68a2646d8b343c98b119a48164ef
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
