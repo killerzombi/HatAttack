@@ -110,8 +110,9 @@ public class CombatGridCreator : MonoBehaviour
                 {
                     Object prefab = GetComponent<TerrainType>().randomizer(true);
                     // Calls TerrainType and returns us a random terrain type block.
-                    GameObject block = Instantiate(prefab, Vector3.zero, cube.transform.rotation) as GameObject;
+                    GameObject block = (GameObject)Instantiate(prefab, Vector3.zero, cube.transform.rotation) as GameObject;
 
+                    block.GetComponent<cubeScript>().SetPosition(x, z);
                     block.AddComponent<TerrainType>();
                     block.transform.parent = transform;
                     block.transform.localPosition = new Vector3(x, 0, z);
@@ -122,8 +123,9 @@ public class CombatGridCreator : MonoBehaviour
                 {
                     Object prefab = GetComponent<TerrainType>().randomizer(false);
                     // Calls TerrainType and returns us a random terrain type block.
-                    GameObject block = Instantiate(prefab, Vector3.zero, cube.transform.rotation) as GameObject;
+                    GameObject block = (GameObject)Instantiate(prefab, Vector3.zero, cube.transform.rotation) as GameObject;
 
+                    block.GetComponent<cubeScript>().SetPosition(x, z);
                     block.AddComponent<TerrainType>();
                     block.transform.parent = transform;
                     block.transform.localPosition = new Vector3(x, -.75f, z);
@@ -172,9 +174,12 @@ public class CombatGridCreator : MonoBehaviour
 
     public GameObject[,] makeGrid()
     {
-        generateWaterSpots();
+        Debug.Log("Making Grid");
+        //generateWaterSpots();
         createCombatMap();
         createGridEffect();
+
+        Debug.Log("passing Grid");
         return grid;
     }
 }

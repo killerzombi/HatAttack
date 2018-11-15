@@ -8,13 +8,14 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     public GameObject Unit2;
     public GameObject Unit3;
     public GameObject Unit4;
-    public float tickDelay = 3f;
+    [Range(0,15)]public float tickDelay = 3f;
     //public bool easyMode = false;
 
     // =============================
     // Terrain Types
     // =============================
     public GameObject cube;
+    public GameObject gridCube;
     public GameObject tree;
     public GameObject rock;
     public GameObject bush;
@@ -64,10 +65,18 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         TerrainType TT = this.gameObject.AddComponent<TerrainType>();
         TT.cube = cube; TT.bush = bush; TT.rock = rock; TT.tree = tree;
         CombatGridCreator CGC = this.gameObject.AddComponent<CombatGridCreator>();
+        CGC.cube = cube; CGC.gridcube = gridCube;
         grid = CGC.makeGrid();
+        if(grid!= null) { Debug.Log("got grid"); } else { Debug.Log("didn't get grid!!"); }
         Destroy(TT);
         Destroy(CGC);
-
+        for(int x = 0;x<gridSizeX; x++)
+        {
+            for (int y = 0; y < gridSizeZ; y++)
+            {
+                bestPaths[x, y] = new Queue<Transform>();
+            }
+        }
 
 
         if (Unit1 != null)

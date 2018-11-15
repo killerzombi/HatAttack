@@ -7,6 +7,7 @@ public class SelectionController : MonoBehaviour {
 
     [SerializeField]private KeyCode click = KeyCode.Mouse0;
     [SerializeField] private KeyCode escapeKey = KeyCode.F;
+    [SerializeField] private KeyCode tickNow = KeyCode.Space;
     [SerializeField] private float range = 100f;
     [SerializeField] private float HighlightStrength = .1f;
     [SerializeField] private Color USelectColor;
@@ -14,7 +15,7 @@ public class SelectionController : MonoBehaviour {
     [SerializeField] private GameObject ChoiceUI;
 
 
-    public CombatGridCreator cgc;  // to be removed
+    public MapInterface MInterface;  // to be removed
 
     private SelectionInterface selected = null;
     private Queue<SelectionInterface> S2;
@@ -43,6 +44,8 @@ public class SelectionController : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
+        if (Input.GetKeyDown(tickNow) && watching) if (TickManager.instance != null) TickManager.instance.tickNow();
+
         if (Input.GetKeyDown(click) && watching)
         {
             RaycastHit hitRay = new RaycastHit();
