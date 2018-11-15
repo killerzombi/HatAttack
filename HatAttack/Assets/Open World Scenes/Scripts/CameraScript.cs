@@ -13,6 +13,8 @@ public class CameraScript : MonoBehaviour {
 
     private float leftRight = 0f;
     private float upDown = 0f;
+    private CursorLockMode locked = CursorLockMode.Locked;
+    private bool canMove = true;
     GameObject character;
     //Animator anim;
 
@@ -25,17 +27,20 @@ public class CameraScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = locked;
+        if (canMove)
+        {
         float H = 0f;
         //if (anim.GetBool("CanMove") == true && false)
         //    H = Input.GetAxis("Horizontal") + Input.GetAxis("Mouse X");
         //else
-            H = Input.GetAxis("Mouse X");
-        leftRight += speedHorizontal * H;
-        upDown = Mathf.Clamp(upDown + speedVertical * Input.GetAxis("Mouse Y"), MinAngle, MaxAngle);
-        
-        transform.eulerAngles = new Vector3(-upDown, leftRight, 0f);
 
+        H = Input.GetAxis("Mouse X");
+            leftRight += speedHorizontal * H;
+            upDown = Mathf.Clamp(upDown + speedVertical * Input.GetAxis("Mouse Y"), MinAngle, MaxAngle);
+
+            transform.eulerAngles = new Vector3(-upDown, leftRight, 0f);
+        }
         //transform.Rotate()
         //leftRight = speedHorizontal * Input.GetAxis("Mouse X");
         //upDown = speedVertical * Input.GetAxis("Mouse Y");
@@ -50,4 +55,31 @@ public class CameraScript : MonoBehaviour {
         //transform.LookAt(character.transform.position+(new Vector3(0.5f,1,0.5f)));
     }
 
+    public void setCamerPlayer(GameObject NewPlayer)
+    {
+        character = NewPlayer;
+    }
+
+    public void setOffset()
+    {
+        offset = character.transform.InverseTransformPoint(transform.position);
+    }
+
+    public void setCPO(GameObject NewPlayer)
+    {
+        setCamerPlayer(NewPlayer);
+        setOffset();
+    }
+
+    public void setAngles(float UD, float LR)
+    {
+        leftRight = LR;
+        upDown = UD;
+    }
+
+    public void setLockState(CursorLockMode lockd) { locked = lockd; }
+    public void stopMovement() { locked = CursorLockMode.None; canMove = false; }
+    public void startMovement() { locked = CursorLockMode.Locked; canMove = true; }
+    public void lockCursor() { locked = CursorLockMode.Locked; }
+    public void unlockCursor() { locked = CursorLockMode.None; }
 }
