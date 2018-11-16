@@ -112,12 +112,12 @@ public class CombatGridCreator : MonoBehaviour
                     // Calls TerrainType and returns us a random terrain type block.
                     GameObject block = (GameObject)Instantiate(prefab, Vector3.zero, cube.transform.rotation) as GameObject;
 
-<<<<<<< HEAD
-                    block.AddComponent<TerrainType1>();
-=======
+//<<<<<<< HEAD
+                    block.AddComponent<TerrainType>();
+//=======
                     block.GetComponent<cubeScript>().SetPosition(x, z);
                     block.AddComponent<TerrainType>();
->>>>>>> 99abe788e37dea9fd8e1983fda28260204d63dd9
+//>>>>>>> 99abe788e37dea9fd8e1983fda28260204d63dd9
                     block.transform.parent = transform;
                     block.transform.localPosition = new Vector3(x, 0, z);
                     // Sets block object to it's position in the array so we can access it.

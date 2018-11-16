@@ -6,9 +6,10 @@ public class PlayerControllerTPSFlying : MonoBehaviour {
 
     
 
-    [SerializeField] private float m_moveSpeed = 2;
+    [SerializeField] private float m_hopSpeed = 2;
+    [SerializeField] private float m_flySpeed = 2;
     //[SerializeField] private float m_turnSpeed = 200;
-    [SerializeField] private float m_jumpForce = 4;
+    [SerializeField] private float m_flyForce = 4;
     [SerializeField] private Rigidbody m_rigidBody;
     [SerializeField] private bool DirectMove = true;
     public Camera cam;
@@ -97,9 +98,9 @@ public class PlayerControllerTPSFlying : MonoBehaviour {
         else
             MoveForce();
 
+        fly();
         animate();
-        jump();
-        
+
     }
 
     private void MoveForce()
@@ -120,23 +121,23 @@ public class PlayerControllerTPSFlying : MonoBehaviour {
         {
             move *= (m / move.magnitude);
         }
-        move *= m_moveSpeed;
+        move *= m_hopSpeed;
         if(move != Vector3.zero)
             transform.forward = move;
 
         // walk or run?
         //bool crouch = Input.GetKey(KeyCode.LeftControl);
-        bool walk = Input.GetKey(KeyCode.LeftShift);
+        //bool walk = Input.GetKey(KeyCode.LeftShift);
         //walking backwards or forwards?
-        if (walk)
-        {
-            move *= m_walkScale;
-        }
+        //if (walk)
+        //{
+        //    move *= m_walkScale;
+        //}
         //determine vector of movemnet
         m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
         m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
         //apply movement & rotation
-        m_rigidBody.AddForce(move * m_moveSpeed * Time.deltaTime, ForceMode.VelocityChange);
+        m_rigidBody.AddForce(move * m_hopSpeed * Time.deltaTime, ForceMode.VelocityChange);
         float dis = m_rigidBody.velocity.magnitude;
         //transform.position += transform.forward * move.magnitude * m_moveSpeed * Time.deltaTime;
         //transform.Rotate(0, m_currentH * m_turnSpeed * Time.deltaTime, 0);
@@ -156,51 +157,67 @@ public class PlayerControllerTPSFlying : MonoBehaviour {
         {
             move *= (m / move.magnitude);
         }
-        move *= m_moveSpeed;
+        if (m_isGrounded)
+        {
+            move *= m_hopSpeed;
+        }
+        else
+        {
+            move *= m_flySpeed;
+        }
         if (move != Vector3.zero)
             transform.forward = move;
         // walk or run?
         //bool crouch = Input.GetKey(KeyCode.LeftControl);
-        bool walk = Input.GetKey(KeyCode.LeftShift);
+        //bool walk = Input.GetKey(KeyCode.LeftShift);
         //walking backwards or forwards?
-        if (walk)
-        {
-            move *= m_walkScale;
-        }
+        //f (walk)
+        //{
+        //    move *= m_walkScale;
+        //}
         //determine vector of movemnet
         m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
         m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
         //apply movement & rotation
         //m_rigidBody.AddForce(move * m_moveSpeed * Time.deltaTime, ForceMode.VelocityChange);
         //float dis = m_rigidBody.velocity.magnitude;
-        transform.position += transform.forward * move.magnitude * m_moveSpeed * Time.deltaTime;
+        transform.position += transform.forward * move.magnitude * m_hopSpeed * Time.deltaTime;
         //transform.Rotate(0, m_currentH * m_turnSpeed * Time.deltaTime, 0);
     }
 
 
-    void jump() {
-        bool jumpCooldownOver = (Time.time - m_jumpTimeStamp) >= m_minJumpInterval;
+    void fly() {
+        //bool jumpCooldownOver = (Time.time - m_jumpTimeStamp) >= m_minJumpInterval;
         //only jump if on ground and havent jumped in the past minJumpInterval time
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
-            if (jumpCooldownOver && (m_isGrounded || m_wasGrounded))
-            {
-                float tjforce = m_jumpForce * m_rigidBody.mass;
-                m_jumpTimeStamp = Time.time;
-                m_rigidBody.velocity = new Vector3(m_rigidBody.velocity.x, 0f, m_rigidBody.velocity.z);
-                //if (animator.GetFloat("CJP") > 0)
-                //{
-                //    tjforce = m_jumpForce * (Mathf.Pow(2, animator.GetFloat("CJP") / 2));
-                //    m_rigidBody.AddForce(cam.transform.forward * tjforce, ForceMode.Impulse);
-                //}
-                m_rigidBody.AddForce(Vector3.up * tjforce, ForceMode.Impulse);
-            }
-            else if (!doubleJump)
-            {
-                doubleJump = true;
-                m_rigidBody.velocity = new Vector3(m_rigidBody.velocity.x, 0f, m_rigidBody.velocity.z);
-                m_rigidBody.AddForce(Vector3.up * m_jumpForce * m_rigidBody.mass * 0.8f, ForceMode.Impulse);
-            }
+            m_rigidBody.constraints = RigidbodyConstraints.None;
+            float tjforce = m_flyForce * m_rigidBody.mass;
+            m_jumpTimeStamp = Time.time;
+            m_rigidBody.velocity = new Vector3(m_rigidBody.velocity.x, 0f, m_rigidBody.velocity.z);
+            //if (animator.GetFloat("CJP") > 0)
+            //{
+            //    tjforce = m_jumpForce * (Mathf.Pow(2, animator.GetFloat("CJP") / 2));
+            //    m_rigidBody.AddForce(cam.transform.forward * tjforce, ForceMode.Impulse);
+            //}
+            m_rigidBody.AddForce(Vector3.up * tjforce, ForceMode.Impulse);
+        }
+        else if (Input.GetKey(KeyCode.LeftShift))
+        {
+            m_rigidBody.constraints = RigidbodyConstraints.None;
+            float tjforce = -m_flyForce * m_rigidBody.mass * 4;
+            m_jumpTimeStamp = Time.time;
+            m_rigidBody.velocity = new Vector3(m_rigidBody.velocity.x, 0f, m_rigidBody.velocity.z);
+            //if (animator.GetFloat("CJP") > 0)
+            //{
+            //    tjforce = m_jumpForce * (Mathf.Pow(2, animator.GetFloat("CJP") / 2));
+            //    m_rigidBody.AddForce(cam.transform.forward * tjforce, ForceMode.Impulse);
+            //}
+            m_rigidBody.AddForce(Vector3.up * tjforce, ForceMode.Impulse);
+        }
+        else
+        {
+            m_rigidBody.constraints = RigidbodyConstraints.FreezePositionY;
         }
 
         if (!m_wasGrounded && m_isGrounded)
@@ -219,6 +236,15 @@ public class PlayerControllerTPSFlying : MonoBehaviour {
 
     void animate()
     {
+        if (!m_isGrounded)
+        {
+            anim.SetBool("IsGrounded", false);
+        }
+        else{
+            anim.SetBool("IsGrounded", true);
+        }
 
+        anim.SetFloat("FBMovement", m_currentV);
+        anim.SetFloat("LRMovement", m_currentH);
     }
 }
