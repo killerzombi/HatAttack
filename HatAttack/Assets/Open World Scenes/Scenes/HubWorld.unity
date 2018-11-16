@@ -478,6 +478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 606458874}
   - component: {fileID: 606458873}
+  - component: {fileID: 606458876}
   - component: {fileID: 606458875}
   - component: {fileID: 606458872}
   m_Layer: 0
@@ -562,6 +563,17 @@ MonoBehaviour:
   speedVertical: 2
   MaxAngle: 80
   MinAngle: -80
+--- !u!114 &606458876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 606458871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dbf87f074e44e745b414bdf34af1b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &633121111
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,6 +767,7 @@ GameObject:
   - component: {fileID: 1145341445}
   - component: {fileID: 1145341444}
   - component: {fileID: 1145341450}
+  - component: {fileID: 1145341451}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -873,6 +886,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 606458873}
   sceneImIn: HubWorld
+--- !u!114 &1145341451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1145341443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c1f04507180cc458997eba87de3f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1220234557
 GameObject:
   m_ObjectHideFlags: 0
