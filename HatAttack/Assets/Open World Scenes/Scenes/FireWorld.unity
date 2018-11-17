@@ -766,7 +766,7 @@ MeshCollider:
   m_GameObject: {fileID: 217380849}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -787,7 +787,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 981dfe7f927db5546b5b30528bfc4275, type: 2}
+  - {fileID: 2100000, guid: 787cb25de3401c44b939f2599cda764c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -821,7 +821,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 217380849}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.6, y: 98.36, z: 24.3}
+  m_LocalPosition: {x: 25.6, y: 99.1, z: 24.3}
   m_LocalScale: {x: 5.364363, y: 1, z: 4.8694}
   m_Children: []
   m_Father: {fileID: 0}
@@ -838,7 +838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d28cb150ad86f4a8100312a4aea7a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uvAnimationRate: {x: 1, y: 0}
+  uvAnimationRate: {x: 0.5, y: 0}
   textureName: _MainTex
 --- !u!1001 &220449368
 Prefab:
@@ -2362,6 +2362,10 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: -2.41
       objectReference: {fileID: 0}
+    - target: {fileID: 8281866, guid: 062893e7007e39441aea009115b6cefa, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 062893e7007e39441aea009115b6cefa, type: 2}
   m_IsPrefabAsset: 0
@@ -2795,6 +2799,18 @@ Prefab:
     - target: {fileID: 421400, guid: 8a23a06107e96134598493163a37174f, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19889064, guid: 8a23a06107e96134598493163a37174f, type: 2}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19889064, guid: 8a23a06107e96134598493163a37174f, type: 2}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8265484, guid: 8a23a06107e96134598493163a37174f, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a23a06107e96134598493163a37174f, type: 2}
@@ -8896,7 +8912,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 494314, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.1909103
+      value: 3.96
       objectReference: {fileID: 0}
     - target: {fileID: 494314, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 2}
       propertyPath: m_LocalPosition.z
@@ -8969,6 +8985,10 @@ Prefab:
     - target: {fileID: 437362, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 2}
       propertyPath: m_LocalScale.z
       value: 1.3234
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215432, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c51d7df2d29ba8449f85eb74c672555, type: 2}
