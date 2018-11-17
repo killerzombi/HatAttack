@@ -154,6 +154,8 @@
     <Compile Include="Assets\Test Scenes\living birds\scripts\lb_Bird.cs" />
     <Compile Include="Assets\Test Scenes\living birds\scripts\lb_BirdController.cs" />
     <Compile Include="Assets\Test Scenes\living birds\scripts\lb_CrowProximity.cs" />
+    <Compile Include="Assets\Test Scenes\Test Assets (Erik)\test scripts\fireChargeJump.cs" />
+    <Compile Include="Assets\Test Scenes\Test Assets (Erik)\test scripts\spawnIceBlock.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\assets\CombatController\OverheadControl.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\assets\CombatController\SelectionController.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\assets\cube\cubeScript.cs" />
