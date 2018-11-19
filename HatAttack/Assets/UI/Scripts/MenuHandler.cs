@@ -11,14 +11,9 @@ public class MenuHandler : MonoBehaviour
     Application.Quit();
   }
 
-  // public void playMyGame()
-  //   {
-  //       //Quick and simple way to load a new scene
-  //       SceneManager.LoadScene("Level01");
-  //   }
-
-  //   public void exitTheGame()
-  //   {
-  //       Application.Quit();
-  //   }
+  public void startGame()
+  {
+    print("Started game");
+    // This is just a placeholder for now!
+  }
 }

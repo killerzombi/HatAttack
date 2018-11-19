@@ -161,6 +161,7 @@
      <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\TickManager.cs" />
      <Compile Include="Assets\Test Scenes\Test Scripts (Ian)\CreateCombat.cs" />
      <Compile Include="Assets\Test Scenes\Test Scripts (Ian)\PlayerControllerTPSFlying.cs" />
+     <Compile Include="Assets\UI\Scripts\InventoryHandler.cs" />
      <Compile Include="Assets\UI\Scripts\MenuHandler.cs" />
      <None Include="Assets\Open World Scenes\Materials\IceWorldAssets\Packs\BirchPackVol1\Works For Fun.txt" />
      <None Include="Assets\Open World Scenes\Materials\FireWorldAssets\ManyWorlds\Common\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
