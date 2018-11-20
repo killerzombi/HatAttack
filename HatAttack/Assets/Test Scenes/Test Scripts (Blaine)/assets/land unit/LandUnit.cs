@@ -73,13 +73,8 @@ public class LandUnit : MonoBehaviour, UnitControllerInterface, SelectionInterfa
             position = nextPathPositions.Dequeue();
         }
         else
-        {
-            nextPaths.Enqueue(path);
-            nextPathPositions.Enqueue(allPathPositions.Dequeue());
-            if (moveNowCount == 0)
-                moveNow += NextMove;
             moveNowCount++;
-        }
+        
         if (moveNowCount <= 0) { moveNow -= NextMove; }
     }
 
