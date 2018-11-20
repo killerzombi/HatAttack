@@ -219,6 +219,23 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     {
         return (!(x > gridSizeX || x < 0) && !(y > gridSizeZ || y < 0));
     }
+    public void endCombat()
+    {
+        //if all 4 enemies defeated/captured
+        //or all 4 allies defeated
+        //set player to active
+        //set main camera to active
+        //SceneManager.LoadScene(wts.sceneImIn);
+    }
+    void startCombat()
+    {
+        //disable the player that was dontdestroyonload
+        //disable the camera
+        //black out the screen on the camera
+        //coroutine 2 seconds loading time
+        //camera back to normal, begin combat
+        //set timescale to 0
+    }
 
     //public bool setMaterial(int x, int y, Material m)
     //{

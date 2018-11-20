@@ -24,7 +24,7 @@ public class LandUnit : MonoBehaviour, UnitControllerInterface, SelectionInterfa
     private event TickManager.Tick tick;
 
     private event TickManager.Tick moveNow;
-    private int moveNowCount = 0f;
+    private int moveNowCount = 0;
 
 
     private MeshRenderer MeshR;
@@ -38,7 +38,7 @@ public class LandUnit : MonoBehaviour, UnitControllerInterface, SelectionInterfa
             {
                 Vector2Int cpos = path.Dequeue();
 
-                Vector3 target = MInterface.getNode(cpos.x, cpos.y).transform.position;
+                Vector3 target = MInterface.GetNode(cpos.x, cpos.y).transform.position;
                 //Debug.Log(target);
                 Vector3 currentPos = this.transform.position;
                 float t = 0f;
@@ -54,9 +54,9 @@ public class LandUnit : MonoBehaviour, UnitControllerInterface, SelectionInterfa
         else
         {
             //Shouldn't get here
-            Queue<Transform> cPath = new Queue<Transform>();
-            for (int i = 0; i < moveSpeed; i++)
-                cpath.Enqueue(path.Dequeue());
+            //Queue<Transform> cPath = new Queue<Transform>();
+            //for (int i = 0; i < moveSpeed; i++)
+            //    cPath.Enqueue(path.Dequeue());
 
         }
         MovingNow = false;
@@ -91,7 +91,7 @@ public class LandUnit : MonoBehaviour, UnitControllerInterface, SelectionInterfa
 
             while (Path.Count > moveSpeed)
             {
-                Queue<Vector2Int> cPath = new Queue<Transform>();
+                Queue<Vector2Int> cPath = new Queue<Vector2Int>();
                 for (int i = 0; i < moveSpeed - 1; i++)
                     cPath.Enqueue(Path.Dequeue());
                 Vector2Int cTarget = Path.Dequeue();
@@ -133,7 +133,7 @@ public class LandUnit : MonoBehaviour, UnitControllerInterface, SelectionInterfa
             }
         }
     }
-}
+
 private void moveOnTick()  //IF YOU CHANGE THE NAME CHANGE IT IN MOVEUNIT AS WELL!!!
 {
     if (allPaths.Count > 0)
@@ -196,18 +196,18 @@ public void setGrid(MapInterface cgc, Vector2Int pos)
     MInterface = cgc; position = pos; Initialize();
 }
 
-public void highlightGrid(Color C, Vector2Int pos = position)  // pos = position?
+public void highlightGrid(Color C, Vector2Int pos) 
 {
     if (MInterface != null) MInterface.startHighlight(pos.x, pos.y, C, moveSpeed);
     else Debug.Log("CombatGridCreator not found");
 }
 
-//public void highlightGrid(Color C)
-//{
-//    if (MInterface != null) MInterface.startHighlight(position.x, position.y, C, moveSpeed);
-//    else Debug.Log("CombatGridCreator not found");
-//}
-public void unHighlightGrid()
+    public void highlightGrid(Color C)
+    {
+        if (MInterface != null) MInterface.startHighlight(position.x, position.y, C, moveSpeed);
+        else Debug.Log("CombatGridCreator not found");
+    }
+    public void unHighlightGrid()
 {
     if (MInterface != null) MInterface.unHighlight();
     else Debug.Log("CombatGridCreator not found");
