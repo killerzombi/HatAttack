@@ -34,7 +34,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     const int gridSizeZ = 30;
 
     private GameObject[,] grid = new GameObject[gridSizeX, gridSizeZ];
-    private Queue<Transform>[,] bestPaths = new Queue<Transform>[gridSizeX, gridSizeZ];
+    private Queue<Vector2Int>[,] bestPaths = new Queue<Transform>[gridSizeX, gridSizeZ];
 
 
     // Use this for initialization
@@ -75,7 +75,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         {
             for (int y = 0; y < gridSizeZ; y++)
             {
-                bestPaths[x, y] = new Queue<Transform>();
+                bestPaths[x, y] = new Queue<Vector2Int>();
             }
         }
 
@@ -132,7 +132,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     }
 
 
-    public Queue<Transform> getPath(int x, int z) { return bestPaths[x, z]; }
+    public Queue<Vector2Int> getPath(int x, int z) { return bestPaths[x, z]; }
     //public GameObject[,] getGrid()
     //{
     //    return grid;
@@ -161,12 +161,12 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
             }
             tcs.selected(C);
         }
-        highlightGrid(x, z + 1, C, count - 1, new Queue<Transform>());
-        highlightGrid(x + 1, z, C, count - 1, new Queue<Transform>());
-        highlightGrid(x, z - 1, C, count - 1, new Queue<Transform>());
-        highlightGrid(x - 1, z, C, count - 1, new Queue<Transform>());
+        highlightGrid(x, z + 1, C, count - 1, new Queue<Vector2Int>());
+        highlightGrid(x + 1, z, C, count - 1, new Queue<Vector2Int>());
+        highlightGrid(x, z - 1, C, count - 1, new Queue<Vector2Int>());
+        highlightGrid(x - 1, z, C, count - 1, new Queue<Vector2Int>());
     }
-    private void highlightGrid(int x, int z, Color C, int count, Queue<Transform> path)
+    private void highlightGrid(int x, int z, Color C, int count, Queue<Vector2Int> path)
     {
         if (x < 0 || x >= gridSizeX || z < 0 || z >= gridSizeZ || count <= 0) return;
         //Debug.Log("path so far:");
@@ -181,17 +181,17 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
             {
                 Debug.Log("no cubescript on grid:" + x + "," + z); return;
             }
-            path.Enqueue(tcs.Node.transform);
+            path.Enqueue(tcs.getPostition());
             tcs.selected(C);
         }
         if ((bestPaths[x, z].Count == 0) || (bestPaths[x, z].Count > path.Count)) bestPaths[x, z] = path;
 
         //Debug.Log("Highlighted " + x + "," + z + " Count:"+count);
 
-        highlightGrid(x, z + 1, C, count - 1, new Queue<Transform>(path));
-        highlightGrid(x + 1, z, C, count - 1, new Queue<Transform>(path));
-        highlightGrid(x, z - 1, C, count - 1, new Queue<Transform>(path));
-        highlightGrid(x - 1, z, C, count - 1, new Queue<Transform>(path));
+        highlightGrid(x, z + 1, C, count - 1, new Queue<Vector2Int>(path));
+        highlightGrid(x + 1, z, C, count - 1, new Queue<Vector2Int>(path));
+        highlightGrid(x, z - 1, C, count - 1, new Queue<Vector2Int>(path));
+        highlightGrid(x - 1, z, C, count - 1, new Queue<Vector2Int>(path));
     }
 
     public Queue<Vector2Int> PathAtoB(Vector2Int A, Vector2Int B)
