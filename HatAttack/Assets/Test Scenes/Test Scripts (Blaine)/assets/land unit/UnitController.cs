@@ -76,7 +76,6 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
                 MovingNow = true;
                 StartCoroutine(MoveDownPath(allPaths.Dequeue(), moveTime));
                 position = allPathPositions.Dequeue();
-                MInterface.
             }
             else
             {
