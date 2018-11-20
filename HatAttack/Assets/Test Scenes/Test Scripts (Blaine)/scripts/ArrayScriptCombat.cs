@@ -226,6 +226,9 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         //set player to active
         //set main camera to active
         //SceneManager.LoadScene(wts.sceneImIn);
+
+        //reset TickManager instance
+        TickManager.instance = null;
     }
     void startCombat()
     {

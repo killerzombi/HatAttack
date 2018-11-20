@@ -115,7 +115,6 @@ public class LandUnit : MonoBehaviour, UnitControllerInterface, SelectionInterfa
                     }
                 case TickManager.TickMode.Initiative1:
                     {
-                        //TickManager.EnqueuePlayer(tick);	//dont enqueue every move
                         tick += moveOnTick;
                         inMoveSys = true;
                         break;
@@ -275,16 +274,7 @@ public void Initialize()
 // Use this for initialization
 void Start()
 {
-    moveNowCount = 0;
-    if (MeshR == null)
-    {
-        MeshR = GetComponent<MeshRenderer>();
-        if (MeshR == null) Debug.Log("no MeshRenderer");
-    }
-    allPaths = new Queue<Queue<Vector2Int>>();
-    allPathPositions = new Queue<Vector2Int>();
-    nextPaths = new Queue<Queue<Vector2Int>>();
-    nextPathPositions = new Queue<Vector2Int>();
+        Initialize();
 }
 
     // Update is called once per frame

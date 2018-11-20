@@ -59,11 +59,7 @@ public class SelectionController : MonoBehaviour {
                     if (selected == null)
                     {
                         selected = SI;
-                        if (CS != null)
-                        {
-                            CS.startMovement();
-                        }
-                        else { Debug.Log("selectionscript cannot access camerascript"); }
+                        startMouse();
                         selected.selected(USelectColor * HighlightStrength);
                         //Debug.Log("Selected 1");
                         if(cUCI != null)
@@ -77,12 +73,8 @@ public class SelectionController : MonoBehaviour {
                         S2.Enqueue(SI);
                         if (cUCI != null)
                         {
-                            if (ChoiceUI != null) ChoiceUI.SetActive(true);
-                            if (CS != null)
-                            {
-                                CS.stopMovement();
-                            }
-                            else { Debug.Log("selectionscript cannot access camerascript"); }
+                            showUI();
+                            stopMouse();
                             SI.selected(ESelectColor * HighlightStrength);
                         }
                         else
@@ -95,7 +87,7 @@ public class SelectionController : MonoBehaviour {
                             //    Debug.Log(T.position);
                             //}}
                             //Debug.Log(SI.getPosition());
-                            
+                            startMouse();
                             if(UCI!=null)
                             { 
                                 UCI.MoveUnit(SI.getPosition());
@@ -112,11 +104,12 @@ public class SelectionController : MonoBehaviour {
                                 //}
                                 //else { Debug.Log("selectionscript cannot access camerascript"); }
                             }
-                    }
+                        }
                         //Debug.Log("Selected 2");
                     }
                 }
-                else {
+                else
+                {
                     ResetValues();
                 }
             }
@@ -137,11 +130,28 @@ public class SelectionController : MonoBehaviour {
         if (selected != null) selected.deselected();
         while (S2.Count > 0) S2.Dequeue().deselected();
         selected = null; UCI = null; S2 = new Queue<SelectionInterface>();
+        startMouse();
+        //Debug.Log("Selected 0");
+    }
+
+    private void showUI(GameObject UI = null)
+    {
+        if (UI == null) UI = ChoiceUI;
+        if (UI != null) UI.SetActive(true);
+    }
+
+    private void stopMouse() {
+        if (CS != null)
+        {
+            CS.stopMovement();
+        }
+        else { Debug.Log("selectionscript cannot access camerascript"); }
+    }
+    private void startMouse() {
         if (CS != null)
         {
             CS.startMovement();
         }
         else { Debug.Log("selectionscript cannot access camerascript"); }
-        //Debug.Log("Selected 0");
     }
 }
