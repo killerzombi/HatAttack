@@ -117,41 +117,31 @@ public class SelectionController : MonoBehaviour {
                     }
                 }
                 else {
-                    if(selected != null) selected.deselected();
-                    while (S2.Count > 0) S2.Dequeue().deselected();
-                    selected = null; UCI = null; S2 = new Queue<SelectionInterface>();
-                    if (CS != null)
-                    {
-                        CS.startMovement();
-                    }
-                    else { Debug.Log("selectionscript cannot access camerascript"); }
-                    //Debug.Log("Selected 0");
+                    ResetValues();
                 }
             }
             else
             {
-                if (selected != null) selected.deselected();
-                while (S2.Count > 0) S2.Dequeue().deselected();
-                selected = null; UCI = null; S2 = new Queue<SelectionInterface>();
-                if (CS != null)
-                {
-                    CS.startMovement();
-                }
-                else { Debug.Log("selectionscript cannot access camerascript"); }
-                //Debug.Log("Selected 0");
+                ResetValues();
             }
         }
         else if (Input.GetKeyDown(escapeKey) && watching)
         {
-            if (selected != null) selected.deselected();
-            while (S2.Count > 0) S2.Dequeue().deselected();
-            selected = null; UCI = null; S2 = new Queue<SelectionInterface>();
-            if (CS != null)
-            {
-                CS.startMovement();
-            }
-            else { Debug.Log("selectionscript cannot access camerascript"); }
+            ResetValues();
         }
 
 	}
+
+    private void ResetValues()
+    {
+        if (selected != null) selected.deselected();
+        while (S2.Count > 0) S2.Dequeue().deselected();
+        selected = null; UCI = null; S2 = new Queue<SelectionInterface>();
+        if (CS != null)
+        {
+            CS.startMovement();
+        }
+        else { Debug.Log("selectionscript cannot access camerascript"); }
+        //Debug.Log("Selected 0");
+    }
 }

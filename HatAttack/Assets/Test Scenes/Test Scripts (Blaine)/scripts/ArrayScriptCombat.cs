@@ -34,7 +34,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     const int gridSizeZ = 30;
 
     private GameObject[,] grid = new GameObject[gridSizeX, gridSizeZ];
-    private Queue<Vector2Int>[,] bestPaths = new Queue<Transform>[gridSizeX, gridSizeZ];
+    private Queue<Vector2Int>[,] bestPaths = new Queue<Vector2Int>[gridSizeX, gridSizeZ];
 
 
     // Use this for initialization
@@ -143,7 +143,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         {
             for (int z = 0; z < gridSizeZ; z++)
             {
-                bestPaths[x, z] = new Queue<Transform>();
+                bestPaths[x, z] = new Queue<Vector2Int>();
                 cubeScript tcs = grid[x, z].GetComponent<cubeScript>();
                 if (tcs == null) Debug.Log("no cubescript on grid:" + x + "," + z);
                 else tcs.deselected();
@@ -181,7 +181,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
             {
                 Debug.Log("no cubescript on grid:" + x + "," + z); return;
             }
-            path.Enqueue(tcs.getPostition());
+            path.Enqueue(tcs.getPosition());
             tcs.selected(C);
         }
         if ((bestPaths[x, z].Count == 0) || (bestPaths[x, z].Count > path.Count)) bestPaths[x, z] = path;
