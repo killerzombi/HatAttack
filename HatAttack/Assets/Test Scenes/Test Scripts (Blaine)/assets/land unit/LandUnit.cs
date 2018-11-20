@@ -237,15 +237,15 @@ public Vector2Int getPosition()
 
 public void Initialize()
 {
-    moveNowCount = 0f;
+    moveNowCount = 0;
     if (MeshR == null)
     {
         MeshR = GetComponent<MeshRenderer>();
         if (MeshR == null) Debug.Log("no MeshRenderer");
     }
-    allPaths = new Queue<Queue<Transform>>();
+    allPaths = new Queue<Queue<Vector2Int>>();
     allPathPositions = new Queue<Vector2Int>();
-    nextPaths = new Queue<Queue<Transform>>();
+    nextPaths = new Queue<Queue<Vector2Int>>();
     nextPathPositions = new Queue<Vector2Int>();
     if (TickManager.instance != null)
     {
@@ -275,15 +275,15 @@ public void Initialize()
 // Use this for initialization
 void Start()
 {
-    moveNowCount = 0f;
+    moveNowCount = 0;
     if (MeshR == null)
     {
         MeshR = GetComponent<MeshRenderer>();
         if (MeshR == null) Debug.Log("no MeshRenderer");
     }
-    allPaths = new Queue<Queue<Transform>>();
+    allPaths = new Queue<Queue<Vector2Int>>();
     allPathPositions = new Queue<Vector2Int>();
-    nextPaths = new Queue<Queue<Transform>>();
+    nextPaths = new Queue<Queue<Vector2Int>>();
     nextPathPositions = new Queue<Vector2Int>();
 }
 
