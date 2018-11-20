@@ -8,4 +8,5 @@ public interface MapInterface {
     Queue<Vector2Int> getPath(int x, int z);
     void startHighlight(int x, int z, Color C, int count);
     void unHighlight();
+    void moveFT(Vector2Int from, Vector2Int to);
 }

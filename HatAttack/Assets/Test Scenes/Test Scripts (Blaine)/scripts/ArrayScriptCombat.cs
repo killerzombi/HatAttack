@@ -27,6 +27,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
 
     private GameObject[,] grid = new GameObject[gridSizeX, gridSizeZ];
     private Queue<Vector2Int>[,] bestPaths = new Queue<Vector2Int>[gridSizeX, gridSizeZ];
+    private Queue<Queue<Vector2Int>> UnitPositions;
 
 
     // Use this for initialization

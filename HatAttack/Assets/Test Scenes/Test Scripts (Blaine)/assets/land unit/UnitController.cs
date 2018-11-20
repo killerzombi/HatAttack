@@ -9,7 +9,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     private float attack;
     private float defense;
     private int moveSpeed = 5;
-    private float moveTime = 1f;
+    private float moveTime = 0.6f;
 
 
     private MapInterface MInterface;
@@ -67,6 +67,56 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         if (moveNowCount <= 0) { moveNow -= NextMove; }
     }
 
+    private void moveOnTick()  //IF YOU CHANGE THE NAME CHANGE IT IN MOVEUNIT AS WELL!!!
+    {
+        if (allPaths.Count > 0)
+        {
+            if (!MovingNow)
+            {
+                MovingNow = true;
+                StartCoroutine(MoveDownPath(allPaths.Dequeue(), moveTime));
+                position = allPathPositions.Dequeue();
+                MInterface.
+            }
+            else
+            {
+                nextPaths.Enqueue(allPaths.Dequeue());
+                nextPathPositions.Enqueue(allPathPositions.Dequeue());
+                if (moveNowCount == 0)
+                    moveNow += NextMove;
+                moveNowCount++;
+            }
+        }
+        else
+        {
+            switch (TickManager.instance.getTM())
+            {
+                case TickManager.TickMode.Chaos:
+                    {
+                        TickManager.tick -= moveOnTick;
+                        inMoveSys = false;
+                        break;
+                    }
+                case TickManager.TickMode.Team:
+                    {
+                        inMoveSys = false;
+                        break;
+                    }
+                case TickManager.TickMode.Initiative1:
+                    {
+                        tick -= moveOnTick;
+                        inMoveSys = false;
+                        break;
+                    }
+                case TickManager.TickMode.Initiative2:
+                    {
+                        inMoveSys = false;
+                        break;
+                    }
+            }
+        }
+    }
+
     public void MoveUnit(Vector2Int target)
     {
         Queue<Vector2Int> Path = MInterface.getPath(target.x, target.y);
@@ -111,56 +161,6 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
                 case TickManager.TickMode.Initiative2:
                     {
                         inMoveSys = true;
-                        break;
-                    }
-            }
-        }
-    }
-
-    private void moveOnTick()  //IF YOU CHANGE THE NAME CHANGE IT IN MOVEUNIT AS WELL!!!
-    {
-        if (allPaths.Count > 0)
-        {
-            Queue<Vector2Int> path = new Queue<Vector2Int>(allPaths.Dequeue());
-            if (!MovingNow)
-            {
-                MovingNow = true;
-                StartCoroutine(MoveDownPath(path, moveTime));
-                position = allPathPositions.Dequeue();
-            }
-            else
-            {
-                nextPaths.Enqueue(path);
-                nextPathPositions.Enqueue(allPathPositions.Dequeue());
-                if (moveNowCount == 0)
-                    moveNow += NextMove;
-                moveNowCount++;
-            }
-        }
-        else
-        {
-            switch (TickManager.instance.getTM())
-            {
-                case TickManager.TickMode.Chaos:
-                    {
-                        TickManager.tick -= moveOnTick;
-                        inMoveSys = false;
-                        break;
-                    }
-                case TickManager.TickMode.Team:
-                    {
-                        inMoveSys = false;
-                        break;
-                    }
-                case TickManager.TickMode.Initiative1:
-                    {
-                        tick -= moveOnTick;
-                        inMoveSys = false;
-                        break;
-                    }
-                case TickManager.TickMode.Initiative2:
-                    {
-                        inMoveSys = false;
                         break;
                     }
             }
@@ -237,6 +237,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         nextPathPositions = new Queue<Vector2Int>();
         if (TickManager.instance != null)
         {
+            //moveTime = TickManager.instance.getTickDelay() / 10;
             switch (TickManager.instance.getTM())
             {
                 case TickManager.TickMode.Chaos:

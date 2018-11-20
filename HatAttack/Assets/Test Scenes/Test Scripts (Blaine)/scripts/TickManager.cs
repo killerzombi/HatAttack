@@ -40,7 +40,7 @@ public class TickManager : MonoBehaviour
 
     public void EnqueuePlayer(Tick t) { InitiativeList.Enqueue(t); }
     public void EnqueueEnemy(Tick t) { EnemyIL.Enqueue(t); }
-
+    public float getTickDelay() { return tickDelay;  }
     public void setTickDelay(float tDelay) { tickDelay = tDelay; }
     public TickMode getTM() { return tickMode; }
 
