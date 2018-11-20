@@ -45,14 +45,14 @@ public class WorldTransferScript : MonoBehaviour {
         if (collision.gameObject.transform.parent.name == "Enemies") //this code is a proof of concept on how to keep the player where they were when they entered combat.
         {
             //StartCoroutine(MoveSpawnPoint(sceneImIn)); //starts a coroutine with this scene we're currently in
-            sceneImIn = "HubWorld"; //sets the scene we're in to the target scene, will be combat scene in final project (probably)
+            sceneImIn = "currentCombatScene"; //sets the scene we're in to the target scene, will be combat scene in final project (probably)
             StartCoroutine(WaitOnSpawn(sceneImIn)); 
             StartCoroutine(LoadSceneAsync(sceneImIn));
             combatSpawn.transform.position = this.gameObject.transform.position;
             //Change the sceene name when we move it to live.
 
-            //this.gameObject.SetActive(false); --- disables the player and camera upon exiting the overworld and entering the game world, will be re enabled by a controller 
-            //camera.gameObject.SetActive(false); --- upon leaving the battle screen
+            this.gameObject.SetActive(false);// --- disables the player and camera upon exiting the overworld and entering the game world, will be re enabled by a controller 
+            camera.gameObject.SetActive(false);// --- upon leaving the battle screen
         }
     }
 

@@ -571,9 +571,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 606458871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dbf87f074e44e745b414bdf34af1b00, type: 3}
+  m_Script: {fileID: 11500000, guid: 13a3e439714ccee49b5ef69ad2d57849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &632577912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 632577914}
+  - component: {fileID: 632577913}
+  m_Layer: 0
+  m_Name: CombatSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &632577913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 632577912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc50c5ccb4565c048b2e75fe5fbf5ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &632577914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 632577912}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.19, y: 4.85, z: -0.4188614}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &633121111
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +845,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &1145341446
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -886,6 +926,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 606458873}
   sceneImIn: HubWorld
+  combatSpawn: {fileID: 632577912}
 --- !u!114 &1145341451
 MonoBehaviour:
   m_ObjectHideFlags: 0

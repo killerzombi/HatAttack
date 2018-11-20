@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Test Scenes/Test Scene (Blane).unity
     guid: fade8584ff5e32444b4b4f162887614c
+  - enabled: 1
+    path: Assets/Combat Scene/Scenes/currentCombatScene.unity
+    guid: 614275aceb787cf43911209d65158665
   m_configObjects: {}
