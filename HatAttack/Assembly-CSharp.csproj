@@ -161,7 +161,7 @@
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\assets\CombatController\OverheadControl.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\assets\CombatController\SelectionController.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\assets\cube\cubeScript.cs" />
-    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\assets\land unit\LandUnit.cs" />
+    <Compile Include="Assets\Test Scenes\Test Scripts %28Blaine%29\assets\land unit\UnitController.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\ArrayScriptCombat.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\interfaces\MapInterface.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\interfaces\SelectionInterface.cs" />
