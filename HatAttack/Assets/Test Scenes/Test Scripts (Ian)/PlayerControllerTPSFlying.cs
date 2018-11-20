@@ -15,6 +15,7 @@ public class PlayerControllerTPSFlying : MonoBehaviour {
     public Camera cam;
 
     public Animator anim;
+    public CapsuleCollider capsuleCollider;
     
     private readonly float m_interpolation = 10;
     private readonly float m_walkScale = 0.4f;
@@ -192,6 +193,7 @@ public class PlayerControllerTPSFlying : MonoBehaviour {
         if (Input.GetKey(KeyCode.Space))
         {
             m_rigidBody.constraints = RigidbodyConstraints.None;
+            m_rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
             float tjforce = m_flyForce * m_rigidBody.mass;
             m_jumpTimeStamp = Time.time;
             m_rigidBody.velocity = new Vector3(m_rigidBody.velocity.x, 0f, m_rigidBody.velocity.z);
@@ -205,6 +207,7 @@ public class PlayerControllerTPSFlying : MonoBehaviour {
         else if (Input.GetKey(KeyCode.LeftShift))
         {
             m_rigidBody.constraints = RigidbodyConstraints.None;
+            m_rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
             float tjforce = -m_flyForce * m_rigidBody.mass * 4;
             m_jumpTimeStamp = Time.time;
             m_rigidBody.velocity = new Vector3(m_rigidBody.velocity.x, 0f, m_rigidBody.velocity.z);
@@ -218,6 +221,7 @@ public class PlayerControllerTPSFlying : MonoBehaviour {
         else
         {
             m_rigidBody.constraints = RigidbodyConstraints.FreezePositionY;
+            m_rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
         }
 
         if (!m_wasGrounded && m_isGrounded)
@@ -240,7 +244,8 @@ public class PlayerControllerTPSFlying : MonoBehaviour {
         {
             anim.SetBool("IsGrounded", false);
         }
-        else{
+        else
+        {
             anim.SetBool("IsGrounded", true);
         }
 
