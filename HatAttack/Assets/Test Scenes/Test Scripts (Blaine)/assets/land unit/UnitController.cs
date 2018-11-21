@@ -20,6 +20,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     private Queue<Vector2Int> allPathPositions = null;
     private Queue<Queue<Vector2Int>> nextPaths = null;
     private Queue<Vector2Int> nextPathPositions = null;
+    private int currentRound = 0;
 
     private event TickManager.Tick tick;
 
@@ -32,6 +33,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     private IEnumerator MoveDownPath(Queue<Vector2Int> path, float timeToMove)
     {
         float cTimeToMove = timeToMove / path.Count;
+        currentRound++;
         while (path.Count > 0)
         {
             Vector2Int cpos = path.Dequeue();
@@ -116,8 +118,81 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         }
     }
 
-    public void MoveUnit(Vector2Int target)
+    public void MoveUnit(Queue<Vector2Int> Path, int TicksForward = 0)
     {
+        Vector2Int[] pathArray = new Vector2Int[Path.Count];
+        Path.CopyTo(pathArray,0);
+        Vector2Int target = pathArray[Path.Count - 1];
+        if (currentRound == MInterface.getRound()) { }
+        else Debug.Log("round difference: " + (MInterface.getRound() - currentRound));
+        if (TicksForward == 0)
+            MInterface.moveFT(position, target);
+        else
+        {
+            Debug.Log("round difference: " + (MInterface.getRound() - currentRound));
+        }
+
+
+        
+        if (Path.Count > 0)
+        {
+
+            while (Path.Count > moveSpeed)
+            {
+                Queue<Vector2Int> cPath = new Queue<Vector2Int>();
+                for (int i = 0; i < moveSpeed - 1; i++)
+                    cPath.Enqueue(Path.Dequeue());
+                Vector2Int cTarget = Path.Dequeue();
+                cPath.Enqueue(cTarget);
+                allPaths.Enqueue(cPath);
+                allPathPositions.Enqueue(cTarget);
+            }
+
+            allPaths.Enqueue(Path);
+            allPathPositions.Enqueue(target);
+        }
+        if (!inMoveSys)
+        {
+            switch (TickManager.instance.getTM())
+            {
+                case TickManager.TickMode.Chaos:
+                    {
+                        TickManager.tick += moveOnTick;
+                        inMoveSys = true;
+                        break;
+                    }
+                case TickManager.TickMode.Team:
+                    {
+                        inMoveSys = true;
+                        break;
+                    }
+                case TickManager.TickMode.Initiative1:
+                    {
+                        tick += moveOnTick;
+                        inMoveSys = true;
+                        break;
+                    }
+                case TickManager.TickMode.Initiative2:
+                    {
+                        inMoveSys = true;
+                        break;
+                    }
+            }
+        }
+    }
+
+    public void MoveUnit(Vector2Int target, int TicksForward = 0)
+    {
+        if (currentRound == MInterface.getRound()) { }
+        else Debug.Log("round difference: " + (MInterface.getRound() - currentRound));
+        if (TicksForward == 0)
+            MInterface.moveFT(position, target);
+        else
+        {
+            Debug.Log("round difference: " + (MInterface.getRound() - currentRound));
+        }
+        
+
         Queue<Vector2Int> Path = MInterface.getPath(target.x, target.y);
         if (Path.Count > 0)
         {
@@ -128,7 +203,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
                 for (int i = 0; i < moveSpeed - 1; i++)
                     cPath.Enqueue(Path.Dequeue());
                 Vector2Int cTarget = Path.Dequeue();
-
+                cPath.Enqueue(cTarget);
                 allPaths.Enqueue(cPath);
                 allPathPositions.Enqueue(cTarget);
             }
@@ -224,7 +299,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
 
     public void Initialize()
     {
-        moveNowCount = 0;
+        moveNowCount = currentRound = 0;
         if (MeshR == null)
         {
             MeshR = GetComponent<MeshRenderer>();

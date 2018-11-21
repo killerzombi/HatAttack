@@ -27,10 +27,12 @@ public class TickManager : MonoBehaviour
 
     public delegate void Tick();
     public static event Tick tick;
+    public static event Tick roundTick;
 
     private Queue<Tick> InitiativeList;
     private Queue<Tick> EnemyIL; //for team mode
     private bool EnemyTurn = false;
+    private int roundTracker = 0;
 
     //public System.Delegate[] getInvocationList()
     //{
@@ -59,12 +61,14 @@ public class TickManager : MonoBehaviour
 
     private void DoTick()
     {
+        roundTracker++;
         if (tick != null)
             tick();
         switch (tickMode)
         {
             case TickMode.Chaos:
-
+                roundTick();
+                roundTracker = 0;
                 break;
             case TickMode.Team:
                 if (EnemyTurn)
@@ -82,6 +86,11 @@ public class TickManager : MonoBehaviour
                     }
                 }
                 EnemyTurn = !EnemyTurn;
+                if(roundTracker >= 2)
+                {
+                    roundTick();
+                    roundTracker = 0;
+                }
                 break;
             case TickMode.Initiative1:
                 {
@@ -89,10 +98,20 @@ public class TickManager : MonoBehaviour
                     temp();
                     InitiativeList.Enqueue(temp);
                 }
+                if(roundTracker >= InitiativeList.Count)
+                {
+                    roundTracker = 0;
+                    roundTick();
+                }
                 break;
             case TickMode.Initiative2:
                 {
                     //I dont even know right now
+                }
+                if (roundTracker >= InitiativeList.Count)
+                {
+                    roundTracker = 0;
+                    roundTick();
                 }
                 break;
             default:
@@ -106,6 +125,7 @@ public class TickManager : MonoBehaviour
     {
         Timer = Time.time;
         InitiativeList = new Queue<Tick>();
+        EnemyIL = new Queue<Tick>();
     }
 
     // Update is called once per frame

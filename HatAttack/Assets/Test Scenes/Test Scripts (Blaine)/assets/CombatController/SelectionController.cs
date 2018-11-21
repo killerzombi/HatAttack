@@ -21,19 +21,16 @@ public class SelectionController : MonoBehaviour {
     private Queue<SelectionInterface> S2;
     private bool watching = true;
     private CameraScript CS = null;
-    private UnitControllerInterface UCI = null;
+    private UnitControllerInterface UCI = null, UCI2 = null;
+    private int roundForward = 0;
 
     public void startMovement(bool t)
     {
         if (ChoiceUI != null) ChoiceUI.SetActive(false);
-        if (CS != null)
-        {
-            CS.startMovement();
-        }
-        else { Debug.Log("selectionscript cannot access camerascript"); }
+        startMouse();
         if(UCI!= null && t)
         {
-
+            UCI.MoveUnit(UCI2.pathFrom(selected.getPosition()), roundForward);
         }
     }
 	// Use this for initialization
@@ -76,6 +73,7 @@ public class SelectionController : MonoBehaviour {
                             showUI();
                             stopMouse();
                             SI.selected(ESelectColor * HighlightStrength);
+                            UCI2 = cUCI;
                         }
                         else
                         {
@@ -93,6 +91,7 @@ public class SelectionController : MonoBehaviour {
                                 UCI.MoveUnit(SI.getPosition());
                                 UCI.unHighlightGrid();
                                 UCI.highlightGrid(USelectColor * HighlightStrength * 0.8f, SI.getPosition());
+                                roundForward++;
                                 
 
                                 //if (selected != null) selected.deselected();
@@ -129,7 +128,8 @@ public class SelectionController : MonoBehaviour {
     {
         if (selected != null) selected.deselected();
         while (S2.Count > 0) S2.Dequeue().deselected();
-        selected = null; UCI = null; S2 = new Queue<SelectionInterface>();
+        selected = null; UCI = UCI2 = null; S2 = new Queue<SelectionInterface>();
+        roundForward = 0;
         startMouse();
         //Debug.Log("Selected 0");
     }

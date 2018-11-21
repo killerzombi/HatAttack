@@ -4,7 +4,9 @@ using UnityEngine;
 
 public interface UnitControllerInterface {
 
-    void MoveUnit(Vector2Int target);
+
+    void MoveUnit(Queue<Vector2Int> path, int TicksForward = 0);
+    void MoveUnit(Vector2Int target, int TicksForward = 0);
     void setGrid(MapInterface cgc, Vector2Int pos);
     void highlightGrid(Color C);
     void highlightGrid(Color C, Vector2Int pos);

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -355,8 +355,6 @@ GameObject:
   m_Component:
   - component: {fileID: 901871721}
   - component: {fileID: 901871720}
-  - component: {fileID: 901871723}
-  - component: {fileID: 901871722}
   - component: {fileID: 901871724}
   m_Layer: 0
   m_Name: Array
@@ -371,17 +369,24 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 901871719}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 700734c4c757a1d499a54d16a5644091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabCube: {fileID: 1774646062051102, guid: 1dde36a5807e81c49bcd7389e487e0ca, type: 2}
-  Ground: {fileID: 2100000, guid: f40610f0a2103644196cb173f2779029, type: 2}
-  width: 30
-  height: 30
-  spacing: 0.01
+  Unit1: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
+  Unit2: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
+  Unit3: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
+  Unit4: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
   tickDelay: 3
+  noTimer: 0
+  backTicks: 5
+  tickMode: 2
+  cube: {fileID: 1421666737088372, guid: 7251cf35a1a138741a96c4f94ac695a0, type: 2}
+  gridCube: {fileID: 1823577020420158, guid: 1f962fdeb96581b489f161550ada9dd3, type: 2}
+  tree: {fileID: 1589285367844330, guid: c5b5833c27e797d40bc7787ce8a43524, type: 2}
+  rock: {fileID: 1911792087121822, guid: ba8d19bca61dace42bd7b4d0af2cb216, type: 2}
+  bush: {fileID: 1706226675754752, guid: be229b6fb10903b4ab682a3ed1c42cb5, type: 2}
 --- !u!4 &901871721
 Transform:
   m_ObjectHideFlags: 0
@@ -395,38 +400,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &901871722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 901871719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f897c294ddb83204eb8416f66050c52e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TerrainTypeNum: 0
-  TerrainName: 
-  cube: {fileID: 1421666737088372, guid: 7251cf35a1a138741a96c4f94ac695a0, type: 2}
-  tree: {fileID: 1589285367844330, guid: c5b5833c27e797d40bc7787ce8a43524, type: 2}
-  rock: {fileID: 1911792087121822, guid: ba8d19bca61dace42bd7b4d0af2cb216, type: 2}
-  bush: {fileID: 1706226675754752, guid: be229b6fb10903b4ab682a3ed1c42cb5, type: 2}
---- !u!114 &901871723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 901871719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c4654884b26434fb8d10e75df33a01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 1421666737088372, guid: 7251cf35a1a138741a96c4f94ac695a0, type: 2}
-  gridcube: {fileID: 1823577020420158, guid: 1f962fdeb96581b489f161550ada9dd3, type: 2}
-  TerrainType: {fileID: 901871722}
-  Unit1: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
 --- !u!114 &901871724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,8 +412,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tickDelay: 8.5
-  noTimer: 0
-  tickNow: 32
 --- !u!1 &1128356094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,12 +1087,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   click: 323
+  escapeKey: 102
+  tickNow: 32
   range: 10
   HighlightStrength: 0.3
   USelectColor: {r: 0.078431375, g: 0.98039216, b: 0.627451, a: 0.98039216}
   ESelectColor: {r: 0.9411765, g: 0.54901963, b: 0.54901963, a: 0.98039216}
   ChoiceUI: {fileID: 2023209864}
-  cgc: {fileID: 901871723}
 --- !u!1 &2023209864
 GameObject:
   m_ObjectHideFlags: 0

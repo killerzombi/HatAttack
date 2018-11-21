@@ -10,6 +10,8 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     public GameObject Unit4;
     [Range(0.25f,15f)]public float tickDelay = 3f;
     [SerializeField] private bool noTimer = false;
+    [SerializeField] private int backTicks = 5;
+    [SerializeField] private TickManager.TickMode tickMode= TickManager.TickMode.Chaos;
 
     // =============================
     // Terrain Types
@@ -28,7 +30,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     private GameObject[,] grid = new GameObject[gridSizeX, gridSizeZ];
     private Queue<Vector2Int>[,] bestPaths = new Queue<Vector2Int>[gridSizeX, gridSizeZ];
     private List<List<Vector2Int>> UnitPositions;
-
+    private int RoundCounter = 0;
 
     // Use this for initialization
     void Start()
@@ -123,11 +125,27 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         }
         return path;
     }
-    public void moveFT(Vector2Int from, Vector2Int to, int ticksForward = 0)
+    public bool moveFT(Vector2Int from, Vector2Int to, int ticksForward = 0)
     {
-
+        int tickEffected = backTicks + ticksForward;
+        List<Vector2Int> Units = UnitPositions[tickEffected];
+        if (Units.Contains(to)) return false;
+        if (Units.Contains(from))
+        {
+            int unitEffected = Units.IndexOf(from);
+            Units[unitEffected] = to;
+            return true;
+        }
+        Debug.Log("Error, unit moving from: " + from + " to: " + to + " @ " + ticksForward + " Doesnt exist in UnitsPosition");
+        return false;
     }
-
+    public int getRound() { return RoundCounter; }
+    private void onRoundTick()
+    {
+        RoundCounter++;
+        UnitPositions.RemoveAt(0);
+        UnitPositions.Add(UnitPositions[UnitPositions.Count - 1]);
+    }
 
     private bool check(Vector2Int pos) { return check(pos.x, pos.y); }
     private bool check(int x, int y)
@@ -169,7 +187,11 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
                 bestPaths[x, y] = new Queue<Vector2Int>();
             }
         }
-
+        UnitPositions = new List<List<Vector2Int>>();
+        for(int i = 0; i <= (backTicks*2); i++)
+        {
+            UnitPositions[i] = new List<Vector2Int>();
+        }
 
         if (Unit1 != null)
         {
@@ -177,6 +199,10 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
             Transform TU1 = grid[U1x, U1z].GetComponent<cubeScript>().Node.transform;
             GameObject U1 = (GameObject)Instantiate(Unit1, TU1.position, TU1.rotation);
             U1.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U1x, U1z));
+            for (int i = 0; i <= (backTicks * 2); i++)
+            {
+                UnitPositions[i].Add(new Vector2Int(U1x, U1z));
+            }
         }
         if (Unit2 != null)
         {
@@ -184,6 +210,10 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
             Transform TU2 = grid[U2x, U2z].GetComponent<cubeScript>().Node.transform;
             GameObject U2 = (GameObject)Instantiate(Unit2, TU2.position, TU2.rotation);
             U2.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U2x, U2z));
+            for (int i = 0; i <= (backTicks * 2); i++)
+            {
+                UnitPositions[i].Add(new Vector2Int(U2x, U2z));
+            }
         }
         if (Unit3 != null)
         {
@@ -191,6 +221,10 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
             Transform TU3 = grid[U3x, U3z].GetComponent<cubeScript>().Node.transform;
             GameObject U3 = (GameObject)Instantiate(Unit3, TU3.position, TU3.rotation);
             U3.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U3x, U3z));
+            for (int i = 0; i <= (backTicks * 2); i++)
+            {
+                UnitPositions[i].Add(new Vector2Int(U3x, U3z));
+            }
         }
         if (Unit4 != null)
         {
@@ -198,13 +232,19 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
             Transform TU4 = grid[U4x, U4z].GetComponent<cubeScript>().Node.transform;
             GameObject U4 = (GameObject)Instantiate(Unit4, TU4.position, TU4.rotation);
             U4.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U4x, U4z));
+            for (int i = 0; i <= (backTicks * 2); i++)
+            {
+                UnitPositions[i].Add(new Vector2Int(U4x, U4z));
+            }
         }
         if (TickManager.instance == null)
         {
             this.gameObject.AddComponent<TickManager>();
         }
+        RoundCounter = 0;
+        TickManager.roundTick += onRoundTick;
         if (!noTimer)
-            TickManager.instance.StartTicking(tickDelay);
+            TickManager.instance.StartTicking(tickDelay,tickMode);
         else TickManager.instance.StartTicking(0);
     }
 
