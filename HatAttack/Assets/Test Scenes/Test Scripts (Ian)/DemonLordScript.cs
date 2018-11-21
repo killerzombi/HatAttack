@@ -229,6 +229,17 @@ public class DemonLordScript : MonoBehaviour
         {
             anim.SetTrigger("Jump");
         }
-
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            anim.SetTrigger("Roar");
+        }
+        else if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            anim.SetTrigger("Attack");
+        }
+        else if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            anim.SetTrigger("WhipAttack");
+        }
     }
 }
