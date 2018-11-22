@@ -12,6 +12,7 @@ Assets/AssetStoreTools*
 ExportedObj/
 .consulo/
 *.csproj
+.DS_Store
 *.unityproj
 *.sln
 *.suo
