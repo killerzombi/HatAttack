@@ -26,6 +26,8 @@ public class DemonLordScript : MonoBehaviour
     private bool m_isGrounded;
     private bool m_wasGrounded;
     private bool doubleJump;
+    private bool m_canDash = true;
+    private bool m_dashing = false;
     private List<Collider> m_collisions = new List<Collider>();
 
 
@@ -94,11 +96,13 @@ public class DemonLordScript : MonoBehaviour
 
     private void Update()
     {
-        if (DirectMove)
-            MoveDirect();
-        else
-            MoveForce();
-
+        if (!m_dashing)
+        {
+            if (DirectMove)
+                MoveDirect();
+            else
+                MoveForce();
+        }
         jump();
         animate();
     }
@@ -211,9 +215,9 @@ public class DemonLordScript : MonoBehaviour
             //m_animator.SetTrigger("Land");
         }
 
-        if (!m_isGrounded && m_wasGrounded)
+        if (m_isGrounded)
         {
-            //animator.SetTrigger("Jump");
+            m_canDash = true;
         }
 
         m_wasGrounded = m_isGrounded;
@@ -225,7 +229,11 @@ public class DemonLordScript : MonoBehaviour
         anim.SetFloat("LRMovement", m_currentH);
         anim.SetBool("IsGrounded", m_isGrounded);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && m_canDash && !m_dashing)
+        {
+            StartCoroutine(Dash());
+        }
+        else if (Input.GetKeyDown(KeyCode.Space))
         {
             anim.SetTrigger("Jump");
         }
@@ -241,5 +249,18 @@ public class DemonLordScript : MonoBehaviour
         {
             anim.SetTrigger("WhipAttack");
         }
+    }
+
+    IEnumerator<WaitForSeconds> Dash()
+    {
+        m_canDash = false;
+        m_dashing = true;
+        anim.SetTrigger("Dash");
+        m_rigidBody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
+        yield return new WaitForSeconds(1.3f);
+        anim.SetTrigger("Dash");
+        m_dashing = false;
+        m_rigidBody.constraints = RigidbodyConstraints.None;
+        m_rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
     }
 }
