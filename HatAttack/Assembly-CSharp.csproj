@@ -169,6 +169,7 @@
     <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\TickManager.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Ian)\CreateCombat.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Ian)\DemonLordScript.cs" />
+    <Compile Include="Assets\Test Scenes\Test Scripts (Ian)\IceGiantScript.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Ian)\PlayerControllerTPSFlying.cs" />
     <Compile Include="Assets\UI\Scripts\InventoryHandler.cs" />
     <Compile Include="Assets\UI\Scripts\MenuHandler.cs" />

@@ -70,7 +70,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1
-        value: {x: -3.844, y: 167.011, z: -19.575}
+        value: {x: -3.844, y: 167.011, z: 32.627003}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -122,7 +122,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1
-        value: {x: 0, y: 0, z: 117.756004}
+        value: {x: 0, y: 0, z: 26.074001}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -174,7 +174,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1
-        value: {x: 4.026, y: -166.96501, z: -14.436001}
+        value: {x: 4.026, y: -166.96501, z: 35.997}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -226,7 +226,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1
-        value: {x: 0, y: 0, z: 112.546005}
+        value: {x: 0, y: 0, z: 23.031002}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -1254,6 +1254,65 @@ AnimationClip:
       m_RotationOrder: 4
     path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ Spine/DEMON_LORD_ Spine1/DEMON_LORD_
       Spine2/DEMON_LORD_WING_R_ARM/DEMON_LORD_WING_R_FOREARM/DEMON_LORD_WING_R_HAND/DEMON_LORD_WING_R_FINGER_C_1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.41666666
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: 
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -90.00001, y: 0, z: 90.00001}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1
+        value: {x: -90.00001, y: 0, z: 90.00001}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: DEMON_LORD_
   m_PositionCurves:
   - curve:
       serializedVersion: 2
@@ -3078,6 +3137,20 @@ AnimationClip:
       customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
+      path: 0
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 495212267
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
       path: 486972485
       attribute: 3
       script: {fileID: 0}
@@ -3094,6 +3167,34 @@ AnimationClip:
     - serializedVersion: 2
       path: 0
       attribute: 0
+      script: {fileID: 0}
+      typeID: 95
+      customType: 8
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 0
+      attribute: 3
+      script: {fileID: 0}
+      typeID: 95
+      customType: 8
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 0
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 95
+      customType: 8
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 0
+      attribute: 5
+      script: {fileID: 0}
+      typeID: 95
+      customType: 8
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 0
+      attribute: 6
       script: {fileID: 0}
       typeID: 95
       customType: 8
@@ -3595,7 +3696,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: -19.575
+        value: 32.627003
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -3925,7 +4026,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 117.756004
+        value: 26.074001
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -4255,7 +4356,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: -14.436001
+        value: 35.997
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -4585,7 +4686,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 112.546005
+        value: 23.031002
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -11463,6 +11564,201 @@ AnimationClip:
     path: 
     classID: 4
     script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.41666666
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.41666666
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.41666666
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -90.00001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: -90.00001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: DEMON_LORD_
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: DEMON_LORD_
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 90.00001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 90.00001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: DEMON_LORD_
+    classID: 4
+    script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:
       serializedVersion: 2
@@ -11471,7 +11767,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh/DEMON_LORD_ L Calf/DEMON_LORD_
+      L HorseLink/DEMON_LORD_ L Foot
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -11481,7 +11778,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh/DEMON_LORD_ L Calf/DEMON_LORD_
+      L HorseLink/DEMON_LORD_ L Foot
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -11491,7 +11789,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh/DEMON_LORD_ L Calf/DEMON_LORD_
+      L HorseLink/DEMON_LORD_ L Foot
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -11501,7 +11800,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh
+    path: 
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -11511,7 +11810,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh
+    path: 
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -11521,7 +11820,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh
+    path: 
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -11954,8 +12253,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh/DEMON_LORD_ R Calf/DEMON_LORD_
-      R HorseLink
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh/DEMON_LORD_ R Calf
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -11965,8 +12263,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh/DEMON_LORD_ R Calf/DEMON_LORD_
-      R HorseLink
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh/DEMON_LORD_ R Calf
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -11976,8 +12273,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh/DEMON_LORD_ R Calf/DEMON_LORD_
-      R HorseLink
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh/DEMON_LORD_ R Calf
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12053,7 +12349,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh/DEMON_LORD_ L Calf
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12063,7 +12359,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh/DEMON_LORD_ L Calf
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12073,7 +12369,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh/DEMON_LORD_ L Calf
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12117,7 +12413,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
     path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh/DEMON_LORD_ L Calf/DEMON_LORD_
-      L HorseLink/DEMON_LORD_ L Foot
+      L HorseLink
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12128,7 +12424,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
     path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh/DEMON_LORD_ L Calf/DEMON_LORD_
-      L HorseLink/DEMON_LORD_ L Foot
+      L HorseLink
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12139,7 +12435,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
     path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh/DEMON_LORD_ L Calf/DEMON_LORD_
-      L HorseLink/DEMON_LORD_ L Foot
+      L HorseLink
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12150,7 +12446,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
     path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh/DEMON_LORD_ R Calf/DEMON_LORD_
-      R HorseLink/DEMON_LORD_ R Foot
+      R HorseLink
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12161,7 +12457,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
     path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh/DEMON_LORD_ R Calf/DEMON_LORD_
-      R HorseLink/DEMON_LORD_ R Foot
+      R HorseLink
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12172,7 +12468,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
     path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh/DEMON_LORD_ R Calf/DEMON_LORD_
-      R HorseLink/DEMON_LORD_ R Foot
+      R HorseLink
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12248,8 +12544,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh/DEMON_LORD_ L Calf/DEMON_LORD_
-      L HorseLink
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh/DEMON_LORD_ L Calf
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12259,8 +12554,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh/DEMON_LORD_ L Calf/DEMON_LORD_
-      L HorseLink
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh/DEMON_LORD_ L Calf
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12270,8 +12564,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh/DEMON_LORD_ L Calf/DEMON_LORD_
-      L HorseLink
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ L Thigh/DEMON_LORD_ L Calf
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12481,8 +12774,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh/DEMON_LORD_ R Calf
+    attribute: m_LocalEulerAngles.z
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12492,7 +12785,17 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh/DEMON_LORD_ R Calf
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -12502,7 +12805,60 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh/DEMON_LORD_ R Calf
+    path: DEMON_LORD_
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: DEMON_LORD_
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: DEMON_LORD_
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh/DEMON_LORD_ R Calf/DEMON_LORD_
+      R HorseLink/DEMON_LORD_ R Foot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh/DEMON_LORD_ R Calf/DEMON_LORD_
+      R HorseLink/DEMON_LORD_ R Foot
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: DEMON_LORD_/DEMON_LORD_ Pelvis/DEMON_LORD_ R Thigh/DEMON_LORD_ R Calf/DEMON_LORD_
+      R HorseLink/DEMON_LORD_ R Foot
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 1
