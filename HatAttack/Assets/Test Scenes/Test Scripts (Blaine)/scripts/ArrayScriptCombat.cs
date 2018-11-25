@@ -8,10 +8,11 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     public GameObject Unit2;
     public GameObject Unit3;
     public GameObject Unit4;
-    [Range(0.25f,15f)]public float tickDelay = 3f;
+    public Vector2Int BasePosition = new Vector2Int(2,2);
+    [Range(0.25f, 15f)] public float tickDelay = 3f;
     [SerializeField] private bool noTimer = false;
     [SerializeField] private int backTicks = 5;
-    [SerializeField] private TickManager.TickMode tickMode= TickManager.TickMode.Chaos;
+    [SerializeField] private TickManager.TickMode tickMode = TickManager.TickMode.Chaos;
 
     // =============================
     // Terrain Types
@@ -21,7 +22,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     public GameObject tree;
     public GameObject rock;
     public GameObject bush;
-    
+
 
 
     const int gridSizeX = 30;
@@ -29,8 +30,15 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
 
     private GameObject[,] grid = new GameObject[gridSizeX, gridSizeZ];
     private Queue<Vector2Int>[,] bestPaths = new Queue<Vector2Int>[gridSizeX, gridSizeZ];
-    private List<List<Vector2Int>> UnitPositions;
+    //private List<List<Vector2Int>> UnitPositions; //old history
     private int RoundCounter = 0;
+
+    private GameObject unit1 = null;
+    private GameObject unit2 = null;
+    private GameObject unit3 = null;
+    private GameObject unit4 = null;
+    private GameObject[] CurrentUnits = new GameObject[8];
+    private List<GameObject> Enemies = new List<GameObject>();
 
     // Use this for initialization
     void Start()
@@ -68,7 +76,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
             }
         }
     }
-    public void startHighlight(int x, int z, Color C, int count)
+    public void startHighlight(int x, int z, Color C, int count, int ticksForward = 0)
     {
         if (x < 0 || x >= gridSizeX || z < 0 || z >= gridSizeZ || count <= 0) return;
         {
@@ -79,15 +87,15 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
             }
             tcs.selected(C);
         }
-        highlightGrid(x, z + 1, C, count - 1, new Queue<Vector2Int>());
-        highlightGrid(x + 1, z, C, count - 1, new Queue<Vector2Int>());
-        highlightGrid(x, z - 1, C, count - 1, new Queue<Vector2Int>());
-        highlightGrid(x - 1, z, C, count - 1, new Queue<Vector2Int>());
+        highlightGrid(x, z + 1, C, count - 1, new Queue<Vector2Int>(), ticksForward);
+        highlightGrid(x + 1, z, C, count - 1, new Queue<Vector2Int>(), ticksForward);
+        highlightGrid(x, z - 1, C, count - 1, new Queue<Vector2Int>(), ticksForward);
+        highlightGrid(x - 1, z, C, count - 1, new Queue<Vector2Int>(), ticksForward);
     }
-    private void highlightGrid(int x, int z, Color C, int count, Queue<Vector2Int> path)
+    private void highlightGrid(int x, int z, Color C, int count, Queue<Vector2Int> path, int ticksForward = 0)
     {
         if (x < 0 || x >= gridSizeX || z < 0 || z >= gridSizeZ || count <= 0) return;
-        
+
 
         {
             cubeScript tcs = grid[x, z].GetComponent<cubeScript>();
@@ -96,15 +104,16 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
                 Debug.Log("no cubescript on grid:" + x + "," + z); return;
             }
             path.Enqueue(tcs.getPosition());
-            tcs.selected(C);
+            if(history.checkMove(new Vector2Int(x,z),ticksForward))
+                tcs.selected(C);
         }
         if ((bestPaths[x, z].Count == 0) || (bestPaths[x, z].Count > path.Count)) bestPaths[x, z] = path;
-        
-
-        highlightGrid(x, z + 1, C, count - 1, new Queue<Vector2Int>(path));
-        highlightGrid(x + 1, z, C, count - 1, new Queue<Vector2Int>(path));
-        highlightGrid(x, z - 1, C, count - 1, new Queue<Vector2Int>(path));
-        highlightGrid(x - 1, z, C, count - 1, new Queue<Vector2Int>(path));
+        if (!history.checkMove(new Vector2Int(x, z)))
+            bestPaths[x, z] = new Queue<Vector2Int>();
+        highlightGrid(x, z + 1, C, count - 1, new Queue<Vector2Int>(path), ticksForward);
+        highlightGrid(x + 1, z, C, count - 1, new Queue<Vector2Int>(path), ticksForward);
+        highlightGrid(x, z - 1, C, count - 1, new Queue<Vector2Int>(path), ticksForward);
+        highlightGrid(x - 1, z, C, count - 1, new Queue<Vector2Int>(path), ticksForward);
     }
 
     public Queue<Vector2Int> PathAtoB(Vector2Int A, Vector2Int B)
@@ -125,33 +134,437 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         }
         return path;
     }
-    public bool moveFT(Vector2Int from, Vector2Int to, int ticksForward = 0)
-    {
-        int tickEffected = backTicks + ticksForward;
-        List<Vector2Int> Units = UnitPositions[tickEffected];
-        if (Units.Contains(to)) return false;
-        if (Units.Contains(from))
-        {
-            int unitEffected = Units.IndexOf(from);
-            Units[unitEffected] = to;
-            return true;
-        }
-        Debug.Log("Error, unit moving from: " + from + " to: " + to + " @ " + ticksForward + " Doesnt exist in UnitsPosition");
-        return false;
-    }
-    public int getRound() { return RoundCounter; }
-    private void onRoundTick()
-    {
-        RoundCounter++;
-        UnitPositions.RemoveAt(0);
-        UnitPositions.Add(UnitPositions[UnitPositions.Count - 1]);
-    }
+    public void Do(GameObject unit) { history.Perform(unit); }
+    public void Undo(GameObject unit) { history.Undo(unit); }
 
     private bool check(Vector2Int pos) { return check(pos.x, pos.y); }
     private bool check(int x, int y)
     {
         return (!(x > gridSizeX || x < 0) && !(y > gridSizeZ || y < 0));
     }
+
+    //HISTORY!!
+    private class TickList
+    {
+        private class TickNode
+        {
+            private class UnitAction
+            {
+                #region variables
+                Vector2Int From, To;
+                GameObject Target;
+                public enum action { Guard, Attack, Move, Ability, Heal, Die, Captured, Spawn }
+                action Action;
+                bool Done;
+                #endregion
+                #region comparison
+                public static bool operator ==(UnitAction A, UnitAction B)
+                {
+                    return (A.To.x == B.To.x && A.To.y == B.To.y);
+                }
+                public static bool operator !=(UnitAction A, UnitAction B)
+                {
+                    return !(A.To.x == B.To.x && A.To.y == B.To.y);
+                }
+                public bool Equals(UnitAction other)
+                {
+                    if (ReferenceEquals(null, other))
+                    {
+                        return false;
+                    }
+                    if (ReferenceEquals(this, other))
+                    {
+                        return true;
+                    }
+                    return (this.To.x == other.To.x && this.To.y == other.To.y);
+                }
+                public override bool Equals(object obj)
+                {
+                    if (ReferenceEquals(null, obj))
+                    {
+                        return false;
+                    }
+                    if (ReferenceEquals(this, obj))
+                    {
+                        return true;
+                    }
+
+                    return obj.GetType() == GetType() && Equals((UnitAction)obj);
+                }
+
+                #endregion
+                #region getters
+                public bool getDone() { return Done; }
+                public action getAction() { return Action; }
+                public GameObject getTarget() { return Target; }
+                public Vector2Int getFrom() { return From; }
+                public Vector2Int getTo() { return To; }
+                #endregion
+                #region constructors
+                public UnitAction(Vector2Int from, Vector2Int to, action act = action.Guard, GameObject target = null, bool done = false)
+                {
+                    From = from; To = to; Action = act; Target = target; Done = done;
+                }
+                public UnitAction(UnitAction UA)
+                {
+                    From = UA.From; To = UA.To; Action = UA.Action; Target = UA.Target; Done = UA.Done;
+                }
+                public UnitAction(Vector2Int to) { To = to; }
+                #endregion
+                #region methods
+                public void Killed(GameObject killer)
+                {
+                    Target = killer;
+                    Action = action.Die;
+                }
+                public void Move(Vector2Int to)
+                {
+                    Action = action.Move;
+                    To = to;
+                }
+                public void Moved(Vector2Int pos)
+                {
+                    From = To = pos;
+                    Action = action.Guard;
+                }
+                public void Attack(GameObject target)
+                {
+                    Target = target; Action = action.Attack;
+                }
+                public void Ability(GameObject target)
+                {
+                    Action = action.Ability; Target = target;
+                }
+                public void Capture()
+                {
+                    Action = action.Captured;
+                }
+                public void Perform()
+                {
+                    if (Done) Debug.Log("the action has been performed already!!");
+                    Done = true;
+                }
+                public void Undo()
+                {
+                    if (!Done) Debug.Log("it hasn't been done already!!");
+                    Done = false;
+                }
+                #endregion
+            }
+
+            private TickNode prev = null, next = null;
+            private int NodeNumb = 0;
+
+            private Dictionary<GameObject, UnitAction> actions;
+            #region UA interactions
+            public void SpawnUnit(GameObject unit, Vector2Int position)
+            {
+                actions.Add(unit, new UnitAction(position, position, UnitAction.action.Spawn));
+                if (next != null)
+                {
+                    next.UnitSpawned(unit, position);
+                }
+            }
+            void UnitSpawned(GameObject unit, Vector2Int position)
+            {
+                actions.Add(unit, new UnitAction(position, position));
+                if (next != null)
+                {
+                    next.UnitSpawned(unit, position);
+                }
+            }
+            public void KillUnit(GameObject unit, GameObject killer)
+            {
+                if (actions.ContainsKey(unit))
+                {
+                    actions[unit].Killed(killer);
+                    if (next != null)
+                    {
+                        next.UnitKilled(unit);
+                    }
+                }
+                else
+                {
+                    Debug.Log("Unit: " + unit + " :Does not exist, tried to kill from tickNode");
+                }
+            }
+            public void CaptureUnit(GameObject unit)
+            {
+                if (actions.ContainsKey(unit))
+                {
+                    actions[unit].Capture();
+                    if (next != null)
+                    {
+                        next.UnitKilled(unit);
+                    }
+                }
+                else
+                {
+                    Debug.Log("Unit: " + unit + " :Does not exist, tried to kill from tickNode");
+                }
+            }
+            void UnitKilled(GameObject unit)
+            {
+                actions.Remove(unit);
+                if (next != null)
+                {
+                    next.UnitKilled(unit);
+                }
+            }
+            public void MoveUnit(GameObject unit, Vector2Int position)
+            {
+                if (actions.ContainsKey(unit))
+                {
+                    actions[unit].Move(position);
+                    if (next != null)
+                    {
+                        next.UnitMoved(unit, position);
+                    }
+                }
+                else
+                {
+                    Debug.Log("Unit: " + unit + " :Does not exist, tried to move from tickNode");
+                }
+            }
+            void UnitMoved(GameObject unit, Vector2Int position)
+            {
+                actions[unit].Moved(position);
+                if (next != null)
+                {
+                    next.UnitMoved(unit, position);
+                }
+            }
+            public void AttackUnit(GameObject unit, GameObject target)
+            {
+                if (actions.ContainsKey(unit))
+                {
+                    actions[unit].Attack(target);
+                }
+                else
+                {
+                    Debug.Log("Unit: " + unit + " :Does not exist, tried to attack from tickNode");
+                }
+            }
+            public void AbilityUse(GameObject unit, GameObject target)
+            {
+                if (actions.ContainsKey(unit))
+                {
+                    actions[unit].Ability(target);
+                }
+                else
+                {
+                    Debug.Log("Unit: " + unit + " :Does not exist, tried to use ability from tickNode");
+                }
+            }
+            public void Undo(GameObject unit)
+            {
+                if (actions.ContainsKey(unit))
+                {
+                    actions[unit].Undo();
+                }
+                else
+                {
+                    Debug.Log("Unit: " + unit + " :Does not exist, tried to undo from tickNode");
+                }
+            }
+            public void Perform(GameObject unit)
+            {
+                if (actions.ContainsKey(unit))
+                {
+                    actions[unit].Perform();
+                }
+                else
+                {
+                    Debug.Log("Unit: " + unit + " :Does not exist, tried to perform from tickNode");
+                }
+            }
+            #endregion
+            public TickNode()
+            {
+                actions = new Dictionary<GameObject, UnitAction>();
+            }
+            public TickNode(TickNode tn, int nodeNumb = 0, int count = 0)
+            {
+                NodeNumb = nodeNumb;
+                actions = new Dictionary<GameObject, UnitAction>(tn.actions);
+                if (count > 0) { next = new TickNode(tn, nodeNumb+1, count - 1);
+                    next.prev = this; }
+            }
+            public int nodeDiff(TickNode bigger) { return bigger.NodeNumb - NodeNumb; }
+            public bool Greater(TickNode other) { return NodeNumb > other.NodeNumb; }
+            public bool checkMove(Vector2Int position)
+            {
+                UnitAction check = new UnitAction(position);
+                foreach (KeyValuePair<GameObject,UnitAction> UA in actions)
+                {
+                    if (UA.Value == check)
+                        return false;
+                }
+                return true;
+            }
+            public TickNode Prev()
+            {
+                if (prev != null)
+                {
+                    return prev;
+                }
+                else Debug.Log("there is no previous node");
+                return null;
+            }
+            public TickNode Next()
+            {
+                if(next != null)
+                {
+                    if (next.next == null)
+                    { next.next = new TickNode(next, next.NodeNumb+1);
+                        next.next.prev = next;
+                    }
+                    return next;
+                }
+                else
+                {
+                    Debug.Log("NEXT WAS NULL IN HISTORY!!!");
+                    next = new TickNode(this, NodeNumb+1, 2);
+                    return next;
+                }
+            }
+        }
+
+        private TickNode current = null, start = null, furthest = null;
+        private int backTicks;
+
+        #region NodeFunctions
+        public void SpawnUnit(GameObject unit, Vector2Int position)
+        {
+            current.SpawnUnit(unit, position);
+        }
+        public void KillUnit(GameObject unit, GameObject killer)
+        {
+            current.KillUnit(unit, killer);
+        }
+        public void CaptureUnit(GameObject unit)
+        {
+            current.CaptureUnit(unit);
+        }
+        public void MoveUnit(GameObject unit, Vector2Int position)
+        {
+            if (current.checkMove(position))
+                current.MoveUnit(unit, position);
+            else
+                Debug.Log("can't move " + unit + " to position: " + position);
+        }
+        public bool checkMove(Vector2Int position, int ticksForward = 0)
+        {
+            TickNode temp = current;
+            for (int i = 0; i < ticksForward; i++)
+                temp = temp.Next();
+            return temp.checkMove(position); }
+        public void AttackUnit(GameObject unit, GameObject target)
+        {
+            current.AttackUnit(unit, target);
+        }
+        public void AbilityUse(GameObject unit, GameObject target)
+        {
+            current.AbilityUse(unit, target);
+        }
+        public void Undo(GameObject unit)
+        {
+            current.Undo(unit);
+        }
+        public void Perform(GameObject unit)
+        {
+            current.Perform(unit);
+        }
+        #endregion
+        public void NextTick()
+        {
+            current = current.Next();
+            if (furthest == null) furthest = current;
+            if(current.Greater(furthest)) furthest = current;
+        }
+        public void BackTick()
+        {
+            if(current != start && current.nodeDiff(furthest) < backTicks)
+            {
+                current = current.Prev();
+                if (current == null) current = start;
+            }
+        }
+        public bool Move(GameObject unit, Vector2Int position, int ticksForward = 0)
+        {
+            TickNode temp = current;
+            for (int i = 0; i < ticksForward; i++)
+            {
+                temp = temp.Next();
+            }
+            if (temp.checkMove(position))
+                temp.MoveUnit(unit, position);
+            else return false;
+            return true;
+        }
+        public TickList()
+        {
+            current = new TickNode();
+        }
+        public TickList(TickList TL, int count = 0)
+        {
+            if (TL.start != null && TL.current != null && TL.furthest != null)
+            { current = TL.current; start = TL.start; furthest = TL.furthest; }
+            else if (TL.current != null)
+                current = start = furthest = new TickNode(TL.current,0, count);
+            else current = new TickNode();
+        }
+    }
+    private TickList history = null;
+
+    private void StartHistory()
+    {
+        history = new TickList();
+        history = new TickList(history, backTicks);
+        foreach (GameObject U in CurrentUnits)
+        {
+            if(U != null) {
+                SelectionInterface cU = U.GetComponent<SelectionInterface>();
+                if (cU != null)
+                {
+                    history.SpawnUnit(U, cU.getPosition());
+                }
+            }
+        }
+    }
+
+    
+    public bool moveUnit(GameObject unit, Vector2Int to, int ticksForward = 0)
+    {
+            //new history
+        return history.Move(unit, to, ticksForward);
+            //old history
+        //int tickEffected = backTicks + ticksForward;
+        //List<Vector2Int> Units = UnitPositions[tickEffected];
+        //if (Units.Contains(to)) return false;
+        //if (Units.Contains(from))
+        //{
+        //    int unitEffected = Units.IndexOf(from);
+        //    Units[unitEffected] = to;
+        //    return true;
+        //}
+        //Debug.Log("Error, unit moving from: " + from + " to: " + to + " @ " + ticksForward + " Doesnt exist in UnitsPosition");
+        //return false;
+    }
+    public int getRound() { return RoundCounter; }
+    private void onRoundTick()
+    {
+        RoundCounter++;
+
+            //new history
+        history.NextTick();
+            //old history
+        //UnitPositions.RemoveAt(0);
+        //UnitPositions.Add(UnitPositions[UnitPositions.Count - 1]);
+    }
+
+
+    //end and start combat
     public void endCombat()
     {
         //if all 4 enemies defeated/captured
@@ -187,64 +600,85 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
                 bestPaths[x, y] = new Queue<Vector2Int>();
             }
         }
-        UnitPositions = new List<List<Vector2Int>>();
-        for(int i = 0; i <= (backTicks*2); i++)
-        {
-            UnitPositions[i] = new List<Vector2Int>();
-        }
 
+        //old history  *new history is after unit spawns
+        //UnitPositions = new List<List<Vector2Int>>();
+        //for (int i = 0; i <= (backTicks * 2); i++)
+        //{
+        //    UnitPositions.Add(new List<Vector2Int>());
+        //}
+
+
+        #region unit spawns
         if (Unit1 != null)
         {
-            int U1x = 3, U1z = 3;
+            int U1x = BasePosition.x+1, U1z = BasePosition.y;
             Transform TU1 = grid[U1x, U1z].GetComponent<cubeScript>().Node.transform;
-            GameObject U1 = (GameObject)Instantiate(Unit1, TU1.position, TU1.rotation);
-            U1.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U1x, U1z));
-            for (int i = 0; i <= (backTicks * 2); i++)
-            {
-                UnitPositions[i].Add(new Vector2Int(U1x, U1z));
-            }
+            unit1 = (GameObject)Instantiate(Unit1, TU1.position, TU1.rotation);
+            unit1.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U1x, U1z));
+            CurrentUnits[0] = unit1;
+            //for (int i = 0; i <= (backTicks * 2); i++)
+            //{
+            //    UnitPositions[i].Add(new Vector2Int(U1x, U1z));
+            //}
         }
         if (Unit2 != null)
         {
-            int U2x = 5, U2z = 3;
+            int U2x = BasePosition.x, U2z = BasePosition.y+1;
             Transform TU2 = grid[U2x, U2z].GetComponent<cubeScript>().Node.transform;
-            GameObject U2 = (GameObject)Instantiate(Unit2, TU2.position, TU2.rotation);
-            U2.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U2x, U2z));
-            for (int i = 0; i <= (backTicks * 2); i++)
-            {
-                UnitPositions[i].Add(new Vector2Int(U2x, U2z));
-            }
+            unit2 = (GameObject)Instantiate(Unit2, TU2.position, TU2.rotation);
+            unit2.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U2x, U2z));
+            CurrentUnits[1] = unit2;
+            //for (int i = 0; i <= (backTicks * 2); i++)
+            //{
+            //    UnitPositions[i].Add(new Vector2Int(U2x, U2z));
+            //}
         }
         if (Unit3 != null)
         {
-            int U3x = 5, U3z = 5;
+            int U3x = BasePosition.x-1, U3z = BasePosition.y;
             Transform TU3 = grid[U3x, U3z].GetComponent<cubeScript>().Node.transform;
-            GameObject U3 = (GameObject)Instantiate(Unit3, TU3.position, TU3.rotation);
-            U3.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U3x, U3z));
-            for (int i = 0; i <= (backTicks * 2); i++)
-            {
-                UnitPositions[i].Add(new Vector2Int(U3x, U3z));
-            }
+            unit3 = (GameObject)Instantiate(Unit3, TU3.position, TU3.rotation);
+            unit3.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U3x, U3z));
+            CurrentUnits[2] = unit3;
+            //for (int i = 0; i <= (backTicks * 2); i++)
+            //{
+            //    UnitPositions[i].Add(new Vector2Int(U3x, U3z));
+            //}
         }
         if (Unit4 != null)
         {
-            int U4x = 3, U4z = 5;
+            int U4x = BasePosition.x, U4z = BasePosition.y-1;
             Transform TU4 = grid[U4x, U4z].GetComponent<cubeScript>().Node.transform;
-            GameObject U4 = (GameObject)Instantiate(Unit4, TU4.position, TU4.rotation);
-            U4.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U4x, U4z));
-            for (int i = 0; i <= (backTicks * 2); i++)
-            {
-                UnitPositions[i].Add(new Vector2Int(U4x, U4z));
-            }
+            unit4 = (GameObject)Instantiate(Unit4, TU4.position, TU4.rotation);
+            unit4.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U4x, U4z));
+            CurrentUnits[3] = unit4;
+            //for (int i = 0; i <= (backTicks * 2); i++)
+            //{
+            //    UnitPositions[i].Add(new Vector2Int(U4x, U4z));
+            //}
         }
+        #endregion
+        //new history
+        if (history == null)
+        {
+            StartHistory();
+        }
+        else
+        {
+            Debug.Log("history exists!");
+            StartHistory();
+        }
+
         if (TickManager.instance == null)
         {
             this.gameObject.AddComponent<TickManager>();
+            Debug.Log("np tick manager!");
         }
         RoundCounter = 0;
         TickManager.roundTick += onRoundTick;
         if (!noTimer)
-            TickManager.instance.StartTicking(tickDelay,tickMode);
+            TickManager.instance.StartTicking(tickDelay, tickMode);
         else TickManager.instance.StartTicking(0);
     }
 

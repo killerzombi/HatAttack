@@ -8,7 +8,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     private float health;
     private float attack;
     private float defense;
-    private int moveSpeed = 5;
+    protected int moveSpeed = 5;
     private float moveTime = 0.6f;
 
 
@@ -121,36 +121,31 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     public void MoveUnit(Queue<Vector2Int> Path, int TicksForward = 0)
     {
         Vector2Int[] pathArray = new Vector2Int[Path.Count];
-        Path.CopyTo(pathArray,0);
+        Path.CopyTo(pathArray, 0);
         Vector2Int target = pathArray[Path.Count - 1];
         if (currentRound == MInterface.getRound()) { }
         else Debug.Log("round difference: " + (MInterface.getRound() - currentRound));
-        if (TicksForward == 0)
-            MInterface.moveFT(position, target);
-        else
-        {
-            Debug.Log("round difference: " + (MInterface.getRound() - currentRound));
-        }
-
-
-        
-        if (Path.Count > 0)
-        {
-
-            while (Path.Count > moveSpeed)
+        if (MInterface.moveUnit(this.gameObject, target, TicksForward)) { 
+            if (Path.Count > 0)
             {
-                Queue<Vector2Int> cPath = new Queue<Vector2Int>();
-                for (int i = 0; i < moveSpeed - 1; i++)
-                    cPath.Enqueue(Path.Dequeue());
-                Vector2Int cTarget = Path.Dequeue();
-                cPath.Enqueue(cTarget);
-                allPaths.Enqueue(cPath);
-                allPathPositions.Enqueue(cTarget);
-            }
 
-            allPaths.Enqueue(Path);
-            allPathPositions.Enqueue(target);
+                while (Path.Count > moveSpeed)
+                {
+                    Queue<Vector2Int> cPath = new Queue<Vector2Int>();
+                    for (int i = 0; i < moveSpeed - 1; i++)
+                        cPath.Enqueue(Path.Dequeue());
+                    Vector2Int cTarget = Path.Dequeue();
+                    cPath.Enqueue(cTarget);
+                    allPaths.Enqueue(cPath);
+                    allPathPositions.Enqueue(cTarget);
+                }
+
+                allPaths.Enqueue(Path);
+                allPathPositions.Enqueue(target);
+            }
+            else return;
         }
+        else return;
         if (!inMoveSys)
         {
             switch (TickManager.instance.getTM())
@@ -185,14 +180,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     {
         if (currentRound == MInterface.getRound()) { }
         else Debug.Log("round difference: " + (MInterface.getRound() - currentRound));
-        if (TicksForward == 0)
-            MInterface.moveFT(position, target);
-        else
-        {
-            Debug.Log("round difference: " + (MInterface.getRound() - currentRound));
-        }
-        
-
+        MInterface.moveUnit(this.gameObject, target, TicksForward);
         Queue<Vector2Int> Path = MInterface.getPath(target.x, target.y);
         if (Path.Count > 0)
         {
@@ -211,6 +199,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
             allPaths.Enqueue(Path);
             allPathPositions.Enqueue(target);
         }
+        else return;
         if (!inMoveSys)
         {
             switch (TickManager.instance.getTM())
@@ -253,15 +242,15 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         MInterface = cgc; position = pos; Initialize();
     }
 
-    public void highlightGrid(Color C, Vector2Int pos)
+    public void highlightGrid(Color C, Vector2Int pos, int ticksForward = 0)
     {
-        if (MInterface != null) MInterface.startHighlight(pos.x, pos.y, C, moveSpeed);
+        if (MInterface != null) MInterface.startHighlight(pos.x, pos.y, C, moveSpeed, ticksForward);
         else Debug.Log("CombatGridCreator not found");
     }
 
-    public void highlightGrid(Color C)
+    public void highlightGrid(Color C, int ticksForward = 0)
     {
-        if (MInterface != null) MInterface.startHighlight(position.x, position.y, C, moveSpeed);
+        if (MInterface != null) MInterface.startHighlight(position.x, position.y, C, moveSpeed, ticksForward);
         else Debug.Log("CombatGridCreator not found");
     }
     public void unHighlightGrid()

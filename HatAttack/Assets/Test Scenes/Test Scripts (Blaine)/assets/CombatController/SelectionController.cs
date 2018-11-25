@@ -88,9 +88,9 @@ public class SelectionController : MonoBehaviour {
                             startMouse();
                             if(UCI!=null)
                             { 
-                                UCI.MoveUnit(SI.getPosition());
+                                UCI.MoveUnit(SI.getPosition(),roundForward);
                                 UCI.unHighlightGrid();
-                                UCI.highlightGrid(USelectColor * HighlightStrength * 0.8f, SI.getPosition());
+                                UCI.highlightGrid(USelectColor * HighlightStrength * 0.8f, SI.getPosition(), roundForward);
                                 roundForward++;
                                 
 
