@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class OverworldEnemyScript : MonoBehaviour {
+public class OverworldEnemyScript : MonoBehaviour
+{
 
     public float xRangePos = 14f; //a range for how far the enemies can walk, change it on every enemy with this script attached
                                   //how far forward
@@ -20,9 +21,8 @@ public class OverworldEnemyScript : MonoBehaviour {
     private float zRangeMaxNeg;
     NavMeshAgent agent;
     public Vector3 startPosition = new Vector3(0f, 0f, 0f); //the position that the enemy starts, probably needs to be a vector3
-    public Vector3 endPosition;             //the position that was chosen for the enemy to move to           
-    private Vector3 test = new Vector3(74f, -42.60667f, -25f);
-	void Start ()
+    public Vector3 endPosition;             //the position that was chosen for the enemy to move to 
+    void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         xRangeMaxPos = startPosition.x + xRangePos; //the start position of each enemy gets changed in the unity editor, this code sets the bounds of how far the enemy can move
@@ -38,10 +38,10 @@ public class OverworldEnemyScript : MonoBehaviour {
         agent.SetDestination(endPosition);
 
     }
-	
-	void Update ()
+
+    void Update()
     {
-        setEndPosition(); 
+        setEndPosition();
     }
     public void setEndPosition()
     {
@@ -53,7 +53,6 @@ public class OverworldEnemyScript : MonoBehaviour {
             endPosition = new Vector3(xDestination, yDestination, zDestination); //put all the positions into a new vector 3
             agent.SetDestination(endPosition); //move the enemy to the new position just created
         }
-        return false;
     }
 
 }
