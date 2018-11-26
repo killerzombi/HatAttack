@@ -53,6 +53,7 @@ public class OverworldEnemyScript : MonoBehaviour {
             endPosition = new Vector3(xDestination, yDestination, zDestination); //put all the positions into a new vector 3
             agent.SetDestination(endPosition); //move the enemy to the new position just created
         }
+        return false;
     }
 
 }
