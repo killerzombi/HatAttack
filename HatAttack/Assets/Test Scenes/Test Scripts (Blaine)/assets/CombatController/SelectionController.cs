@@ -90,8 +90,8 @@ public class SelectionController : MonoBehaviour {
                             { 
                                 UCI.MoveUnit(SI.getPosition(),roundForward);
                                 UCI.unHighlightGrid();
-                                UCI.highlightGrid(USelectColor * HighlightStrength * 0.8f, SI.getPosition(), roundForward);
                                 roundForward++;
+                                UCI.highlightGrid(USelectColor * HighlightStrength * 0.8f, SI.getPosition(), roundForward);
                                 
 
                                 //if (selected != null) selected.deselected();

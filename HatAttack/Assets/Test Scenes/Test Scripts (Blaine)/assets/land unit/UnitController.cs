@@ -222,7 +222,11 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
                 allPaths.Enqueue(Path);
                 allPathPositions.Enqueue(target);
             }
-            else return;
+            else
+            {
+                Debug.Log("Can't move there");
+                return;
+            }
         }
         else return;
         if (!inMoveSys)
