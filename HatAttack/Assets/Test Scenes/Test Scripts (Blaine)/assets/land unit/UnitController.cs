@@ -119,7 +119,39 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
             }
         }
     }
+    public void backMove(Queue<Vector2Int> origPath, Vector2Int target)
+    {
+        {
+            Queue<Vector2Int> tempPositions = new Queue<Vector2Int>();
+            tempPositions.Enqueue(position);
+            while (allPathPositions.Count > 0) tempPositions.Enqueue(allPathPositions.Dequeue());
+            while (tempPositions.Count > 0) allPathPositions.Enqueue(tempPositions.Dequeue());
 
+            Queue<Queue<Vector2Int>> tempPaths = new Queue<Queue<Vector2Int>>();
+            tempPaths.Enqueue(origPath);
+            while (allPaths.Count > 0) tempPaths.Enqueue(allPaths.Dequeue());
+            while (tempPaths.Count > 0) allPaths.Enqueue(tempPaths.Dequeue());
+        }
+        Stack<Vector2Int> helper = new Stack<Vector2Int>();
+        while(origPath.Count>0) helper.Push(origPath.Dequeue());
+        while (helper.Count > 0) origPath.Enqueue(helper.Pop());
+        origPath.Enqueue(target);
+        if (!MovingNow)
+        {
+            MovingNow = true;
+            StartCoroutine(MoveDownPath(origPath, moveTime));
+            position = target;
+        }
+        else
+        {
+            nextPaths.Enqueue(origPath);
+            nextPathPositions.Enqueue(target);
+            if (moveNowCount == 0)
+                moveNow += NextMove;
+            moveNowCount++;
+        }
+        currentRound -= 2;
+    }
     public void MoveUnit(Queue<Vector2Int> Path, int TicksForward = 0)
     {
         Vector2Int[] pathArray = new Vector2Int[Path.Count];

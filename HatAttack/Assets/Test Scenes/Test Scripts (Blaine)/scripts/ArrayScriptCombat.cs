@@ -376,6 +376,34 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
                 if (actions.ContainsKey(unit))
                 {
                     actions[unit].Undo();
+                    UnitAction.action A = actions[unit].getAction();
+                    switch (A)
+                    {
+                        case UnitAction.action.Guard:
+                            break;
+                        case UnitAction.action.Attack:
+                            GameObject target = actions[unit].getTarget();
+                            //AddCode unattack here.
+                            break;
+                        case UnitAction.action.Move:
+                            UnitControllerInterface UCI = unit.GetComponent<UnitControllerInterface>();
+                            if (UCI != null)
+                            {
+                                UCI.backMove(UCI.pathFrom(actions[unit].getFrom()),actions[unit].getFrom());
+                            }
+                            else Debug.Log("no UCI on unit");
+                            break;
+                        case UnitAction.action.Ability:
+                            break;
+                        case UnitAction.action.Heal:
+                            break;
+                        case UnitAction.action.Die:
+                            break;
+                        case UnitAction.action.Captured:
+                            break;
+                        case UnitAction.action.Spawn:
+                            break;
+                    }
                 }
                 else
                 {
@@ -523,6 +551,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         }
         public TickList(TickList TL, int count = 0)
         {
+            backTicks = count;
             if (TL.start != null && TL.current != null && TL.furthest != null)
             { current = TL.current; start = TL.start; furthest = TL.furthest; }
             else if (TL.current != null)
@@ -576,6 +605,11 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
             //old history
         //UnitPositions.RemoveAt(0);
         //UnitPositions.Add(UnitPositions[UnitPositions.Count - 1]);
+    }
+    private void onRoundUnTick()
+    {
+        RoundCounter--;
+        history.BackTick();
     }
 
 

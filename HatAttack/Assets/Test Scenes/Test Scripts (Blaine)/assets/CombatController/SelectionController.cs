@@ -5,9 +5,10 @@ using UnityEngine;
 //to be placed on the camera
 public class SelectionController : MonoBehaviour {
 
-    [SerializeField]private KeyCode click = KeyCode.Mouse0;
+    [SerializeField] private KeyCode click = KeyCode.Mouse0;
     [SerializeField] private KeyCode escapeKey = KeyCode.F;
     [SerializeField] private KeyCode tickNow = KeyCode.Space;
+    [SerializeField] private KeyCode backTick = KeyCode.LeftShift;
     [SerializeField] private float range = 100f;
     [SerializeField] private float HighlightStrength = .1f;
     [SerializeField] private Color USelectColor;
