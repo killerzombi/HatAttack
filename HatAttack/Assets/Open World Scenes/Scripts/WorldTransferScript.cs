@@ -13,7 +13,7 @@ public class WorldTransferScript : MonoBehaviour {
     public GameObject combatSpawn;
     private void Update()
     {
-        if (fireSpawn == null && sceneImIn == "FireWorld")
+        if (fireSpawn == null && sceneImIn == "FireWorld") //initializes the spawns, checking if we're in the world the spawn is in
             fireSpawn = GameObject.Find("FireWorldSpawnPoint");
         else if (iceSpawn == null && sceneImIn == "IceWorld")
             iceSpawn = GameObject.Find("IceWorldSpawnPoint");
@@ -35,6 +35,7 @@ public class WorldTransferScript : MonoBehaviour {
             sceneImIn = "IceWorld";
             StartCoroutine(LoadSceneAsync(sceneImIn));
             StartCoroutine(WaitOnSpawn(sceneImIn)); //this coroutine waits half a second upon spawning in before executing the next lines of code, allowing the update to find the ice spawn, in theory 
+            //the code that follows the coroutine would be the update could probably lower the load time a lot
         }
         else if (collision.gameObject.name == "ExitPortal")
         {
@@ -53,13 +54,14 @@ public class WorldTransferScript : MonoBehaviour {
 
             this.gameObject.SetActive(false);// --- disables the player and camera upon exiting the overworld and entering the game world, will be re enabled by a controller 
             camera.gameObject.SetActive(false);// --- upon leaving the battle screen
+            //probably need to handle this in the combat scene
         }
     }
 
     IEnumerator LoadSceneAsync(string toLoad)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(toLoad);
-        while (!asyncLoad.isDone)
+        while (!asyncLoad.isDone)//can probably rework this code to work better
         {
             camera.clearFlags = CameraClearFlags.SolidColor;
             camera.cullingMask = 0; //turns the camera to a black screen.
