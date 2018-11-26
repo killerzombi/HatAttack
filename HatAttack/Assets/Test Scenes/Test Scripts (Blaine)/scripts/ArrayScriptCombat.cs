@@ -136,6 +136,21 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     }
     public void Do(GameObject unit) { history.Perform(unit); }
     public void Undo(GameObject unit) { history.Undo(unit); }
+    public void UnitCaptured(GameObject unit)
+    {
+        history.CaptureUnit(unit);
+        RemoveUnit(unit);
+    }
+    public void UnitDied(GameObject unit, GameObject killer)
+    {
+        history.KillUnit(unit, killer);
+        RemoveUnit(unit);
+    }
+    private void RemoveUnit(GameObject unit)
+    {
+        TickManager.instance.RemovePlayer(unit);
+        unit.SetActive(false);
+    }
 
     private bool check(Vector2Int pos) { return check(pos.x, pos.y); }
     private bool check(int x, int y)
@@ -608,7 +623,12 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         //    UnitPositions.Add(new List<Vector2Int>());
         //}
 
-
+        if (TickManager.instance == null)
+        {
+            this.gameObject.AddComponent<TickManager>();
+            Debug.Log("np tick manager!1");
+        }
+        TickManager.instance.setTickMode(tickMode);
         #region unit spawns
         if (Unit1 != null)
         {
@@ -624,7 +644,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         }
         if (Unit2 != null)
         {
-            int U2x = BasePosition.x, U2z = BasePosition.y+1;
+            int U2x = BasePosition.x, U2z = BasePosition.y + 1;
             Transform TU2 = grid[U2x, U2z].GetComponent<cubeScript>().Node.transform;
             unit2 = (GameObject)Instantiate(Unit2, TU2.position, TU2.rotation);
             unit2.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U2x, U2z));
@@ -636,7 +656,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         }
         if (Unit3 != null)
         {
-            int U3x = BasePosition.x-1, U3z = BasePosition.y;
+            int U3x = BasePosition.x - 1, U3z = BasePosition.y;
             Transform TU3 = grid[U3x, U3z].GetComponent<cubeScript>().Node.transform;
             unit3 = (GameObject)Instantiate(Unit3, TU3.position, TU3.rotation);
             unit3.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U3x, U3z));
@@ -648,7 +668,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         }
         if (Unit4 != null)
         {
-            int U4x = BasePosition.x, U4z = BasePosition.y-1;
+            int U4x = BasePosition.x, U4z = BasePosition.y - 1;
             Transform TU4 = grid[U4x, U4z].GetComponent<cubeScript>().Node.transform;
             unit4 = (GameObject)Instantiate(Unit4, TU4.position, TU4.rotation);
             unit4.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U4x, U4z));
