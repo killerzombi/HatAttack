@@ -731,6 +731,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         }
         RoundCounter = 0;
         TickManager.roundTick += onRoundTick;
+        TickManager.roundUnTick += onRoundUnTick;
         if (!noTimer)
             TickManager.instance.StartTicking(tickDelay, tickMode);
         else TickManager.instance.StartTicking(0);

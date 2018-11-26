@@ -23,7 +23,6 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     private int currentRound = 0;
 
     private event TickManager.Tick tick;
-    protected event TickManager.Tick Etick;
 
     private event TickManager.Tick moveNow;
     private int moveNowCount = 0;
@@ -352,6 +351,11 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         Debug.Log(this.gameObject + " Did a tick");
     }
 
+    private void onMyUnTick()
+    {
+        MInterface.Undo(this.gameObject);
+    }
+
     public void Initialize()
     {
         moveNowCount = currentRound = 0;
@@ -367,13 +371,13 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         if (TickManager.instance != null)
         {
             //moveTime = TickManager.instance.getTickDelay() / 10;
-            Etick += onMyTick;
             switch (TickManager.instance.getTM())
             {
                 case TickManager.TickMode.Chaos:
                     {
                         Debug.Log("in chaos: " + TickManager.instance.getTM());
-                        //TickManager.tick += Etick;
+                        TickManager.tick += onMyTick;
+                        TickManager.untick += onMyUnTick;
                         break;
                     }
                 case TickManager.TickMode.Team:
@@ -382,9 +386,9 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
                     }
                 case TickManager.TickMode.Initiative1:
                     {
-                        Etick += onMyTick;
                         TickManager.EventDic ed = TickManager.instance.EnqueuePlayer(this.gameObject);
-                        ed.tick += Etick;
+                        ed.tick += onMyTick;
+                        ed.untick += onMyUnTick;
                         break;
                     }
                 case TickManager.TickMode.Initiative2:

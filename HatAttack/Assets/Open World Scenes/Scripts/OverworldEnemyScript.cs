@@ -43,5 +43,6 @@ public class OverworldEnemyScript : MonoBehaviour {
 
             //set the destination
         }
+        return false;
     }
 }
