@@ -12,4 +12,6 @@ public interface MapInterface {
     int getRound();
     void Do(GameObject unit);
     void Undo(GameObject unit);
+    void UnitCaptured(GameObject unit);
+    void UnitDied(GameObject unit, GameObject killer);
 }

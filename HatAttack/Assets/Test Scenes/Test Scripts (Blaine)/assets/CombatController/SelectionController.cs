@@ -48,7 +48,7 @@ public class SelectionController : MonoBehaviour {
             RaycastHit hitRay = new RaycastHit();
             if(Physics.Raycast(transform.position, transform.forward, out hitRay, range))
             {
-                Debug.Log("clicked: " + hitRay.collider.gameObject.name);
+                //Debug.Log("clicked: " + hitRay.collider.gameObject.name);
                 SelectionInterface SI = hitRay.collider.GetComponent<SelectionInterface>();
                 UnitControllerInterface cUCI = hitRay.collider.GetComponent<UnitControllerInterface>();
                 if (SI != null)
@@ -90,8 +90,8 @@ public class SelectionController : MonoBehaviour {
                             { 
                                 UCI.MoveUnit(SI.getPosition(),roundForward);
                                 UCI.unHighlightGrid();
-                                UCI.highlightGrid(USelectColor * HighlightStrength * 0.8f, SI.getPosition(), roundForward);
                                 roundForward++;
+                                UCI.highlightGrid(USelectColor * HighlightStrength * 0.8f, SI.getPosition(), roundForward);
                                 
 
                                 //if (selected != null) selected.deselected();

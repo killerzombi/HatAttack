@@ -23,6 +23,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     private int currentRound = 0;
 
     private event TickManager.Tick tick;
+    protected event TickManager.Tick Etick;
 
     private event TickManager.Tick moveNow;
     private int moveNowCount = 0;
@@ -51,7 +52,8 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
 
         }
         MovingNow = false;
-        moveNow();
+        if (moveNow != null)
+            moveNow();
     }
 
     private void NextMove()
@@ -125,21 +127,32 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         Vector2Int target = pathArray[Path.Count - 1];
         if (currentRound == MInterface.getRound()) { }
         else Debug.Log("round difference: " + (MInterface.getRound() - currentRound));
-        if (MInterface.moveUnit(this.gameObject, target, TicksForward)) { 
-            if (Path.Count > 0)
+
+        if (Path.Count > 0)
+        {
+            int addTick = 0;
+            while (Path.Count > moveSpeed)
             {
-
-                while (Path.Count > moveSpeed)
+                Queue<Vector2Int> cPath = new Queue<Vector2Int>();
+                for (int i = 0; i < moveSpeed - 1; i++)
+                    cPath.Enqueue(Path.Dequeue());
+                Vector2Int cTarget = Path.Dequeue();
+                cPath.Enqueue(cTarget);
+                while (!MInterface.moveUnit(this.gameObject, cTarget, TicksForward + addTick))
                 {
-                    Queue<Vector2Int> cPath = new Queue<Vector2Int>();
-                    for (int i = 0; i < moveSpeed - 1; i++)
-                        cPath.Enqueue(Path.Dequeue());
-                    Vector2Int cTarget = Path.Dequeue();
+                    int c = cPath.Count;
+                    while (Path.Count > 0) cPath.Enqueue(Path.Dequeue());
+                    while (cPath.Count > 0) Path.Enqueue(cPath.Dequeue());
+                    for (int i = 0; i < c - 2; i++) cPath.Enqueue(Path.Dequeue());
+                    cTarget = Path.Dequeue();
                     cPath.Enqueue(cTarget);
-                    allPaths.Enqueue(cPath);
-                    allPathPositions.Enqueue(cTarget);
                 }
-
+                allPaths.Enqueue(cPath);
+                allPathPositions.Enqueue(cTarget);
+                addTick++;
+            }
+            if (MInterface.moveUnit(this.gameObject, target, TicksForward + addTick))
+            {
                 allPaths.Enqueue(Path);
                 allPathPositions.Enqueue(target);
             }
@@ -148,28 +161,25 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         else return;
         if (!inMoveSys)
         {
+            inMoveSys = true;
             switch (TickManager.instance.getTM())
             {
                 case TickManager.TickMode.Chaos:
                     {
                         TickManager.tick += moveOnTick;
-                        inMoveSys = true;
                         break;
                     }
                 case TickManager.TickMode.Team:
                     {
-                        inMoveSys = true;
                         break;
                     }
                 case TickManager.TickMode.Initiative1:
                     {
                         tick += moveOnTick;
-                        inMoveSys = true;
                         break;
                     }
                 case TickManager.TickMode.Initiative2:
                     {
-                        inMoveSys = true;
                         break;
                     }
             }
@@ -180,11 +190,11 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     {
         if (currentRound == MInterface.getRound()) { }
         else Debug.Log("round difference: " + (MInterface.getRound() - currentRound));
-        MInterface.moveUnit(this.gameObject, target, TicksForward);
         Queue<Vector2Int> Path = MInterface.getPath(target.x, target.y);
         if (Path.Count > 0)
         {
 
+            int addTick = 0;
             while (Path.Count > moveSpeed)
             {
                 Queue<Vector2Int> cPath = new Queue<Vector2Int>();
@@ -192,38 +202,54 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
                     cPath.Enqueue(Path.Dequeue());
                 Vector2Int cTarget = Path.Dequeue();
                 cPath.Enqueue(cTarget);
+                while (!MInterface.moveUnit(this.gameObject, cTarget, TicksForward + addTick))
+                {
+                    int c = cPath.Count;
+                    while (Path.Count > 0) cPath.Enqueue(Path.Dequeue());
+                    while (cPath.Count > 0) Path.Enqueue(cPath.Dequeue());
+                    for (int i = 0; i < c - 2; i++) cPath.Enqueue(Path.Dequeue());
+                    cTarget = Path.Dequeue();
+                    cPath.Enqueue(cTarget);
+                }
                 allPaths.Enqueue(cPath);
                 allPathPositions.Enqueue(cTarget);
+                addTick++;
             }
 
-            allPaths.Enqueue(Path);
-            allPathPositions.Enqueue(target);
+
+            if (MInterface.moveUnit(this.gameObject, target, TicksForward + addTick))
+            {
+                allPaths.Enqueue(Path);
+                allPathPositions.Enqueue(target);
+            }
+            else
+            {
+                Debug.Log("Can't move there");
+                return;
+            }
         }
         else return;
         if (!inMoveSys)
         {
+            inMoveSys = true;
             switch (TickManager.instance.getTM())
             {
                 case TickManager.TickMode.Chaos:
                     {
                         TickManager.tick += moveOnTick;
-                        inMoveSys = true;
                         break;
                     }
                 case TickManager.TickMode.Team:
                     {
-                        inMoveSys = true;
                         break;
                     }
                 case TickManager.TickMode.Initiative1:
                     {
                         tick += moveOnTick;
-                        inMoveSys = true;
                         break;
                     }
                 case TickManager.TickMode.Initiative2:
                     {
-                        inMoveSys = true;
                         break;
                     }
             }
@@ -286,6 +312,14 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         return position;
     }
 
+    private void onMyTick()
+    {
+        MInterface.Do(this.gameObject);
+        if(tick!=null)
+            tick();
+        Debug.Log(this.gameObject + " Did a tick");
+    }
+
     public void Initialize()
     {
         moveNowCount = currentRound = 0;
@@ -301,10 +335,13 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         if (TickManager.instance != null)
         {
             //moveTime = TickManager.instance.getTickDelay() / 10;
+            Etick += onMyTick;
             switch (TickManager.instance.getTM())
             {
                 case TickManager.TickMode.Chaos:
                     {
+                        Debug.Log("in chaos: " + TickManager.instance.getTM());
+                        //TickManager.tick += Etick;
                         break;
                     }
                 case TickManager.TickMode.Team:
@@ -313,7 +350,9 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
                     }
                 case TickManager.TickMode.Initiative1:
                     {
-                        TickManager.instance.EnqueuePlayer(tick);
+                        Etick += onMyTick;
+                        TickManager.EventDic ed = TickManager.instance.EnqueuePlayer(this.gameObject);
+                        ed.tick += Etick;
                         break;
                     }
                 case TickManager.TickMode.Initiative2:
@@ -322,12 +361,13 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
                     }
             }
         }
+        else Debug.Log("no tick manager!");
     }
 
     // Use this for initialization
     void Start()
     {
-        Initialize();
+        //Initialize();
     }
 
     // Update is called once per frame
