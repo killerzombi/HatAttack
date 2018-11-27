@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -380,8 +380,11 @@ MonoBehaviour:
   Unit2: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
   Unit3: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
   Unit4: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
+  BasePosition: {x: 2, y: 2}
   tickDelay: 3
   noTimer: 0
+  backTicks: 5
+  tickMode: 0
   cube: {fileID: 1421666737088372, guid: 7251cf35a1a138741a96c4f94ac695a0, type: 2}
   gridCube: {fileID: 1823577020420158, guid: 1f962fdeb96581b489f161550ada9dd3, type: 2}
   tree: {fileID: 1589285367844330, guid: c5b5833c27e797d40bc7787ce8a43524, type: 2}
@@ -576,8 +579,8 @@ GameObject:
   - component: {fileID: 1278803134}
   - component: {fileID: 1278803133}
   m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
+  m_Name: CombatPlayer
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1120,6 +1123,7 @@ MonoBehaviour:
   click: 323
   escapeKey: 102
   tickNow: 32
+  backTick: 304
   range: 10
   HighlightStrength: 0.3
   USelectColor: {r: 0.078431375, g: 0.98039216, b: 0.627451, a: 0.98039216}

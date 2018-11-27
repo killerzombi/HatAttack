@@ -20,7 +20,18 @@ public class CameraScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        character = GameObject.Find("Player");
+        character = null;
+        {
+            GameObject c = null;
+            foreach (GameObject g in GameObject.FindGameObjectsWithTag("Player"))
+            {
+                WorldTransferScript w = null;
+                if (g.name == "Player") if (null != (w = g.GetComponent<WorldTransferScript>())) if (w.sceneImIn != "currentCombatScene") character = g;
+                if (g.name == "CombatPlayer") c = g;
+            }
+            if (character == null) character = c;
+        }
+        if(character == null)character = GameObject.Find("Player");
         //anim = character.GetComponent<Animator>();
         offset = character.transform.InverseTransformPoint(transform.position);
     }
