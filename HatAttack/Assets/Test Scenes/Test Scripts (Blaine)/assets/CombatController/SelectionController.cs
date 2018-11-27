@@ -43,6 +43,7 @@ public class SelectionController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(tickNow) && watching) if (TickManager.instance != null) TickManager.instance.tickNow();
+        if (Input.GetKeyDown(backTick) && watching) if (TickManager.instance != null) TickManager.instance.backTick();
 
         if (Input.GetKeyDown(click) && watching)
         {

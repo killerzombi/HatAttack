@@ -125,9 +125,16 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
             tempPositions.Enqueue(position);
             while (allPathPositions.Count > 0) tempPositions.Enqueue(allPathPositions.Dequeue());
             while (tempPositions.Count > 0) allPathPositions.Enqueue(tempPositions.Dequeue());
-
+            Queue<Vector2Int> tem = new Queue<Vector2Int>(), tem2 = new Queue<Vector2Int>();
+            Vector2Int tv = new Vector2Int();
+            while (origPath.Count>0) {
+                tv = origPath.Dequeue();
+                tem.Enqueue(tv);
+                tem2.Enqueue(tv);
+            }
+            origPath = tem2;
             Queue<Queue<Vector2Int>> tempPaths = new Queue<Queue<Vector2Int>>();
-            tempPaths.Enqueue(origPath);
+            tempPaths.Enqueue(tem);
             while (allPaths.Count > 0) tempPaths.Enqueue(allPaths.Dequeue());
             while (tempPaths.Count > 0) allPaths.Enqueue(tempPaths.Dequeue());
         }
