@@ -11,6 +11,7 @@ public class WorldTransferScript : MonoBehaviour {
     GameObject iceSpawn;
     GameObject hubSpawn;
     public GameObject combatSpawn;
+    //public GameObject combatArray;
     private void Update()
     {
         if (fireSpawn == null && sceneImIn == "FireWorld") //initializes the spawns, checking if we're in the world the spawn is in
@@ -52,20 +53,30 @@ public class WorldTransferScript : MonoBehaviour {
             combatSpawn.transform.position = this.gameObject.transform.position;
             //Change the sceene name when we move it to live.
 
+            //this.gameObject.SetActive(false);// --- disables the player and camera upon exiting the overworld and entering the game world, will be re enabled by a controller 
+            //camera.gameObject.SetActive(false);// --- upon leaving the battle screen
+            //probably need to handle this in the combat scene
+        }
+    }
+
+    private void DoneLoading()
+    {
+        if(sceneImIn == "currentCombatScene")
+        {
+            Debug.Log("spawning combat");
             GameObject Array = GameObject.Find("Array");
             ArrayScriptCombat AS = null;
             if (Array != null)
                 AS = Array.GetComponent<ArrayScriptCombat>();
             else Debug.Log("no Array!");
-            if(AS != null)
-            {
+
+            //if (Array == null) AS = combatArray.GetComponent<ArrayScriptCombat>();
+            if (AS != null)
                 AS.startCombat();
-            }
-            else Debug.Log("no ArrayScriptCombat")
+            else Debug.Log("no ArrayScriptCombat");
 
             this.gameObject.SetActive(false);// --- disables the player and camera upon exiting the overworld and entering the game world, will be re enabled by a controller 
             camera.gameObject.SetActive(false);// --- upon leaving the battle screen
-            //probably need to handle this in the combat scene
         }
     }
 
@@ -81,6 +92,7 @@ public class WorldTransferScript : MonoBehaviour {
             camera.clearFlags = CameraClearFlags.Skybox; //turns the camera back to the regular view
             camera.cullingMask = -1; //-1 is the everything setting on the camera culling mask
         }
+        DoneLoading();
     }
     IEnumerator WaitOnSpawn(string toLoad)
     {

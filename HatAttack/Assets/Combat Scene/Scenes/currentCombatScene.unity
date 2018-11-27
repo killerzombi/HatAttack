@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -553,8 +553,6 @@ GameObject:
   m_Component:
   - component: {fileID: 901871721}
   - component: {fileID: 901871720}
-  - component: {fileID: 901871723}
-  - component: {fileID: 901871722}
   - component: {fileID: 901871724}
   m_Layer: 0
   m_Name: Array
@@ -601,37 +599,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &901871722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 901871719}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f897c294ddb83204eb8416f66050c52e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TerrainTypeNum: 0
-  TerrainName: 
-  cube: {fileID: 1421666737088372, guid: 7251cf35a1a138741a96c4f94ac695a0, type: 2}
-  tree: {fileID: 1589285367844330, guid: c5b5833c27e797d40bc7787ce8a43524, type: 2}
-  rock: {fileID: 1911792087121822, guid: ba8d19bca61dace42bd7b4d0af2cb216, type: 2}
-  bush: {fileID: 1706226675754752, guid: be229b6fb10903b4ab682a3ed1c42cb5, type: 2}
---- !u!114 &901871723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 901871719}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c4654884b26434fb8d10e75df33a01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 1421666737088372, guid: 7251cf35a1a138741a96c4f94ac695a0, type: 2}
-  gridcube: {fileID: 1823577020420158, guid: 1f962fdeb96581b489f161550ada9dd3, type: 2}
-  TerrainType: {fileID: 0}
 --- !u!114 &901871724
 MonoBehaviour:
   m_ObjectHideFlags: 0

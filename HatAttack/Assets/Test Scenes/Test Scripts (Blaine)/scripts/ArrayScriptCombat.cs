@@ -13,6 +13,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     [SerializeField] private bool noTimer = false;
     [SerializeField] private int backTicks = 5;
     [SerializeField] private TickManager.TickMode tickMode = TickManager.TickMode.Chaos;
+    
 
     // =============================
     // Terrain Types
@@ -40,12 +41,25 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     private GameObject[] CurrentUnits = new GameObject[8];
     private List<GameObject> Enemies = new List<GameObject>();
 
+    private bool initiated = false;
+    private float Itimer = 0f;
+
     // Use this for initialization
     void Start()
     {
-
+        Itimer = 0f;
         //startCombat();
 
+    }
+
+    private void Update()
+    {
+        if (!initiated)
+        {
+            Itimer += Time.deltaTime;
+            if (Itimer >= 3f)
+                startCombat();
+        }
     }
 
     public GameObject GetNode(int x, int y)
@@ -633,6 +647,8 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         //coroutine 2 seconds loading time
         //camera back to normal, begin combat
         //set timescale to 0    <-this loading time can be completed by instead waiting to call TickManager.StartTicking()
+
+        initiated = true;
 
         TerrainType TT = this.gameObject.AddComponent<TerrainType>();
         TT.cube = cube; TT.bush = bush; TT.rock = rock; TT.tree = tree;
