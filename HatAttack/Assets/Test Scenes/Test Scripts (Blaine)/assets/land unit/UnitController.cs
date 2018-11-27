@@ -15,7 +15,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
 
     protected int moveSpeed = 5;
     private float moveTime = 0.6f;
-
+    private bool amIanEnemy = false;
 
     private MapInterface MInterface;
     private Vector2Int position;
@@ -428,6 +428,10 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         }
         else Debug.Log("no MeshRenderer");
     }
+
+    public void captureEnemy() { amIanEnemy = false; }
+    public void setEnemy() { amIanEnemy = true; }
+    public bool isEnemy() { return amIanEnemy; }
 
     public Vector2Int getPosition()
     {

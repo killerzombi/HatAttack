@@ -9,6 +9,11 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     public GameObject Unit3;
     public GameObject Unit4;
     public Vector2Int BasePosition = new Vector2Int(2,2);
+    public GameObject EUnit1;
+    public GameObject EUnit2;
+    public GameObject EUnit3;
+    public GameObject EUnit4;
+    public Vector2Int EBasePosition = new Vector2Int(28, 28);
     [Range(0.25f, 15f)] public float tickDelay = 3f;
     [SerializeField] private bool noTimer = false;
     [SerializeField] private int backTicks = 5;
@@ -38,8 +43,13 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     private GameObject unit2 = null;
     private GameObject unit3 = null;
     private GameObject unit4 = null;
+    private GameObject Eunit1 = null;
+    private GameObject Eunit2 = null;
+    private GameObject Eunit3 = null;
+    private GameObject Eunit4 = null;
     private GameObject[] CurrentUnits = new GameObject[8];
     private List<GameObject> Enemies = new List<GameObject>();
+    private EnemyManager EM = null;
 
     private bool initiated = false;
     private float Itimer = 0f;
@@ -687,10 +697,6 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
             unit1 = (GameObject)Instantiate(Unit1, TU1.position, TU1.rotation);
             unit1.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U1x, U1z));
             CurrentUnits[0] = unit1;
-            //for (int i = 0; i <= (backTicks * 2); i++)
-            //{
-            //    UnitPositions[i].Add(new Vector2Int(U1x, U1z));
-            //}
         }
         if (Unit2 != null)
         {
@@ -699,10 +705,6 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
             unit2 = (GameObject)Instantiate(Unit2, TU2.position, TU2.rotation);
             unit2.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U2x, U2z));
             CurrentUnits[1] = unit2;
-            //for (int i = 0; i <= (backTicks * 2); i++)
-            //{
-            //    UnitPositions[i].Add(new Vector2Int(U2x, U2z));
-            //}
         }
         if (Unit3 != null)
         {
@@ -711,10 +713,6 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
             unit3 = (GameObject)Instantiate(Unit3, TU3.position, TU3.rotation);
             unit3.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U3x, U3z));
             CurrentUnits[2] = unit3;
-            //for (int i = 0; i <= (backTicks * 2); i++)
-            //{
-            //    UnitPositions[i].Add(new Vector2Int(U3x, U3z));
-            //}
         }
         if (Unit4 != null)
         {
@@ -723,11 +721,49 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
             unit4 = (GameObject)Instantiate(Unit4, TU4.position, TU4.rotation);
             unit4.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U4x, U4z));
             CurrentUnits[3] = unit4;
-            //for (int i = 0; i <= (backTicks * 2); i++)
-            //{
-            //    UnitPositions[i].Add(new Vector2Int(U4x, U4z));
-            //}
         }
+
+        if (EUnit1 != null)
+        {
+            int U1x = EBasePosition.x + 1, U1z = EBasePosition.y;
+            Transform TU1 = grid[U1x, U1z].GetComponent<cubeScript>().Node.transform;
+            Eunit1 = (GameObject)Instantiate(Unit1, TU1.position, TU1.rotation);
+            Eunit1.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U1x, U1z));
+            CurrentUnits[4] = unit1;
+        }
+        if (EUnit2 != null)
+        {
+            int U2x = EBasePosition.x, U2z = EBasePosition.y + 1;
+            Transform TU2 = grid[U2x, U2z].GetComponent<cubeScript>().Node.transform;
+            Eunit2 = (GameObject)Instantiate(Unit2, TU2.position, TU2.rotation);
+            Eunit2.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U2x, U2z));
+            CurrentUnits[5] = unit2;
+        }
+        if (EUnit3 != null)
+        {
+            int U3x = EBasePosition.x - 1, U3z = EBasePosition.y;
+            Transform TU3 = grid[U3x, U3z].GetComponent<cubeScript>().Node.transform;
+            Eunit3 = (GameObject)Instantiate(Unit3, TU3.position, TU3.rotation);
+            Eunit3.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U3x, U3z));
+            CurrentUnits[6] = unit3;
+        }
+        if (EUnit4 != null)
+        {
+            int U4x = EBasePosition.x, U4z = EBasePosition.y - 1;
+            Transform TU4 = grid[U4x, U4z].GetComponent<cubeScript>().Node.transform;
+            Eunit4 = (GameObject)Instantiate(Unit4, TU4.position, TU4.rotation);
+            Eunit4.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U4x, U4z));
+            CurrentUnits[7] = unit4;
+        }
+
+        EM = this.gameObject.AddComponent<EnemyManager>();
+
+
+
+        //spawn enemies
+        //send enemyManager enemies;
+        // EM.intantiate(unit5,unit6,unit7,unit8);
+
         #endregion
         //new history
         if (history == null)
