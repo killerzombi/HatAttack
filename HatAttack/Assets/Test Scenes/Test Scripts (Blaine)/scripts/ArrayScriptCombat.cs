@@ -44,7 +44,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     void Start()
     {
 
-        startCombat();
+        //startCombat();
 
     }
 
@@ -625,7 +625,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         //reset TickManager instance
         TickManager.instance = null;
     }
-    void startCombat()
+    public void startCombat()
     {
         //disable the player that was dontdestroyonload
         //disable the camera

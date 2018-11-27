@@ -52,6 +52,17 @@ public class WorldTransferScript : MonoBehaviour {
             combatSpawn.transform.position = this.gameObject.transform.position;
             //Change the sceene name when we move it to live.
 
+            GameObject Array = GameObject.Find("Array");
+            ArrayScriptCombat AS = null;
+            if (Array != null)
+                AS = Array.GetComponent<ArrayScriptCombat>();
+            else Debug.Log("no Array!");
+            if(AS != null)
+            {
+                AS.startCombat();
+            }
+            else Debug.Log("no ArrayScriptCombat")
+
             this.gameObject.SetActive(false);// --- disables the player and camera upon exiting the overworld and entering the game world, will be re enabled by a controller 
             camera.gameObject.SetActive(false);// --- upon leaving the battle screen
             //probably need to handle this in the combat scene
