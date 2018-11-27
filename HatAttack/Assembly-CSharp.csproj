@@ -140,6 +140,7 @@
      <Compile Include="Assets\Open World Scenes\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Open World Scenes\Scripts\CombatSpawnPointDestroyer.cs" />
      <Compile Include="Assets\Open World Scenes\Scripts\OverworldEnemyScript.cs" />
+     <Compile Include="Assets\Open World Scenes\Scripts\OverworldPatrolScript.cs" />
      <Compile Include="Assets\Open World Scenes\Scripts\PlayerControllerTPS.cs" />
      <Compile Include="Assets\Open World Scenes\Scripts\PlayerControllerTPSSwimming.cs" />
      <Compile Include="Assets\Open World Scenes\Scripts\PlayerDestroyer.cs" />

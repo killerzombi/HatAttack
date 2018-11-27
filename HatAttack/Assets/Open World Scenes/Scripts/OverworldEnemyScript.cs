@@ -21,7 +21,7 @@ public class OverworldEnemyScript : MonoBehaviour
     private float zRangeMaxNeg;
     NavMeshAgent agent;
     public Vector3 startPosition = new Vector3(0f, 0f, 0f); //the position that the enemy starts, probably needs to be a vector3
-    public Vector3 endPosition;             //the position that was chosen for the enemy to move to 
+    private Vector3 endPosition;             //the position that was chosen for the enemy to move to 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
