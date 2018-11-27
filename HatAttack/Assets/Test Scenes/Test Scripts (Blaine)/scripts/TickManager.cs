@@ -128,6 +128,8 @@ public class TickManager : MonoBehaviour
     {
         //Debug.Log("Tick Tock");
         roundTracker--;
+        if (untick != null)
+            untick();
         switch (tickMode)
         {
             case TickMode.Chaos:
@@ -194,8 +196,6 @@ public class TickManager : MonoBehaviour
                 Debug.Log("Qhat mode yo tickManager in?!?!");
                 break;
         }
-        if (untick != null)
-            untick();
     }
     private void DoTick()
     {

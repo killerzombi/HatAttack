@@ -367,7 +367,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     MInterface.Do(this.gameObject);
     if (tick != null)
       tick();
-    Debug.Log(this.gameObject + " Did a tick");
+    //Debug.Log(this.gameObject + " Did a tick");
   }
 
   private void onMyUnTick()
