@@ -8,7 +8,7 @@ public interface UnitControllerInterface
     void backMove(Queue<Vector2Int> origPath, Vector2Int target);
     void MoveUnit(Queue<Vector2Int> path, int TicksForward = 0);
     void MoveUnit(Vector2Int target, int TicksForward = 0);
-    void setGrid(MapInterface cgc, Vector2Int pos);
+    void setGrid(MapInterface cgc, Vector2Int pos, int LVL = 1);
     void highlightGrid(Color C, int ticksForward = 0);
     void highlightGrid(Color C, Vector2Int pos, int ticksForward = 0);
     void unHighlightGrid();

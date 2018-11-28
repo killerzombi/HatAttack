@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionInterface
 {
-
+	protected float MaxHealth = 0;
     private float health;
     private float attack;
     private float defense;
@@ -12,8 +12,14 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     private int LeveL = 1;
     private static float[] nextLVL = { 0, 100, 250, 450, 700, 1000, 1350, 1750, 2200, 2700, 3250, 3850, 4500, 5200, 5950, 6750,
                                         7600, 8500, 9450, 10450, 11500, 12600, 13750, 14950, 16200, 17500};
-
-    protected int moveSpeed = 5;
+	protected float[] LVLMHealth = { 0, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500,
+										525, 550, 575, 600, 625, 650, 675 };
+	protected float[] LVLAttack = { 0, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+										22, 23, 24, 25, 26, 27, 28 };
+	protected float[] LVLDefense = { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+										19, 20, 21, 22, 23, 24, 25 };
+	
+	protected int moveSpeed = 5;
 	protected int attackRange = 3;
     private float moveTime = 0.6f;
     private bool amIanEnemy = false;
@@ -116,8 +122,10 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
 			if(NTarget == null){
 				Natarget = target;
 				tick += AttackNow;
+				return eCI.getAttacked(this.gameObject, attack);
 			}
-            return eCI.getAttacked(this.gameObject, attack);
+			else  Debug.Log("Target already selected");
+			NTarget = target;		//comment out if we don't want to be able to retarget. idk if a good idea though.			
         }
         else Debug.Log("enemy doesnt have UCI: " + target + " NAME: " + target.gameObject.name);
         return -1;
@@ -430,8 +438,9 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         return new Queue<Vector2Int>();
     }
 
-    public void setGrid(MapInterface cgc, Vector2Int pos)
+    public void setGrid(MapInterface cgc, Vector2Int pos, int LVL = 1)
     {
+		LeveL = LVL;
         MInterface = cgc; position = pos; Initialize();
     }
 
@@ -498,6 +507,11 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
 
     public void Initialize()
     {
+		MaxHealth = LVLMHealth[LeveL];
+		health = MaxHealth;
+		experience = 0f;
+		attack = LVLAttack[LeveL];
+		defense = LVLDefense[LeveL];
         moveNowCount = currentRound = 0;
         if (MeshR == null)
         {

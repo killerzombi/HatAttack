@@ -48,7 +48,12 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     private GameObject Eunit3 = null;
     private GameObject Eunit4 = null;
     private GameObject[] CurrentUnits = new GameObject[8];
-    private List<GameObject> Enemies = new List<GameObject>();
+	private Queue<GameObject> PlayerTeam = new Queue<GameObject>();
+    private Queue<GameObject> Enemies = new Queue<GameObject>();
+    private Queue<GameObject> CapturedEnemies = new Queue<GameObject>();
+	private Stack<GameObject> Dead = new Stack<GameObject>();
+	private class ListNum{ public bool dead; public bool captured; public int num; }
+	private Dictionary<GameObject, ListNum> GODic = new Dictionary<GameObject, ListNum>();
     private EnemyManager EM = null;
 
     private bool initiated = false;
@@ -181,7 +186,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     {
         return (!(x > gridSizeX || x < 0) && !(y > gridSizeZ || y < 0));
     }
-
+	#region history
     //HISTORY!!
     private class TickList
     {
@@ -600,6 +605,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
                 if (cU != null)
                 {
                     history.SpawnUnit(U, cU.getPosition());
+					history.SpawnUnit(new GameObject(), cU.getPosition());
                 }
             }
         }
@@ -610,18 +616,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     {
             //new history
         return history.Move(unit, to, ticksForward);
-            //old history
-        //int tickEffected = backTicks + ticksForward;
-        //List<Vector2Int> Units = UnitPositions[tickEffected];
-        //if (Units.Contains(to)) return false;
-        //if (Units.Contains(from))
-        //{
-        //    int unitEffected = Units.IndexOf(from);
-        //    Units[unitEffected] = to;
-        //    return true;
-        //}
-        //Debug.Log("Error, unit moving from: " + from + " to: " + to + " @ " + ticksForward + " Doesnt exist in UnitsPosition");
-        //return false;
+        
     }
     public int getRound() { return RoundCounter; }
     private void onRoundTick()
@@ -630,17 +625,147 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
 
             //new history
         history.NextTick();
-            //old history
-        //UnitPositions.RemoveAt(0);
-        //UnitPositions.Add(UnitPositions[UnitPositions.Count - 1]);
     }
     private void onRoundUnTick()
     {
         RoundCounter--;
         history.BackTick();
     }
-
-
+	#endregion
+	
+	private void spawnPlayer(int space, GameObject spawn)
+	{
+		GameObject unitSpawned = null;
+		int Ux, Uz;
+		switch(space){
+			case 0:
+			{
+				Ux = BasePosition.x+1; Uz = BasePosition.y;
+				break;
+			}
+			case 1:
+			{
+				Ux = BasePosition.x, Uz = BasePosition.y + 1;
+				break;
+			}
+			case 2:
+			{
+				Ux = BasePosition.x - 1, Uz = BasePosition.y;
+				break;
+			}
+			case 3:
+			{
+				Ux = BasePosition.x, Uz = BasePosition.y - 1;
+				break;
+			}
+			case 4:
+			{
+				Ux = EBasePosition.x+1; Uz = EBasePosition.y;
+				break;
+			}
+			case 5:
+			{
+				Ux = EBasePosition.x, Uz = EBasePosition.y + 1;
+				break;
+			}
+			case 6:
+			{
+				Ux = EBasePosition.x - 1, Uz = EBasePosition.y;
+				break;
+			}
+			case 7:
+			{
+				Ux = EBasePosition.x, Uz = EBasePosition.y - 1;
+				break;
+			}
+		}
+		Transform TU = grid[Ux, Uz].GetComponent<cubeScript>().Node.transform;
+		unitSpawned = (GameObject)Instantiate(spawn, TU.position, TU.rotation);
+		unitSpawned.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(Ux, Uz));
+		CurrentUnits[space] = unitSpawned;
+	}
+	
+	private void checkDone()
+	{
+		bool done = true;
+		if(CurrentUnits[0] != null)
+			done = false;
+		else 
+		{
+			done = false;
+			if(PlayerTeam.Count > 0)
+				spawnPlayer(0, PlayerTeam.Dequeue());
+			else done = true;
+		}
+		if(CurrentUnits[1] != null)
+			done = false;
+		else 
+		{
+			done = false;
+			if(PlayerTeam.Count > 0)
+				spawnPlayer(1, PlayerTeam.Dequeue());
+			else done = true;
+		}
+		if(CurrentUnits[2] != null)
+			done = false;
+		else 
+		{
+			done = false;
+			if(PlayerTeam.Count > 0)
+				spawnPlayer(2, PlayerTeam.Dequeue());
+			else done = true;
+		}
+		if(CurrentUnits[3] != null)
+			done = false;
+		else 
+		{
+			done = false;
+			if(PlayerTeam.Count > 0)
+				spawnPlayer(3, PlayerTeam.Dequeue());
+			else done = true;
+		}
+		if(!done)
+			done = true;
+		else endCombat();
+		
+		if(CurrentUnits[4] != null)
+			done = false;
+		else 
+		{
+			done = false;
+			if(Enemies.Count > 0)
+				spawnPlayer(4, Enemies.Dequeue());
+			else done = true;
+		}
+		if(CurrentUnits[5] != null)
+			done = false;
+		else 
+		{
+			done = false;
+			if(Enemies.Count > 0)
+				spawnPlayer(5, Enemies.Dequeue());
+			else done = true;
+		}
+		if(CurrentUnits[6] != null)
+			done = false;
+		else 
+		{
+			done = false;
+			if(Enemies.Count > 0)
+				spawnPlayer(6, Enemies.Dequeue());
+			else done = true;
+		}
+		if(CurrentUnits[7] != null)
+			done = false;
+		else 
+		{
+			done = false;
+			if(Enemies.Count > 0)
+				spawnPlayer(7, Enemies.Dequeue());
+			else done = true;
+		}
+		if(done) endCombat();
+	}
     //end and start combat
     public void endCombat()
     {
@@ -649,6 +774,8 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         //set player to active
         //set main camera to active
         //SceneManager.LoadScene(wts.sceneImIn);
+		
+		//load all CapturedEnemies into player CapturedUnits inventory.
 
         //reset TickManager instance
         TickManager.instance = null;
@@ -696,77 +823,40 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         #region unit spawns
         if (Unit1 != null)
         {
-            int U1x = BasePosition.x+1, U1z = BasePosition.y;
-            Transform TU1 = grid[U1x, U1z].GetComponent<cubeScript>().Node.transform;
-            unit1 = (GameObject)Instantiate(Unit1, TU1.position, TU1.rotation);
-            unit1.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U1x, U1z));
-            CurrentUnits[0] = unit1;
+            spawnPlayer(0, Unit1);
         }
         if (Unit2 != null)
         {
-            int U2x = BasePosition.x, U2z = BasePosition.y + 1;
-            Transform TU2 = grid[U2x, U2z].GetComponent<cubeScript>().Node.transform;
-            unit2 = (GameObject)Instantiate(Unit2, TU2.position, TU2.rotation);
-            unit2.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U2x, U2z));
-            CurrentUnits[1] = unit2;
+            spawnPlayer(1, Unit2);
         }
         if (Unit3 != null)
         {
-            int U3x = BasePosition.x - 1, U3z = BasePosition.y;
-            Transform TU3 = grid[U3x, U3z].GetComponent<cubeScript>().Node.transform;
-            unit3 = (GameObject)Instantiate(Unit3, TU3.position, TU3.rotation);
-            unit3.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U3x, U3z));
-            CurrentUnits[2] = unit3;
+            spawnPlayer(2, Unit3);
         }
         if (Unit4 != null)
         {
-            int U4x = BasePosition.x, U4z = BasePosition.y - 1;
-            Transform TU4 = grid[U4x, U4z].GetComponent<cubeScript>().Node.transform;
-            unit4 = (GameObject)Instantiate(Unit4, TU4.position, TU4.rotation);
-            unit4.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U4x, U4z));
-            CurrentUnits[3] = unit4;
+            spawnPlayer(3, Unit4)
         }
 
         if (EUnit1 != null)
         {
-            int U1x = EBasePosition.x + 1, U1z = EBasePosition.y;
-            Transform TU1 = grid[U1x, U1z].GetComponent<cubeScript>().Node.transform;
-            Eunit1 = (GameObject)Instantiate(Unit1, TU1.position, TU1.rotation);
-            Eunit1.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U1x, U1z));
-            CurrentUnits[4] = unit1;
+            spawnPlayer(4, EUnit1);
         }
         if (EUnit2 != null)
         {
-            int U2x = EBasePosition.x, U2z = EBasePosition.y + 1;
-            Transform TU2 = grid[U2x, U2z].GetComponent<cubeScript>().Node.transform;
-            Eunit2 = (GameObject)Instantiate(Unit2, TU2.position, TU2.rotation);
-            Eunit2.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U2x, U2z));
-            CurrentUnits[5] = unit2;
+            spawnPlayer(5, EUnit2);
         }
         if (EUnit3 != null)
         {
-            int U3x = EBasePosition.x - 1, U3z = EBasePosition.y;
-            Transform TU3 = grid[U3x, U3z].GetComponent<cubeScript>().Node.transform;
-            Eunit3 = (GameObject)Instantiate(Unit3, TU3.position, TU3.rotation);
-            Eunit3.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U3x, U3z));
-            CurrentUnits[6] = unit3;
+            spawnPlayer(6, EUnit3);
         }
         if (EUnit4 != null)
         {
-            int U4x = EBasePosition.x, U4z = EBasePosition.y - 1;
-            Transform TU4 = grid[U4x, U4z].GetComponent<cubeScript>().Node.transform;
-            Eunit4 = (GameObject)Instantiate(Unit4, TU4.position, TU4.rotation);
-            Eunit4.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(U4x, U4z));
-            CurrentUnits[7] = unit4;
+            spawnPlayer(7, EUnit4);
         }
-
+		
         EM = this.gameObject.AddComponent<EnemyManager>();
-
-
-
-        //spawn enemies
-        //send enemyManager enemies;
-        // EM.intantiate(unit5,unit6,unit7,unit8);
+		EM.StartEM(CurrentUnits[4],CurrentUnits[5],CurrentUnits[6],CurrentUnits[7]);
 
         #endregion
         //new history
@@ -786,6 +876,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
             Debug.Log("np tick manager!");
         }
         RoundCounter = 0;
+		TickManager.tick += checkDone;
         TickManager.roundTick += onRoundTick;
         TickManager.roundUnTick += onRoundUnTick;
         if (!noTimer)

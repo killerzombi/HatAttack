@@ -43,7 +43,7 @@ public class WorldTransferScript : MonoBehaviour {
             sceneImIn = "HubWorld";
             StartCoroutine(LoadSceneAsync(sceneImIn));
             StartCoroutine(WaitOnSpawn(sceneImIn));
-        }
+        }	//the if statement below(V V V V V) needs to change to --> if(collision.gameObject.tag == "Enemy")	-->	then tag all enemies "Enemy"
         if (collision.gameObject.transform.parent.name == "Enemies") //this code is a proof of concept on how to keep the player where they were when they entered combat.
         {
             //StartCoroutine(MoveSpawnPoint(sceneImIn)); //starts a coroutine with this scene we're currently in
