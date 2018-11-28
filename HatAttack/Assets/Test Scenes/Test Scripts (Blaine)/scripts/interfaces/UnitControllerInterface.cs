@@ -20,7 +20,7 @@ public interface UnitControllerInterface
     void getEXP(float exp);
     void ungetEXP(float exp);
 
-    void captueEnemy();
+    void captureEnemy();
     void setEnemy();
     bool isEnemy();
 

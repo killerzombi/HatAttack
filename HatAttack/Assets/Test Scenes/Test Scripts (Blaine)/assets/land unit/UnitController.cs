@@ -120,7 +120,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         if (eCI != null)
         {
 			if(NTarget == null){
-				Natarget = target;
+				NTarget = target;
 				tick += AttackNow;
 				return eCI.getAttacked(this.gameObject, attack);
 			}

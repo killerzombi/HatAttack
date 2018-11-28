@@ -414,7 +414,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
                             GameObject target = actions[unit].getTarget();
 							UnitControllerInterface aUCI = unit.GetComponent<UnitControllerInterface>();
 							if(aUCI != null){
-								aUCI.unattack(target);
+								aUCI.unAttack(target);
 							} else Debug.Log("no UCI on unit: "+unit.gameObject.name+" in history!");
                             //AddCode unattack here.
                             break;
@@ -636,8 +636,9 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
 	private void spawnPlayer(int space, GameObject spawn)
 	{
 		GameObject unitSpawned = null;
-		int Ux, Uz;
-		switch(space){
+		int Ux=0, Uz=0;
+		switch(space)
+        {
 			case 0:
 			{
 				Ux = BasePosition.x+1; Uz = BasePosition.y;
@@ -645,17 +646,17 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
 			}
 			case 1:
 			{
-				Ux = BasePosition.x, Uz = BasePosition.y + 1;
+                    Ux = BasePosition.x; Uz = BasePosition.y + 1;
 				break;
 			}
 			case 2:
 			{
-				Ux = BasePosition.x - 1, Uz = BasePosition.y;
+                    Ux = BasePosition.x - 1; Uz = BasePosition.y;
 				break;
 			}
 			case 3:
 			{
-				Ux = BasePosition.x, Uz = BasePosition.y - 1;
+                    Ux = BasePosition.x; Uz = BasePosition.y - 1;
 				break;
 			}
 			case 4:
@@ -665,17 +666,17 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
 			}
 			case 5:
 			{
-				Ux = EBasePosition.x, Uz = EBasePosition.y + 1;
+                    Ux = EBasePosition.x; Uz = EBasePosition.y + 1;
 				break;
 			}
 			case 6:
 			{
-				Ux = EBasePosition.x - 1, Uz = EBasePosition.y;
+                    Ux = EBasePosition.x - 1; Uz = EBasePosition.y;
 				break;
 			}
 			case 7:
 			{
-				Ux = EBasePosition.x, Uz = EBasePosition.y - 1;
+                    Ux = EBasePosition.x; Uz = EBasePosition.y - 1;
 				break;
 			}
 		}
@@ -835,7 +836,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         }
         if (Unit4 != null)
         {
-            spawnPlayer(3, Unit4)
+            spawnPlayer(3, Unit4);
         }
 
         if (EUnit1 != null)
