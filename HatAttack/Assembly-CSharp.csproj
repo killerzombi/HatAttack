@@ -62,12 +62,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Combat Scene\Scripts\CombatGridCreator.cs" />
+    <Compile Include="Assets\Combat Scene\Scripts\cube\cubeScript.cs" />
     <Compile Include="Assets\Combat Scene\Scripts\EnemyManager.cs" />
     <Compile Include="Assets\Combat Scene\Scripts\FollowPosition.cs" />
     <Compile Include="Assets\Combat Scene\Scripts\land unit\HealthControl.cs" />
     <Compile Include="Assets\Combat Scene\Scripts\land unit\UnitController.cs" />
     <Compile Include="Assets\Combat Scene\Scripts\LookAtPosition.cs" />
     <Compile Include="Assets\Combat Scene\Scripts\oldUnitController.cs" />
+    <Compile Include="Assets\Combat Scene\Scripts\OverheadControl.cs" />
+    <Compile Include="Assets\Combat Scene\Scripts\scripts\ArrayScriptCombat.cs" />
+    <Compile Include="Assets\Combat Scene\Scripts\scripts\interfaces\CombatInterface.cs" />
+    <Compile Include="Assets\Combat Scene\Scripts\scripts\interfaces\MapInterface.cs" />
+    <Compile Include="Assets\Combat Scene\Scripts\scripts\interfaces\SelectionInterface.cs" />
+    <Compile Include="Assets\Combat Scene\Scripts\scripts\interfaces\UnitControllerInterface.cs" />
+    <Compile Include="Assets\Combat Scene\Scripts\scripts\TickManager.cs" />
+    <Compile Include="Assets\Combat Scene\Scripts\SelectionController.cs" />
     <Compile Include="Assets\Combat Scene\Scripts\TerrainType.cs" />
     <Compile Include="Assets\HEROIC FANTASY CREATURES FULL PACK\DEMONIC CREATURES PACK\DEMON LORD\SCRIPT\ScrollingUVs.cs" />
     <Compile Include="Assets\KriptoFX\Realistic Effects Pack v4\PostEffects\Mobile\RFX4_DistortionAndBloom.cs" />
@@ -165,15 +174,6 @@
     <Compile Include="Assets\Test Scenes\Test Assets (Erik)\test scripts\fireChargeJump.cs" />
     <Compile Include="Assets\Test Scenes\Test Assets (Erik)\test scripts\RevealBridgeOnHit.cs" />
     <Compile Include="Assets\Test Scenes\Test Assets (Erik)\test scripts\spawnIceBlock.cs" />
-    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\assets\CombatController\OverheadControl.cs" />
-    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\assets\CombatController\SelectionController.cs" />
-    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\assets\cube\cubeScript.cs" />
-    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\ArrayScriptCombat.cs" />
-    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\interfaces\CombatInterface.cs" />
-    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\interfaces\MapInterface.cs" />
-    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\interfaces\SelectionInterface.cs" />
-    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\interfaces\UnitControllerInterface.cs" />
-    <Compile Include="Assets\Test Scenes\Test Scripts (Blaine)\scripts\TickManager.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Ian)\CreateCombat.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Ian)\DemonLordScript.cs" />
     <Compile Include="Assets\Test Scenes\Test Scripts (Ian)\IceGiantScript.cs" />
