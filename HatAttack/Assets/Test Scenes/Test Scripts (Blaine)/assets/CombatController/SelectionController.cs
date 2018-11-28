@@ -15,6 +15,7 @@ public class SelectionController : MonoBehaviour
     [SerializeField] private Color USelectColor;
     [SerializeField] private Color ESelectColor;
     [SerializeField] private GameObject ChoiceUI;
+    [SerializeField] private GameObject RangeNote;
 
     [SerializeField] private GameObject AttackChoiceUI;
 
@@ -35,7 +36,7 @@ public class SelectionController : MonoBehaviour
         if (ChoiceUI != null) ChoiceUI.SetActive(false);
         if (AttackChoiceUI != null) AttackChoiceUI.SetActive(false);
         startMouse();
-        if (UCI != null && t)
+        if (UCI != null && UCI2 != null && t)
         {
             UCI.MoveUnit(UCI2.pathFrom(selected.getPosition()), roundForward);
         }
@@ -45,9 +46,10 @@ public class SelectionController : MonoBehaviour
     {
         if (AttackChoiceUI != null) AttackChoiceUI.SetActive(false);
         if (ChoiceUI != null) ChoiceUI.SetActive(false);
-        if (UCI != null && t)
+        startMouse();
+        if (UCI != null && UCI2 != null && t)
         {
-            UCI.AttackUnit(cUCI.getSelectedUnit());
+            UCI.AttackUnit(UCI2.getSelectedUnit());
         }
     }
     // Use this for initialization
@@ -56,6 +58,9 @@ public class SelectionController : MonoBehaviour
         if (CS == null) CS = this.GetComponent<CameraScript>();
         if (CS == null) Debug.Log("selectionscript cannot access camerascript");
         S2 = new Queue<SelectionInterface>();
+
+         GameObject rn = GameObject.Instantiate(RangeNote, this.gameObject.transform);
+        rn.transform.position = transform.position + (transform.forward * range);
     }
     // Update is called once per frame
     void Update()
@@ -83,7 +88,8 @@ public class SelectionController : MonoBehaviour
                         if (cUCI != null)
                         {
                             UCI = cUCI;
-                            UCI.highlightGrid(USelectColor * HighlightStrength * 0.8f);
+                            if(!UCI.isEnemy())
+                                UCI.highlightGrid(USelectColor * HighlightStrength * 0.8f);
                         }
                     }
                     else
@@ -92,10 +98,17 @@ public class SelectionController : MonoBehaviour
                         if (cUCI != null)
                         {
                             //showUI();
-                            showAttackUI();
-                            stopMouse();
-                            SI.selected(ESelectColor * HighlightStrength);
-                            UCI2 = cUCI;
+                            if(!UCI.isEnemy() && cUCI.isEnemy())
+                            {
+                                showAttackUI();
+                                stopMouse();
+                                SI.selected(ESelectColor * HighlightStrength);
+                                UCI2 = cUCI;
+                            }
+                            else if(UCI == cUCI && UCI.isEnemy()) //unsure if UCI == cUCI will correctly compare
+                            {
+                                //do capture snake here
+                            }
                         }
                         else
                         {

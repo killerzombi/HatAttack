@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrayScriptCombat : MonoBehaviour, MapInterface
+public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
 {
     public GameObject Unit1;
     public GameObject Unit2;
@@ -18,8 +18,8 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     [SerializeField] private bool noTimer = false;
     [SerializeField] private int backTicks = 5;
     [SerializeField] private TickManager.TickMode tickMode = TickManager.TickMode.Chaos;
-    
 
+    public event EndCombat endOfCombat;
     // =============================
     // Terrain Types
     // =============================
@@ -50,10 +50,10 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     private GameObject[] CurrentUnits = new GameObject[8];
 	private Queue<GameObject> PlayerTeam = new Queue<GameObject>();
     private Queue<GameObject> Enemies = new Queue<GameObject>();
-    private Queue<GameObject> CapturedEnemies = new Queue<GameObject>();
-	private Stack<GameObject> Dead = new Stack<GameObject>();
+    private Stack<GameObject> CapturedEnemies = new Stack<GameObject>();
+	private LStack<GameObject> Dead = new LStack<GameObject>();
 	private class ListNum{ public bool dead; public bool captured; public int num; }
-	private Dictionary<GameObject, ListNum> GODic = new Dictionary<GameObject, ListNum>();
+	private Dictionary<GameObject, int> GODic = new Dictionary<GameObject, int>();
     private EnemyManager EM = null;
 
     private bool initiated = false;
@@ -90,6 +90,9 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         else return null;
     }
 
+
+    public void EnqueuePlayer(GameObject unit) { PlayerTeam.Enqueue(unit); }
+    public void EnqueueEnemy(GameObject unit) { Enemies.Enqueue(unit); }
 
     public Queue<Vector2Int> getPath(int x, int z) { return bestPaths[x, z]; }
     public void unHighlight()
@@ -163,23 +166,6 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         }
         return path;
     }
-    public void Do(GameObject unit) { history.Perform(unit); }
-    public void Undo(GameObject unit) { history.Undo(unit); }
-    public void UnitCaptured(GameObject unit)
-    {
-        history.CaptureUnit(unit);
-        RemoveUnit(unit);
-    }
-    public void UnitDied(GameObject unit, GameObject killer)
-    {
-        history.KillUnit(unit, killer);
-        RemoveUnit(unit);
-    }
-    private void RemoveUnit(GameObject unit)
-    {
-        TickManager.instance.RemovePlayer(unit);
-        unit.SetActive(false);
-    }
 
     private bool check(Vector2Int pos) { return check(pos.x, pos.y); }
     private bool check(int x, int y)
@@ -235,7 +221,11 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
 
                     return obj.GetType() == GetType() && Equals((UnitAction)obj);
                 }
-
+                public override int GetHashCode()
+                {
+                    return ( ArrayScriptCombat.ShiftAndWrap(To.x,18) ^ ArrayScriptCombat.ShiftAndWrap(To.y, 12) ^
+                        ArrayScriptCombat.ShiftAndWrap(From.x,6) ^ ArrayScriptCombat.ShiftAndWrap(From.y,0));
+                }
                 #endregion
                 #region getters
                 public bool getDone() { return Done; }
@@ -612,6 +602,27 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
     }
 
     
+    public void Do(GameObject unit) { history.Perform(unit); }
+    public void Undo(GameObject unit) { history.Undo(unit); }
+    public void UnitCaptured(GameObject unit)
+    {
+        history.CaptureUnit(unit);
+        RemoveUnit(unit);
+    }
+    public void UnitDied(GameObject unit, GameObject killer)
+    {
+        history.KillUnit(unit, killer);
+        RemoveUnit(unit);
+    }
+    private void RemoveUnit(GameObject unit)
+    {
+        TickManager.instance.RemovePlayer(unit);
+        unit.SetActive(false);
+    }
+    public void UnitAttacked(GameObject unit, GameObject target)
+    {
+        history.AttackUnit(unit, target);
+    }
     public bool moveUnit(GameObject unit, Vector2Int to, int ticksForward = 0)
     {
             //new history
@@ -682,7 +693,11 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
 		}
 		Transform TU = grid[Ux, Uz].GetComponent<cubeScript>().Node.transform;
 		unitSpawned = (GameObject)Instantiate(spawn, TU.position, TU.rotation);
-		unitSpawned.GetComponent<UnitControllerInterface>().setGrid(this, new Vector2Int(Ux, Uz));
+        UnitControllerInterface usuci = unitSpawned.GetComponent<UnitControllerInterface>();
+        if (usuci != null) {
+            usuci.setGrid(this, new Vector2Int(Ux, Uz));
+            if (space <= 3) usuci.Initialize();
+                    }
 		CurrentUnits[space] = unitSpawned;
 	}
 	
@@ -780,6 +795,9 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
 
         //reset TickManager instance
         TickManager.instance = null;
+
+        //call endOfCombat for combatInterface
+        endOfCombat(CapturedEnemies);
     }
     public void startCombat()
     {
@@ -814,6 +832,25 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
         //{
         //    UnitPositions.Add(new List<Vector2Int>());
         //}
+        if(PlayerTeam.Count > 0)
+            Unit1 = PlayerTeam.Dequeue();
+        if (PlayerTeam.Count > 0)
+            Unit2 = PlayerTeam.Dequeue();
+        if (PlayerTeam.Count > 0)
+            Unit3 = PlayerTeam.Dequeue();
+        if (PlayerTeam.Count > 0)
+            Unit4 = PlayerTeam.Dequeue();
+
+        if (Enemies.Count > 0)
+            EUnit1 = Enemies.Dequeue();
+        if (Enemies.Count > 0)
+            EUnit2 = Enemies.Dequeue();
+        if (Enemies.Count > 0)
+            EUnit3 = Enemies.Dequeue();
+        if (Enemies.Count > 0)
+            EUnit4 = Enemies.Dequeue();
+
+
 
         if (TickManager.instance == null)
         {
@@ -821,6 +858,8 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
             Debug.Log("np tick manager!1");
         }
         TickManager.instance.setTickMode(tickMode);
+        if (noTimer) tickDelay = 20f;
+        TickManager.instance.setTickDelay(tickDelay);
         #region unit spawns
         if (Unit1 != null)
         {
@@ -884,6 +923,44 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
             TickManager.instance.StartTicking(tickDelay, tickMode);
         else TickManager.instance.StartTicking(0);
     }
+    public static int ShiftAndWrap(int value, int positions)
+    {
+        positions = positions & 0x1F;
+
+        // Save the existing bit pattern, but interpret it as an unsigned integer.
+        uint number = System.BitConverter.ToUInt32(System.BitConverter.GetBytes(value), 0);
+        // Preserve the bits to be discarded.
+        uint wrapped = number >> (32 - positions);
+        // Shift and wrap the discarded bits.
+        return System.BitConverter.ToInt32(System.BitConverter.GetBytes((number << positions) | wrapped), 0);
+    }
+}
+    
 
 
+public class LStack<T> : List<T>
+{
+    new public T RemoveAt(int index)
+    {
+        T temp = this[index];
+        base.RemoveAt(index);
+        return temp;
+    }
+
+    public void Push(T item)
+    {
+        Add(item);
+    }
+
+    public T Pop()
+    {
+        if (Count > 0)
+        {
+            T temp = this[Count - 1]; 
+            RemoveAt(Count - 1);
+            return temp;
+        }
+        else
+            return default(T);
+    }
 }

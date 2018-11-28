@@ -98,6 +98,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
 					NTarget = null;
 					eCI.UnitAttacked(this.gameObject, attack);
 					tick -= AttackNow;
+                    MInterface.UnitAttacked(this.gameObject, NTarget);
 				}
 				else 
 				{
@@ -136,9 +137,9 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         UnitControllerInterface eCI = target.GetComponent<UnitControllerInterface>();
         if (eCI != null)
         {
-            return eCI.unAttacked(this.gameObject, attack);
 			if(NTarget == null) { NTarget = target; tick += AttackNow; }
 			else {Debug.Log("NTarget already set!");}
+            return eCI.unAttacked(this.gameObject, attack);
         }
         else Debug.Log("on un: enemy doesnt have UCI: " + target + " NAME: " + target.gameObject.name);
         return -1;
@@ -438,10 +439,11 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         return new Queue<Vector2Int>();
     }
 
-    public void setGrid(MapInterface cgc, Vector2Int pos, int LVL = 1)
+    public void setGrid(MapInterface cgc, Vector2Int pos, int LVL = 0)
     {
-		LeveL = LVL;
-        MInterface = cgc; position = pos; Initialize();
+        if(LVL > 0)
+		    LeveL = LVL;
+        MInterface = cgc; position = pos; //Initialize();
     }
 
     public void highlightGrid(Color C, Vector2Int pos, int ticksForward = 0)

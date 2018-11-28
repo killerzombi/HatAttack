@@ -32,10 +32,10 @@ public class EnemyManager : MonoBehaviour
         if (Unit4 != null)
             UCI4 = Unit4.GetComponent<UnitControllerInterface>();
 
-        if (UCI1 != null) UCI1.setEnemy();
-        if (UCI2 != null) UCI2.setEnemy();
-        if (UCI3 != null) UCI3.setEnemy();
-        if (UCI4 != null) UCI4.setEnemy();
+        if (UCI1 != null) { UCI1.setEnemy(); UCI1.Initialize(); }
+        if (UCI2 != null) { UCI2.setEnemy(); UCI2.Initialize(); }
+        if (UCI3 != null) { UCI3.setEnemy(); UCI3.Initialize(); }
+        if (UCI4 != null) { UCI4.setEnemy(); UCI4.Initialize(); }
 
     }
 }
