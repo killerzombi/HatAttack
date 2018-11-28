@@ -14,6 +14,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
                                         7600, 8500, 9450, 10450, 11500, 12600, 13750, 14950, 16200, 17500};
 
     protected int moveSpeed = 5;
+	protected int attackRange = 3;
     private float moveTime = 0.6f;
     private bool amIanEnemy = false;
 
@@ -25,6 +26,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     private Queue<Vector2Int> allPathPositions = null;
     private Queue<Queue<Vector2Int>> nextPaths = null;
     private Queue<Vector2Int> nextPathPositions = null;
+	private GameObject NTarget = null;
     private int currentRound = 0;
 
     private event TickManager.Tick tick;
@@ -76,13 +78,46 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     }
     private void LVLdown() { LeveL--; }
 
+	private void AttackNow()
+	{
+		if(!inMoveSys)
+		{
+			Debug.Log("Attacked " + NTarget);
+			UnitControllerInterface eCI = NTarget.GetComponent<UnitControllerInterface>();
+			if (eCI != null)
+			{
+				Queue<Vector2Int> Path = new Queue<Vector2Int>();
+				Path = eCI.pathFrom(position);
+				if(Path.Count < attackRange){
+					NTarget = null;
+					eCI.UnitAttacked(this.gameObject, attack);
+					tick -= AttackNow;
+				}
+				else 
+				{
+					MoveUnit(Path);
+					moveOnTick();
+				}
+			}
+			else 
+			{
+				Debug.Log("enemy doesnt have UCI: " + NTarget + " NAME: " + NTarget.gameObject.name);
+				NTarget = null;
+			}
+		}
+	}
+
     public float AttackUnit(GameObject target)
     {
-        Debug.Log("Attacked " + target);
+        Debug.Log("set to attack " + target.gameObject.name);
         UnitControllerInterface eCI = target.GetComponent<UnitControllerInterface>();
         if (eCI != null)
         {
-            return eCI.UnitAttacked(this.gameObject, attack);
+			if(NTarget == null){
+				Natarget = target;
+				tick += AttackNow;
+			}
+            return eCI.getAttacked(this.gameObject, attack);
         }
         else Debug.Log("enemy doesnt have UCI: " + target + " NAME: " + target.gameObject.name);
         return -1;
@@ -94,6 +129,8 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         if (eCI != null)
         {
             return eCI.unAttacked(this.gameObject, attack);
+			if(NTarget == null) { NTarget = target; tick += AttackNow; }
+			else {Debug.Log("NTarget already set!");}
         }
         else Debug.Log("on un: enemy doesnt have UCI: " + target + " NAME: " + target.gameObject.name);
         return -1;
@@ -113,6 +150,14 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
             }
             else Debug.Log("ATACKING enemy doesnt have UCI: " + attacker + " NAME: " + attacker.gameObject.name);
         }
+        return dTaken;
+    }
+	
+	public float getAttacked(GameObject attacker, float damage)
+    {
+        float dTaken = damage - defense;
+        if (dTaken < 0) dTaken = 0;
+        
         return dTaken;
     }
 

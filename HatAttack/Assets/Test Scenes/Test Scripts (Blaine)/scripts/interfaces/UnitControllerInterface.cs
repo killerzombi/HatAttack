@@ -16,6 +16,7 @@ public interface UnitControllerInterface
     float UnitAttacked(GameObject attacker, float damage); //returns damage taken
     float unAttacked(GameObject attacker, float damage);
     float unAttack(GameObject target);
+	float getAttacked(GameObject attacker, float damage);
     void getEXP(float exp);
     void ungetEXP(float exp);
 

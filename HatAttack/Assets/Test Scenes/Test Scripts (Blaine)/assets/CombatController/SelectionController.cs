@@ -47,7 +47,7 @@ public class SelectionController : MonoBehaviour
         if (ChoiceUI != null) ChoiceUI.SetActive(false);
         if (UCI != null && t)
         {
-            UCI.AttackUnit(cUCI.getSelectedUnit());
+            UCI.AttackUnit(cUCI.gameObject);
         }
     }
     // Use this for initialization

@@ -407,6 +407,10 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
                             break;
                         case UnitAction.action.Attack:
                             GameObject target = actions[unit].getTarget();
+							UnitControllerInterface aUCI = unit.GetComponent<UnitControllerInterface>();
+							if(aUCI != null){
+								aUCI.unattack(target);
+							} else Debug.Log("no UCI on unit: "+unit.gameObject.name+" in history!");
                             //AddCode unattack here.
                             break;
                         case UnitAction.action.Move:
@@ -415,7 +419,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface
                             {
                                 UCI.backMove(UCI.pathFrom(actions[unit].getFrom()),actions[unit].getFrom());
                             }
-                            else Debug.Log("no UCI on unit");
+                            else Debug.Log("no UCI on unit: "+unit.gameObject.name+" in history!");
                             break;
                         case UnitAction.action.Ability:
                             break;
