@@ -19,6 +19,10 @@ public interface UnitControllerInterface
     void getEXP(float exp);
     void ungetEXP(float exp);
 
+    void captueEnemy();
+    void setEnemy();
+    bool isEnemy();
+
     GameObject getSelectedUnit();
     Queue<Vector2Int> pathFrom(Vector2Int startingPoint);
 }
