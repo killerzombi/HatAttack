@@ -294,8 +294,13 @@ public class TickManager : MonoBehaviour
 			else
 			{
 				if(EMTimer > (Timer % (tickDelay/5f))){
+<<<<<<< HEAD
 					if(EMTick != null)
 						EMTick((int)(Timer/(tickDelay/5f)));
+=======
+					if(EMtick != null)
+						EMtick((int)(Timer/(tickDelay/5f)));
+>>>>>>> parent of 929ca8ab... Merge branch 'master' of https://github.com/killerzombi/HatAttack
 				}
 				EMTimer = (Timer % (tickDelay/5));
 			}

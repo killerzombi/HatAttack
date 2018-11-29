@@ -39,8 +39,14 @@ public class WorldTransferScript : MonoBehaviour {
         }	//the if statement below(V V V V V) needs to change to --> if(collision.gameObject.tag == "Enemy")	-->	then tag all enemies "Enemy" -- done
         if (collision.gameObject.tag == "Enemy") 
         {
+<<<<<<< HEAD
             //StartCoroutine(MoveSpawnPoint(sceneImIn)); //starts a coroutine with this scene we're currently in
 			targetScene = "currentCombatScene"; //using targetScene for the DoneLoading function, changing sceneImIn to currentCombatScene won't let us ever leave combat
+=======
+            targetScene = sceneImIn;
+            //StartCoroutine(MoveSpawnPoint(sceneImIn)); //starts a coroutine with this scene we're currently in
+			sceneImIn = "currentCombatScene"; //using targetScene for the DoneLoading function, changing sceneImIn to currentCombatScene won't let us ever leave combat
+>>>>>>> parent of 929ca8ab... Merge branch 'master' of https://github.com/killerzombi/HatAttack
              //sets the scene we're in to the target scene, will be combat scene in final project (probably)
             StartCoroutine(WaitOnSpawn(targetScene)); 
             combatSpawn.transform.position = this.gameObject.transform.position;
@@ -70,8 +76,12 @@ public class WorldTransferScript : MonoBehaviour {
             camera.gameObject.SetActive(false);// --- upon leaving the battle screen
         }
     }
+<<<<<<< HEAD
 
 
+=======
+    
+>>>>>>> parent of 929ca8ab... Merge branch 'master' of https://github.com/killerzombi/HatAttack
     IEnumerator WaitOnSpawn(string toLoad) //this function now handles all of loading
     {
 		AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(toLoad);
