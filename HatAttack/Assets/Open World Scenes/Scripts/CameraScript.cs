@@ -26,7 +26,13 @@ public class CameraScript : MonoBehaviour {
             foreach (GameObject g in GameObject.FindGameObjectsWithTag("Player"))
             {
                 WorldTransferScript w = null;
-                if (g.name == "Player") if (null != (w = g.GetComponent<WorldTransferScript>())) if (w.sceneImIn != "currentCombatScene") character = g;
+                if (g.name == "Player") { 
+                    if (null != (w = g.GetComponent<WorldTransferScript>()))
+                    {
+                        if (w.sceneImIn != "currentCombatScene") character = g;
+                    }
+                    else Debug.Log("couldn't Get World Transfer Script");
+                }
                 if (g.name == "CombatPlayer") c = g;
             }
             if (character == null) character = c;
