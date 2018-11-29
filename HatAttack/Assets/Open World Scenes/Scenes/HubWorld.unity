@@ -114,6 +114,350 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &35736921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 188020, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 35736922}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_L_FINGER_A_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &35736922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 425600, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 35736921}
+  m_LocalRotation: {x: 0.00267928, y: 0.03652877, z: -0.08293915, w: 0.9958813}
+  m_LocalPosition: {x: -0.9825549, y: -0.00000045776366, z: 0.000000047683713}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1585606493}
+  m_Father: {fileID: 132703058}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -24.640224, y: -9.362663, z: -40.096752}
+--- !u!1 &53765714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 176938, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 53765715}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_R_FOREARM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &53765715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 419716, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 53765714}
+  m_LocalRotation: {x: -0.000000008627579, y: -0.000000015987371, z: -0.49731168,
+    w: 0.86757195}
+  m_LocalPosition: {x: -1.0360738, y: 0.00000030517577, z: -0.00000015258789}
+  m_LocalScale: {x: 0.9999999, y: 0.99999994, z: 1.0000001}
+  m_Children:
+  - {fileID: 802480053}
+  m_Father: {fileID: 1991471316}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.000042194897, y: 0.000016075051, z: -143.79443}
+--- !u!1 &61431415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 193528, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 61431416}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L UpperArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &61431416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 487414, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 61431415}
+  m_LocalRotation: {x: 0.11185065, y: -0.17848675, z: -0.00704339, w: 0.97753894}
+  m_LocalPosition: {x: -0.41871318, y: 0, z: 0.00000030517577}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1.0000002}
+  m_Children:
+  - {fileID: 764100980}
+  m_Father: {fileID: 1408103109}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 6.5035777, y: -35.063477, z: 30.250336}
+--- !u!1 &78648479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 128370, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 78648480}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WHIP_010
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &78648480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 457662, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 78648479}
+  m_LocalRotation: {x: 0.00023200453, y: -0.000021012347, z: -0.0001358155, w: 1}
+  m_LocalPosition: {x: -1.0009766, y: -0.00000030517577, z: -0.00000030517577}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 0.9999999}
+  m_Children:
+  - {fileID: 1745399330}
+  m_Father: {fileID: 1462764908}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.23580675, y: 10.546931, z: 16.090618}
+--- !u!1 &88700429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 156880, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 88700430}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L HorseLink
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &88700430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 452580, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 88700429}
+  m_LocalRotation: {x: -0.000000056156168, y: 0.000000015163696, z: -0.33377853, w: 0.94265157}
+  m_LocalPosition: {x: -0.86890846, y: 0.000012472274, z: -0.000016026128}
+  m_LocalScale: {x: 0.99999994, y: 1.0000001, z: 1.0000001}
+  m_Children:
+  - {fileID: 168379578}
+  m_Father: {fileID: 1152100362}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.000002559188, y: -0.0000024170968, z: -38.997}
+--- !u!1 &132703057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 192576, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 132703058}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_L_FINGER_A_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &132703058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 474818, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 132703057}
+  m_LocalRotation: {x: 0.0040667513, y: -0.019005733, z: 0.18099052, w: 0.98329276}
+  m_LocalPosition: {x: -0.3671652, y: -0.11091049, z: 0.00011663675}
+  m_LocalScale: {x: 1.0000004, y: 1.0000004, z: 1.0000001}
+  m_Children:
+  - {fileID: 35736922}
+  m_Father: {fileID: 152776488}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -22.365034, y: -1.587576, z: -36.14197}
+--- !u!1 &152776487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 147542, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 152776488}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_L_HAND
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &152776488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 405176, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 152776487}
+  m_LocalRotation: {x: 0.00029306565, y: 0.0010168011, z: -0.07401615, w: 0.9972565}
+  m_LocalPosition: {x: -0.86937743, y: -0.00000015258789, z: 0.0000000023841857}
+  m_LocalScale: {x: 0.9999998, y: 0.9999998, z: 1}
+  m_Children:
+  - {fileID: 132703058}
+  - {fileID: 703918379}
+  - {fileID: 1331104467}
+  m_Father: {fileID: 1152276952}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.042115066, y: 0.11371009, z: -8.489359}
+--- !u!1 &165558162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 150162, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 165558163}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Finger32
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &165558163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 456312, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 165558162}
+  m_LocalRotation: {x: 0.000000014087507, y: -0.000000004856622, z: -0.32592237, w: 0.94539654}
+  m_LocalPosition: {x: -0.11791473, y: 0.00000015258789, z: 0}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1012509994}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.00000010185089, y: 0.00000041455846, z: -76.19666}
+--- !u!1 &168379577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 192292, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 168379578}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Foot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &168379578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 460700, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 168379577}
+  m_LocalRotation: {x: 0.01495356, y: 0.063479304, z: 0.10602879, w: 0.99222213}
+  m_LocalPosition: {x: -0.35938576, y: -0.000005446374, z: -0.000021916243}
+  m_LocalScale: {x: 1.0000002, y: 0.99999994, z: 1.0000001}
+  m_Children:
+  - {fileID: 311332134}
+  m_Father: {fileID: 88700430}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -6.6571813, y: 11.472419, z: 12.259001}
+--- !u!1 &215945017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 117638, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 215945018}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ Spine2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &215945018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 476544, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 215945017}
+  m_LocalRotation: {x: -2.6532624e-14, y: -0.00000012142083, z: 0.04377734, w: 0.9990413}
+  m_LocalPosition: {x: -0.23109679, y: -0.0005245209, z: -0.0000000014548368}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 631654081}
+  - {fileID: 1290641311}
+  - {fileID: 1991471316}
+  m_Father: {fileID: 889434961}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.30126905, y: 0.15615427, z: -8.922047}
+--- !u!1 &239725888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 125888, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 239725889}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Toe01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &239725889
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 480110, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 239725888}
+  m_LocalRotation: {x: 0, y: 0, z: -0.000000007450581, w: 1}
+  m_LocalPosition: {x: -0.18637668, y: 0, z: -0.000000076293944}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 311332134}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.00000005336085, y: -0.00000039020125, z: 0}
 --- !u!1 &251111318
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,6 +543,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 251111318}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &275338925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 135982, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 275338926}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_R_FINGER_C_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &275338926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 489402, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 275338925}
+  m_LocalRotation: {x: 0.000033523273, y: 0.00069869886, z: 0.045868475, w: 0.99894726}
+  m_LocalPosition: {x: -0.7394333, y: -0.0000009155273, z: 0.00000006198883}
+  m_LocalScale: {x: 0.99999994, y: 1.0000001, z: 0.99999976}
+  m_Children:
+  - {fileID: 1078758895}
+  m_Father: {fileID: 835770627}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 5.1582603, y: -21.55875, z: 36.691242}
 --- !u!1 &297189943
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +664,440 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 297189943}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &311332133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 136774, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 311332134}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Toe0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &311332134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 465874, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 311332133}
+  m_LocalRotation: {x: -0.000000011195257, y: 0.0000000098781685, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.3182211, y: 0.36011967, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 239725889}
+  m_Father: {fileID: 168379578}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.000054479817, y: -0.000052933905, z: -90.00006}
+--- !u!1 &326675845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 105480, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 326675846}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WHIP_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &326675846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 446776, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 326675845}
+  m_LocalRotation: {x: -0.646591, y: -0.0018419226, z: -0.0015613445, w: 0.762833}
+  m_LocalPosition: {x: -0.9916938, y: 0, z: 0.00000061035155}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 0.9999997}
+  m_Children:
+  - {fileID: 1855529098}
+  m_Father: {fileID: 338826911}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 6.8147993, y: -148.11652, z: -179.55882}
+--- !u!1 &338826910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 157244, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 338826911}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WHIP_HANDLE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &338826911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 481500, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 338826910}
+  m_LocalRotation: {x: 0.7070181, y: 0.23260294, z: -0.65068054, w: 0.15045363}
+  m_LocalPosition: {x: -0.3369795, y: 0.15479279, z: -0.32505926}
+  m_LocalScale: {x: 1, y: 0.9999999, z: 0}
+  m_Children:
+  - {fileID: 326675846}
+  m_Father: {fileID: 1094861345}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 31.027359, y: -97.237495, z: 171.06346}
+--- !u!1 &351749395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 173842, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 351749396}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Finger1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &351749396
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 498180, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 351749395}
+  m_LocalRotation: {x: 0.00029827683, y: -0.07691093, z: -0.03341076, w: 0.99647796}
+  m_LocalPosition: {x: -0.36371544, y: -0.03141754, z: -0.14564429}
+  m_LocalScale: {x: 0.9999999, y: 1.0000001, z: 1.0000004}
+  m_Children:
+  - {fileID: 742426699}
+  m_Father: {fileID: 1612891115}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -0.26039952, y: -8.818305, z: -41.97433}
+--- !u!1 &370201919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 122594, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 370201920}
+  - component: {fileID: 370201921}
+  m_Layer: 0
+  m_Name: DEMON_LORD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &370201920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 427994, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 370201919}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1087522558}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &370201921
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 13727200, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 370201919}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 9a8c63f5db0a78d4f9e6116a5408d380, type: 2}
+  - {fileID: 2100000, guid: 8db30438425e4d34fb313c1fc15eb67d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 4
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 4300000, guid: f260fcbfd40957c448d4cac7726f12b7, type: 3}
+  m_Bones:
+  - {fileID: 1782309162}
+  - {fileID: 1152100362}
+  - {fileID: 1408103109}
+  - {fileID: 1322502399}
+  - {fileID: 1719209636}
+  - {fileID: 351749396}
+  - {fileID: 1400099576}
+  - {fileID: 1391633981}
+  - {fileID: 584666712}
+  - {fileID: 742426699}
+  - {fileID: 976347588}
+  - {fileID: 598960007}
+  - {fileID: 1529457111}
+  - {fileID: 1012509994}
+  - {fileID: 165558163}
+  - {fileID: 168379578}
+  - {fileID: 764100980}
+  - {fileID: 1612891115}
+  - {fileID: 88700430}
+  - {fileID: 573235741}
+  - {fileID: 1550674835}
+  - {fileID: 1242206880}
+  - {fileID: 631654081}
+  - {fileID: 889434961}
+  - {fileID: 1657161325}
+  - {fileID: 754040104}
+  - {fileID: 215945018}
+  - {fileID: 1381043167}
+  - {fileID: 1290641311}
+  - {fileID: 61431416}
+  - {fileID: 1991471316}
+  - {fileID: 457354502}
+  - {fileID: 1382786202}
+  - {fileID: 311332134}
+  - {fileID: 1627331610}
+  - {fileID: 1152276952}
+  - {fileID: 703918379}
+  - {fileID: 152776488}
+  - {fileID: 132703058}
+  - {fileID: 1331104467}
+  - {fileID: 1238995631}
+  - {fileID: 1869735833}
+  - {fileID: 35736922}
+  - {fileID: 579849732}
+  - {fileID: 1716628890}
+  - {fileID: 1585606493}
+  - {fileID: 1666708778}
+  - {fileID: 239725889}
+  - {fileID: 663033724}
+  - {fileID: 53765715}
+  - {fileID: 1094861345}
+  - {fileID: 1734364508}
+  - {fileID: 1030137957}
+  - {fileID: 425817436}
+  - {fileID: 835770627}
+  - {fileID: 275338926}
+  - {fileID: 802480053}
+  - {fileID: 1245399358}
+  - {fileID: 1078758895}
+  - {fileID: 1108798612}
+  - {fileID: 1355776125}
+  - {fileID: 1687100039}
+  - {fileID: 461631201}
+  - {fileID: 952796125}
+  - {fileID: 623776128}
+  - {fileID: 2061554886}
+  - {fileID: 519271015}
+  - {fileID: 813876494}
+  - {fileID: 1685296611}
+  - {fileID: 541796179}
+  - {fileID: 1296982545}
+  - {fileID: 1799514329}
+  - {fileID: 1725380832}
+  - {fileID: 514562166}
+  - {fileID: 1792485177}
+  - {fileID: 561150606}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1657161325}
+  m_AABB:
+    m_Center: {x: -1.6213192, y: -1.09185, z: 0.04230666}
+    m_Extent: {x: 4.454613, y: 4.1298923, z: 5.1450806}
+  m_DirtyAABB: 0
+--- !u!1 &425817435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 158632, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 425817436}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_R_FINGER_B_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &425817436
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 460444, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 425817435}
+  m_LocalRotation: {x: -0.002994107, y: 0.0064666695, z: 0.17146404, w: 0.98516464}
+  m_LocalPosition: {x: -0.881351, y: -0.00000061035155, z: -0.00000021934508}
+  m_LocalScale: {x: 0.9999999, y: 0.99999994, z: 0.9999998}
+  m_Children: []
+  m_Father: {fileID: 1030137957}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 3.3981245, y: -18.812498, z: 25.354404}
+--- !u!1 &457354501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 117346, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 457354502}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R UpperArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &457354502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 444544, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 457354501}
+  m_LocalRotation: {x: -0.111850634, y: 0.17848669, z: -0.0070433924, w: 0.97753894}
+  m_LocalPosition: {x: -0.41871315, y: 0, z: -0.00000030517577}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1.0000001}
+  m_Children:
+  - {fileID: 663033724}
+  m_Father: {fileID: 1381043167}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -4.3052764, y: 42.88342, z: 34.087715}
+--- !u!1 &461631200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 132060, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 461631201}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Toe01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &461631201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 448114, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 461631200}
+  m_LocalRotation: {x: -0.0000000074505797, y: -9.3132246e-10, z: -6.9388922e-18,
+    w: 1}
+  m_LocalPosition: {x: -0.18637677, y: 0, z: 0.000000076293944}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+  m_Children: []
+  m_Father: {fileID: 561150606}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -3.665092e-16, y: -0.00000019676813, z: -0.0000001067217}
+--- !u!1 &514562165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 135460, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 514562166}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Finger11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &514562166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 426680, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 514562165}
+  m_LocalRotation: {x: 0.000000003469056, y: 0.00000002959973, z: -0.11640221, w: 0.9932022}
+  m_LocalPosition: {x: -0.13904053, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1.0000001}
+  m_Children:
+  - {fileID: 1725380832}
+  m_Father: {fileID: 541796179}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.0000010861191, y: 0.00000086323456, z: -51.52274}
+--- !u!1 &519271014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 193900, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 519271015}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Finger2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &519271015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 480624, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519271014}
+  m_LocalRotation: {x: 0.04703433, y: -0.00898755, z: -0.1394535, w: 0.9890702}
+  m_LocalPosition: {x: -0.36570686, y: -0.013980102, z: 0.02638977}
+  m_LocalScale: {x: 0.9999994, y: 0.9999995, z: 0.99999976}
+  m_Children:
+  - {fileID: 1296982545}
+  m_Father: {fileID: 1094861345}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 5.194319, y: -1.7778424, z: -34.28536}
 --- !u!1 &519953192
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +1188,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519953192}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &541796178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 126676, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 541796179}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Finger1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &541796179
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 487464, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 541796178}
+  m_LocalRotation: {x: -0.0002982614, y: 0.07691092, z: -0.033410776, w: 0.99647796}
+  m_LocalPosition: {x: -0.3637153, y: -0.031417236, z: 0.14564429}
+  m_LocalScale: {x: 0.9999997, y: 0.99999994, z: 1.0000002}
+  m_Children:
+  - {fileID: 514562166}
+  m_Father: {fileID: 1094861345}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0.260401, y: 8.818304, z: -41.97433}
 --- !u!1 &558265318 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100076, guid: d3d3cb8ade0d8364aa268ba27a3c7985,
@@ -400,6 +1240,129 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1314002634710796, guid: 9163dd9f9a72d3b41919513ce013c2e1,
     type: 2}
   bulletSpawn: {fileID: 1892751483}
+--- !u!1 &561150605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 105026, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 561150606}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Toe0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &561150606
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 468382, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 561150605}
+  m_LocalRotation: {x: 0.000000005268356, y: -0.000000005268356, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.31822112, y: 0.3601196, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+  m_Children:
+  - {fileID: 461631201}
+  m_Father: {fileID: 1666708778}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.00017430975, y: 0.000054908658, z: -89.99988}
+--- !u!1 &573235740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 179086, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 573235741}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Thigh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &573235741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 467934, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 573235740}
+  m_LocalRotation: {x: -0.17254698, y: 0.9779255, z: 0.013621628, w: 0.1170637}
+  m_LocalPosition: {x: 0.00000030517577, y: 0.00000037193297, z: 0.20174453}
+  m_LocalScale: {x: 1, y: 1, z: 0.9999999}
+  m_Children:
+  - {fileID: 1152100362}
+  m_Father: {fileID: 1657161325}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -25.463814, y: 167.04283, z: -19.575}
+--- !u!1 &579849731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 182652, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 579849732}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_L_FINGER_B_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &579849732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 455310, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 579849731}
+  m_LocalRotation: {x: 0.0029943336, y: 0.0064671123, z: -0.17146395, w: 0.98516464}
+  m_LocalPosition: {x: -0.881351, y: 0.00000030517577, z: 0.00000012874602}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1238995631}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 1.0631171, y: -17.435389, z: -25.28777}
+--- !u!1 &584666711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 121632, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 584666712}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Finger3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &584666712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 424586, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 584666711}
+  m_LocalRotation: {x: -0.07745952, y: 0.076329365, z: -0.23208599, w: 0.96659714}
+  m_LocalPosition: {x: -0.36623657, y: 0.0014459228, z: 0.12052398}
+  m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000001}
+  m_Children:
+  - {fileID: 1012509994}
+  m_Father: {fileID: 1612891115}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -1.1026518, y: 24.65239, z: -66.71108}
 --- !u!1 &591425777
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +1453,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 591425777}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &598960006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 166810, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 598960007}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Finger21
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &598960007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 406144, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 598960006}
+  m_LocalRotation: {x: 0, y: 0, z: -0.18713754, w: 0.9823337}
+  m_LocalPosition: {x: -0.16022293, y: 0, z: 0.00000015258789}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
+  m_Children:
+  - {fileID: 1529457111}
+  m_Father: {fileID: 1391633981}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.0000014701438, y: -0.00000026649977, z: -79.725296}
 --- !u!1 &606458871
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +1589,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a3e439714ccee49b5ef69ad2d57849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &623776127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 161092, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 623776128}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Finger02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &623776128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 426462, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 623776127}
+  m_LocalRotation: {x: 0.000000035886686, y: 0.000000022102085, z: -0.23126723, w: 0.97289026}
+  m_LocalPosition: {x: -0.13304847, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+  m_Children: []
+  m_Father: {fileID: 2061554886}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.0000017085808, y: 0.00000085170325, z: -36.939346}
+--- !u!1 &631654080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 111816, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 631654081}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ Neck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &631654081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 431664, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 631654080}
+  m_LocalRotation: {x: -1.4029512e-13, y: 0.00000034354218, z: -0.12386145, w: 0.99229956}
+  m_LocalPosition: {x: -0.3944418, y: -0.14937761, z: 0.000000046268397}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1408103109}
+  - {fileID: 1242206880}
+  - {fileID: 1381043167}
+  m_Father: {fileID: 215945018}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.0000048503157, y: 0.00003931428, z: -14.230019}
 --- !u!1 &632577912
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,11 +1781,385 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 633121111}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &650787582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 149286, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 650787583}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WHIP_03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &650787583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 444792, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 650787582}
+  m_LocalRotation: {x: -0.00799462, y: 0.00051060464, z: 0.0035194496, w: 0.99996173}
+  m_LocalPosition: {x: -1.0019817, y: 0.0000007629394, z: 0}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999976}
+  m_Children:
+  - {fileID: 1840712535}
+  m_Father: {fileID: 1855529098}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -16.375462, y: -34.596676, z: 10.261085}
+--- !u!1 &663033723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 154600, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 663033724}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Forearm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &663033724
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 407316, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 663033723}
+  m_LocalRotation: {x: -0.0000000070891955, y: -0.0000000022922573, z: 0.30766162,
+    w: 0.9514958}
+  m_LocalPosition: {x: -0.7121803, y: -0.000000038146972, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+  m_Children:
+  - {fileID: 1094861345}
+  m_Father: {fileID: 457354502}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.00000045777756, y: 0.000004807929, z: 39.56109}
 --- !u!4 &695473858 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 468664, guid: d731c9176197cd744a91c4b41e417c71,
     type: 2}
   m_PrefabInternal: {fileID: 1012839835}
+--- !u!1 &703918378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 191258, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 703918379}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_L_FINGER_B_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &703918379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 485158, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 703918378}
+  m_LocalRotation: {x: 0.00071134843, y: -0.0016532978, z: -0.121905826, w: 0.99254006}
+  m_LocalPosition: {x: -0.35750428, y: 0.043817747, z: 0.00002354145}
+  m_LocalScale: {x: 1.0000004, y: 1.0000002, z: 0.99999994}
+  m_Children:
+  - {fileID: 1238995631}
+  m_Father: {fileID: 152776488}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -19.249752, y: -2.5836976, z: -72.55847}
+--- !u!1 &742426698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 129606, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 742426699}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Finger11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &742426699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 401074, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 742426698}
+  m_LocalRotation: {x: 0.000000026130675, y: -0.00000003306879, z: -0.11640222, w: 0.9932022}
+  m_LocalPosition: {x: -0.13904053, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1}
+  m_Children:
+  - {fileID: 976347588}
+  m_Father: {fileID: 351749396}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.000002202174, y: -0.00000065967197, z: -51.522743}
+--- !u!1 &754040103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 181592, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 754040104}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ Spine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &754040104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 416658, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 754040103}
+  m_LocalRotation: {x: -0.000002080476, y: 0.000000693676, z: -0.000398159, w: 0.99999994}
+  m_LocalPosition: {x: -0.19498703, y: -0.00021089554, z: 0.00000027070055}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
+  m_Children:
+  - {fileID: 889434961}
+  m_Father: {fileID: 1657161325}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 7.9682612, y: -0.068475746, z: -14.1793165}
+--- !u!1 &764100979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 117520, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 764100980}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Forearm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &764100980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 479454, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764100979}
+  m_LocalRotation: {x: 0.0000000141783945, y: 0.0000000045845154, z: 0.30766162, w: 0.9514959}
+  m_LocalPosition: {x: -0.7121803, y: 0, z: -0.00000030517577}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_Children:
+  - {fileID: 1612891115}
+  m_Father: {fileID: 61431416}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.0000032827597, y: -0.0000012709398, z: 54.799545}
+--- !u!1 &767165635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 184042, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 767165636}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WHIP_05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &767165636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 428270, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 767165635}
+  m_LocalRotation: {x: 0.012261889, y: -0.0008352037, z: -0.0053768675, w: 0.99991006}
+  m_LocalPosition: {x: -1.0004846, y: -0.00000030517577, z: 0.00000045776366}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 0.99999994}
+  m_Children:
+  - {fileID: 2062966188}
+  m_Father: {fileID: 1840712535}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 1.0820376, y: -16.913572, z: -22.553785}
+--- !u!1 &802480052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 193412, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 802480053}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_R_HAND
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &802480053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 458884, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 802480052}
+  m_LocalRotation: {x: -0.00029302505, y: 0.0010168047, z: 0.074016, w: 0.9972565}
+  m_LocalPosition: {x: -0.86937743, y: 0, z: 0.00000030755996}
+  m_LocalScale: {x: 1.0000001, y: 1.0000002, z: 1}
+  m_Children:
+  - {fileID: 1245399358}
+  - {fileID: 1734364508}
+  - {fileID: 835770627}
+  m_Father: {fileID: 53765715}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.042109597, y: 0.11371432, z: 8.489333}
+--- !u!1 &813876493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 124610, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 813876494}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Finger32
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &813876494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 405586, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 813876493}
+  m_LocalRotation: {x: 0.0000000021871307, y: -0.000000016515818, z: -0.3259224, w: 0.94539654}
+  m_LocalPosition: {x: -0.117915034, y: 0, z: -0.00000015258789}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 0.99999994}
+  m_Children: []
+  m_Father: {fileID: 1792485177}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.00000040740355, y: 0.0000016582338, z: -76.19666}
+--- !u!1 &824850171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 115420, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 824850172}
+  m_Layer: 0
+  m_Name: DEMON_LORD_
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &824850172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 489804, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 824850171}
+  m_LocalRotation: {x: -0.50000036, y: 0.49999967, z: 0.49999967, w: 0.50000036}
+  m_LocalPosition: {x: -0, y: 2.54, z: 0}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_Children:
+  - {fileID: 1657161325}
+  m_Father: {fileID: 1087522558}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -84.65764, y: 10.356416, z: 89.999985}
+--- !u!1 &835770626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 135954, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 835770627}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_R_FINGER_C_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &835770627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 409090, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 835770626}
+  m_LocalRotation: {x: -0.00077431987, y: -0.0007080926, z: 0.522642, w: 0.8525516}
+  m_LocalPosition: {x: -0.2595184, y: -0.1659674, z: 0.000054962635}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 0.99999994}
+  m_Children:
+  - {fileID: 275338926}
+  m_Father: {fileID: 802480053}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 20.311804, y: 12.550885, z: 131.91187}
+--- !u!1 &889434960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 180070, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 889434961}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ Spine1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &889434961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 477242, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 889434960}
+  m_LocalRotation: {x: -4.07621e-14, y: -4.440892e-16, z: -1.8102008e-29, w: 1}
+  m_LocalPosition: {x: -0.26497895, y: -0.00018405914, z: -5.1049937e-10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 215945018}
+  m_Father: {fileID: 754040104}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 2.5105438, y: 2.1700203, z: -13.905001}
 --- !u!1 &950355107
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,6 +2250,100 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 950355107}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &952796124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 120172, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 952796125}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Finger0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &952796125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 490980, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 952796124}
+  m_LocalRotation: {x: -0.62737536, y: 0.47576013, z: 0.16598903, w: 0.5937173}
+  m_LocalPosition: {x: -0.02485939, y: 0.02161682, z: 0.094717555}
+  m_LocalScale: {x: 1.0000004, y: 1.0000004, z: 0.99999994}
+  m_Children:
+  - {fileID: 2061554886}
+  m_Father: {fileID: 1094861345}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -54.137074, y: 155.67126, z: -97.17281}
+--- !u!1 &976347587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 157330, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 976347588}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Finger12
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &976347588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 497332, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 976347587}
+  m_LocalRotation: {x: -0.000000021949958, y: 0.0000000042189567, z: -0.18875296,
+    w: 0.9820246}
+  m_LocalPosition: {x: -0.14106369, y: 0, z: 0.000000076293944}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1.0000001}
+  m_Children: []
+  m_Father: {fileID: 742426699}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.0000033448625, y: -0.0000015156141, z: -59.91377}
+--- !u!1 &1012509993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 179800, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1012509994}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Finger31
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1012509994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 424634, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1012509993}
+  m_LocalRotation: {x: -0.000000010939335, y: 0.0000000022871485, z: -0.20465057,
+    w: 0.9788351}
+  m_LocalPosition: {x: -0.14194068, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 165558163}
+  m_Father: {fileID: 584666712}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.0000011921537, y: -0.0000032360902, z: -61.771812}
 --- !u!1001 &1012839835
 Prefab:
   m_ObjectHideFlags: 0
@@ -964,27 +2489,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 468664, guid: d731c9176197cd744a91c4b41e417c71, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 173
+      value: 11.947
       objectReference: {fileID: 0}
     - target: {fileID: 468664, guid: d731c9176197cd744a91c4b41e417c71, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.628
+      value: 1.32
       objectReference: {fileID: 0}
     - target: {fileID: 468664, guid: d731c9176197cd744a91c4b41e417c71, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.367
+      value: -0.36615223
       objectReference: {fileID: 0}
     - target: {fileID: 476716, guid: d731c9176197cd744a91c4b41e417c71, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -58243
+      value: 11.543
       objectReference: {fileID: 0}
     - target: {fileID: 476716, guid: d731c9176197cd744a91c4b41e417c71, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.685
+      value: 0.00000018514
       objectReference: {fileID: 0}
     - target: {fileID: 476716, guid: d731c9176197cd744a91c4b41e417c71, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.131
+      value: -0.0000019073
       objectReference: {fileID: 0}
     - target: {fileID: 476716, guid: d731c9176197cd744a91c4b41e417c71, type: 2}
       propertyPath: m_LocalScale.z
@@ -1004,35 +2529,35 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 479698, guid: d731c9176197cd744a91c4b41e417c71, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.000000003510625
+      value: -0.0000000034399705
       objectReference: {fileID: 0}
     - target: {fileID: 479698, guid: d731c9176197cd744a91c4b41e417c71, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.6865854
+      value: -0.6797745
       objectReference: {fileID: 0}
     - target: {fileID: 479698, guid: d731c9176197cd744a91c4b41e417c71, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.000000007554077
+      value: -0.000000007586539
       objectReference: {fileID: 0}
     - target: {fileID: 479698, guid: d731c9176197cd744a91c4b41e417c71, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.7270492
+      value: 0.7334212
       objectReference: {fileID: 0}
     - target: {fileID: 479698, guid: d731c9176197cd744a91c4b41e417c71, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -30330
+      value: 0.00041168756
       objectReference: {fileID: 0}
     - target: {fileID: 479698, guid: d731c9176197cd744a91c4b41e417c71, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.661
+      value: -0.00000047683716
       objectReference: {fileID: 0}
     - target: {fileID: 479698, guid: d731c9176197cd744a91c4b41e417c71, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.055
+      value: -0.00000008940697
       objectReference: {fileID: 0}
     - target: {fileID: 479698, guid: d731c9176197cd744a91c4b41e417c71, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -446.721
+      value: -85.652
       objectReference: {fileID: 0}
     - target: {fileID: 496706, guid: d731c9176197cd744a91c4b41e417c71, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1069,16 +2594,216 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d731c9176197cd744a91c4b41e417c71, type: 2}
   m_IsPrefabAsset: 0
---- !u!4 &1087522558 stripped
+--- !u!1 &1030137956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 197962, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1030137957}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_R_FINGER_B_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1030137957
 Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 422914, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1030137956}
+  m_LocalRotation: {x: -0.00007514757, y: -0.0021620018, z: 0.06776985, w: 0.99769866}
+  m_LocalPosition: {x: -0.8521802, y: -0.00000030517577, z: 0.00000037908552}
+  m_LocalScale: {x: 1.0000002, y: 1.0000001, z: 1.0000002}
+  m_Children:
+  - {fileID: 425817436}
+  m_Father: {fileID: 1734364508}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 12.548574, y: -17.02087, z: 36.099045}
+--- !u!1 &1054407200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 121444, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1054407201}
+  m_Layer: 0
+  m_Name: DEMON_LORD_SWORD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1054407201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 414914, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1054407200}
+  m_LocalRotation: {x: -0.0922767, y: -0.70468235, z: -0.007805574, w: 0.7034536}
+  m_LocalPosition: {x: -0.3170681, y: 0.0841394, z: 0.006278305}
+  m_LocalScale: {x: 0.9999999, y: 0, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1612891115}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: -8.095628, y: -90.58939, z: 6.9075866}
+--- !u!1 &1078758894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 164788, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1078758895}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_R_FINGER_C_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1078758895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 465604, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1078758894}
+  m_LocalRotation: {x: -0.00007353384, y: -0.00052483584, z: 0.20959014, w: 0.97778916}
+  m_LocalPosition: {x: -0.8780147, y: 0.00000061035155, z: 0.00000023841858}
+  m_LocalScale: {x: 0.9999998, y: 1.0000001, z: 0.99999994}
+  m_Children: []
+  m_Father: {fileID: 275338926}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -2.3143415, y: -20.431389, z: 26.021595}
+--- !u!1 &1087522557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 118136, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1087522558}
+  - component: {fileID: 1087522563}
+  m_Layer: 0
+  m_Name: DemonLord
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1087522558
+Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 410588, guid: 671306f7395630a4f8cb96159b796198,
     type: 2}
-  m_PrefabInternal: {fileID: 2063479807}
---- !u!95 &1087522563 stripped
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1087522557}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_Children:
+  - {fileID: 370201920}
+  - {fileID: 824850172}
+  - {fileID: 1178663176}
+  - {fileID: 1694266490}
+  m_Father: {fileID: 1145341449}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1087522563
 Animator:
-  m_CorrespondingSourceObject: {fileID: 95379880618976982, guid: 671306f7395630a4f8cb96159b796198,
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1087522557}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe25f230703ea2e4099d0b60c3620d8d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1094861344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114966, guid: 671306f7395630a4f8cb96159b796198,
     type: 2}
-  m_PrefabInternal: {fileID: 2063479807}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1094861345}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1094861345
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 462408, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1094861344}
+  m_LocalRotation: {x: 0.8300686, y: -0.12948506, z: -0.029213302, w: 0.5416331}
+  m_LocalPosition: {x: -0.65403974, y: 0.000000038146972, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0.99999994}
+  m_Children:
+  - {fileID: 952796125}
+  - {fileID: 541796179}
+  - {fileID: 519271015}
+  - {fileID: 1685296611}
+  - {fileID: 338826911}
+  m_Father: {fileID: 663033724}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 41.327305, y: -88.60982, z: -113.4948}
+--- !u!1 &1108798611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 134716, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1108798612}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_R_FINGER_A_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1108798612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 418166, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1108798611}
+  m_LocalRotation: {x: -0.0026793755, y: 0.036528934, z: 0.08293911, w: 0.9958813}
+  m_LocalPosition: {x: -0.9825549, y: 0.0000007629394, z: -0.0000000667572}
+  m_LocalScale: {x: 0.9999995, y: 0.99999976, z: 1.0000001}
+  m_Children:
+  - {fileID: 1355776125}
+  m_Father: {fileID: 1245399358}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 14.522614, y: -20.343317, z: 41.230408}
 --- !u!1 &1145341443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,6 +3297,165 @@ MonoBehaviour:
   DirectMove: 1
   cam: {fileID: 606458873}
   anim: {fileID: 1490228994}
+--- !u!1 &1152100361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 179212, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1152100362}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Calf
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1152100362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 489166, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152100361}
+  m_LocalRotation: {x: 0.000000012107189, y: -0.000000022351736, z: 0.41747916, w: 0.9086865}
+  m_LocalPosition: {x: -0.94671845, y: -0.0000026542693, z: 0.0000010430814}
+  m_LocalScale: {x: 0.9999999, y: 0.99999994, z: 1}
+  m_Children:
+  - {fileID: 88700430}
+  m_Father: {fileID: 573235741}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.0000013571699, y: 0.0000016473914, z: 49.351}
+--- !u!1 &1152276951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 137228, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1152276952}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_L_FOREARM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1152276952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 480452, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152276951}
+  m_LocalRotation: {x: 0.000000014901323, y: 2.2228369e-10, z: 0.49731147, w: 0.86757207}
+  m_LocalPosition: {x: -1.0360732, y: 0.00000030517577, z: -0.00000012636184}
+  m_LocalScale: {x: 0.99999976, y: 1, z: 1}
+  m_Children:
+  - {fileID: 152776488}
+  m_Father: {fileID: 1290641311}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.000012118065, y: 0.0000065325426, z: 144.54698}
+--- !u!1 &1178663175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 160222, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1178663176}
+  - component: {fileID: 1178663178}
+  - component: {fileID: 1178663177}
+  m_Layer: 0
+  m_Name: FIRE_SWORD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1178663176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 499938, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1178663175}
+  m_LocalRotation: {x: -0.26641834, y: -0.06509369, z: -0.4141995, w: 0.8678841}
+  m_LocalPosition: {x: -1.9182223, y: 2.3261733, z: 0.43414813}
+  m_LocalScale: {x: 1.0000002, y: 0.9999998, z: 0.9999997}
+  m_Children: []
+  m_Father: {fileID: 1087522558}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1178663177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 11408642, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1178663175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55daa38de30c12c40b668d729a256fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialIndex: 1
+  uvAnimationRate: {x: -0.12, y: -1}
+  textureName: _MainTex
+--- !u!137 &1178663178
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 13722518, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1178663175}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: fb661cd2dec4bf2459d3c6689ea13746, type: 2}
+  - {fileID: 2100000, guid: 7677abcb141dd55449d4055f56bdf9c8, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 4300004, guid: f260fcbfd40957c448d4cac7726f12b7, type: 3}
+  m_Bones:
+  - {fileID: 1054407201}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1054407201}
+  m_AABB:
+    m_Center: {x: -1.2590114, y: 0.011253424, z: 0.0028556734}
+    m_Extent: {x: 1.5894719, y: 0.084668905, z: 0.3068331}
+  m_DirtyAABB: 0
 --- !u!1 &1220234557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,7 +3585,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: d3d3cb8ade0d8364aa268ba27a3c7985, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 13700004, guid: d3d3cb8ade0d8364aa268ba27a3c7985, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2909,20 +4793,263 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400106, guid: d3d3cb8ade0d8364aa268ba27a3c7985, type: 3}
       propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: d3d3cb8ade0d8364aa268ba27a3c7985, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3d3cb8ade0d8364aa268ba27a3c7985, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &1238995630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 156692, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1238995631}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_L_FINGER_B_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1238995631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 442272, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1238995630}
+  m_LocalRotation: {x: 0.00007505497, y: -0.0021621636, z: -0.067769825, w: 0.99769866}
+  m_LocalPosition: {x: -0.8521798, y: 0, z: 0.00000020980835}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 579849732}
+  m_Father: {fileID: 703918379}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -8.028367, y: -17.635311, z: -36.213657}
+--- !u!1 &1242206879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 149002, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1242206880}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ Neck1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1242206880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 413874, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1242206879}
+  m_LocalRotation: {x: 7.213164e-14, y: 0.00000034354213, z: -0.12386148, w: 0.99229956}
+  m_LocalPosition: {x: -0.19858307, y: -0.00017211914, z: -4.774483e-10}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_Children:
+  - {fileID: 1782309162}
+  m_Father: {fileID: 631654081}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0.000004848821, y: 0.000038874256, z: -14.230008}
+--- !u!1 &1245399357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 133592, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1245399358}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_R_FINGER_A_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1245399358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 420966, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1245399357}
+  m_LocalRotation: {x: -0.004066738, y: -0.019005846, z: -0.18099044, w: 0.9832928}
+  m_LocalPosition: {x: -0.3671652, y: 0.11091064, z: 0.00011683941}
+  m_LocalScale: {x: 1.0000004, y: 1.0000001, z: 0.9999998}
+  m_Children:
+  - {fileID: 1108798612}
+  m_Father: {fileID: 802480053}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 19.412903, y: -19.81421, z: 24.516108}
 --- !u!198 &1280076585 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 19817892, guid: d731c9176197cd744a91c4b41e417c71,
     type: 2}
   m_PrefabInternal: {fileID: 1012839835}
+--- !u!1 &1290641310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 145108, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1290641311}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_L_ARM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1290641311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 451210, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1290641310}
+  m_LocalRotation: {x: 0.5726468, y: 0.7850865, z: -0.20440364, w: 0.11804234}
+  m_LocalPosition: {x: -0.43015257, y: -0.44942963, z: 0.3298062}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1152276952}
+  m_Father: {fileID: 215945018}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 26.32818, y: -160.41371, z: 43.75936}
+--- !u!1 &1296982544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 146296, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1296982545}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Finger21
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1296982545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 457806, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1296982544}
+  m_LocalRotation: {x: -0.000000004530389, y: 0.000000016032194, z: -0.18713759, w: 0.9823337}
+  m_LocalPosition: {x: -0.16022277, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
+  m_Children:
+  - {fileID: 1799514329}
+  m_Father: {fileID: 519271015}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.00000042004118, y: -0.00000007614274, z: -79.72531}
+--- !u!1 &1322502398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 183280, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1322502399}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Finger0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1322502399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 436702, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1322502398}
+  m_LocalRotation: {x: 0.62737536, y: -0.47576007, z: 0.16598901, w: 0.5937172}
+  m_LocalPosition: {x: -0.024859237, y: 0.02161682, z: -0.09471764}
+  m_LocalScale: {x: 1.0000005, y: 1.0000005, z: 1.0000001}
+  m_Children:
+  - {fileID: 1719209636}
+  m_Father: {fileID: 1612891115}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 54.13708, y: -155.67128, z: -97.17284}
+--- !u!1 &1331104466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 115904, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1331104467}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_L_FINGER_C_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1331104467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 422858, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1331104466}
+  m_LocalRotation: {x: 0.0007742014, y: -0.0007079558, z: -0.5226419, w: 0.85255164}
+  m_LocalPosition: {x: -0.25951782, y: 0.16596755, z: 0.00005517244}
+  m_LocalScale: {x: 1.0000004, y: 1.0000006, z: 1.0000001}
+  m_Children:
+  - {fileID: 1869735833}
+  m_Father: {fileID: 152776488}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -15.134156, y: 19.56687, z: -126.99895}
+--- !u!1 &1355776124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 143896, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1355776125}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_R_FINGER_A_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1355776125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 435012, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1355776124}
+  m_LocalRotation: {x: -0.0029788464, y: 0.012156824, z: 0.124588855, w: 0.9921295}
+  m_LocalPosition: {x: -0.9583215, y: -0.0000010681152, z: -0.00000064849854}
+  m_LocalScale: {x: 1.0000004, y: 1.0000002, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1108798612}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -1.7703849, y: -25.751757, z: 34.17476}
 --- !u!1 &1365406893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2960,10 +5087,232 @@ SphereCollider:
   m_GameObject: {fileID: 1365406893}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1372586957 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400064, guid: d3d3cb8ade0d8364aa268ba27a3c7985,
+    type: 3}
+  m_PrefabInternal: {fileID: 1233103219}
+--- !u!1 &1381043166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 139830, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1381043167}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Clavicle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1381043167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 498990, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1381043166}
+  m_LocalRotation: {x: 0.650853, y: 0.081503354, z: 0.7489665, w: -0.09379172}
+  m_LocalPosition: {x: -0.05069824, y: 0.14646533, z: -0.21097049}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1.0000001}
+  m_Children:
+  - {fileID: 457354502}
+  m_Father: {fileID: 631654081}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -15.524532, y: 81.80295, z: 172.11137}
+--- !u!1 &1382786201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 197932, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1382786202}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Thigh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1382786202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 480598, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1382786201}
+  m_LocalRotation: {x: 0.12768316, y: -0.9848021, z: 0.02020719, w: 0.115988225}
+  m_LocalPosition: {x: -0.00000030517577, y: -0.00000018596648, z: -0.2017493}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_Children:
+  - {fileID: 1627331610}
+  m_Father: {fileID: 1657161325}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 25.042315, y: -153.38016, z: 2.732}
+--- !u!1 &1391633980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 156788, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1391633981}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Finger2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1391633981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 408868, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1391633980}
+  m_LocalRotation: {x: -0.047034334, y: 0.008987563, z: -0.13945346, w: 0.9890702}
+  m_LocalPosition: {x: -0.36570686, y: -0.013980102, z: -0.026389847}
+  m_LocalScale: {x: 0.99999964, y: 0.9999997, z: 0.99999994}
+  m_Children:
+  - {fileID: 598960007}
+  m_Father: {fileID: 1612891115}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -5.194318, y: 1.777843, z: -34.28535}
+--- !u!1 &1395818485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 124874, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1395818486}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WHIP_08
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1395818486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 455530, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1395818485}
+  m_LocalRotation: {x: -0.002556659, y: 0.00019611967, z: 0.0012571029, w: 0.99999595}
+  m_LocalPosition: {x: -1.0002191, y: 0.0000015258788, z: 0.00000030517577}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1.0000002}
+  m_Children:
+  - {fileID: 1462764908}
+  m_Father: {fileID: 2120657429}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -18.30254, y: 16.51254, z: 12.910574}
+--- !u!1 &1400099575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 175230, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1400099576}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Finger02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1400099576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 486822, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1400099575}
+  m_LocalRotation: {x: -0.0000000034461507, y: -0.0000000144971954, z: -0.23126724,
+    w: 0.97289026}
+  m_LocalPosition: {x: -0.1330484, y: -0.000000076293944, z: 0}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_Children: []
+  m_Father: {fileID: 1719209636}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.0000026449368, y: 0.0000014546224, z: -36.93935}
+--- !u!1 &1408103108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 117394, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1408103109}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Clavicle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1408103109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 467236, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1408103108}
+  m_LocalRotation: {x: -0.65085316, y: -0.08150542, z: 0.7489663, w: -0.09378991}
+  m_LocalPosition: {x: -0.05069824, y: 0.14646415, z: 0.21097037}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 1.0000001}
+  m_Children:
+  - {fileID: 61431416}
+  m_Father: {fileID: 631654081}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 14.170029, y: -86.88786, z: -177.61296}
+--- !u!1 &1462764907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 179768, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1462764908}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WHIP_09
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1462764908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 413864, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1462764907}
+  m_LocalRotation: {x: 0.000658124, y: -0.00003555903, z: -0.00023380376, w: 0.99999976}
+  m_LocalPosition: {x: -1.0000446, y: 0.00000015258789, z: -0.00000061035155}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 0.9999997}
+  m_Children:
+  - {fileID: 78648480}
+  m_Father: {fileID: 1395818486}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -15.26595, y: 21.862226, z: 30.878027}
 --- !u!4 &1490228990 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400076, guid: d3d3cb8ade0d8364aa268ba27a3c7985,
@@ -3004,6 +5353,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1529457110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 163772, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1529457111}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Finger22
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1529457111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 498358, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1529457110}
+  m_LocalRotation: {x: -0.0000000091730765, y: 0.0000000016096163, z: -0.17283124,
+    w: 0.9849515}
+  m_LocalPosition: {x: -0.16484787, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999999, y: 0.99999994, z: 0.9999999}
+  m_Children: []
+  m_Father: {fileID: 598960007}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.00000035330856, y: 0.0000016705958, z: -78.05866}
+--- !u!1 &1550674834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 135360, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1550674835}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ Ponytail1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1550674835
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 436034, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1550674834}
+  m_LocalRotation: {x: 1.4338401e-12, y: 0.0000023429925, z: -0.84474796, w: 0.5351643}
+  m_LocalPosition: {x: -0.07815674, y: 0.08039597, z: 0.0000013792364}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1782309162}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.00019374565, y: 0.00015506284, z: -102.639565}
 --- !u!1 &1565420579
 GameObject:
   m_ObjectHideFlags: 0
@@ -3163,6 +5573,135 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1573325109}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1585606492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 174562, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1585606493}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_L_FINGER_A_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1585606493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 454732, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1585606492}
+  m_LocalRotation: {x: 0.0029789014, y: 0.012157084, z: -0.12458889, w: 0.9921295}
+  m_LocalPosition: {x: -0.9583203, y: 0.00000061035155, z: -0.00000015258789}
+  m_LocalScale: {x: 0.9999998, y: 0.9999998, z: 1}
+  m_Children: []
+  m_Father: {fileID: 35736922}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -13.606254, y: -25.718666, z: -29.816216}
+--- !u!1 &1612891114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 198514, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1612891115}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1612891115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 478374, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1612891114}
+  m_LocalRotation: {x: -0.8300686, y: 0.12948506, z: -0.029213294, w: 0.54163307}
+  m_LocalPosition: {x: -0.6540397, y: -0.000000114440915, z: -0.00000030517577}
+  m_LocalScale: {x: 1, y: 1, z: 1.0000001}
+  m_Children:
+  - {fileID: 1322502399}
+  - {fileID: 351749396}
+  - {fileID: 1391633981}
+  - {fileID: 584666712}
+  - {fileID: 1054407201}
+  m_Father: {fileID: 764100980}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -34.413895, y: 108.0368, z: -103.192375}
+--- !u!1 &1627331609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 122840, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1627331610}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Calf
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1627331610
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 428224, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1627331609}
+  m_LocalRotation: {x: -0.00000022398302, y: -0.0000002421438, z: 0.831695, w: 0.5552328}
+  m_LocalPosition: {x: -0.94674236, y: 0.000008419157, z: 0.00001591444}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1.0000001}
+  m_Children:
+  - {fileID: 1687100039}
+  m_Father: {fileID: 1382786202}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.000010734649, y: 0.0000011815292, z: 112.546005}
+--- !u!1 &1657161324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 129778, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1657161325}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ Pelvis
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1657161325
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 489928, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1657161324}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.4999993, w: 0.5000007}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
+  m_Children:
+  - {fileID: 573235741}
+  - {fileID: 1382786202}
+  - {fileID: 754040104}
+  m_Father: {fileID: 824850172}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 89.99992, z: 0}
 --- !u!4 &1662038752
 Transform:
   m_ObjectHideFlags: 0
@@ -3189,6 +5728,269 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1666708777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 132920, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1666708778}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Foot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1666708778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 441148, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1666708777}
+  m_LocalRotation: {x: -0.034658715, y: -0.09243429, z: 0.21470279, w: 0.9716776}
+  m_LocalPosition: {x: -0.35940108, y: -0.0000055730343, z: -0.000013505707}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 0.99999994}
+  m_Children:
+  - {fileID: 561150606}
+  m_Father: {fileID: 1687100039}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 1.4422374, y: -27.91555, z: 23.960032}
+--- !u!1 &1685296610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 163034, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1685296611}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Finger3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1685296611
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 446410, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1685296610}
+  m_LocalRotation: {x: 0.07745955, y: -0.07632936, z: -0.23208597, w: 0.96659714}
+  m_LocalPosition: {x: -0.36623657, y: 0.0014459228, z: -0.12052406}
+  m_LocalScale: {x: 1.0000004, y: 0.9999998, z: 0.99999994}
+  m_Children:
+  - {fileID: 1792485177}
+  m_Father: {fileID: 1094861345}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 1.102657, y: -24.652386, z: -66.71108}
+--- !u!1 &1687100038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 115920, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1687100039}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R HorseLink
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1687100039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 433024, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1687100038}
+  m_LocalRotation: {x: 0.000007744584, y: 0.000004234156, z: -0.4765357, w: 0.87915516}
+  m_LocalPosition: {x: -0.86890596, y: 0.000018715857, z: -0.00000467425}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
+  m_Children:
+  - {fileID: 1666708778}
+  m_Father: {fileID: 1627331610}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.0000027893207, y: -0.000007159817, z: -68.71511}
+--- !u!1 &1694266489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 152216, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1694266490}
+  - component: {fileID: 1694266492}
+  - component: {fileID: 1694266491}
+  m_Layer: 0
+  m_Name: LAVA_WHIP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1694266490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 415758, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1694266489}
+  m_LocalRotation: {x: -0.26511097, y: -0.0348166, z: 0.0015071203, w: 0.96358794}
+  m_LocalPosition: {x: 1.9544685, y: 2.1251886, z: 0.17861268}
+  m_LocalScale: {x: 0.9999998, y: 0.99999994, z: 1.0000002}
+  m_Children: []
+  m_Father: {fileID: 1087522558}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1694266491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 11454166, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1694266489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55daa38de30c12c40b668d729a256fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialIndex: 1
+  uvAnimationRate: {x: -0.09, y: -0.85}
+  textureName: _MainTex
+--- !u!137 &1694266492
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 13788714, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1694266489}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 07c79e8b96710b044909a804de5854d4, type: 2}
+  - {fileID: 2100000, guid: 7677abcb141dd55449d4055f56bdf9c8, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 2
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 4300002, guid: f260fcbfd40957c448d4cac7726f12b7, type: 3}
+  m_Bones:
+  - {fileID: 326675846}
+  - {fileID: 1855529098}
+  - {fileID: 650787583}
+  - {fileID: 1840712535}
+  - {fileID: 767165636}
+  - {fileID: 2062966188}
+  - {fileID: 2120657429}
+  - {fileID: 1395818486}
+  - {fileID: 1462764908}
+  - {fileID: 78648480}
+  - {fileID: 1745399330}
+  - {fileID: 338826911}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 338826911}
+  m_AABB:
+    m_Center: {x: -2.3430274, y: -0.025768757, z: 1.913878}
+    m_Extent: {x: 9.68549, y: 9.288649, z: 7.6218667}
+  m_DirtyAABB: 0
+--- !u!1 &1716628889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 101490, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1716628890}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_L_FINGER_C_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1716628890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 412902, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1716628889}
+  m_LocalRotation: {x: 0.00007359994, y: -0.0005247167, z: -0.20959009, w: 0.9777892}
+  m_LocalPosition: {x: -0.8780145, y: 0, z: 0.0000001335144}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1869735833}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.083005175, y: -25.062452, z: -16.880053}
+--- !u!1 &1719209635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 160094, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1719209636}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ L Finger01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1719209636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 409010, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719209635}
+  m_LocalRotation: {x: 0.000000030187554, y: 0.0000000056922147, z: -0.058571756,
+    w: 0.9982832}
+  m_LocalPosition: {x: -0.16883633, y: 0.000000076293944, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1400099576}
+  m_Father: {fileID: 1322502399}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.0000013936044, y: -0.00000091482826, z: -16.911627}
 --- !u!1 &1723473789
 GameObject:
   m_ObjectHideFlags: 0
@@ -3258,6 +6060,190 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1725380831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 152108, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1725380832}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Finger12
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1725380832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 483450, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1725380831}
+  m_LocalRotation: {x: 0.000000021949962, y: -0.000000004218958, z: -0.18875298, w: 0.9820246}
+  m_LocalPosition: {x: -0.14106369, y: 0, z: 0.000000076293944}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
+  m_Children: []
+  m_Father: {fileID: 514562166}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.00000042799908, y: 0.00000073874634, z: -59.913773}
+--- !u!1 &1734364507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 129752, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1734364508}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_R_FINGER_B_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1734364508
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 490012, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1734364507}
+  m_LocalRotation: {x: -0.0007114081, y: -0.00165331, z: 0.12190587, w: 0.99254006}
+  m_LocalPosition: {x: -0.35750428, y: -0.043817136, z: 0.000023510456}
+  m_LocalScale: {x: 1.0000002, y: 1, z: 0.9999999}
+  m_Children:
+  - {fileID: 1030137957}
+  m_Father: {fileID: 802480053}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 19.983936, y: 2.9508967, z: 79.97224}
+--- !u!1 &1745399329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 195448, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1745399330}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WHIP_011
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1745399330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 435372, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1745399329}
+  m_LocalRotation: {x: 0.00000028684752, y: -0.0000009089708, z: 0.0000002700838,
+    w: 1}
+  m_LocalPosition: {x: -1.0023168, y: 0.00000015258789, z: -0.00000030517577}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1.0000002}
+  m_Children: []
+  m_Father: {fileID: 78648480}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 1.1521564, y: 4.2082562, z: 6.0711493}
+--- !u!1 &1782309161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 130702, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1782309162}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1782309162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 401366, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1782309161}
+  m_LocalRotation: {x: 3.3815056e-14, y: -0.00000022930385, z: 0.082674436, w: 0.9965766}
+  m_LocalPosition: {x: -0.22297485, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 0.99999994}
+  m_Children:
+  - {fileID: 1550674835}
+  m_Father: {fileID: 1242206880}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.3224291, y: -1.0895809, z: 34.59856}
+--- !u!1 &1792485176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 120796, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1792485177}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Finger31
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1792485177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 425488, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792485176}
+  m_LocalRotation: {x: -0.000000003049531, y: -0.00000001458578, z: -0.20465055, w: 0.9788351}
+  m_LocalPosition: {x: -0.14194053, y: -0.00000030517577, z: 0.00000015258789}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
+  m_Children:
+  - {fileID: 813876494}
+  m_Father: {fileID: 1685296611}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -61.771812}
+--- !u!1 &1799514328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 118090, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1799514329}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Finger22
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1799514329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 443836, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1799514328}
+  m_LocalRotation: {x: 0.000000013230004, y: 0.000000043064993, z: -0.17283125, w: 0.9849515}
+  m_LocalPosition: {x: -0.16484794, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1.0000001}
+  m_Children: []
+  m_Father: {fileID: 1296982545}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.00000002760223, y: 0.00000013051529, z: -78.05866}
 --- !u!4 &1811009551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 476716, guid: d731c9176197cd744a91c4b41e417c71,
@@ -3268,6 +6254,99 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 19818028, guid: d731c9176197cd744a91c4b41e417c71,
     type: 2}
   m_PrefabInternal: {fileID: 1012839835}
+--- !u!1 &1840712534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 131608, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1840712535}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WHIP_04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1840712535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 445424, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1840712534}
+  m_LocalRotation: {x: 0.0029170793, y: -0.0001504448, z: -0.001073398, w: 0.9999952}
+  m_LocalPosition: {x: -1.0007156, y: -0.00000045776366, z: 0.00000015258789}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1.0000001}
+  m_Children:
+  - {fileID: 767165636}
+  m_Father: {fileID: 650787583}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -19.629711, y: -25.965984, z: -36.344948}
+--- !u!1 &1855529097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 175996, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1855529098}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WHIP_02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1855529098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 446518, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1855529097}
+  m_LocalRotation: {x: -0.006233487, y: 0.00043286438, z: 0.0027123415, w: 0.9999768}
+  m_LocalPosition: {x: -1.0012244, y: -0.00000015258789, z: -0.00000030517577}
+  m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1.0000002}
+  m_Children:
+  - {fileID: 650787583}
+  m_Father: {fileID: 326675846}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -1.4690387, y: -41.429424, z: 21.006628}
+--- !u!1 &1869735832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 122350, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1869735833}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_L_FINGER_C_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1869735833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 453202, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1869735832}
+  m_LocalRotation: {x: -0.00003339401, y: 0.00069871725, z: -0.045868464, w: 0.99894726}
+  m_LocalPosition: {x: -0.7394337, y: 0.00000061035155, z: 0.00000016927719}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
+  m_Children:
+  - {fileID: 1716628890}
+  m_Father: {fileID: 1331104467}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -13.624987, y: -21.699694, z: -35.13908}
 --- !u!1 &1888321124
 GameObject:
   m_ObjectHideFlags: 0
@@ -3305,15 +6384,45 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1892751482}
-  m_LocalRotation: {x: -0.000000039115534, y: -0.72854775, z: -0.000000059604623,
-    w: 0.68499506}
-  m_LocalPosition: {x: 2.24, y: 2.2039561, z: 3.31}
-  m_LocalScale: {x: 0.005996732, y: 1.539379, z: 4.902872}
+  m_LocalRotation: {x: -0.083237, y: -0.59690785, z: 0.705113, w: -0.37361526}
+  m_LocalPosition: {x: -0.36, y: -2.89, z: -0.01}
+  m_LocalScale: {x: 0.0059967213, y: 1.5393782, z: 4.902865}
   m_Children:
   - {fileID: 695473858}
-  m_Father: {fileID: 1490228990}
-  m_RootOrder: 2
+  m_Father: {fileID: 1372586957}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -93.53001, z: 0}
+--- !u!1 &1991471315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 136744, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1991471316}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WING_R_ARM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1991471316
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 441422, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1991471315}
+  m_LocalRotation: {x: 0.11789394, y: -0.20448095, z: 0.78506404, w: 0.57268065}
+  m_LocalPosition: {x: -0.43015227, y: -0.44942883, z: -0.3300006}
+  m_LocalScale: {x: 0.9999999, y: 0.99999994, z: 0.99999994}
+  m_Children:
+  - {fileID: 53765715}
+  m_Father: {fileID: 215945018}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 30.159464, y: -0.2477128, z: 145.14435}
 --- !u!1 &2051979975
 GameObject:
   m_ObjectHideFlags: 0
@@ -3390,52 +6499,100 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2051979975}
   m_Mesh: {fileID: 4300000, guid: 218f82d5989bc2a41875ffbf40e9f3f6, type: 3}
---- !u!1001 &2063479807
-Prefab:
+--- !u!1 &2061554885
+GameObject:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1145341449}
-    m_Modifications:
-    - target: {fileID: 410588, guid: 671306f7395630a4f8cb96159b796198, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410588, guid: 671306f7395630a4f8cb96159b796198, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 410588, guid: 671306f7395630a4f8cb96159b796198, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410588, guid: 671306f7395630a4f8cb96159b796198, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410588, guid: 671306f7395630a4f8cb96159b796198, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410588, guid: 671306f7395630a4f8cb96159b796198, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 410588, guid: 671306f7395630a4f8cb96159b796198, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 410588, guid: 671306f7395630a4f8cb96159b796198, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 118136, guid: 671306f7395630a4f8cb96159b796198, type: 2}
-      propertyPath: m_Name
-      value: DemonLord
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 671306f7395630a4f8cb96159b796198, type: 2}
-  m_IsPrefabAsset: 0
+  m_CorrespondingSourceObject: {fileID: 161280, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2061554886}
+  m_Layer: 0
+  m_Name: DEMON_LORD_ R Finger01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2061554886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 467052, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2061554885}
+  m_LocalRotation: {x: -0.000000015311974, y: -0.0000000065650023, z: -0.058571782,
+    w: 0.9982832}
+  m_LocalPosition: {x: -0.16883633, y: 0.00000015258789, z: 0.00000030517577}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_Children:
+  - {fileID: 623776128}
+  m_Father: {fileID: 952796125}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.0000014018647, y: -0.0000031432273, z: -16.911629}
+--- !u!1 &2062966187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 145768, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2062966188}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WHIP_06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2062966188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 446832, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2062966187}
+  m_LocalRotation: {x: 0.0021086107, y: -0.00020862668, z: -0.0012271685, w: 0.999997}
+  m_LocalPosition: {x: -1.0008672, y: -0.00000015258789, z: 0}
+  m_LocalScale: {x: 0.9999997, y: 1.0000001, z: 0.9999999}
+  m_Children:
+  - {fileID: 2120657429}
+  m_Father: {fileID: 767165636}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 6.9433193, y: -15.48699, z: -17.307674}
+--- !u!1 &2120657428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 199538, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2120657429}
+  m_Layer: 0
+  m_Name: DEMON_LORD_WHIP_07
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2120657429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 427918, guid: 671306f7395630a4f8cb96159b796198,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2120657428}
+  m_LocalRotation: {x: -0.00677138, y: 0.00048581237, z: 0.0029434615, w: 0.99997264}
+  m_LocalPosition: {x: -1.0024267, y: -0.00000015258789, z: -0.0000009155273}
+  m_LocalScale: {x: 1.0000004, y: 1, z: 0.9999999}
+  m_Children:
+  - {fileID: 1395818486}
+  m_Father: {fileID: 2062966188}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 11.305928, y: -14.903197, z: -11.883252}
 --- !u!1 &2129210984
 GameObject:
   m_ObjectHideFlags: 0
