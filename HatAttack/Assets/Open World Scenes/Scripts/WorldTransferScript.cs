@@ -60,8 +60,10 @@ public class WorldTransferScript : MonoBehaviour {
             else Debug.Log("no Array!");
 
             //if (Array == null) AS = combatArray.GetComponent<ArrayScriptCombat>();
-            if (AS != null)
+            if (AS != null){
                 AS.startCombat();
+				//AS.endOfCombat += OnEndOfCombat;		//add this code and a function OnEndOfCombat(Stack<GameObject> capturedUnits)
+			}
             else Debug.Log("no ArrayScriptCombat");
 
             this.gameObject.SetActive(false);// --- disables the player and camera upon exiting the overworld and entering the game world, will be re enabled by a controller 

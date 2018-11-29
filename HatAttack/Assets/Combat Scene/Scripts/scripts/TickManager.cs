@@ -20,6 +20,7 @@ public class TickManager : MonoBehaviour
 
     private bool ticking = false;
     private float Timer = 0f;
+    private float EMTimer = 0f;
 
 
     public enum TickMode { Chaos, Team, Initiative1, Initiative2 }; //Initiative1 = simple ; Initiative2 = AttributeBased
@@ -29,10 +30,12 @@ public class TickManager : MonoBehaviour
     //[SerializeField] private KeyCode tickNow = KeyCode.Space;
 
     public delegate void Tick();
+    public delegate void EMTick(int u); //u 0-3, for unit1-4
     public static event Tick tick;
     public static event Tick roundTick;
     public static event Tick untick;
     public static event Tick roundUnTick;
+	public static event EMTick EMtick;
 
     public class EventDic
     {
@@ -286,7 +289,16 @@ public class TickManager : MonoBehaviour
                     Timer -= tickDelay;
 
                 DoTick();
+				EMTimer = Timer;
             }
+			else
+			{
+				if(EMTimer > (Timer % (tickDelay/5f))){
+					if(EMTick != null)
+						EMTick((int)(Timer/(tickDelay/5f)));
+				}
+				EMTimer = (Timer % (tickDelay/5));
+			}
             //if (Input.GetKeyDown(tickNow))
             //{
             //    Timer -= tickDelay;

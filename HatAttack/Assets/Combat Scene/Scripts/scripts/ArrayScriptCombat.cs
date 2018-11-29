@@ -311,7 +311,8 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
             }
             void UnitSpawned(GameObject unit, Vector2Int position)
             {
-                actions.Add(unit, new UnitAction(position, position));
+				if(!actions.ContainsKey(unit))
+					actions.Add(unit, new UnitAction(position, position));
                 if (next != null)
                 {
                     next.UnitSpawned(unit, position);
@@ -726,9 +727,9 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
         {
 			case 0:
 			{
-				Ux = BasePosition.x+1; Uz = BasePosition.y;
+					Ux = BasePosition.x+1; Uz = BasePosition.y;
                     playerLives--;
-				break;
+					break;
 			}
 			case 1:
 			{
@@ -772,6 +773,10 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
                     enemyLives--;
                     break;
 			}
+			default:
+					Debug.Log("weirdo number in spawnPlayer");
+					return;
+					break;
 		}
 		Transform TU = grid[Ux, Uz].GetComponent<cubeScript>().Node.transform;
 		unitSpawned = (GameObject)Instantiate(spawn, TU.position, TU.rotation);
@@ -779,6 +784,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
         if (usuci != null) {
             usuci.setGrid(this, new Vector2Int(Ux, Uz));
             if (space <= 3) usuci.Initialize();
+			else if(space <= 7) EM.spawnedEnemy(unitSpawned, space);
                     }
 		CurrentUnits[space] = unitSpawned;
         if (GODic.ContainsKey(spawn))
@@ -885,6 +891,8 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
 
         //call endOfCombat for combatInterface
         endOfCombat(CapturedEnemies);
+		//reset ArrayScriptCombat instance
+		instance = null;
     }
     public void startCombat()
     {
@@ -980,7 +988,8 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
             spawnPlayer(7, EUnit4);
         }
 		
-        EM = this.gameObject.AddComponent<EnemyManager>();
+        this.gameObject.AddComponent<EnemyManager>();
+		EM = EnemyManager.instance;
 		EM.StartEM(CurrentUnits[4],CurrentUnits[5],CurrentUnits[6],CurrentUnits[7]);
 
         #endregion

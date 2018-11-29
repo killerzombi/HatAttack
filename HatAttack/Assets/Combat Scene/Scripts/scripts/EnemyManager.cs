@@ -8,6 +8,15 @@ public class EnemyManager : MonoBehaviour
     private GameObject Unit1 = null, Unit2 = null, Unit3 = null, Unit4 = null;
     private UnitControllerInterface UCI1 = null, UCI2 = null, UCI3 = null, UCI4 = null;
 
+	#region singleton
+	public static EnemyManager instance = null;
+	
+	void Awake(){
+		if(instance == null) instance = this;
+		else Destroy(this);
+	}
+	#endregion
+
     // Use this for initialization
     void Start()
     {
@@ -19,6 +28,66 @@ public class EnemyManager : MonoBehaviour
     {
 
     }
+	
+	private void decideMove(int u)
+	{
+		switch(u)
+		{
+			case 0:
+				//move unit1
+				break;
+			case 1:
+				//move unit2
+				break;
+			case 2:
+				//move unit3
+				break;
+			case 3:
+				//move unit4
+				break;
+				default:
+				Debug.Log("can't move a unit other than 0-3");
+				break;
+		}
+	}
+	
+	public void spawnedEnemy(GameObject unit, int space)
+	{
+		switch(space)
+		{
+			case 0:
+			case 4:
+			Unit1 = unit;
+			if (Unit1 != null)
+            UCI1 = Unit1.GetComponent<UnitControllerInterface>();
+			if (UCI1 != null) { UCI1.setEnemy(); UCI1.Initialize(); }
+			break;
+			case 1:
+			case 5:
+			Unit2 = unit;
+			if (Unit2 != null)
+            UCI2 = Unit2.GetComponent<UnitControllerInterface>();
+			if (UCI2 != null) { UCI2.setEnemy(); UCI2.Initialize(); }
+			break;
+			case 2:
+			case 6:
+			Unit3 = unit;
+			if (Unit3 != null)
+            UCI3 = Unit3.GetComponent<UnitControllerInterface>();
+			if (UCI3 != null) { UCI3.setEnemy(); UCI3.Initialize(); }
+			break;
+			case 3:
+			case 7:
+			Unit4 = unit;
+			if (Unit4 != null)
+            UCI4 = Unit4.GetComponent<UnitControllerInterface>();
+			if (UCI4 != null) { UCI4.setEnemy(); UCI4.Initialize(); }
+			break;
+			default:
+			Debug.Log("Space not valid in spanedEnemy");
+			break;
+		}
+	}
 
     public void StartEM(GameObject unit1, GameObject unit2, GameObject unit3, GameObject unit4)
     {
@@ -36,6 +105,8 @@ public class EnemyManager : MonoBehaviour
         if (UCI2 != null) { UCI2.setEnemy(); UCI2.Initialize(); }
         if (UCI3 != null) { UCI3.setEnemy(); UCI3.Initialize(); }
         if (UCI4 != null) { UCI4.setEnemy(); UCI4.Initialize(); }
+		
+		TickManager.EMtick += decideMove;
 
     }
 }
