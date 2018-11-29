@@ -14,6 +14,11 @@ public class DemonLordScript : MonoBehaviour
     public Camera cam;
 
     public Animator anim;
+    public AudioClip swordattack;
+    public AudioClip dash;
+    public AudioClip jumpSound;
+
+    private AudioSource audioSource;
 
 
     private readonly float m_interpolation = 10;
@@ -34,6 +39,7 @@ public class DemonLordScript : MonoBehaviour
     void Awake()
     {
         m_drag = m_rigidBody.drag;
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -231,24 +237,27 @@ public class DemonLordScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && m_canDash && !m_dashing)
         {
+            audioSource.PlayOneShot(dash, 1f);
             StartCoroutine(Dash());
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
+            audioSource.PlayOneShot(jumpSound, 1f);
             anim.SetTrigger("Jump");
         }
         else if (Input.GetKeyDown(KeyCode.R))
         {
             anim.SetTrigger("Roar");
         }
-        else if (Input.GetKeyDown(KeyCode.Mouse0))
+        /*else if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             anim.SetTrigger("Attack");
+            audioSource.PlayOneShot(swordattack, 2f);
         }
         else if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             anim.SetTrigger("WhipAttack");
-        }
+        }*/
     }
 
     IEnumerator<WaitForSeconds> Dash()
@@ -258,7 +267,6 @@ public class DemonLordScript : MonoBehaviour
         anim.SetTrigger("Dash");
         m_rigidBody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
         yield return new WaitForSeconds(1.3f);
-        anim.SetTrigger("Dash");
         m_dashing = false;
         m_rigidBody.constraints = RigidbodyConstraints.None;
         m_rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
