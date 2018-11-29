@@ -20,12 +20,9 @@ public class MovePlayerAcrossBridgeScript : MonoBehaviour {
 		if (collisionInfo.gameObject.tag == "Bridge")
 		{
 <<<<<<< HEAD
-<<<<<<< HEAD
 			tempTrans = transform.parent;
 			Debug.Log("collided with:" + collisionInfo);
 =======
-=======
->>>>>>> parent of 929ca8ab... Merge branch 'master' of https://github.com/killerzombi/HatAttack
             
 			tempTrans = transform.parent;
 			Debug.Log("collided with:" + collisionInfo.gameObject);
@@ -38,9 +35,6 @@ public class MovePlayerAcrossBridgeScript : MonoBehaviour {
 <<<<<<< HEAD
 =======
         Debug.Log("stopped colliding with " + collisionInfo.gameObject);
-<<<<<<< HEAD
->>>>>>> parent of 929ca8ab... Merge branch 'master' of https://github.com/killerzombi/HatAttack
-=======
 >>>>>>> parent of 929ca8ab... Merge branch 'master' of https://github.com/killerzombi/HatAttack
 		if (collisionInfo.gameObject.tag == "Bridge")
 			transform.parent = tempTrans;

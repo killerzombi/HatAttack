@@ -46,9 +46,6 @@ public class WorldTransferScript : MonoBehaviour {
             targetScene = sceneImIn;
             //StartCoroutine(MoveSpawnPoint(sceneImIn)); //starts a coroutine with this scene we're currently in
 			sceneImIn = "currentCombatScene"; //using targetScene for the DoneLoading function, changing sceneImIn to currentCombatScene won't let us ever leave combat
-<<<<<<< HEAD
->>>>>>> parent of 929ca8ab... Merge branch 'master' of https://github.com/killerzombi/HatAttack
-=======
 >>>>>>> parent of 929ca8ab... Merge branch 'master' of https://github.com/killerzombi/HatAttack
              //sets the scene we're in to the target scene, will be combat scene in final project (probably)
             StartCoroutine(WaitOnSpawn(targetScene)); 
@@ -84,9 +81,6 @@ public class WorldTransferScript : MonoBehaviour {
 
 =======
     
-<<<<<<< HEAD
->>>>>>> parent of 929ca8ab... Merge branch 'master' of https://github.com/killerzombi/HatAttack
-=======
 >>>>>>> parent of 929ca8ab... Merge branch 'master' of https://github.com/killerzombi/HatAttack
     IEnumerator WaitOnSpawn(string toLoad) //this function now handles all of loading
     {
