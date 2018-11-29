@@ -14,6 +14,8 @@ public class DemonLordScript : MonoBehaviour
     public Camera cam;
 
     public Animator anim;
+	public Animator playerAnim;
+
     public AudioClip swordattack;
     public AudioClip dash;
     public AudioClip jumpSound;
@@ -265,6 +267,7 @@ public class DemonLordScript : MonoBehaviour
         m_canDash = false;
         m_dashing = true;
         anim.SetTrigger("Dash");
+        playerAnim.SetTrigger("Dash");
         m_rigidBody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
         yield return new WaitForSeconds(1.3f);
         m_dashing = false;

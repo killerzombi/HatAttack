@@ -222,6 +222,11 @@ public class IceGiantScript : MonoBehaviour {
     {
         anim.SetFloat("FBMovement", m_currentV);
         anim.SetFloat("LRMovement", m_currentH);
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            anim.SetTrigger("Freeze");
+        }
     }
 }
 
