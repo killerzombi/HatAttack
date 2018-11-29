@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class WorldTransferScript : MonoBehaviour {
 	public Camera camera;
     public string sceneImIn = "HubWorld";
+	public string targetScene = "IceWorld";
     private static WorldTransferScript instanceRef;
     GameObject fireSpawn;
     GameObject iceSpawn;
@@ -14,12 +15,7 @@ public class WorldTransferScript : MonoBehaviour {
     //public GameObject combatArray;
     private void Update()
     {
-        if (fireSpawn == null && sceneImIn == "FireWorld") //initializes the spawns, checking if we're in the world the spawn is in
-            fireSpawn = GameObject.Find("FireWorldSpawnPoint");
-        else if (iceSpawn == null && sceneImIn == "IceWorld")
-            iceSpawn = GameObject.Find("IceWorldSpawnPoint");
-        else if (hubSpawn == null && sceneImIn == "HubWorld")
-            hubSpawn = GameObject.Find("HubWorldSpawnPoint");
+
     }
 
     void OnCollisionEnter(Collision collision)
@@ -27,41 +23,34 @@ public class WorldTransferScript : MonoBehaviour {
         if (collision.gameObject.name == "FireWorldPortal")
         {
             sceneImIn = "FireWorld";
-            StartCoroutine(LoadSceneAsync(sceneImIn));
             StartCoroutine(WaitOnSpawn(sceneImIn));
         }
         else if (collision.gameObject.name == "IceWorldPortal")
         {
             
             sceneImIn = "IceWorld";
-            StartCoroutine(LoadSceneAsync(sceneImIn));
-            StartCoroutine(WaitOnSpawn(sceneImIn)); //this coroutine waits half a second upon spawning in before executing the next lines of code, allowing the update to find the ice spawn, in theory 
-            //the code that follows the coroutine would be the update could probably lower the load time a lot
+            StartCoroutine(WaitOnSpawn(sceneImIn));
+            //the code that follows the coroutine would be the update could probably lower the load time a lot -- lowered the load time down to 0.2s, lowest it could go and still find the object before the 
         }
         else if (collision.gameObject.name == "ExitPortal")
         {
             sceneImIn = "HubWorld";
-            StartCoroutine(LoadSceneAsync(sceneImIn));
             StartCoroutine(WaitOnSpawn(sceneImIn));
-        }	//the if statement below(V V V V V) needs to change to --> if(collision.gameObject.tag == "Enemy")	-->	then tag all enemies "Enemy"
-        if (collision.gameObject.transform.parent.name == "Enemies") //this code is a proof of concept on how to keep the player where they were when they entered combat.
+        }	//the if statement below(V V V V V) needs to change to --> if(collision.gameObject.tag == "Enemy")	-->	then tag all enemies "Enemy" -- done
+        if (collision.gameObject.tag == "Enemy") 
         {
             //StartCoroutine(MoveSpawnPoint(sceneImIn)); //starts a coroutine with this scene we're currently in
-            sceneImIn = "currentCombatScene"; //sets the scene we're in to the target scene, will be combat scene in final project (probably)
-            StartCoroutine(WaitOnSpawn(sceneImIn)); 
-            StartCoroutine(LoadSceneAsync(sceneImIn));
+			targetScene = "currentCombatScene"; //using targetScene for the DoneLoading function, changing sceneImIn to currentCombatScene won't let us ever leave combat
+             //sets the scene we're in to the target scene, will be combat scene in final project (probably)
+            StartCoroutine(WaitOnSpawn(targetScene)); 
             combatSpawn.transform.position = this.gameObject.transform.position;
-            //Change the sceene name when we move it to live.
-
-            //this.gameObject.SetActive(false);// --- disables the player and camera upon exiting the overworld and entering the game world, will be re enabled by a controller 
-            //camera.gameObject.SetActive(false);// --- upon leaving the battle screen
-            //probably need to handle this in the combat scene
+            //Change the scene name when we move it to live
         }
     }
 
     private void DoneLoading()
     {
-        if(sceneImIn == "currentCombatScene")
+        if(targetScene == "currentCombatScene")
         {
             Debug.Log("spawning combat");
             GameObject Array = GameObject.Find("Array");
@@ -80,34 +69,38 @@ public class WorldTransferScript : MonoBehaviour {
         }
     }
 
-    IEnumerator LoadSceneAsync(string toLoad)
+
+    IEnumerator WaitOnSpawn(string toLoad) //this function now handles all of loading
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(toLoad);
-        while (!asyncLoad.isDone)//can probably rework this code to work better
-        {
-            camera.clearFlags = CameraClearFlags.SolidColor;
-            camera.cullingMask = 0; //turns the camera to a black screen.
-            yield return new WaitForSeconds(1f); //waits 1 second while the load finishes and the character is placed in the correct position
-            //could display some loading text here or something
-            camera.clearFlags = CameraClearFlags.Skybox; //turns the camera back to the regular view
-            camera.cullingMask = -1; //-1 is the everything setting on the camera culling mask
-        }
-        DoneLoading();
-    }
-    IEnumerator WaitOnSpawn(string toLoad)
-    {
-        yield return new WaitForSeconds(1f); //waits 1 second upon load, allowing the gameobject for this world to be acquired in the update function -- maybe don't need this coroutine anymore either
+		AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(toLoad);
+		
+		camera.clearFlags = CameraClearFlags.SolidColor;
+		camera.cullingMask = 0;
+        yield return new WaitForSeconds(0.35f); //waits 0.2 seconds upon load, allowing the gameobject for this world to be acquired in the update function -- maybe don't need this coroutine anymore either
+		//if there is any issue of the player not landing in the start room, increase the time in the WaitForSeconds above
+		camera.clearFlags = CameraClearFlags.Skybox;
+		camera.cullingMask = -1; //-1 is the everything setting
         if (toLoad == "IceWorld") //checks the scene we're in
+		{
+			iceSpawn = GameObject.Find("IceWorldSpawnPoint");
             this.gameObject.transform.position = iceSpawn.transform.position; //sets position to the game object of the world we loaded into
+		}
         else if (toLoad == "FireWorld")//etc
+		{
+			fireSpawn = GameObject.Find("FireWorldSpawnPoint");
             this.gameObject.transform.position = fireSpawn.transform.position;
+		}
         else if (toLoad == "HubWorld")
+		{
+			hubSpawn = GameObject.Find("HubWorldSpawnPoint");
             this.gameObject.transform.position = hubSpawn.transform.position;
+		}
+		DoneLoading();
         
     }
  }
 
-
+ //{//------------------------all the comments of what's been moved out of this code --------------------------------
 // -------------------------code i hope i never have to reuse but if i do don't want to retype-------------------------------------
 
 //else
@@ -139,5 +132,27 @@ public class WorldTransferScript : MonoBehaviour {
 //    //maybe could use another game object called like, entercombat or something and have it go between worlds with the player and camera instead of moving the spawn points around a bunch.
 //    //would also like to fix the null reference exception caused by line 47, the checking gameobject collision parent line.
 //}
+//-----------------------------------------------this function has been phased out, condensed it's functionality down and moved it into the waitonspawn function, probably going to rename that function now too-----------------------------------------------
+    // IEnumerator LoadSceneAsync(string toLoad)
+    // {
+        // AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(toLoad);
+        // while (!asyncLoad.isDone)//can probably rework this code to work better
+        // {
+            // camera.clearFlags = CameraClearFlags.SolidColor;
+            // camera.cullingMask = 0; //turns the camera to a black screen.
+            // yield return new WaitForSeconds(1f); //waits 1 second while the load finishes and the character is placed in the correct position
+            // //could display some loading text here or something
+            // camera.clearFlags = CameraClearFlags.Skybox; //turns the camera back to the regular view
+            // camera.cullingMask = -1; //-1 is the everything setting on the camera culling mask
+        // }
+        // DoneLoading();
+    // }---------------------------------------------------------------------------------the code from update that got phased out-----------------------------------------------------------------------------
+	        // if (fireSpawn == null && sceneImIn == "FireWorld") //initializes the spawns, checking if we're in the world the spawn is in
+            // fireSpawn = GameObject.Find("FireWorldSpawnPoint"); //spawn initialization moved to the coroutine that places the player in the world
+        // else if (iceSpawn == null && sceneImIn == "IceWorld")
+            // iceSpawn = GameObject.Find("IceWorldSpawnPoint");
+        // else if (hubSpawn == null && sceneImIn == "HubWorld")
+            // hubSpawn = GameObject.Find("HubWorldSpawnPoint");
+//	}
 
 

@@ -307,12 +307,12 @@ Transform:
   m_Children:
   - {fileID: 866690924}
   - {fileID: 861095555}
-  - {fileID: 872124283}
   - {fileID: 1324734285}
   - {fileID: 929060417}
   - {fileID: 1673446116}
   - {fileID: 1443163021}
   - {fileID: 29636710}
+  - {fileID: 872124283}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -358,7 +358,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e62d60f4352419f42b47144832de4495, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e62d60f4352419f42b47144832de4495, type: 3}
       propertyPath: m_LocalScale.y
@@ -2104,7 +2104,7 @@ GameObject:
   - component: {fileID: 554424588}
   m_Layer: 0
   m_Name: Secret Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3355,15 +3355,17 @@ GameObject:
   - component: {fileID: 872124282}
   - component: {fileID: 872124281}
   - component: {fileID: 872124280}
+  - component: {fileID: 872124284}
+  - component: {fileID: 872124285}
   m_Layer: 0
   m_Name: CliffBridge
-  m_TagString: Untagged
+  m_TagString: Bridge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &872124280
-MeshCollider:
+--- !u!65 &872124280
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -3371,11 +3373,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 9.999999}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &872124281
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3425,12 +3425,44 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 872124279}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.69, y: 18.43, z: 16.94}
+  m_LocalPosition: {x: 14.7, y: 18.43, z: 16.94}
   m_LocalScale: {x: 0.19830002, y: 1, z: 0.13260001}
   m_Children: []
   m_Father: {fileID: 10213781}
-  m_RootOrder: 2
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &872124284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 872124279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b203d876f886d344e80aae66131ae05a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  move: {x: 1, y: 0, z: 0}
+  posDirectionX: 14.5
+  negDirectionX: 5.5
+  posDirectionZ: 0
+  negDirectionZ: 0
+--- !u!54 &872124285
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 872124279}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &899424966
 GameObject:
   m_ObjectHideFlags: 0
@@ -3722,7 +3754,7 @@ Transform:
   - {fileID: 246328007}
   - {fileID: 933158218}
   m_Father: {fileID: 10213781}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &933158217
 Prefab:
@@ -3786,7 +3818,7 @@ GameObject:
   - component: {fileID: 976468119}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4499,7 +4531,7 @@ GameObject:
   - component: {fileID: 1161756553}
   m_Layer: 0
   m_Name: Enemy (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4802,7 +4834,7 @@ GameObject:
   - component: {fileID: 1193015519}
   m_Layer: 0
   m_Name: Secret Enemy (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4897,7 +4929,7 @@ GameObject:
   - component: {fileID: 1202511294}
   m_Layer: 0
   m_Name: Enemy (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5331,9 +5363,11 @@ GameObject:
   - component: {fileID: 1324734284}
   - component: {fileID: 1324734283}
   - component: {fileID: 1324734282}
+  - component: {fileID: 1324734286}
+  - component: {fileID: 1324734287}
   m_Layer: 0
   m_Name: BossBridge
-  m_TagString: Untagged
+  m_TagString: Bridge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5401,12 +5435,44 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1324734281}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2.59, y: 18.054, z: 30.79}
+  m_LocalPosition: {x: 2.59, y: 18.054, z: 31.01}
   m_LocalScale: {x: 0.19830014, y: 1, z: 0.13260007}
   m_Children: []
   m_Father: {fileID: 10213781}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1324734286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1324734281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b203d876f886d344e80aae66131ae05a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  move: {x: 0, y: 0, z: 0}
+  posDirectionX: 0
+  negDirectionX: 0
+  posDirectionZ: 43
+  negDirectionZ: 31.05
+--- !u!54 &1324734287
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1324734281}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &1336340370 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400008, guid: bf6a1a77eb8dd9e4081b94f6b53896b4,
@@ -5699,7 +5765,7 @@ Transform:
   m_LocalScale: {x: 0.5209914, y: 1, z: 0.32160997}
   m_Children: []
   m_Father: {fileID: 10213781}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -92.02699, y: 0, z: 0}
 --- !u!64 &1443163022
 MeshCollider:
@@ -5770,7 +5836,7 @@ GameObject:
   - component: {fileID: 1454688498}
   m_Layer: 0
   m_Name: Enemy (3)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6090,7 +6156,7 @@ GameObject:
   - component: {fileID: 1566974376}
   m_Layer: 0
   m_Name: Enemy (4)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6420,7 +6486,7 @@ Transform:
   - {fileID: 160969683}
   - {fileID: 503759374}
   m_Father: {fileID: 10213781}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1686350045
 GameObject:
@@ -6437,7 +6503,7 @@ GameObject:
   - component: {fileID: 1686350051}
   m_Layer: 0
   m_Name: Starter Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7081,7 +7147,7 @@ GameObject:
   - component: {fileID: 1889594632}
   m_Layer: 0
   m_Name: Secret Enemy (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
