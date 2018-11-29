@@ -104,6 +104,13 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
     public void EnqueuePlayer(GameObject unit) { PlayerTeam.Enqueue(unit); }
     public void EnqueueEnemy(GameObject unit) { Enemies.Enqueue(unit); }
 
+    public GameObject getCurrentUnit(int unitNum)
+    {
+        if (unitNum >= 0 && unitNum <= 7)
+            return CurrentUnits[unitNum];
+        else return null;
+    }
+
     public Queue<Vector2Int> getPath(int x, int z) { return bestPaths[x, z]; }
     public void unHighlight()
     {
@@ -776,7 +783,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
 			default:
 					Debug.Log("weirdo number in spawnPlayer");
 					return;
-					break;
+					//break;
 		}
 		Transform TU = grid[Ux, Uz].GetComponent<cubeScript>().Node.transform;
 		unitSpawned = (GameObject)Instantiate(spawn, TU.position, TU.rotation);
@@ -888,6 +895,8 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
 
         //reset TickManager instance
         TickManager.instance = null;
+        EnemyManager.instance = null;
+        //Destroy(EM);
 
         //call endOfCombat for combatInterface
         endOfCombat(CapturedEnemies);
