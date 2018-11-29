@@ -29041,7 +29041,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 440458, guid: 994aac8c46b05f849b78294465816eb1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -18.008158
+      value: -18.07816
       objectReference: {fileID: 0}
     - target: {fileID: 440458, guid: 994aac8c46b05f849b78294465816eb1, type: 2}
       propertyPath: m_LocalPosition.y
@@ -29049,7 +29049,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 440458, guid: 994aac8c46b05f849b78294465816eb1, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -6.762247
+      value: -7.6622467
       objectReference: {fileID: 0}
     - target: {fileID: 440458, guid: 994aac8c46b05f849b78294465816eb1, type: 2}
       propertyPath: m_LocalRotation.x
@@ -29100,36 +29100,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1958366859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71715ee528f7803449976e8ce4c1ac69, type: 3}
+  m_Script: {fileID: 11500000, guid: 01e65e1e3ad047542b7842a44acfe48c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xRangePos: 20
-  xRangeNeg: -18
+  xRangePos: 41.1
+  xRangeNeg: 7.1
   yRange: 0
-  zRangePos: 4
-  zRangeNeg: -18
-  startPosition: {x: 8.76, y: 100.89, z: 19.65}
---- !u!195 &1958366861
-NavMeshAgent:
+  zRangePos: 6.1
+  zRangeNeg: 18.1
+  startPosition: {x: 8.76, y: 100.89, z: 18.75}
+  endPosition: {x: 8.76, y: 100.89, z: 18.75}
+--- !u!54 &1958366861
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1958366859}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &1962379046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: bef7b986193024a70aab30c47a7b66ec,

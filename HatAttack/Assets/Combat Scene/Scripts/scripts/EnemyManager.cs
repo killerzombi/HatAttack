@@ -46,7 +46,7 @@ public class EnemyManager : MonoBehaviour
                 UCI4.AttackUnit(ArrayScriptCombat.instance.getCurrentUnit(3));
                 break;
 				default:
-				Debug.Log("can't move a unit other than 0-3");
+				Debug.Log("can't move a unit other than 0-3  ::"+u);
 				break;
 		}
 	}

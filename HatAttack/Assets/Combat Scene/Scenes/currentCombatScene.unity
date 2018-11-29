@@ -1223,7 +1223,7 @@ MonoBehaviour:
   EUnit2: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
   EUnit3: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
   EUnit4: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
-  EBasePosition: {x: 28, y: 28}
+  EBasePosition: {x: 27, y: 27}
   tickDelay: 10
   noTimer: 0
   backTicks: 5
@@ -2668,7 +2668,7 @@ AudioListener:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1996702391}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1996702393
 Camera:
   m_ObjectHideFlags: 0
