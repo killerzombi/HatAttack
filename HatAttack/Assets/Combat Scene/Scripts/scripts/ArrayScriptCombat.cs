@@ -55,9 +55,19 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
 	private class ListNum{ public bool dead; public bool captured; public int num; }
 	private Dictionary<GameObject, int> GODic = new Dictionary<GameObject, int>();
     private EnemyManager EM = null;
+    private int playerLives = 0, enemyLives = 0;
 
     private bool initiated = false;
     private float Itimer = 0f;
+
+    #region singleton
+    public static ArrayScriptCombat instance = null;
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else Destroy(this);
+    }
+    #endregion
 
     // Use this for initialization
     void Start()
@@ -421,10 +431,13 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
                         case UnitAction.action.Heal:
                             break;
                         case UnitAction.action.Die:
+                            ArrayScriptCombat.instance.spawnPlayer(unit);
                             break;
                         case UnitAction.action.Captured:
                             break;
                         case UnitAction.action.Spawn:
+                            if (prev != null)
+                                ArrayScriptCombat.instance.unSpawn(unit);
                             break;
                     }
                 }
@@ -556,6 +569,8 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
                 if (current == null) current = start;
             }
         }
+
+        
         public bool Move(GameObject unit, Vector2Int position, int ticksForward = 0)
         {
             TickNode temp = current;
@@ -601,23 +616,71 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
         }
     }
 
-    
+    public void unSpawn(GameObject unit)
+    {
+        TickManager.instance.RemovePlayer(unit);
+        if (GODic.ContainsKey(unit))
+        {
+            if (GODic[unit] >= 0 && GODic[unit] <= 3)
+            {
+                playerLives++;
+                CurrentUnits[GODic[unit]] = null;
+                Queue<GameObject> temp = new Queue<GameObject>();
+                temp.Enqueue(unit);
+                while (PlayerTeam.Count > 0) temp.Enqueue(PlayerTeam.Dequeue());
+                while (temp.Count > 0) PlayerTeam.Enqueue(temp.Dequeue());
+            }
+            else if(GODic[unit] >= 4 && GODic[unit] <= 7)
+            {
+                enemyLives++;
+                CurrentUnits[GODic[unit]] = null;
+                Queue<GameObject> temp = new Queue<GameObject>();
+                temp.Enqueue(unit);
+                while (Enemies.Count > 0) temp.Enqueue(Enemies.Dequeue());
+                while (temp.Count > 0) Enemies.Enqueue(temp.Dequeue());
+            }
+        else Debug.Log("GODic has a weirdo number: " + GODic[unit]);
+        }
+        unit.SetActive(false);
+    }
     public void Do(GameObject unit) { history.Perform(unit); }
     public void Undo(GameObject unit) { history.Undo(unit); }
     public void UnitCaptured(GameObject unit)
     {
         history.CaptureUnit(unit);
         RemoveUnit(unit);
+        CapturedEnemies.Push(unit);
     }
     public void UnitDied(GameObject unit, GameObject killer)
     {
         history.KillUnit(unit, killer);
         RemoveUnit(unit);
+        Dead.Push(unit);
+
+        if (GODic.ContainsKey(unit))
+        {
+            if (GODic[unit] >= 0 && GODic[unit] <= 3)
+            {
+                if (playerLives > 0)
+                    PlayerTeam.Enqueue(unit);
+            }
+            else if (GODic[unit] >= 4 && GODic[unit] <= 7)
+            {
+                if(enemyLives > 0)
+                    Enemies.Enqueue(unit);
+            }
+        }
     }
     private void RemoveUnit(GameObject unit)
     {
         TickManager.instance.RemovePlayer(unit);
         unit.SetActive(false);
+        if (GODic.ContainsKey(unit)) {
+            if (GODic[unit] >= 0 && GODic[unit] <= 7) { 
+                CurrentUnits[GODic[unit]] = null;
+            }
+            else Debug.Log("GODic has a weirdo number: " + GODic[unit]);
+        }
     }
     public void UnitAttacked(GameObject unit, GameObject target)
     {
@@ -642,9 +705,20 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
         RoundCounter--;
         history.BackTick();
     }
-	#endregion
-	
-	private void spawnPlayer(int space, GameObject spawn)
+    #endregion
+
+    private void spawnPlayer(GameObject spawn)
+    {
+        if (GODic.ContainsKey(spawn))
+        {
+            if(GODic[spawn]>=0 && GODic[spawn] <= 7)
+            {
+                spawnPlayer(GODic[spawn], spawn);
+            }
+        }
+    }
+
+    private void spawnPlayer(int space, GameObject spawn)
 	{
 		GameObject unitSpawned = null;
 		int Ux=0, Uz=0;
@@ -653,42 +727,50 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
 			case 0:
 			{
 				Ux = BasePosition.x+1; Uz = BasePosition.y;
+                    playerLives--;
 				break;
 			}
 			case 1:
 			{
                     Ux = BasePosition.x; Uz = BasePosition.y + 1;
-				break;
+                    playerLives--;
+                    break;
 			}
 			case 2:
 			{
                     Ux = BasePosition.x - 1; Uz = BasePosition.y;
-				break;
+                    playerLives--;
+                    break;
 			}
 			case 3:
 			{
                     Ux = BasePosition.x; Uz = BasePosition.y - 1;
-				break;
+                    playerLives--;
+                    break;
 			}
 			case 4:
 			{
-				Ux = EBasePosition.x+1; Uz = EBasePosition.y;
-				break;
+				    Ux = EBasePosition.x+1; Uz = EBasePosition.y;
+                    enemyLives--;
+                    break;
 			}
 			case 5:
 			{
                     Ux = EBasePosition.x; Uz = EBasePosition.y + 1;
-				break;
+                    enemyLives--;
+                    break;
 			}
 			case 6:
 			{
                     Ux = EBasePosition.x - 1; Uz = EBasePosition.y;
-				break;
+                    enemyLives--;
+                    break;
 			}
 			case 7:
 			{
                     Ux = EBasePosition.x; Uz = EBasePosition.y - 1;
-				break;
+                    enemyLives--;
+                    break;
 			}
 		}
 		Transform TU = grid[Ux, Uz].GetComponent<cubeScript>().Node.transform;
@@ -699,6 +781,11 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
             if (space <= 3) usuci.Initialize();
                     }
 		CurrentUnits[space] = unitSpawned;
+        if (GODic.ContainsKey(spawn))
+        {
+            GODic[spawn] = space;
+        }
+        else GODic.Add(spawn, space);
 	}
 	
 	private void checkDone()
@@ -825,13 +912,11 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
                 bestPaths[x, y] = new Queue<Vector2Int>();
             }
         }
-
-        //old history  *new history is after unit spawns
-        //UnitPositions = new List<List<Vector2Int>>();
-        //for (int i = 0; i <= (backTicks * 2); i++)
-        //{
-        //    UnitPositions.Add(new List<Vector2Int>());
-        //}
+        if (PlayerTeam.Count > 0) playerLives = PlayerTeam.Count * 2 + 4;
+        else playerLives = 12;
+        if (Enemies.Count > 0) enemyLives = Enemies.Count * 2 + 4;
+        else enemyLives = 12;
+        
         if(PlayerTeam.Count > 0)
             Unit1 = PlayerTeam.Dequeue();
         if (PlayerTeam.Count > 0)

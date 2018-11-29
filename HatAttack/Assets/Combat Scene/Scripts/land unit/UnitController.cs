@@ -153,6 +153,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         health -= dTaken;
         if(health <= 0)
         {
+            MInterface.UnitDied(this.gameObject, attacker);
             if (HC != null)
                 HC.setHealth(0);
             UnitControllerInterface eCI = attacker.GetComponent<UnitControllerInterface>();

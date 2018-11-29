@@ -6,6 +6,7 @@ using UnityEngine;
 public class SelectionController : MonoBehaviour
 {
 
+    [SerializeField] private KeyCode endNow = KeyCode.Colon;
     [SerializeField] private KeyCode click = KeyCode.Mouse0;
     [SerializeField] private KeyCode escapeKey = KeyCode.F;
     [SerializeField] private KeyCode tickNow = KeyCode.Space;
@@ -67,6 +68,7 @@ public class SelectionController : MonoBehaviour
     {
         if (Input.GetKeyDown(tickNow) && watching) if (TickManager.instance != null) TickManager.instance.tickNow();
         if (Input.GetKeyDown(backTick) && watching) if (TickManager.instance != null) TickManager.instance.backTick();
+        if (Input.GetKeyDown(endNow) && watching) if (ArrayScriptCombat.instance != null) ArrayScriptCombat.instance.endCombat();
 
         if (Input.GetKeyDown(click) && watching)
         {
