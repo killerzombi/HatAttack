@@ -40,8 +40,7 @@ public class WorldTransferScript : MonoBehaviour {
         if (collision.gameObject.tag == "Enemy") 
         {
             targetScene = sceneImIn;
-            //StartCoroutine(MoveSpawnPoint(sceneImIn)); //starts a coroutine with this scene we're currently in
-			sceneImIn = "currentCombatScene"; //using targetScene for the DoneLoading function, changing sceneImIn to currentCombatScene won't let us ever leave combat
+			sceneImIn = "currentCombatScene"; 
              //sets the scene we're in to the target scene, will be combat scene in final project (probably)
             StartCoroutine(WaitOnSpawn(sceneImIn)); 
             combatSpawn.transform.position = this.gameObject.transform.position;
@@ -72,7 +71,7 @@ public class WorldTransferScript : MonoBehaviour {
         }
     }
     
-    IEnumerator WaitOnSpawn(string toLoad) //this function now handles all of loading
+    public IEnumerator WaitOnSpawn(string toLoad) //this function now handles all of loading
     {
 		AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(toLoad);
 		

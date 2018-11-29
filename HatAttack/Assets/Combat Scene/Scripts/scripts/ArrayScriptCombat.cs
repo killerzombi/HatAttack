@@ -1007,7 +1007,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
         if (TickManager.instance == null)
         {
             this.gameObject.AddComponent<TickManager>();
-            Debug.Log("np tick manager!");
+            Debug.Log("no tick manager!");
         }
         RoundCounter = 0;
 		TickManager.tick += checkDone;

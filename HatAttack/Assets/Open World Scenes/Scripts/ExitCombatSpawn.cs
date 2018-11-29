@@ -5,6 +5,7 @@ using UnityEngine;
 public class ExitCombatSpawn : MonoBehaviour {
 
     private ArrayScriptCombat ASC;
+    private WorldTransferScript wts;
     GameObject Player = null, Cam = null;
 
     public void setEndCombat(ArrayScriptCombat AS, GameObject player, GameObject cam)
@@ -12,8 +13,8 @@ public class ExitCombatSpawn : MonoBehaviour {
         ASC = AS;
         Player = player;
         Cam = cam;
+        Debug.Log("Adding OnEndOfCombat to the event");
         ASC.endOfCombat += OnEndOfCombat;
-
 
     }
 
@@ -23,6 +24,8 @@ public class ExitCombatSpawn : MonoBehaviour {
         Cam.gameObject.SetActive(true);
         Player = null; Cam = null;
         ASC.endOfCombat -= OnEndOfCombat;
+        Debug.Log("Starting the coroutine to exit combat");
+        StartCoroutine(wts.WaitOnSpawn(wts.targetScene));
     }
 
 	// Use this for initialization
