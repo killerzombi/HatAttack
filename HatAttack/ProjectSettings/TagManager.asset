@@ -7,6 +7,14 @@ TagManager:
   - ground
   - bridge
   - ice
+  - Icebeam
+  - Fire
+  - lava
+  - tornado
+  - FireA
+  - FireB
+  - FireC
+  - FireD
   layers:
   - Default
   - TransparentFX

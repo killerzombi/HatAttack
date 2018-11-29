@@ -28,7 +28,33 @@ public class RevealBridgeOnHit : MonoBehaviour {
             GameObject.FindWithTag("ice").GetComponent<Collider>().isTrigger = false;
             Debug.Log("Did a thing");
         }
+
+        if (other.gameObject.tag == "Icebeam" || other.gameObject.tag == "FireA")
+        {
+            GameObject.FindWithTag("FireA").SetActive(false);
+            Debug.Log("Did a thingA");
+        }
+
+        if (other.gameObject.tag == "Icebeam" || other.gameObject.tag == "FireB")
+        {
+            GameObject.FindWithTag("FireB").SetActive(false);
+            Debug.Log("Did a thingB");
+        }
+
+        if (other.gameObject.tag == "Icebeam" || other.gameObject.tag == "FireC")
+        {
+            GameObject.FindWithTag("FireC").SetActive(false);
+            Debug.Log("Did a thingC");
+        }
+
+        if (other.gameObject.tag == "Icebeam" || other.gameObject.tag == "FireD")
+        {
+            GameObject.FindWithTag("FireD").SetActive(false);
+            Debug.Log("Did a thingD");
+        }
+
     }
+
 
 
     // Use this for initialization
