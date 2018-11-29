@@ -13,7 +13,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
     public GameObject EUnit2;
     public GameObject EUnit3;
     public GameObject EUnit4;
-    public Vector2Int EBasePosition = new Vector2Int(27, 27);
+    public Vector2Int EBasePosition = new Vector2Int(28, 28);
     [Range(0.25f, 15f)] public float tickDelay = 3f;
     [SerializeField] private bool noTimer = false;
     [SerializeField] private int backTicks = 5;
@@ -103,13 +103,6 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
 
     public void EnqueuePlayer(GameObject unit) { PlayerTeam.Enqueue(unit); }
     public void EnqueueEnemy(GameObject unit) { Enemies.Enqueue(unit); }
-
-    public GameObject getCurrentUnit(int unitNum)
-    {
-        if (unitNum >= 0 && unitNum <= 7)
-            return CurrentUnits[unitNum];
-        else return null;
-    }
 
     public Queue<Vector2Int> getPath(int x, int z) { return bestPaths[x, z]; }
     public void unHighlight()
@@ -783,17 +776,16 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
 			default:
 					Debug.Log("weirdo number in spawnPlayer");
 					return;
-					//break;
+					break;
 		}
 		Transform TU = grid[Ux, Uz].GetComponent<cubeScript>().Node.transform;
 		unitSpawned = (GameObject)Instantiate(spawn, TU.position, TU.rotation);
         UnitControllerInterface usuci = unitSpawned.GetComponent<UnitControllerInterface>();
-        if (usuci != null)
-        {
+        if (usuci != null) {
             usuci.setGrid(this, new Vector2Int(Ux, Uz));
             if (space <= 3) usuci.Initialize();
-			else if(space <= 7 && EM != null) EM.spawnedEnemy(unitSpawned, space);
-        }
+			else if(space <= 7) EM.spawnedEnemy(unitSpawned, space);
+                    }
 		CurrentUnits[space] = unitSpawned;
         if (GODic.ContainsKey(spawn))
         {
@@ -896,8 +888,6 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
 
         //reset TickManager instance
         TickManager.instance = null;
-        EnemyManager.instance = null;
-        //Destroy(EM);
 
         //call endOfCombat for combatInterface
         endOfCombat(CapturedEnemies);
@@ -1017,7 +1007,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
         if (TickManager.instance == null)
         {
             this.gameObject.AddComponent<TickManager>();
-            Debug.Log("no tick manager!");
+            Debug.Log("np tick manager!");
         }
         RoundCounter = 0;
 		TickManager.tick += checkDone;

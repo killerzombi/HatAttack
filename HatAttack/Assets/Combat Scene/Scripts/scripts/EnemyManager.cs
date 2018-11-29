@@ -34,19 +34,19 @@ public class EnemyManager : MonoBehaviour
 		switch(u)
 		{
 			case 0:
-                UCI1.AttackUnit(ArrayScriptCombat.instance.getCurrentUnit(0));
+				//move unit1
 				break;
 			case 1:
-                UCI2.AttackUnit(ArrayScriptCombat.instance.getCurrentUnit(1));
-                break;
+				//move unit2
+				break;
 			case 2:
-                UCI3.AttackUnit(ArrayScriptCombat.instance.getCurrentUnit(2));
-                break;
+				//move unit3
+				break;
 			case 3:
-                UCI4.AttackUnit(ArrayScriptCombat.instance.getCurrentUnit(3));
-                break;
+				//move unit4
+				break;
 				default:
-				Debug.Log("can't move a unit other than 0-3  ::"+u);
+				Debug.Log("can't move a unit other than 0-3");
 				break;
 		}
 	}

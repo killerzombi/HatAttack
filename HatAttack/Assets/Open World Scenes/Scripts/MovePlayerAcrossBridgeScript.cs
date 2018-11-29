@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class MovePlayerAcrossBridgeScript : MonoBehaviour {
 	Transform tempTrans;
-    Transform tempScale;
 
 	// Use this for initialization
 	void Start () {
-
-        tempTrans = transform.parent;
-
-    }
+		
+		
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -19,17 +17,17 @@ public class MovePlayerAcrossBridgeScript : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision collisionInfo)
 	{
-        Debug.Log("Started colliding with: " + collisionInfo.gameObject);
 		if (collisionInfo.gameObject.tag == "Bridge")
 		{
-			Debug.Log("collided with:" + collisionInfo.gameObject);
+			tempTrans = transform.parent;
+			Debug.Log("collided with:" + collisionInfo);
 			transform.parent = collisionInfo.gameObject.transform;
 		}
 	}
-	void OnTriggerExit(Collider collisionInfo)
+	void OnCollisionExit(Collision collisionInfo)
 	{
-        Debug.Log("stopped colliding with " + collisionInfo.gameObject);
-	    transform.parent = tempTrans;
+		if (collisionInfo.gameObject.tag == "Bridge")
+			transform.parent = tempTrans;
 	}
 	
 }

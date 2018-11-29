@@ -11,18 +11,16 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     private float defense;
     private float experience;
     private int LeveL = 1;
-    [SerializeField]private int HeldLeveL = 1;
     private static float[] nextLVL = { 0, 100, 250, 450, 700, 1000, 1350, 1750, 2200, 2700, 3250, 3850, 4500, 5200, 5950, 6750,
                                         7600, 8500, 9450, 10450, 11500, 12600, 13750, 14950, 16200, 17500};
 	protected float[] LVLMHealth = { 0, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500,
 										525, 550, 575, 600, 625, 650, 675 };
-    protected float[] LVLAttack = { 0, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115,
-                                        120, 125, 130, 135 };
-    protected float[] LVLDefense = { 0, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43, 46, 49, 52, 55, 58, 61, 64, 67,
-                                        70, 73, 76, 79 };
-
-
-    protected int moveSpeed = 5;
+	protected float[] LVLAttack = { 0, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+										22, 23, 24, 25, 26, 27, 28 };
+	protected float[] LVLDefense = { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+										19, 20, 21, 22, 23, 24, 25 };
+	
+	protected int moveSpeed = 5;
 	protected int attackRange = 3;
     private float moveTime = 0.6f;
     private bool amIanEnemy = false;
@@ -98,10 +96,10 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
 				Queue<Vector2Int> Path = new Queue<Vector2Int>();
 				Path = eCI.pathFrom(position);
 				if(Path.Count < attackRange){
+					NTarget = null;
 					eCI.UnitAttacked(this.gameObject, attack);
 					tick -= AttackNow;
                     MInterface.UnitAttacked(this.gameObject, NTarget);
-					NTarget = null;
 				}
 				else 
 				{
@@ -312,11 +310,11 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         Path.CopyTo(pathArray, 0);
         Vector2Int target = pathArray[Path.Count - 1];
         if (currentRound == MInterface.getRound()) { }
-        else Debug.Log("round difference: " + (MInterface.getRound() - currentRound)); //flip it for positive
+        else Debug.Log("round difference: " + (MInterface.getRound() - currentRound));
 
         if (Path.Count > 0)
         {
-            int addTick = currentRound - MInterface.getRound();
+            int addTick = 0;
             while (Path.Count > moveSpeed)
             {
                 Queue<Vector2Int> cPath = new Queue<Vector2Int>();
@@ -380,7 +378,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         if (Path.Count > 0)
         {
 
-            int addTick = currentRound - MInterface.getRound();
+            int addTick = 0;
             while (Path.Count > moveSpeed)
             {
                 Queue<Vector2Int> cPath = new Queue<Vector2Int>();
