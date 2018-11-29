@@ -295,7 +295,7 @@ public class TickManager : MonoBehaviour
 			{
 				if(EMTimer > (Timer % (tickDelay/5f))){
 					if(EMtick != null)
-						EMtick((int)(Timer/(tickDelay/5f)));
+						EMtick((int)((Timer/(tickDelay/5f))-1));
 				}
 				EMTimer = (Timer % (tickDelay/5));
 			}
