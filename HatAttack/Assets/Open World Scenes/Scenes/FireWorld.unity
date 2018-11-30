@@ -623,8 +623,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1513140025}
-  - component: {fileID: 153525475}
   - component: {fileID: 153525474}
+  - component: {fileID: 153525475}
   - component: {fileID: 153525473}
   - component: {fileID: 153525476}
   m_Layer: 0
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 153525472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e19ad2d638b147458c8a7d7cc5a2455, type: 3}
+  m_Script: {fileID: 11500000, guid: 400040d639724ac419fadeb0186bd11e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   iceSpawn: []
@@ -5239,8 +5239,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.3420725, y: 5.3420744, z: 9.762251}
-  m_Center: {x: 0.00000023841858, y: -0.00000023841864, z: 1.4420253}
+  m_Size: {x: 0.6187211, y: 0.65030265, z: 2.276225}
+  m_Center: {x: -0.007843498, y: 0.0047743507, z: 0.2562095}
 --- !u!1 &167902436 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 168262, guid: 062893e7007e39441aea009115b6cefa,
@@ -5254,7 +5254,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 167902436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e19ad2d638b147458c8a7d7cc5a2455, type: 3}
+  m_Script: {fileID: 11500000, guid: d538f52fed051c147b644d2de2f3e2b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   iceSpawn: []
@@ -5268,8 +5268,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 12.361361, y: 9.598579, z: 3.0816116}
+  m_Center: {x: -0.790534, y: -1.416439, z: 1.0408058}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -17256,9 +17256,9 @@ GameObject:
   m_Component:
   - component: {fileID: 76554644}
   - component: {fileID: 637289469}
-  - component: {fileID: 637289468}
   - component: {fileID: 637289467}
   - component: {fileID: 637289470}
+  - component: {fileID: 637289468}
   m_Layer: 0
   m_Name: Fire (1)
   m_TagString: FireB
@@ -17332,7 +17332,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 637289466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e19ad2d638b147458c8a7d7cc5a2455, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cc70619b5f19034fbaabcd2ae6804d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   iceSpawn: []
@@ -21871,8 +21871,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.3420725, y: 5.3420744, z: 9.762251}
-  m_Center: {x: 0.00000047683716, y: -0.00000023841864, z: 1.4420253}
+  m_Size: {x: 0.45976865, y: 0.48211727, z: 2.3904119}
+  m_Center: {x: -0.068520695, y: -0.04110721, z: 0.27101484}
 --- !u!1001 &642278741
 Prefab:
   m_ObjectHideFlags: 0
@@ -28178,7 +28178,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1873446497}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e19ad2d638b147458c8a7d7cc5a2455, type: 3}
+  m_Script: {fileID: 11500000, guid: 46d87bc7316374941b23324aa42f3b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   iceSpawn: []
@@ -28192,8 +28192,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 54.911694, y: 35.745125, z: 4.8664093}
+  m_Center: {x: -0.055330276, y: -5.692089, z: -0.15509224}
 --- !u!1001 &1882054543
 Prefab:
   m_ObjectHideFlags: 0
