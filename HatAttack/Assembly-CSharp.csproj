@@ -70,6 +70,7 @@
      <Compile Include="Assets\Combat Scene\Scripts\scripts\SelectionController.cs" />
      <Compile Include="Assets\Combat Scene\Scripts\scripts\snake\ArrayScript.cs" />
      <Compile Include="Assets\Combat Scene\Scripts\scripts\snake\SnakeMapInterface.cs" />
+     <Compile Include="Assets\Combat Scene\Scripts\scripts\snake\SnakeScreen.cs" />
      <Compile Include="Assets\Combat Scene\Scripts\scripts\snake\SnakeScript.cs" />
      <Compile Include="Assets\Combat Scene\Scripts\scripts\TerrainType.cs" />
      <Compile Include="Assets\Combat Scene\Scripts\scripts\TickManager.cs" />

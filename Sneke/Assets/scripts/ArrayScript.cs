@@ -5,6 +5,8 @@ using UnityEngine;
 public class ArrayScript : MonoBehaviour, SnakeMapInterface
 {
     public GameObject prefabCube;
+    // v This is for the Snake Screen UI
+    public GameObject snakeScreenUI;
     public Material snakeMaterial;
     public Material transparent;
     public Material next;

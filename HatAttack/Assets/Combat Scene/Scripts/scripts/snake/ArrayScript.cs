@@ -5,6 +5,8 @@ using UnityEngine;
 public class ArrayScript : MonoBehaviour, SnakeMapInterface
 {
     public GameObject prefabCube;
+    // v This is for the SnakeScreen UI
+    public GameObject snakeScreen;
     public Material snakeMaterial;
     public Material transparent;
     public Material next;
@@ -24,9 +26,10 @@ public class ArrayScript : MonoBehaviour, SnakeMapInterface
     private Vector2Int NBposition;
 
 
-    // Use this for initialization
-    void Start()
+    
+    public void beginSnake()
     {
+        print("Begin snake");
         nextBack = null;
         Vector2 topLeft = new Vector2(-500 + ((float)-((width + ((width - 1) * spacing)) / 2)), 0 + ((float)((height + ((height - 1) * spacing)) / 2)));
         ML = width;
@@ -49,7 +52,19 @@ public class ArrayScript : MonoBehaviour, SnakeMapInterface
         {
             M.material = transparent;
         }
+        // Bring up the SnakeScreenUI
+        snakeScreen.SetActive(true);
+        // Then begin snake game.
         StartSnake();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            print("Got K key press");
+            beginSnake();
+        }
     }
 
     void StartSnake()
@@ -70,6 +85,12 @@ public class ArrayScript : MonoBehaviour, SnakeMapInterface
         nextBack = snakeMaterial;       //Based on assumption == true
         Jset(x, y, snakeMaterial);
         danger[x, y] = true;
+    }
+
+    public void lose()
+    {
+        print("ya lose");
+     
     }
 
     public void BecomeNext(int x, int y)

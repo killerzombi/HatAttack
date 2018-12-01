@@ -10,4 +10,5 @@ public interface SnakeMapInterface
     void BecomeNext(int x, int y);
     void SetBoundary(int x, int y);
     void setFood(int x, int y);
+    void lose();
 }

@@ -21,6 +21,7 @@ public class SnakeScript : MonoBehaviour, SnakeMapInterface
     // Update is called once per frame
     void Update()
     {
+        
         if (playing)
         {
             if (tt > 0)
@@ -53,6 +54,11 @@ public class SnakeScript : MonoBehaviour, SnakeMapInterface
         }
     }
 
+    public void lose()
+    {
+        print("success");
+    }
+
     private void Tick()
     {
         timeStamp = Time.time;
@@ -72,6 +78,7 @@ public class SnakeScript : MonoBehaviour, SnakeMapInterface
             playing = false;
             setNext(next);
             sneke.death();
+            lose();
             return;
         }
 
@@ -254,6 +261,7 @@ public class SnakeScript : MonoBehaviour, SnakeMapInterface
         private int size;
         private SnakeMapInterface Map;
         private bool debug;
+        public GameObject SnakeScreen;
 
         public void AddPiece(int x, int y)
         {
@@ -354,6 +362,7 @@ public class SnakeScript : MonoBehaviour, SnakeMapInterface
                 Vector2Int t = deathStack.Pop();
                 Map.SetBoundary(t.x, t.y);
             }
+         
         }
     }
 }
