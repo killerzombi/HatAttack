@@ -23,8 +23,13 @@ public class OverworldEnemyScript : MonoBehaviour
     NavMeshAgent agent;
     public Vector3 startPosition = new Vector3(0f, 0f, 0f); //the position that the enemy starts, probably needs to be a vector3
     private Vector3 endPosition;             //the position that was chosen for the enemy to move to 
+	private GameObject player;
+	public float playerDistance = 4f;
+	private Vector3 tempTrans;
+	
     void Start()
     {
+		player = GameObject.Find("Player");
         agent = GetComponent<NavMeshAgent>();
         xRangeMaxPos = startPosition.x + xRangePos; //the start position of each enemy gets changed in the unity editor, this code sets the bounds of how far the enemy can move
         xRangeMaxNeg = startPosition.x - xRangeNeg;
@@ -42,19 +47,41 @@ public class OverworldEnemyScript : MonoBehaviour
 
     void Update()
     {
-        setEndPosition();
+        moveEnemy();
+
+		
     }
-    public void setEndPosition()
+    public void moveEnemy()
     {
-        if (Vector3.Distance(this.gameObject.transform.position, endPosition) <= 0.1f) //if we're near the destination, acquire a new one. Don't need to get exactly to the destination, since the enemy is walking randomly.
+		if (Vector3.Distance(transform.position, player.transform.position) <= playerDistance && playerInRange())
+		{
+			agent.SetDestination(player.transform.position);
+		}
+
+		else if (Vector3.Distance(transform.position, endPosition) <= 0.1f) //if we're near the destination, acquire a new one. Don't need to get exactly to the destination, since the enemy is walking randomly.
         {
-            xDestination = Random.Range(xRangeMaxNeg, xRangeMaxPos); //set the X position we'll move to to a random position within this enemy's walking range
-            yDestination = startPosition.y; //stay on the level same level in Y that we started on
-            zDestination = Random.Range(zRangeMaxNeg, zRangeMaxPos); //set the Z position we'll move to to a random position in the enemy's walking range
-            endPosition = new Vector3(xDestination, yDestination, zDestination); //put all the positions into a new vector 3
+            generateRandomDestination();
             agent.SetDestination(endPosition); //move the enemy to the new position just created
         }
     }
+	public void generateRandomDestination()
+	{
+		xDestination = Random.Range(xRangeMaxNeg, xRangeMaxPos); //set the X position we'll move to to a random position within this enemy's walking range
+        yDestination = startPosition.y; //stay on the level same level in Y that we started on
+        zDestination = Random.Range(zRangeMaxNeg, zRangeMaxPos); //set the Z position we'll move to to a random position in the enemy's walking range
+        endPosition = new Vector3(xDestination, yDestination, zDestination); //put all the positions into a new vector 3
+	}
+	public bool playerInRange()
+	{
+		if (player.transform.position.x > xRangeMaxNeg)
+			if (player.transform.position.x < xRangeMaxPos)
+				if (player.transform.position.z > zRangeMaxNeg)
+					if (player.transform.position.z < zRangeMaxPos)
+						return true;
+		agent.SetDestination(endPosition);
+		return false;
+	}
+
 	//potential idea for fixing the bug of enemies walking through the player, needs work
 	// void OnCollisionEnter(Collision collisionInfo)
 	// {

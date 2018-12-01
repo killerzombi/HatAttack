@@ -41,7 +41,7 @@ public class WorldTransferScript : MonoBehaviour {
         {	targetScene = sceneImIn; //use targetScene to leave combat
 			sceneImIn = "currentCombatScene";
              //sets the scene we're in to the target scene, will be combat scene in final project (probably)
-            StartCoroutine(WaitOnSpawn(sceneImIn)); 
+            //StartCoroutine(WaitOnSpawn(sceneImIn)); 
             combatSpawn.transform.position = this.gameObject.transform.position; //if there's any issues with returning to the world where the player was when they entered combat investigate this line
             //Change the scene name when we move it to live
         }
