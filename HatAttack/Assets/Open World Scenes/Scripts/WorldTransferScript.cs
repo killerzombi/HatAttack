@@ -38,19 +38,18 @@ public class WorldTransferScript : MonoBehaviour {
             StartCoroutine(WaitOnSpawn(sceneImIn));
         }	//the if statement below(V V V V V) needs to change to --> if(collision.gameObject.tag == "Enemy")	-->	then tag all enemies "Enemy" -- done
         if (collision.gameObject.tag == "Enemy") 
-        {
-            //StartCoroutine(MoveSpawnPoint(sceneImIn)); //starts a coroutine with this scene we're currently in
-			targetScene = "currentCombatScene"; //using targetScene for the DoneLoading function, changing sceneImIn to currentCombatScene won't let us ever leave combat
+        {	targetScene = sceneImIn; //use targetScene to leave combat
+			sceneImIn = "currentCombatScene";
              //sets the scene we're in to the target scene, will be combat scene in final project (probably)
-            StartCoroutine(WaitOnSpawn(targetScene)); 
-            combatSpawn.transform.position = this.gameObject.transform.position;
+            StartCoroutine(WaitOnSpawn(sceneImIn)); 
+            combatSpawn.transform.position = this.gameObject.transform.position; //if there's any issues with returning to the world where the player was when they entered combat investigate this line
             //Change the scene name when we move it to live
         }
     }
 
     private void DoneLoading()
     {
-        if(targetScene == "currentCombatScene")
+        if(sceneImIn == "currentCombatScene")
         {
             Debug.Log("spawning combat");
             GameObject Array = GameObject.Find("Array");
@@ -72,13 +71,14 @@ public class WorldTransferScript : MonoBehaviour {
     }
 
 
-    IEnumerator WaitOnSpawn(string toLoad) //this function now handles all of loading
+    public IEnumerator WaitOnSpawn(string toLoad) //this function now handles all of loading
     {
 		AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(toLoad);
 		
 		camera.clearFlags = CameraClearFlags.SolidColor;
 		camera.cullingMask = 0;
-        yield return new WaitForSeconds(0.35f); //waits 0.2 seconds upon load, allowing the gameobject for this world to be acquired in the update function -- maybe don't need this coroutine anymore either
+		while(!asyncLoad.isDone)
+			yield return new WaitForSeconds(0.1f); //waits 0.2 seconds upon load, allowing the gameobject for this world to be acquired in the update function -- maybe don't need this coroutine anymore either
 		//if there is any issue of the player not landing in the start room, increase the time in the WaitForSeconds above
 		camera.clearFlags = CameraClearFlags.Skybox;
 		camera.cullingMask = -1; //-1 is the everything setting

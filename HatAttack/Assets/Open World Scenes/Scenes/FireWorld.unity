@@ -22046,7 +22046,6 @@ Transform:
   - {fileID: 285168296}
   - {fileID: 325105995}
   - {fileID: 2051900920}
-  - {fileID: 1958366858}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29037,19 +29036,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 661348459}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 440458, guid: 994aac8c46b05f849b78294465816eb1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -18.008158
+      value: 8.6
       objectReference: {fileID: 0}
     - target: {fileID: 440458, guid: 994aac8c46b05f849b78294465816eb1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.630913
+      value: 100.89
       objectReference: {fileID: 0}
     - target: {fileID: 440458, guid: 994aac8c46b05f849b78294465816eb1, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -6.762247
+      value: 19.48
       objectReference: {fileID: 0}
     - target: {fileID: 440458, guid: 994aac8c46b05f849b78294465816eb1, type: 2}
       propertyPath: m_LocalRotation.x
@@ -29069,7 +29068,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 440458, guid: 994aac8c46b05f849b78294465816eb1, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 141900, guid: 994aac8c46b05f849b78294465816eb1, type: 2}
       propertyPath: m_TagString
@@ -29077,16 +29076,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 141900, guid: 994aac8c46b05f849b78294465816eb1, type: 2}
       propertyPath: m_Name
-      value: FireTorando
+      value: FireTornado
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 994aac8c46b05f849b78294465816eb1, type: 2}
   m_IsPrefabAsset: 0
---- !u!4 &1958366858 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 440458, guid: 994aac8c46b05f849b78294465816eb1,
-    type: 2}
-  m_PrefabInternal: {fileID: 1958366857}
 --- !u!1 &1958366859 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 141900, guid: 994aac8c46b05f849b78294465816eb1,
@@ -29100,36 +29094,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1958366859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71715ee528f7803449976e8ce4c1ac69, type: 3}
+  m_Script: {fileID: 11500000, guid: a0a03a383f817e64cb82cbc768f7ea6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xRangePos: 20
-  xRangeNeg: -18
+  xRangePos: 41
+  xRangeNeg: 8
   yRange: 0
-  zRangePos: 4
-  zRangeNeg: -18
-  startPosition: {x: 8.76, y: 100.89, z: 19.65}
---- !u!195 &1958366861
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1958366859}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  zRangePos: 5.8
+  zRangeNeg: 19
+  speed: 0.05
+  startPosition: {x: 8.6, y: 100.89, z: 19.48}
+  endPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1962379046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: bef7b986193024a70aab30c47a7b66ec,

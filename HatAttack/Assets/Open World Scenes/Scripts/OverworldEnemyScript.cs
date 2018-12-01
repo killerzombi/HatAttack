@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class OverworldEnemyScript : MonoBehaviour
 {
+	WorldTransferScript wts;
 
     public float xRangePos = 14f; //a range for how far the enemies can walk, change it on every enemy with this script attached
                                   //how far forward
@@ -54,5 +55,17 @@ public class OverworldEnemyScript : MonoBehaviour
             agent.SetDestination(endPosition); //move the enemy to the new position just created
         }
     }
+	//potential idea for fixing the bug of enemies walking through the player, needs work
+	// void OnCollisionEnter(Collision collisionInfo)
+	// {
+		// if(collisionInfo.gameObject.name == "Player")
+		// {
+			// wts.targetScene = wts.sceneImIn;
+			// wts.sceneImIn = "currentCombatScene";
+			// StartCoroutine(wts.WaitOnSpawn(wts.sceneImIn));
+			// wts.combatSpawn.transform.position = GameObject.Find("Player").transform.position;
+		// }
+	// }
+	
 
 }
