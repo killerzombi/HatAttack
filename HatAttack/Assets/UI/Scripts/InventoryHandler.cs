@@ -5,15 +5,31 @@ using UnityEngine;
 public class InventoryHandler : MonoBehaviour
 {
 
+    bool isOpen = false;
+
 
   public GameObject Inventory;
 
+
+    void closeInventory()
+    {
+        Inventory.SetActive(false);
+    }
 
   void Update()
   {
     if (Input.GetKeyDown("i"))
     {
-      Inventory.SetActive(true);
+        if(isOpen)
+        {
+            Inventory.SetActive(false);
+                isOpen = false;
+        }
+        else
+        {
+            Inventory.SetActive(true);
+                isOpen = true;
+        }
     }
   }
 
