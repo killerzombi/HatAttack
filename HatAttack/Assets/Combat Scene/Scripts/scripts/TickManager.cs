@@ -57,6 +57,12 @@ public class TickManager : MonoBehaviour
     //    else return new System.Delegate[0];
     //}
 
+    // Used for getting the list in the TickManager UI
+    public Queue<GameObject> getInitiativeList()
+    {
+        return InitiativeList;
+    }
+
     public EventDic EnqueuePlayer(GameObject unit)
     {
         if (unit == null) Debug.Log("enquinging nothing???");
