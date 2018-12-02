@@ -30,6 +30,7 @@ public class OverworldEnemyScript : MonoBehaviour
     void Start()
     {
 		player = GameObject.Find("Player");
+		wts = player.GetComponent<WorldTransferScript>();
         agent = GetComponent<NavMeshAgent>();
         xRangeMaxPos = startPosition.x + xRangePos; //the start position of each enemy gets changed in the unity editor, this code sets the bounds of how far the enemy can move
         xRangeMaxNeg = startPosition.x - xRangeNeg;
@@ -80,6 +81,16 @@ public class OverworldEnemyScript : MonoBehaviour
 						return true;
 		agent.SetDestination(endPosition);
 		return false;
+	}
+	void OnCollisionEnter(Collision collisionInfo)
+	{
+		if(collisionInfo.gameObject.name == "Player")
+		{
+			wts.targetScene = wts.sceneImIn;
+			wts.sceneImIn = "currentCombatScene";
+			StartCoroutine(wts.WaitOnSpawn(wts.sceneImIn));
+			wts.combatSpawn.transform.position = GameObject.Find("Player").transform.position;
+		}
 	}
 
 	//potential idea for fixing the bug of enemies walking through the player, needs work

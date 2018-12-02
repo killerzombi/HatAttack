@@ -13,10 +13,6 @@ public class WorldTransferScript : MonoBehaviour {
     GameObject hubSpawn;
     public GameObject combatSpawn;
     //public GameObject combatArray;
-    private void Update()
-    {
-
-    }
 
     void OnCollisionEnter(Collision collision)
 	{
@@ -37,6 +33,12 @@ public class WorldTransferScript : MonoBehaviour {
             sceneImIn = "HubWorld";
             StartCoroutine(WaitOnSpawn(sceneImIn));
         }	//the if statement below(V V V V V) needs to change to --> if(collision.gameObject.tag == "Enemy")	-->	then tag all enemies "Enemy" -- done
+		if (collision.gameObject.tag == "Fire")
+		{
+			Debug.Log("Collided with" + collision.gameObject.name);
+			sceneImIn = "HubWorld";
+			StartCoroutine(WaitOnSpawn(sceneImIn));
+		}
         if (collision.gameObject.tag == "Enemy") 
         {	targetScene = sceneImIn; //use targetScene to leave combat
 			sceneImIn = "currentCombatScene";
