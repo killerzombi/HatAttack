@@ -1634,7 +1634,7 @@ MonoBehaviour:
   Intro: {fileID: 8300000, guid: eb2c0d5632a8f4d458ec3765294b40ad, type: 3}
   Loop: {fileID: 8300000, guid: 0b53ea12bfe714a91a5cc49e1f01779b, type: 3}
   introDuration: 4.3
-  loopDuration: 128
+  loopDuration: 126
 --- !u!82 &606458878
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3554,6 +3554,7 @@ MonoBehaviour:
   PlayerAnim: {fileID: 1145341456}
   iceGiantScript: {fileID: 1145341457}
   demonLordScript: {fileID: 1145341455}
+  IceBlockScript: {fileID: 558265319}
   IceGiantRenderer: {fileID: 1183142407}
   DemonLordRenderer: {fileID: 370201921}
 --- !u!114 &1145341459
@@ -6660,7 +6661,7 @@ GameObject:
   m_Layer: 0
   m_Name: IceSpawn
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

@@ -11,6 +11,7 @@ public class SwitchScript : MonoBehaviour {
 
     public IceGiantScript iceGiantScript;
     public DemonLordScript demonLordScript;
+    public spawnIceBlock IceBlockScript;
     //BirdScript birdScript;
 
     public SkinnedMeshRenderer IceGiantRenderer;
@@ -41,6 +42,7 @@ public class SwitchScript : MonoBehaviour {
         IceGiantAnim.enabled = false;
         iceGiantScript.enabled = false;
         IceGiantRenderer.enabled = false;
+        IceBlockScript.enabled = false;
 
         DemonLordAnim.enabled = false;
         demonLordScript.enabled = false;
@@ -56,6 +58,7 @@ public class SwitchScript : MonoBehaviour {
             IceGiantAnim.enabled = true;
             iceGiantScript.enabled = true;
             IceGiantRenderer.enabled = true;
+            IceBlockScript.enabled = true;
         }
         else if (creatureType == 1)
         {
