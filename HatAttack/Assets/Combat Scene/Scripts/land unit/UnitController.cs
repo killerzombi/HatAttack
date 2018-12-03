@@ -49,13 +49,11 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     private IEnumerator MoveDownPath(Queue<Vector2Int> path, float timeToMove)
     {
         float cTimeToMove = timeToMove / path.Count;
-        currentRound++;
         while (path.Count > 0)
         {
             Vector2Int cpos = path.Dequeue();
 
             Vector3 target = MInterface.GetNode(cpos.x, cpos.y).transform.position;
-            //Debug.Log(target);
             Vector3 currentPos = this.transform.position;
             float t = 0f;
             while (t < 1)
@@ -105,6 +103,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
 				}
 				else 
 				{
+                    clearMovement();
 					MoveUnit(Path);
 					moveOnTick();
 				}
@@ -205,7 +204,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     private void NextMove()
     {
         moveNowCount--;
-        if (!MovingNow)
+        if (!MovingNow && nextPathPositions.Count > 0)
         {
             MovingNow = true;
             StartCoroutine(MoveDownPath(nextPaths.Dequeue(), moveTime));
@@ -215,6 +214,16 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
             moveNowCount++;
 
         if (moveNowCount <= 0) { moveNow -= NextMove; }
+    }
+
+    private void clearMovement()
+    {
+        moveNowCount = 0;
+        inMoveSys = false;
+        allPaths.Clear();
+        allPathPositions.Clear();
+        nextPaths.Clear();
+        nextPathPositions.Clear();
     }
 
     private void moveOnTick()  //IF YOU CHANGE THE NAME CHANGE IT IN MOVEUNIT AS WELL!!!
@@ -238,31 +247,8 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         }
         else
         {
-            switch (TickManager.instance.getTM())
-            {
-                case TickManager.TickMode.Chaos:
-                    {
-                        TickManager.tick -= moveOnTick;
-                        inMoveSys = false;
-                        break;
-                    }
-                case TickManager.TickMode.Team:
-                    {
-                        inMoveSys = false;
-                        break;
-                    }
-                case TickManager.TickMode.Initiative1:
-                    {
                         tick -= moveOnTick;
                         inMoveSys = false;
-                        break;
-                    }
-                case TickManager.TickMode.Initiative2:
-                    {
-                        inMoveSys = false;
-                        break;
-                    }
-            }
         }
     }
     public void backMove(Queue<Vector2Int> origPath, Vector2Int target)
@@ -311,8 +297,6 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         Vector2Int[] pathArray = new Vector2Int[Path.Count];
         Path.CopyTo(pathArray, 0);
         Vector2Int target = pathArray[Path.Count - 1];
-        if (currentRound == MInterface.getRound()) { }
-        else Debug.Log("round difference: " + (MInterface.getRound() - currentRound)); //flip it for positive
 
         if (Path.Count > 0)
         {
@@ -348,34 +332,15 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         if (!inMoveSys)
         {
             inMoveSys = true;
-            switch (TickManager.instance.getTM())
-            {
-                case TickManager.TickMode.Chaos:
-                    {
-                        TickManager.tick += moveOnTick;
-                        break;
-                    }
-                case TickManager.TickMode.Team:
-                    {
-                        break;
-                    }
-                case TickManager.TickMode.Initiative1:
-                    {
-                        tick += moveOnTick;
-                        break;
-                    }
-                case TickManager.TickMode.Initiative2:
-                    {
-                        break;
-                    }
-            }
+            tick += moveOnTick;
         }
     }
 
-    public void MoveUnit(Vector2Int target, int TicksForward = 0)
+    //warning this MoveUnit clears attacks
+    public void MoveUnit(Vector2Int target, int TicksForward = 0) //warning this MoveUnit clears attacks
+    //warning this MoveUnit clears attacks
     {
-        if (currentRound == MInterface.getRound()) { }
-        else Debug.Log("round difference: " + (MInterface.getRound() - currentRound));
+        if(NTarget != null) { NTarget = null; clearMovement(); tick -= AttackNow; }
         Queue<Vector2Int> Path = MInterface.getPath(target.x, target.y);
         if (Path.Count > 0)
         {
@@ -418,27 +383,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         if (!inMoveSys)
         {
             inMoveSys = true;
-            switch (TickManager.instance.getTM())
-            {
-                case TickManager.TickMode.Chaos:
-                    {
-                        TickManager.tick += moveOnTick;
-                        break;
-                    }
-                case TickManager.TickMode.Team:
-                    {
-                        break;
-                    }
-                case TickManager.TickMode.Initiative1:
-                    {
-                        tick += moveOnTick;
-                        break;
-                    }
-                case TickManager.TickMode.Initiative2:
-                    {
-                        break;
-                    }
-            }
+            tick += moveOnTick;
         }
     }
 
@@ -507,6 +452,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     private void onMyTick()
     {
         MInterface.Do(this.gameObject);
+        currentRound++;
         if (tick != null)
             tick();
         //Debug.Log(this.gameObject + " Did a tick");

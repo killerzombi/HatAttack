@@ -39,20 +39,12 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
     //private List<List<Vector2Int>> UnitPositions; //old history
     private int RoundCounter = 0;
 
-    private GameObject unit1 = null;
-    private GameObject unit2 = null;
-    private GameObject unit3 = null;
-    private GameObject unit4 = null;
-    private GameObject Eunit1 = null;
-    private GameObject Eunit2 = null;
-    private GameObject Eunit3 = null;
-    private GameObject Eunit4 = null;
+    
     private GameObject[] CurrentUnits = new GameObject[8];
 	private Queue<GameObject> PlayerTeam = new Queue<GameObject>();
     private Queue<GameObject> Enemies = new Queue<GameObject>();
     private Stack<GameObject> CapturedEnemies = new Stack<GameObject>();
 	private LStack<GameObject> Dead = new LStack<GameObject>();
-	private class ListNum{ public bool dead; public bool captured; public int num; }
 	private Dictionary<GameObject, int> GODic = new Dictionary<GameObject, int>();
     private EnemyManager EM = null;
     private int playerLives = 0, enemyLives = 0;

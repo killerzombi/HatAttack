@@ -60,7 +60,7 @@ public class SelectionController : MonoBehaviour
         if (CS == null) Debug.Log("selectionscript cannot access camerascript");
         S2 = new Queue<SelectionInterface>();
 
-         GameObject rn = GameObject.Instantiate(RangeNote, this.gameObject.transform);
+        GameObject rn = GameObject.Instantiate(RangeNote, this.gameObject.transform);
         rn.transform.position = transform.position + (transform.forward * range);
     }
     // Update is called once per frame
@@ -125,7 +125,7 @@ public class SelectionController : MonoBehaviour
                             startMouse();
                             if (UCI != null)
                             {
-                                UCI.MoveUnit(SI.getPosition(), roundForward);
+                                UCI.MoveUnit(SI.getPosition(), roundForward); //clears attack target for this unit
                                 UCI.unHighlightGrid();
                                 roundForward++;
                                 UCI.highlightGrid(USelectColor * HighlightStrength * 0.8f, SI.getPosition(), roundForward);

@@ -7,7 +7,7 @@ public class TerrainType : MonoBehaviour
 
   public int TerrainTypeNum;
   public string TerrainName;
-  Material material;
+
 
   // =============================
   // Terrain Types
@@ -51,25 +51,5 @@ public class TerrainType : MonoBehaviour
             return cube;
         }
         return cube;
-  }
-
-  void plain()
-  {
-    material.color = Color.green;
-  }
-
-  void ice()
-  {
-    material.color = Color.blue;
-  }
-
-  void mountain()
-  {
-    material.color = Color.red;
-  }
-
-  void forest()
-  {
-    material.color = Color.cyan;
   }
 }
