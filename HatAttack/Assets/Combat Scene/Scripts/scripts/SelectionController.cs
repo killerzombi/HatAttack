@@ -124,21 +124,26 @@ public class SelectionController : MonoBehaviour
                             //Debug.Log(SI.getPosition());
                             startMouse();
                             if (UCI != null)
-                            {
-                                UCI.MoveUnit(SI.getPosition(), roundForward); //clears attack target for this unit
-                                UCI.unHighlightGrid();
-                                roundForward++;
-                                UCI.highlightGrid(USelectColor * HighlightStrength * 0.8f, SI.getPosition(), roundForward);
+                            {   if (!UCI.isEnemy())
+                                {
+
+                                    UCI.MoveUnit(SI.getPosition(), roundForward); //clears attack target for this unit
+                                    UCI.unHighlightGrid();
+                                    roundForward++;
+                                    UCI.highlightGrid(USelectColor * HighlightStrength * 0.8f, SI.getPosition(), roundForward);
 
 
-                                //if (selected != null) selected.deselected();
-                                //while (S2.Count > 0) S2.Dequeue().deselected();
-                                //selected = null; UCI = null; S2 = new Queue<SelectionInterface>();
-                                //if (CS != null)
-                                //{
-                                //    CS.startMovement();
-                                //}
-                                //else { Debug.Log("selectionscript cannot access camerascript"); }
+                                    //if (selected != null) selected.deselected();
+                                    //while (S2.Count > 0) S2.Dequeue().deselected();
+                                    //selected = null; UCI = null; S2 = new Queue<SelectionInterface>();
+                                    //if (CS != null)
+                                    //{
+                                    //    CS.startMovement();
+                                    //}
+                                    //else { Debug.Log("selectionscript cannot access camerascript"); }
+                                }
+                                else //enemy clicks
+                                { }
                             }
                         }
                         //Debug.Log("Selected 2");

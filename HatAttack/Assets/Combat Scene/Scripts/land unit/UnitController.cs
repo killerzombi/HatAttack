@@ -11,6 +11,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     private float defense;
     private float experience;
     private int LeveL = 1;
+    [SerializeField]private float HeldExperience = 0f;
     [SerializeField]private int HeldLeveL = 1;
     private static float[] nextLVL = { 0, 100, 250, 450, 700, 1000, 1350, 1750, 2200, 2700, 3250, 3850, 4500, 5200, 5950, 6750,
                                         7600, 8500, 9450, 10450, 11500, 12600, 13750, 14950, 16200, 17500};
@@ -30,12 +31,12 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     private MapInterface MInterface;
     private Vector2Int position;
     private bool MovingNow = false;
-    private bool inMoveSys = false;
+    [SerializeField] private bool inMoveSys = false;
     private Queue<Queue<Vector2Int>> allPaths = null;
     private Queue<Vector2Int> allPathPositions = null;
     private Queue<Queue<Vector2Int>> nextPaths = null;
     private Queue<Vector2Int> nextPathPositions = null;
-	private GameObject NTarget = null;
+    [SerializeField] private GameObject NTarget = null;
     private int currentRound = 0;
 
     private event TickManager.Tick tick;
@@ -125,10 +126,11 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
 			if(NTarget == null){
 				NTarget = target;
 				tick += AttackNow;
-				return eCI.getAttacked(this.gameObject, attack);
-			}
-			else  Debug.Log("Target already selected");
-			NTarget = target;		//comment out if we don't want to be able to retarget. idk if a good idea though.			
+                return eCI.getAttacked(this.gameObject, attack);
+            }
+			else if(!amIanEnemy) Debug.Log("Target already selected");
+			NTarget = target;       //comment out if we don't want to be able to retarget. idk if a good idea though.	
+            return eCI.getAttacked(this.gameObject, attack);
         }
         else Debug.Log("enemy doesnt have UCI: " + target + " NAME: " + target.gameObject.name);
         return -1;
@@ -169,7 +171,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         return dTaken;
     }
 	
-	public float getAttacked(GameObject attacker, float damage)
+	public float getAttacked(GameObject attacker, float damage) //no effect to health, just returns damage
     {
         float dTaken = damage - defense;
         if (dTaken < 0) dTaken = 0;
@@ -181,8 +183,9 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     {
         float dRecieved = damage - defense;
         if (dRecieved < 0) dRecieved = 0;
-        if(health <= 0)
-        {
+        if (health <= 0)
+        { 
+            MInterface.UnitUnDied(this.gameObject);
             UnitControllerInterface eCI = attacker.GetComponent<UnitControllerInterface>();
             if (eCI != null)
             {
@@ -490,7 +493,6 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
             {
                 case TickManager.TickMode.Chaos:
                     {
-                        Debug.Log("in chaos: " + TickManager.instance.getTM());
                         TickManager.tick += onMyTick;
                         TickManager.untick += onMyUnTick;
                         break;

@@ -31,7 +31,8 @@ public class EnemyManager : MonoBehaviour
 	
 	private void decideMove(int u)
 	{
-		switch(u)
+        Debug.Log(u);
+		switch(u-1)
 		{
 			case 0:
                 UCI1.AttackUnit(ArrayScriptCombat.instance.getCurrentUnit(0));
@@ -46,7 +47,7 @@ public class EnemyManager : MonoBehaviour
                 UCI4.AttackUnit(ArrayScriptCombat.instance.getCurrentUnit(3));
                 break;
 				default:
-				Debug.Log("can't move a unit other than 0-3  ::"+u);
+				Debug.Log("can't move a unit other than 1-4  ::"+u);
 				break;
 		}
 	}

@@ -15,4 +15,5 @@ public interface MapInterface {
     void UnitCaptured(GameObject unit);
     void UnitDied(GameObject unit, GameObject killer);
     void UnitAttacked(GameObject unit, GameObject target);
+    void UnitUnDied(GameObject unit);
 }

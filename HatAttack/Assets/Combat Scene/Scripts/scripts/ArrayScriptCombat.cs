@@ -41,7 +41,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
 
     
     private GameObject[] CurrentUnits = new GameObject[8];
-	private Queue<GameObject> PlayerTeam = new Queue<GameObject>();
+    private Queue<GameObject> PlayerTeam = new Queue<GameObject>();
     private Queue<GameObject> Enemies = new Queue<GameObject>();
     private Stack<GameObject> CapturedEnemies = new Stack<GameObject>();
 	private LStack<GameObject> Dead = new LStack<GameObject>();
@@ -431,7 +431,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
                         case UnitAction.action.Heal:
                             break;
                         case UnitAction.action.Die:
-                            ArrayScriptCombat.instance.spawnPlayer(unit);
+                            //ArrayScriptCombat.instance.spawnPlayer(unit);
                             break;
                         case UnitAction.action.Captured:
                             break;
@@ -671,16 +671,32 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
             }
         }
     }
+    public void UnitUnDied(GameObject unit) {
+        TickManager.instance.EnqueuePlayer(unit);
+        unit.SetActive(true);
+        if (GODic.ContainsKey(unit))
+        {
+            if (GODic[unit] >= 0 && GODic[unit] <= 7)
+            {
+                CurrentUnits[GODic[unit]] = unit;
+            }
+            else Debug.Log("GODic has a weirdo number: " + GODic[unit]);
+        }
+        else Debug.Log("unit not in GODic");
+    }
     private void RemoveUnit(GameObject unit)
     {
         TickManager.instance.RemovePlayer(unit);
         unit.SetActive(false);
-        if (GODic.ContainsKey(unit)) {
-            if (GODic[unit] >= 0 && GODic[unit] <= 7) { 
+        if (GODic.ContainsKey(unit))
+        {
+            if (GODic[unit] >= 0 && GODic[unit] <= 7)
+            {
                 CurrentUnits[GODic[unit]] = null;
             }
             else Debug.Log("GODic has a weirdo number: " + GODic[unit]);
         }
+        else Debug.Log("unit not in GODic");
     }
     public void UnitAttacked(GameObject unit, GameObject target)
     {
@@ -778,7 +794,12 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
 					//break;
 		}
 		Transform TU = grid[Ux, Uz].GetComponent<cubeScript>().Node.transform;
-		unitSpawned = (GameObject)Instantiate(spawn, TU.position, TU.rotation);
+        if(!GODic.ContainsKey(spawn))
+		    unitSpawned = (GameObject)Instantiate(spawn, TU.position, TU.rotation);
+        else { unitSpawned = spawn;
+            unitSpawned.SetActive(true);
+            unitSpawned.transform.position = TU.position;
+        }
         UnitControllerInterface usuci = unitSpawned.GetComponent<UnitControllerInterface>();
         if (usuci != null)
         {
