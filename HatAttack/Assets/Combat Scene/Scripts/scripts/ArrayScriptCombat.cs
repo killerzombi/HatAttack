@@ -469,6 +469,21 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
                 if (count > 0) { next = new TickNode(tn, nodeNumb+1, count - 1);
                     next.prev = this; }
             }
+
+            public Vector2Int getUnitPosition(GameObject unit)
+            {
+                if (actions.ContainsKey(unit))
+                {
+                    if (actions[unit].getDone()) return actions[unit].getTo();
+                    else return actions[unit].getFrom();
+                }
+                else
+                {
+                    Debug.Log("Unit: " + unit + " :Does not exist, tried to kill from tickNode");
+                }
+                return new Vector2Int(-1, -1);
+            }
+
             public int nodeDiff(TickNode bigger) { return bigger.NodeNumb - NodeNumb; }
             public bool Greater(TickNode other) { return NodeNumb > other.NodeNumb; }
             public bool checkMove(Vector2Int position)
@@ -568,6 +583,10 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
                 current = current.Prev();
                 if (current == null) current = start;
             }
+        }
+        public Vector2Int getUnitPosition(GameObject unit)
+        {
+            return current.getUnitPosition(unit);
         }
 
         
@@ -674,6 +693,12 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
     public void UnitUnDied(GameObject unit) {
         TickManager.instance.EnqueuePlayer(unit);
         unit.SetActive(true);
+        Vector2Int cpos = history.getUnitPosition(unit);
+        cubeScript cubscr;
+        if (cpos != new Vector2Int(-1, -1))
+            cubscr = grid[cpos.x, cpos.y].GetComponent<cubeScript>();
+        else cubscr = grid[gridSizeX / 2, gridSizeZ / 2].GetComponent<cubeScript>();
+        unit.transform.position = cubscr.Node.transform.position;
         if (GODic.ContainsKey(unit))
         {
             if (GODic[unit] >= 0 && GODic[unit] <= 7)
@@ -799,6 +824,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
         else { unitSpawned = spawn;
             unitSpawned.SetActive(true);
             unitSpawned.transform.position = TU.position;
+            Debug.Log("coming back"+space);
         }
         UnitControllerInterface usuci = unitSpawned.GetComponent<UnitControllerInterface>();
         if (usuci != null)
@@ -808,11 +834,11 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
 			else if(space <= 7 && EM != null) EM.spawnedEnemy(unitSpawned, space);
         }
 		CurrentUnits[space] = unitSpawned;
-        if (GODic.ContainsKey(spawn))
+        if (GODic.ContainsKey(unitSpawned))
         {
-            GODic[spawn] = space;
+            GODic[unitSpawned] = space;
         }
-        else GODic.Add(spawn, space);
+        else GODic.Add(unitSpawned, space);
 	}
 	
 	private void checkDone()
@@ -947,7 +973,8 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
         else playerLives = 12;
         if (Enemies.Count > 0) enemyLives = Enemies.Count * 2 + 4;
         else enemyLives = 12;
-        
+
+        GODic = new Dictionary<GameObject, int>();
         if(PlayerTeam.Count > 0)
             Unit1 = PlayerTeam.Dequeue();
         if (PlayerTeam.Count > 0)
