@@ -74,8 +74,9 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
         if (!initiated)
         {
             Itimer += Time.deltaTime;
-            if (Itimer >= 3f)
+            if (Itimer >= 3f) {                
                 startCombat();
+            }
         }
     }
 
@@ -813,14 +814,28 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
                     enemyLives--;
                     break;
 			}
+            case 99:
+            {
+                    Ux = BasePosition.x; Uz = BasePosition.y;
+                    break;
+            }
 			default:
 					Debug.Log("weirdo number in spawnPlayer");
 					return;
 					//break;
 		}
 		Transform TU = grid[Ux, Uz].GetComponent<cubeScript>().Node.transform;
+        int L = 0;
         if(!GODic.ContainsKey(spawn))
-		    unitSpawned = (GameObject)Instantiate(spawn, TU.position, TU.rotation);
+        {
+            UnitControllerInterface spawnUCI = spawn.GetComponent<UnitControllerInterface>();
+            if (spawnUCI != null)
+            {
+                L = spawnUCI.getLVL();   
+            }
+            else Debug.Log("no uci on prefab");
+            unitSpawned = (GameObject)Instantiate(spawn, TU.position, TU.rotation);
+        }
         else { unitSpawned = spawn;
             unitSpawned.SetActive(true);
             unitSpawned.transform.position = TU.position;
@@ -829,11 +844,13 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
         UnitControllerInterface usuci = unitSpawned.GetComponent<UnitControllerInterface>();
         if (usuci != null)
         {
-            usuci.setGrid(this, new Vector2Int(Ux, Uz));
+            usuci.setGrid(this, new Vector2Int(Ux, Uz), L);
             if (space <= 3) usuci.Initialize();
 			else if(space <= 7 && EM != null) EM.spawnedEnemy(unitSpawned, space);
         }
-		CurrentUnits[space] = unitSpawned;
+        if (space >= 0 && space <= 7)
+            CurrentUnits[space] = unitSpawned;
+        else if (space == 99) Unit1 = unitSpawned;
         if (GODic.ContainsKey(unitSpawned))
         {
             GODic[unitSpawned] = space;
@@ -975,7 +992,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
         else enemyLives = 12;
 
         GODic = new Dictionary<GameObject, int>();
-        if(PlayerTeam.Count > 0)
+        if (PlayerTeam.Count > 0)
             Unit1 = PlayerTeam.Dequeue();
         if (PlayerTeam.Count > 0)
             Unit2 = PlayerTeam.Dequeue();
@@ -992,8 +1009,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
             EUnit3 = Enemies.Dequeue();
         if (Enemies.Count > 0)
             EUnit4 = Enemies.Dequeue();
-
-
+        
 
         if (TickManager.instance == null)
         {

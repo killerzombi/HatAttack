@@ -9,8 +9,8 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     private float health;
     private float attack;
     private float defense;
-    private float experience;
-    private int LeveL = 1;
+    [SerializeField]private float experience;
+    [SerializeField]private int LeveL = 1;
     [SerializeField]private float HeldExperience = 0f;
     [SerializeField]private int HeldLeveL = 1;
     private static float[] nextLVL = { 0, 100, 250, 450, 700, 1000, 1350, 1750, 2200, 2700, 3250, 3850, 4500, 5200, 5950, 6750,
@@ -207,7 +207,9 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         return 0;
     }
 
-    public void respawn() { health = MaxHealth; }
+    public int getLVL() { return LeveL; }
+
+    //public void respawn() { health = MaxHealth; }
 
     public GameObject getSelectedUnit()
     {
@@ -478,6 +480,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
 
     public void Initialize()
     {
+        Debug.Log("LEvel " + LeveL + " " + this.gameObject.name);
 		MaxHealth = LVLMHealth[LeveL];
 		health = MaxHealth;
 		experience = 0f;

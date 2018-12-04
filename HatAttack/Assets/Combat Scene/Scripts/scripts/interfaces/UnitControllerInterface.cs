@@ -19,6 +19,7 @@ public interface UnitControllerInterface
 	float getAttacked(GameObject attacker, float damage);
     void getEXP(float exp);
     void ungetEXP(float exp);
+    int getLVL();
     void Initialize();
     void captureEnemy();
     void setEnemy();
