@@ -42,10 +42,10 @@ public class IceGiantScript : MonoBehaviour {
         {
             if (Vector3.Dot(contactPoints[i].normal, Vector3.up) > 0.5f)
             {
-                if (!m_collisions.Contains(collision.collider))
+                /*if (!m_collisions.Contains(collision.collider))
                 {
                     m_collisions.Add(collision.collider);
-                }
+                }*/
                 m_isGrounded = true;
             }
         }
