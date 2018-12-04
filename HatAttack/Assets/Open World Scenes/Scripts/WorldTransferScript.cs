@@ -82,8 +82,7 @@ public class WorldTransferScript : MonoBehaviour {
 		camera.clearFlags = CameraClearFlags.SolidColor;
 		camera.cullingMask = 0;
 		while(!asyncLoad.isDone)
-			yield return new WaitForSeconds(0.1f); //waits 0.2 seconds upon load, allowing the gameobject for this world to be acquired in the update function -- maybe don't need this coroutine anymore either
-		//if there is any issue of the player not landing in the start room, increase the time in the WaitForSeconds above
+			yield return new WaitForSeconds(0.1f);
 		camera.clearFlags = CameraClearFlags.Skybox;
 		camera.cullingMask = -1; //-1 is the everything setting
         if (toLoad == "IceWorld") //checks the scene we're in

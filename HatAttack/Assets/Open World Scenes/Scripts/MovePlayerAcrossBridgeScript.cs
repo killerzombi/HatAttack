@@ -31,6 +31,7 @@ public class MovePlayerAcrossBridgeScript : MonoBehaviour {
 		{
 			transform.parent = tempTrans;
 			transform.localScale = tempScale;
+            DontDestroyOnLoad(this.gameObject);
 		}
 	}
 	
