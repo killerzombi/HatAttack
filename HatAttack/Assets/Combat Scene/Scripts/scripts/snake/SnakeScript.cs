@@ -2,6 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public interface SnakeMapInterface
+{
+    void doneSnake(int size);
+    void Revert(int x, int y);
+    void Become(int x, int y);
+    void BecomeNext(int x, int y);
+    void SetBoundary(int x, int y);
+    void setFood(int x, int y);
+    void lose();
+}
 public class SnakeScript : MonoBehaviour, SnakeMapInterface
 {
 
@@ -52,6 +62,16 @@ public class SnakeScript : MonoBehaviour, SnakeMapInterface
                 tryNext(Vector2Int.left);
             }
         }
+    }
+    IEnumerator onDone(int size)
+    {
+        yield return new WaitForSeconds(5f);
+        map.doneSnake(size);
+    }
+    public void doneSnake(int size)
+    {
+        IEnumerator done = onDone(size);
+        StartCoroutine(done);
     }
 
     public void lose()
@@ -361,6 +381,7 @@ public class SnakeScript : MonoBehaviour, SnakeMapInterface
             {
                 Vector2Int t = deathStack.Pop();
                 Map.SetBoundary(t.x, t.y);
+                Map.doneSnake(size);
             }
          
         }

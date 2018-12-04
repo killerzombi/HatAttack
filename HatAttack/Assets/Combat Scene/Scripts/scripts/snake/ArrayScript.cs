@@ -24,8 +24,15 @@ public class ArrayScript : MonoBehaviour, SnakeMapInterface
     private int MW, ML;  //map length and width
     private Material nextBack;
     private Vector2Int NBposition;
+    private SnakeScript SC;
 
 
+    public void doneSnake(int size)
+    {
+        Destroy(SC);
+        SC = null;
+        snakeScreen.SetActive(false);
+    }
     
     public void beginSnake()
     {
@@ -69,7 +76,7 @@ public class ArrayScript : MonoBehaviour, SnakeMapInterface
 
     void StartSnake()
     {
-        SnakeScript SC = this.gameObject.AddComponent<SnakeScript>();
+        SC = this.gameObject.AddComponent<SnakeScript>();
         SC.StartSnake(height, width, this, tickDelay, easyMode);
     }
 
