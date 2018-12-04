@@ -113,6 +113,7 @@ public class TickManager : MonoBehaviour
     public void setTickMode(TickMode TM) { tickMode = TM; }
     public void StartTicking(float tDelay, TickMode tMode = TickMode.Chaos) { ticking = true; tickDelay = tDelay; tickMode = tMode; }
     public void StartTicking() { ticking = true; }
+    public void StopTicking() { ticking = false; }
 
     public void tickNow()
     {
