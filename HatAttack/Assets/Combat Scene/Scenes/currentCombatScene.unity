@@ -2869,14 +2869,14 @@ MonoBehaviour:
   Unit2: {fileID: 1971786419765896, guid: 17f04a09e4ef40b4a94edebbd87bdf8a, type: 2}
   Unit3: {fileID: 1153434770803584, guid: ae211b44563b49f47a45f0bf78a62f74, type: 2}
   Unit4: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
-  BasePosition: {x: 2, y: 2}
+  BasePosition: {x: 10, y: 10}
   EUnit1: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
   EUnit2: {fileID: 1971786419765896, guid: 17f04a09e4ef40b4a94edebbd87bdf8a, type: 2}
   EUnit3: {fileID: 1153434770803584, guid: ae211b44563b49f47a45f0bf78a62f74, type: 2}
   EUnit4: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
-  EBasePosition: {x: 28, y: 28}
+  EBasePosition: {x: 15, y: 15}
   tickDelay: 15
-  noTimer: 0
+  noTimer: 1
   backTicks: 5
   tickMode: 0
   cube: {fileID: 1421666737088372, guid: 7251cf35a1a138741a96c4f94ac695a0, type: 2}

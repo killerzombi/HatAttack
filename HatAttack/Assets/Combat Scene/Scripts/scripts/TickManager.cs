@@ -137,8 +137,7 @@ public class TickManager : MonoBehaviour
     {
         //Debug.Log("Tick Tock");
         roundTracker--;
-        if (untick != null)
-            untick();
+        
         switch (tickMode)
         {
             case TickMode.Chaos:
@@ -205,6 +204,8 @@ public class TickManager : MonoBehaviour
                 Debug.Log("Qhat mode yo tickManager in?!?!");
                 break;
         }
+        if (untick != null)
+            untick();
     }
     private void DoTick()
     {
@@ -275,6 +276,7 @@ public class TickManager : MonoBehaviour
                 Debug.Log("Qhat mode yo tickManager in?!?!");
                 break;
         }
+        if (tickDelay == 0f) EMallTick();
     }
 
     // Use this for initialization
@@ -299,11 +301,13 @@ public class TickManager : MonoBehaviour
             }
 			else
 			{
+                if (tickDelay != 0f){
 				if(EMTimer > (Timer % (tickDelay/5f))){
 					if(EMtick != null)
 						EMtick((int)(Timer/(tickDelay/5f)));
 				}
 				EMTimer = (Timer % (tickDelay/5));
+                }
 			}
             //if (Input.GetKeyDown(tickNow))
             //{
@@ -313,4 +317,5 @@ public class TickManager : MonoBehaviour
             //}
         }
     }
+    private void EMallTick() { EMtick(1); EMtick(2); EMtick(3); EMtick(4); }
 }

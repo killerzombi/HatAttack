@@ -76,7 +76,11 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         if (experience >= nextLVL[LeveL])
             LVLup();
     }
-    private void LVLup() { LeveL++; }
+    private void LVLup() { LeveL++;
+        attack = LVLAttack[LeveL];
+        MaxHealth = LVLMHealth[LeveL];
+        defense = LVLDefense[LeveL];
+    }
 
     public void ungetEXP(float exp)
     {
@@ -84,7 +88,11 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         if (experience <= nextLVL[LeveL - 1])
             LVLdown();
     }
-    private void LVLdown() { LeveL--; }
+    private void LVLdown() { LeveL--;
+        attack = LVLAttack[LeveL];
+        MaxHealth = LVLMHealth[LeveL];
+        defense = LVLDefense[LeveL];
+    }
 
 	private void AttackNow()
 	{
@@ -198,6 +206,8 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
             HC.setHealth(health / MaxHealth);
         return 0;
     }
+
+    public void respawn() { health = MaxHealth; }
 
     public GameObject getSelectedUnit()
     {
@@ -477,6 +487,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         if(HC==null)
             HC = this.gameObject.GetComponent<HealthControl>();
         if (HC == null) Debug.Log("no HealthControl");
+        else HC.setHealth(1);
         if (MeshR == null)
         {
             MeshR = GetComponent<MeshRenderer>();
