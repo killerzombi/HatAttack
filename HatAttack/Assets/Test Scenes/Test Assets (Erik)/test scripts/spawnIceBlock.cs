@@ -9,28 +9,32 @@ public class spawnIceBlock : MonoBehaviour
     public ParticleSystem ice_launcher2;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
+    public AudioClip PlaySound;
+
+    AudioSource source;
 
 
     private void Start()
     {
         ice_launcher.Stop();
         ice_launcher2.Stop();
-
+        source = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
         if(Input.GetMouseButtonDown(0))
         {
+            source.PlayOneShot(PlaySound);
             ice_launcher.Play();
             ice_launcher2.Play();
-                Fire();
+            Fire();
 
             var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
             var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
 
-            transform.Rotate(0, x, 0);
-            transform.Translate(0, 0, z);
+            //transform.Rotate(0, x, 0);
+            //transform.Translate(0, 0, z);
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
