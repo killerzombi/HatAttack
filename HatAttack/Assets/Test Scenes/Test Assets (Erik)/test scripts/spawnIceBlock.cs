@@ -34,7 +34,7 @@ public class spawnIceBlock : MonoBehaviour
             var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
 
             //transform.Rotate(0, x, 0);
-            //transform.Translate(0, 0, z);
+            //transform.Translate(0, 0, 0);
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
