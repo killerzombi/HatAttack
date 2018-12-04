@@ -21,33 +21,35 @@ public class InventoryHandler : MonoBehaviour
         Inventory.SetActive(false);
     }
 
-  void Update()
-  {
-    if (Input.GetKeyDown("i"))
+    void Update()
     {
-        if(isOpen)
+        if (Input.GetKeyDown("i"))
         {
-            Inventory.SetActive(false);
-                isOpen = false;
-        }
-        else
-        {
-            Inventory.SetActive(true);
-            isOpen = true;
-            unitQueue = tm.getInitiativeList();
-            unitList = new GameObject[unitQueue.Count];
-            unitQueue.CopyTo(unitList, 0);
-
-            // Loop through the queue
-            for (int x = 0; x < unitList.Length; x++)
+            if (isOpen)
             {
-                text = GameObject.Find("txt_v_inventory_unit" + x).GetComponent<Text>();
-                text.text = unitList[x] + "";
+                Inventory.SetActive(false);
+                isOpen = false;
             }
+            else
+            {
+                Inventory.SetActive(true);
+                isOpen = true;
+                unitQueue = tm.getInitiativeList();
+                unitList = new GameObject[unitQueue.Count];
+                unitQueue.CopyTo(unitList, 0);
+
+                // Loop through the queue
+                for (int x = 0; x < unitList.Length; x++)
+                {
+                    text = GameObject.Find("txt_v_inventory_unit" + x).GetComponent<Text>();
+                    if (text != null)
+                        text.text = unitList[x].name + "";
+                    else Debug.Log("text not found");
+                }
             }
 
+        }
     }
-  }
 
 
 }

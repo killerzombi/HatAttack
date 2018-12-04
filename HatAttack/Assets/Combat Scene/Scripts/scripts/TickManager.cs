@@ -13,7 +13,7 @@ public class TickManager : MonoBehaviour
         if (instance == null)
             instance = this;
         instance.InitiativeList = new Queue<GameObject>();
-        instance.EnemyIL = new Queue<GameObject>();
+        //instance.EnemyIL = new Queue<GameObject>();
         instance.Initiative = new Dictionary<GameObject, EventDic>();
     }
     #endregion
@@ -23,7 +23,7 @@ public class TickManager : MonoBehaviour
     private float EMTimer = 0f;
 
 
-    public enum TickMode { Chaos, Team, Initiative1, Initiative2 }; //Initiative1 = simple ; Initiative2 = AttributeBased
+    public enum TickMode { Chaos, Initiative }; //Initiative1 = simple ; Initiative2 = AttributeBased
     private TickMode tickMode = TickMode.Chaos;
 
     [SerializeField, Range(0.5f, 15f)] private float tickDelay = 3f;
@@ -47,15 +47,10 @@ public class TickManager : MonoBehaviour
 
     private Dictionary<GameObject, EventDic> Initiative;
     private Queue<GameObject> InitiativeList = new Queue<GameObject>();
-    private Queue<GameObject> EnemyIL = new Queue<GameObject>(); //for team mode
+    //private Queue<GameObject> EnemyIL = new Queue<GameObject>(); //for team mode
     private bool EnemyTurn = false;
     private int roundTracker = 0;
 
-    //public System.Delegate[] getInvocationList()
-    //{
-    //    if (tick != null) return tick.GetInvocationList();
-    //    else return new System.Delegate[0];
-    //}
 
     // Used for getting the list in the TickManager UI
     public Queue<GameObject> getInitiativeList()
@@ -71,14 +66,14 @@ public class TickManager : MonoBehaviour
         InitiativeList.Enqueue(unit);
         return tempTick;
     }
-    public EventDic EnqueueEnemy(GameObject unit)
-    {
-        if (unit == null) Debug.Log("enquinging nothing???");
-        EventDic tempTick = new EventDic();
-        Initiative.Add(unit, tempTick);
-        EnemyIL.Enqueue(unit);
-        return tempTick;
-    }
+    //public EventDic EnqueueEnemy(GameObject unit)
+    //{
+    //    if (unit == null) Debug.Log("enquinging nothing???");
+    //    EventDic tempTick = new EventDic();
+    //    Initiative.Add(unit, tempTick);
+    //    EnemyIL.Enqueue(unit);
+    //    return tempTick;
+    //}
     public void RemovePlayer(GameObject unit)
     {
         Initiative.Remove(unit);
@@ -94,18 +89,18 @@ public class TickManager : MonoBehaviour
             while (InitiativeList.Count > 0) temp.Enqueue(InitiativeList.Dequeue());
             while (temp.Count > 0) InitiativeList.Enqueue(temp.Dequeue());
         }
-        if(EnemyIL.Contains(unit))
-        {
-            Queue<GameObject> temp = new Queue<GameObject>();
-            GameObject tO = EnemyIL.Dequeue();
-            while (tO != unit)
-            {
-                temp.Enqueue(tO);
-                tO = EnemyIL.Dequeue();
-            }
-            while (EnemyIL.Count > 0) temp.Enqueue(EnemyIL.Dequeue());
-            while (temp.Count > 0) EnemyIL.Enqueue(temp.Dequeue());
-        }
+        //if(EnemyIL.Contains(unit))
+        //{
+        //    Queue<GameObject> temp = new Queue<GameObject>();
+        //    GameObject tO = EnemyIL.Dequeue();
+        //    while (tO != unit)
+        //    {
+        //        temp.Enqueue(tO);
+        //        tO = EnemyIL.Dequeue();
+        //    }
+        //    while (EnemyIL.Count > 0) temp.Enqueue(EnemyIL.Dequeue());
+        //    while (temp.Count > 0) EnemyIL.Enqueue(temp.Dequeue());
+        //}
     }
     public float getTickDelay() { return tickDelay;  }
     public void setTickDelay(float tDelay) { tickDelay = tDelay; }
@@ -114,6 +109,7 @@ public class TickManager : MonoBehaviour
     public void StartTicking(float tDelay, TickMode tMode = TickMode.Chaos) { ticking = true; tickDelay = tDelay; tickMode = tMode; }
     public void StartTicking() { ticking = true; }
     public void StopTicking() { ticking = false; }
+    public bool isTicking() { return ticking; }
 
     public void tickNow()
     {
@@ -146,30 +142,30 @@ public class TickManager : MonoBehaviour
                 roundUnTick();
                 roundTracker = 0;
                 break;
-            case TickMode.Team:
-                //Debug.Log(tickMode + "T");
-                if (roundTracker < 0)
-                {
-                    roundUnTick();
-                    roundTracker = 1;
-                }
-                if (EnemyTurn)
-                {
-                    foreach (GameObject t in EnemyIL)
-                    {
-                        Initiative[t].UnTick();
-                    }
-                }
-                else
-                {
-                    foreach (GameObject t in InitiativeList)
-                    {
-                        Initiative[t].UnTick();
-                    }
-                }
-                EnemyTurn = !EnemyTurn;
-                break;
-            case TickMode.Initiative1:
+            //case TickMode.Team:
+            //    //Debug.Log(tickMode + "T");
+            //    if (roundTracker < 0)
+            //    {
+            //        roundUnTick();
+            //        roundTracker = 1;
+            //    }
+            //    if (EnemyTurn)
+            //    {
+            //        foreach (GameObject t in EnemyIL)
+            //        {
+            //            Initiative[t].UnTick();
+            //        }
+            //    }
+            //    else
+            //    {
+            //        foreach (GameObject t in InitiativeList)
+            //        {
+            //            Initiative[t].UnTick();
+            //        }
+            //    }
+            //    EnemyTurn = !EnemyTurn;
+            //    break;
+            case TickMode.Initiative:
                 //Debug.Log(tickMode + "I");
                 if (roundTracker < 0 )
                 {
@@ -190,17 +186,17 @@ public class TickManager : MonoBehaviour
                     else Debug.Log("TickManager IL is empty" + InitiativeList.Count);
                 }
                 break;
-            case TickMode.Initiative2:
-                //Debug.Log(tickMode + "A");
-                {
-                    //I dont even know right now
-                }
-                if (roundTracker < 0)
-                {
-                    roundTracker = InitiativeList.Count-1;
-                    roundUnTick();
-                }
-                break;
+            //case TickMode.Initiative2:
+            //    //Debug.Log(tickMode + "A");
+            //    {
+            //        //I dont even know right now
+            //    }
+            //    if (roundTracker < 0)
+            //    {
+            //        roundTracker = InitiativeList.Count-1;
+            //        roundUnTick();
+            //    }
+            //    break;
             default:
                 Debug.Log("Qhat mode yo tickManager in?!?!");
                 break;
@@ -221,30 +217,30 @@ public class TickManager : MonoBehaviour
                 roundTick();
                 roundTracker = 0;
                 break;
-            case TickMode.Team:
-                //Debug.Log(tickMode + "T");
-                if (EnemyTurn)
-                {
-                    foreach (GameObject t in EnemyIL)
-                    {
-                        Initiative[t].Tick();
-                    }
-                }
-                else
-                {
-                    foreach (GameObject t in InitiativeList)
-                    {
-                        Initiative[t].Tick();
-                    }
-                }
-                EnemyTurn = !EnemyTurn;
-                if(roundTracker >= 2)
-                {
-                    roundTick();
-                    roundTracker = 0;
-                }
-                break;
-            case TickMode.Initiative1:
+            //case TickMode.Team:
+            //    //Debug.Log(tickMode + "T");
+            //    if (EnemyTurn)
+            //    {
+            //        foreach (GameObject t in EnemyIL)
+            //        {
+            //            Initiative[t].Tick();
+            //        }
+            //    }
+            //    else
+            //    {
+            //        foreach (GameObject t in InitiativeList)
+            //        {
+            //            Initiative[t].Tick();
+            //        }
+            //    }
+            //    EnemyTurn = !EnemyTurn;
+            //    if(roundTracker >= 2)
+            //    {
+            //        roundTick();
+            //        roundTracker = 0;
+            //    }
+            //    break;
+            case TickMode.Initiative:
                 //Debug.Log(tickMode + "I");
                 {
                     if (InitiativeList.Count > 0)
@@ -262,17 +258,17 @@ public class TickManager : MonoBehaviour
                     roundTick();
                 }
                 break;
-            case TickMode.Initiative2:
-                //Debug.Log(tickMode + "A");
-                {
-                    //I dont even know right now
-                }
-                if (roundTracker >= InitiativeList.Count)
-                {
-                    roundTracker = 0;
-                    roundTick();
-                }
-                break;
+            //case TickMode.Initiative2:
+            //    //Debug.Log(tickMode + "A");
+            //    {
+            //        //I dont even know right now
+            //    }
+            //    if (roundTracker >= InitiativeList.Count)
+            //    {
+            //        roundTracker = 0;
+            //        roundTick();
+            //    }
+            //    break;
             default:
                 Debug.Log("Qhat mode yo tickManager in?!?!");
                 break;

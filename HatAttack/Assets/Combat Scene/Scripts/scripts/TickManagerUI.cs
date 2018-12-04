@@ -29,21 +29,33 @@ public class TickManagerUI : MonoBehaviour {
             if (x == 0)
             {
                 text = GameObject.Find("txt_v_nextUnit").GetComponent<Text>();
-                text.text = unitList[x] + "";
+                if (text != null)
+                    text.text = unitList[x].name + "";
+                else Debug.Log("no text found here");
             }
             text = GameObject.Find("txt_v_unit" + x).GetComponent<Text>();
-            text.text = unitList[x] + "";
+            if (text != null)
+                text.text = unitList[x].name + "";
+            else Debug.Log("no text found here");
         }
+    }
+
+    private void Start()
+    {
+        if (TickManager.instance != null) { TickManager.tick += updateTickManagerUI; }
     }
 
 
     void Update()
     {
-        // Just for testing
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            updateTickManagerUI();
-        }
+        if (TickManager.instance.isTicking()) if (TickManager.instance.getTM() == TickManager.TickMode.Chaos) this.gameObject.SetActive(false);
+
+
+        //// Just for testing
+        //if (Input.GetKeyDown(KeyCode.O))
+        //{
+        //    updateTickManagerUI();
+        //}
     }
 	
 }

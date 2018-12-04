@@ -511,21 +511,21 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
                         TickManager.untick += onMyUnTick;
                         break;
                     }
-                case TickManager.TickMode.Team:
-                    {
-                        break;
-                    }
-                case TickManager.TickMode.Initiative1:
+                //case TickManager.TickMode.Team:
+                //    {
+                //        break;
+                //    }
+                case TickManager.TickMode.Initiative:
                     {
                         TickManager.EventDic ed = TickManager.instance.EnqueuePlayer(this.gameObject);
                         ed.tick += onMyTick;
                         ed.untick += onMyUnTick;
                         break;
                     }
-                case TickManager.TickMode.Initiative2:
-                    {
-                        break;
-                    }
+                //case TickManager.TickMode.Initiative2:
+                //    {
+                //        break;
+                //    }
             }
         }
         else Debug.Log("no tick manager!");
