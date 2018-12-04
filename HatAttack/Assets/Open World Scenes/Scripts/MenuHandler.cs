@@ -13,7 +13,7 @@ public class MenuHandler : MonoBehaviour
 
   public void startGame()
   {
-    print("Started game");
+	SceneManager.LoadScene("HubWorld");
     // This is just a placeholder for now!
   }
 }
