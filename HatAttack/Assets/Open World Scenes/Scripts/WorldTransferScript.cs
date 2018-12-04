@@ -40,10 +40,11 @@ public class WorldTransferScript : MonoBehaviour {
 			StartCoroutine(WaitOnSpawn(sceneImIn));
 		}
         if (collision.gameObject.tag == "Enemy") 
-        {	targetScene = sceneImIn; //use targetScene to leave combat
+        {
+            targetScene = sceneImIn; //use targetScene to leave combat
 			sceneImIn = "currentCombatScene";
-             //sets the scene we're in to the target scene, will be combat scene in final project (probably)
-            //StartCoroutine(WaitOnSpawn(sceneImIn)); 
+            //sets the scene we're in to the target scene, will be combat scene in final project (probably)
+            StartCoroutine(WaitOnSpawn(sceneImIn)); 
             combatSpawn.transform.position = this.gameObject.transform.position; //if there's any issues with returning to the world where the player was when they entered combat investigate this line
             //Change the scene name when we move it to live
         }
@@ -59,7 +60,7 @@ public class WorldTransferScript : MonoBehaviour {
             if (Array != null)
                 AS = Array.GetComponent<ArrayScriptCombat>();
             else Debug.Log("no Array!");
-
+     
             //if (Array == null) AS = combatArray.GetComponent<ArrayScriptCombat>();
             if (AS != null){
                 AS.startCombat();
@@ -67,6 +68,7 @@ public class WorldTransferScript : MonoBehaviour {
 			}
             else Debug.Log("no ArrayScriptCombat");
 
+            Debug.Log("Disabling player and camera");
             this.gameObject.SetActive(false);// --- disables the player and camera upon exiting the overworld and entering the game world, will be re enabled by a controller 
             camera.gameObject.SetActive(false);// --- upon leaving the battle screen
         }
