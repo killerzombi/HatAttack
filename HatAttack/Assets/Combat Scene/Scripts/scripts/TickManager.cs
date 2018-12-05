@@ -48,7 +48,7 @@ public class TickManager : MonoBehaviour
     private Dictionary<GameObject, EventDic> Initiative;
     private Queue<GameObject> InitiativeList = new Queue<GameObject>();
     //private Queue<GameObject> EnemyIL = new Queue<GameObject>(); //for team mode
-    private bool EnemyTurn = false;
+    //private bool EnemyTurn = false;
     private int roundTracker = 0;
 
 

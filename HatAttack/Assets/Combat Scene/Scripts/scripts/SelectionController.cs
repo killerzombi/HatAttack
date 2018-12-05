@@ -39,15 +39,15 @@ public class SelectionController : MonoBehaviour
         if (UCI != null)
             h = UCI.getHP();
         h *= 100;
-        if (h > 89f)      { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 12; }
-        else if (h > 64f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 11; }
-        else if (h > 49f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 10; }
-        else if (h > 36f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 9; }
-        else if (h > 25f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 8; }
-        else if (h > 16f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 7; }
-        else if (h > 09f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 6; }
-        else if (h > 04f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 5; }
-        else if (h > 01f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 4; }
+        if (h > 89f)      { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 11; }
+        else if (h > 64f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 10; }
+        else if (h > 49f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 9; }
+        else if (h > 36f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 8; }
+        else if (h > 25f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 7; }
+        else if (h > 16f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 6; }
+        else if (h > 09f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 5; }
+        else if (h > 04f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 4; }
+        else if (h > 01f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 3; }
         watching = false;
         player.CanMove = false;
         if (ArrayScript.instance != null) {

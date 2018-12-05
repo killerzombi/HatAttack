@@ -1123,4 +1123,21 @@ public class LStack<T> : List<T>
         else
             return default(T);
     }
+
+    public T getLowest()
+    {
+        if (Count > 0)
+        {
+            int i = 0;
+            T a = this[i];
+            while (a == null && i < Count)
+            {
+                i++;
+                a = this[i];
+            }
+            if (i != Count) RemoveAt(i);
+            return a;
+        }
+        else return default(T);
+    }
 }
