@@ -22,17 +22,16 @@ public class WarningMessageManager : MonoBehaviour {
 
     
 
-    public void StartMessage(string message, float delay) {
-        WMTPrefab.setDelay(delay);
+    public void StartMessage(string message, float delay = 5f) {
+        //WMTPrefab.setDelay(delay);
         WMTPrefab.setMessage(message);
-        WarningPrefab.transform.position = getFirst();
         Warning = GameObject.Instantiate(WarningPrefab, Canvas.transform);
+        Warning.transform.position = getFirst();
         Warning.GetComponent<WarningMessageTimer>().onDestroy += tickDown;
-        count++;
+        Warning.GetComponent<WarningMessageTimer>().setDelay(delay);
     }
     private void tickDown(Vector3 dead)
     {
-        count--;
         if (posIndex.ContainsKey(dead))
         {
             positions[posIndex[dead]] = dead;
@@ -51,8 +50,8 @@ public class WarningMessageManager : MonoBehaviour {
 
     private Vector3 getFirst()
     {
-        Vector3 pos = positions[0];
         int i = 0;
+        Vector3 pos = positions[0];
         while(pos == Vector3.zero)
         {
             i++;
@@ -69,6 +68,7 @@ public class WarningMessageManager : MonoBehaviour {
         positions = new Vector3[15];
         posIndex = new Dictionary<Vector3, int>();
         for (count = 0; count < 15; count++) positions[count] = new Vector3(200f + 25f * count, 325f - ((count % 5) * 50f), 0f);
+        foreach (Vector3 pos in positions) Debug.Log(pos);
         count = 0;
 	}
 	

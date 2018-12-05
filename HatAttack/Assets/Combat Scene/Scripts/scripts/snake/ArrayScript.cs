@@ -30,7 +30,7 @@ public class ArrayScript : MonoBehaviour, SnakeMapInterface
     public float tickDelay = 3f;
     public bool easyMode = false;
     public SelectionController returnTo = null;
-    public float TimeLimit = 20f;
+    [Range(5f,60f)]public float TimeLimit = 20f;
 
     private GameObject[,] map;
     private MeshRenderer[,] mapM;
@@ -62,9 +62,9 @@ public class ArrayScript : MonoBehaviour, SnakeMapInterface
         
 
         snakeScreen.SetActive(false);
-        Debug.Log(size);
+        //Debug.Log(size);
         float toReturn = size / (float)((width - 2) * (height - 2));
-        Debug.Log(toReturn);
+        //Debug.Log(toReturn);
         if (returnTo != null)
             returnTo.doneSnake(toReturn);
         else Debug.Log("nothing to returnTo!");
@@ -77,6 +77,11 @@ public class ArrayScript : MonoBehaviour, SnakeMapInterface
         else {
             inSnake = true;
         print("Begin snake");
+
+            tickDelay = GameSettingsScript.instance.tickDelaySnake;
+            easyMode = GameSettingsScript.instance.easyModeSnake;
+            spacing = GameSettingsScript.instance.spacingSnake;
+            TimeLimit = GameSettingsScript.instance.TimeLimitSnake;
         nextBack = null;
         Vector2 topLeft = new Vector2(-500 + ((float)-((width + ((width - 1) * spacing)) / 2)), 0 + ((float)((height + ((height - 1) * spacing)) / 2)));
         ML = width;

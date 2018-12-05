@@ -371,7 +371,8 @@ public class SnakeScript : MonoBehaviour, SnakeMapInterface
                 Vector2Int old = positions.Dequeue();
                 if (Map != null)
                 {
-                    Debug.Log("killing snake tail:" + old);
+                    if(debug)
+                        Debug.Log("killing snake tail:" + old);
                     Map.Revert(old.x, old.y);
                 }
                 else

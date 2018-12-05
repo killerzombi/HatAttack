@@ -9,11 +9,12 @@ public class WarningMessageTimer : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI text;
     public delegate void onDeath(Vector3 myPos);
     public event onDeath onDestroy;
-    private float Timer = 0f;
-    private float delay = 5f;
+    private float Timer = 0f, Extra;
+    private float delay;
 	// Use this for initialization
 	void Start () {
-        Timer = 0f;
+        Timer = Extra = 0f;
+        //Debug.Log(text.text + "  Delay" + delay);
 	}
 
     public void setDelay(float time)
@@ -34,8 +35,9 @@ public class WarningMessageTimer : MonoBehaviour {
         Timer += Time.deltaTime;
         if (Timer > delay) Destroy(this);
         float t = ((delay - Timer) / delay);
-        if (t > .6f) t = 1;
-        else if (t > .3f) t += .3f;
+        if (Timer >= Extra + 1f) { Debug.Log(t + "  " + Timer); Extra = Timer; }
+        if (t > .4f) t = 1;
+        else if (t > .2f) t += .5f;
         BG.color = BG.color * t;
         text.color = text.color * t;
     }

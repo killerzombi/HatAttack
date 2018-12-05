@@ -58,14 +58,18 @@ public class SelectionController : MonoBehaviour
 
     public void doneSnake(float fillP)
     {
-        if (Random.Range(0f, 1f) < fillP)
+        float chance = Random.Range(0f, 1f);
+        if (chance < fillP)
         {
             //captured
             if (ArrayScriptCombat.instance != null)
                 ArrayScriptCombat.instance.UnitCaptured(UCI.getSelectedUnit());
         }
-        else Debug.Log("better luck nexxt time"+fillP); //change this to a warning popup?
-
+        else if (WarningMessageManager.instance != null)
+        {
+            WarningMessageManager.instance.StartMessage(("better luck next time!"), 25f);
+            WarningMessageManager.instance.StartMessage(((Mathf.Round(fillP * 10000) / 100) + ":" + (Mathf.Round(chance*10000)/100)));
+        }
         watching = true;
         player.CanMove = true;
         startMouse();
