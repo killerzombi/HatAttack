@@ -10,7 +10,8 @@ public class OverheadControl : MonoBehaviour {
     public float acceleration = 3f;
 
 
-    private bool canMove { get; set; }
+    private bool canMove = true;
+    public bool CanMove { get { return canMove; } set { canMove = value; } }
     private Vector3 AMove = Vector3.zero;
     private float accelerator = 1f;
 

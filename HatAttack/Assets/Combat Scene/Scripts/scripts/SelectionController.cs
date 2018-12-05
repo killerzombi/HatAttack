@@ -17,7 +17,7 @@ public class SelectionController : MonoBehaviour
     [SerializeField] private Color ESelectColor;
     [SerializeField] private GameObject ChoiceUI;
     [SerializeField] private GameObject RangeNote;
-
+    [SerializeField] private OverheadControl player;
     [SerializeField] private GameObject AttackChoiceUI;
 
 
@@ -34,6 +34,7 @@ public class SelectionController : MonoBehaviour
 
     public void startSnake()
     {
+        if (ChoiceUI != null) ChoiceUI.SetActive(false);
         float h = 1;
         if (UCI != null)
             h = UCI.getHP();
@@ -48,6 +49,7 @@ public class SelectionController : MonoBehaviour
         else if (h > 04f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 5; }
         else if (h > 01f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 4; }
         watching = false;
+        player.CanMove = false;
         if (ArrayScript.instance != null) {
             ArrayScript.instance.returnTo = this;
             ArrayScript.instance.beginSnake(); }
@@ -63,6 +65,11 @@ public class SelectionController : MonoBehaviour
                 ArrayScriptCombat.instance.UnitCaptured(UCI.getSelectedUnit());
         }
         else Debug.Log("better luck nexxt time"+fillP); //change this to a warning popup?
+
+        watching = true;
+        player.CanMove = true;
+        startMouse();
+        TickManager.instance.StartTicking();
     }
 
     public void startMovement(bool t)
