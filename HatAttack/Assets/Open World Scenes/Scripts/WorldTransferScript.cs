@@ -33,7 +33,7 @@ public class WorldTransferScript : MonoBehaviour {
             sceneImIn = "HubWorld";
             StartCoroutine(WaitOnSpawn(sceneImIn));
         }	//the if statement below(V V V V V) needs to change to --> if(collision.gameObject.tag == "Enemy")	-->	then tag all enemies "Enemy" -- done
-		if (collision.gameObject.tag == "Fire")
+		if (collision.gameObject.tag == "Fire" || collision.gameObject.tag == "FireA" || collision.gameObject.tag == "FireB")
 		{
 			Debug.Log("Collided with" + collision.gameObject.name);
 			sceneImIn = "HubWorld";
