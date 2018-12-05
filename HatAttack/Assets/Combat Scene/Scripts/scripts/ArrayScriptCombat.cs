@@ -14,10 +14,10 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
     public GameObject EUnit3;
     public GameObject EUnit4;
     public Vector2Int EBasePosition = new Vector2Int(27, 27);
-    [Range(0.25f, 15f)] public float tickDelay = 3f;
-    [SerializeField] private bool noTimer = false;
-    [SerializeField] private int backTicks = 5;
-    [SerializeField] private TickManager.TickMode tickMode = TickManager.TickMode.Chaos;
+    private float tickDelay = 3f;
+     private bool noTimer = false;
+     private int backTicks = 5;
+     private TickManager.TickMode tickMode = TickManager.TickMode.Chaos;
 
     public event EndCombat endOfCombat;
     // =============================
@@ -970,7 +970,10 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
         //set timescale to 0    <-this loading time can be completed by instead waiting to call TickManager.StartTicking()
 
         initiated = true;
-
+        tickDelay = GameSettingsScript.instance.tickDelayCombat;
+        noTimer = GameSettingsScript.instance.noTimer;
+        backTicks = GameSettingsScript.instance.backTicks;
+        tickMode = GameSettingsScript.instance.tickMode;
         TerrainType TT = this.gameObject.AddComponent<TerrainType>();
         TT.cube = cube; TT.bush = bush; TT.rock = rock; TT.tree = tree;
         CombatGridCreator CGC = this.gameObject.AddComponent<CombatGridCreator>();

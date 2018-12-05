@@ -27,7 +27,6 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
 	protected int attackRange = 3;
     private float moveTime = 0.6f;
     private bool amIanEnemy = false;
-    private bool easyMode = false;
 
     private MapInterface MInterface;
     private Vector2Int position;
@@ -74,7 +73,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     public void getEXP(float exp)
     {
         experience += exp;
-        if (!easyMode && exp != 0f) { HeldExperience += exp * .2f; }
+        if (!GameSettingsScript.instance.easyModeEXP && exp != 0f) { HeldExperience += exp * .2f; }
         while (experience >= nextLVL[LeveL])
             LVLup();
     }
@@ -87,7 +86,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     public void ungetEXP(float exp)
     {
         experience -= exp;
-        if (!easyMode && exp != 0f) { HeldExperience -= exp * .2f; }
+        if (!GameSettingsScript.instance.easyModeEXP && exp != 0f) { HeldExperience -= exp * .2f; }
         while (experience <= nextLVL[LeveL - 1])
             LVLdown();
     }
@@ -99,7 +98,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     private void setEXP(float newEXP)
     {
         float oldEXP;
-        if (easyMode) { 
+        if (GameSettingsScript.instance.easyModeEXP) { 
         oldEXP = experience;
         experience = newEXP;}
         else
@@ -112,7 +111,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     }
     private float getEXP()
     {
-        if (easyMode)
+        if (GameSettingsScript.instance.easyModeEXP)
             return experience;
         else return HeldExperience;
     }

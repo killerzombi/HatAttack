@@ -2859,6 +2859,7 @@ GameObject:
   - component: {fileID: 901871720}
   - component: {fileID: 901871724}
   - component: {fileID: 901871722}
+  - component: {fileID: 901871723}
   m_Layer: 0
   m_Name: Array
   m_TagString: Untagged
@@ -2877,20 +2878,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700734c4c757a1d499a54d16a5644091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Unit1: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
+  Unit1: {fileID: 1153434770803584, guid: ae211b44563b49f47a45f0bf78a62f74, type: 2}
   Unit2: {fileID: 1971786419765896, guid: 17f04a09e4ef40b4a94edebbd87bdf8a, type: 2}
   Unit3: {fileID: 1153434770803584, guid: ae211b44563b49f47a45f0bf78a62f74, type: 2}
-  Unit4: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
+  Unit4: {fileID: 1971786419765896, guid: 17f04a09e4ef40b4a94edebbd87bdf8a, type: 2}
   BasePosition: {x: 2, y: 2}
-  EUnit1: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
-  EUnit2: {fileID: 1971786419765896, guid: 17f04a09e4ef40b4a94edebbd87bdf8a, type: 2}
-  EUnit3: {fileID: 1153434770803584, guid: ae211b44563b49f47a45f0bf78a62f74, type: 2}
-  EUnit4: {fileID: 1373852154786890, guid: b307154f33f48c7468ad5829953d39fc, type: 2}
+  EUnit1: {fileID: 1971786419765896, guid: 17f04a09e4ef40b4a94edebbd87bdf8a, type: 2}
+  EUnit2: {fileID: 1153434770803584, guid: ae211b44563b49f47a45f0bf78a62f74, type: 2}
+  EUnit3: {fileID: 1971786419765896, guid: 17f04a09e4ef40b4a94edebbd87bdf8a, type: 2}
+  EUnit4: {fileID: 1971786419765896, guid: 17f04a09e4ef40b4a94edebbd87bdf8a, type: 2}
   EBasePosition: {x: 27, y: 27}
-  tickDelay: 5
-  noTimer: 0
-  backTicks: 5
-  tickMode: 0
   cube: {fileID: 1421666737088372, guid: 7251cf35a1a138741a96c4f94ac695a0, type: 2}
   gridCube: {fileID: 1823577020420158, guid: 1f962fdeb96581b489f161550ada9dd3, type: 2}
   tree: {fileID: 1589285367844330, guid: c5b5833c27e797d40bc7787ce8a43524, type: 2}
@@ -2925,6 +2922,32 @@ MonoBehaviour:
     type: 2}
   WMTPrefab: {fileID: 114062394532272880, guid: e5bd46902f6f469489c199e756b9ac16,
     type: 2}
+--- !u!114 &901871723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 901871719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309802cc9e0b62242b85bc9ecbe62083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tickDelayCombat: 5
+  noTimer: 0
+  backTicks: 5
+  tickMode: 0
+  TimeLimitSnake: 20
+  spacingSnake: 0.25
+  tickDelaySnake: 1.5
+  easyModeSnake: 0
+  easyModeEXP: 0
+  endCombatNow: 58
+  clickCombat: 323
+  deselectCombat: 102
+  tickNowCombat: 32
+  backTickCombat: 304
+  selectorRangeCombat: 10
 --- !u!114 &901871724
 MonoBehaviour:
   m_ObjectHideFlags: 0

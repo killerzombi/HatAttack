@@ -103,7 +103,7 @@ public class SelectionController : MonoBehaviour
         if (CS == null) CS = this.GetComponent<CameraScript>();
         if (CS == null) Debug.Log("selectionscript cannot access camerascript");
         S2 = new Queue<SelectionInterface>();
-
+        UpdateKeys();
         GameObject rn = GameObject.Instantiate(RangeNote, this.gameObject.transform);
         rn.transform.position = transform.position + (transform.forward * range);
     }
@@ -249,5 +249,15 @@ public class SelectionController : MonoBehaviour
             CS.startMovement();
         }
         else { Debug.Log("selectionscript cannot access camerascript"); }
+    }
+
+    private void UpdateKeys()
+    {
+        endNow = GameSettingsScript.instance.endCombatNow;
+        click = GameSettingsScript.instance.clickCombat;
+        escapeKey = GameSettingsScript.instance.deselectCombat;
+        tickNow = GameSettingsScript.instance.tickNowCombat;
+        backTick = GameSettingsScript.instance.backTickCombat;
+        range = GameSettingsScript.instance.selectorRangeCombat;
     }
 }
