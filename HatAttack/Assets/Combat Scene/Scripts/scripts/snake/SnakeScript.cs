@@ -65,18 +65,32 @@ public class SnakeScript : MonoBehaviour, SnakeMapInterface
     }
     IEnumerator onDone(int size)
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2.5f);
         map.doneSnake(size);
     }
+    IEnumerator ondone = null;
     public void doneSnake(int size)
     {
-        IEnumerator done = onDone(size);
-        StartCoroutine(done);
+        if (playing) startDone();
+        else
+        {
+            if(ondone == null) { 
+            ondone = onDone(size);
+            StartCoroutine(ondone);
+            }
+        }
     }
 
     public void lose()
     {
         print("success");
+    }
+
+    private void startDone() {
+        playing = false;
+        setNext(next);
+        sneke.death();
+        lose();
     }
 
     private void Tick()
@@ -95,10 +109,7 @@ public class SnakeScript : MonoBehaviour, SnakeMapInterface
         }
         else
         {
-            playing = false;
-            setNext(next);
-            sneke.death();
-            lose();
+            startDone();
             return;
         }
 
@@ -211,14 +222,14 @@ public class SnakeScript : MonoBehaviour, SnakeMapInterface
     {
         map.Become(x, y);
         danger[x, y] = true;
-        //if (debug)
+        if (debug)
         Debug.Log("Becoming " + x + ", " + y);
     }
 
     public void BecomeNext(int x, int y)
     {
         map.BecomeNext(x, y);
-        //if (debug)
+        if (debug)
         Debug.Log("Becoming Next " + x + ", " + y);
     }
 

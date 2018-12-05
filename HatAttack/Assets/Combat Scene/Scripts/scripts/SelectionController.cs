@@ -32,6 +32,39 @@ public class SelectionController : MonoBehaviour
     UnitControllerInterface cUCI;
     private int roundForward = 0;
 
+    public void startSnake()
+    {
+        float h = 1;
+        if (UCI != null)
+            h = UCI.getHP();
+        h *= 100;
+        if (h > 89f)      { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 12; }
+        else if (h > 64f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 11; }
+        else if (h > 49f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 10; }
+        else if (h > 36f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 9; }
+        else if (h > 25f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 8; }
+        else if (h > 16f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 7; }
+        else if (h > 09f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 6; }
+        else if (h > 04f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 5; }
+        else if (h > 01f) { if (ArrayScript.instance != null) ArrayScript.instance.width = ArrayScript.instance.height = 4; }
+        watching = false;
+        if (ArrayScript.instance != null) {
+            ArrayScript.instance.returnTo = this;
+            ArrayScript.instance.beginSnake(); }
+        else Debug.Log("no snake array instance");
+    }
+
+    public void doneSnake(float fillP)
+    {
+        if (Random.Range(0f, 1f) < fillP)
+        {
+            //captured
+            if (ArrayScriptCombat.instance != null)
+                ArrayScriptCombat.instance.UnitCaptured(UCI.getSelectedUnit());
+        }
+        else Debug.Log("better luck nexxt time"+fillP); //change this to a warning popup?
+    }
+
     public void startMovement(bool t)
     {
         if (ChoiceUI != null) ChoiceUI.SetActive(false);
@@ -109,7 +142,9 @@ public class SelectionController : MonoBehaviour
                             }
                             else if(UCI == cUCI && UCI.isEnemy()) //unsure if UCI == cUCI will correctly compare
                             {
-                                //do capture snake here
+                                stopMouse();
+                                TickManager.instance.StopTicking();
+                                showUI();
                             }
                         }
                         else

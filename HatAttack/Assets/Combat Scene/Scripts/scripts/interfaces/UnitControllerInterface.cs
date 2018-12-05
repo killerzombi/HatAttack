@@ -20,6 +20,7 @@ public interface UnitControllerInterface
     void getEXP(float exp);
     void ungetEXP(float exp);
     int getLVL();
+    float getHP();//float 0-1
     void Initialize();
     void captureEnemy();
     void setEnemy();

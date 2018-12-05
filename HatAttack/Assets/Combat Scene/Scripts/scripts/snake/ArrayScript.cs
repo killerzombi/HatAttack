@@ -1,12 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ArrayScript : MonoBehaviour, SnakeMapInterface
 {
+    public static ArrayScript instance;
+
+    #region singleton
+    void Awake()
+    {
+        if (instance == null) instance = this;
+        else Destroy(this);
+
+    }
+    #endregion
     public GameObject prefabCube;
     // v This is for the SnakeScreen UI
     public GameObject snakeScreen;
+    public Text timerText;
     public Material snakeMaterial;
     public Material transparent;
     public Material next;
@@ -17,6 +29,8 @@ public class ArrayScript : MonoBehaviour, SnakeMapInterface
     public float spacing = .25f;  // space between cubes
     public float tickDelay = 3f;
     public bool easyMode = false;
+    public SelectionController returnTo = null;
+    public float TimeLimit = 20f;
 
     private GameObject[,] map;
     private MeshRenderer[,] mapM;
@@ -25,17 +39,43 @@ public class ArrayScript : MonoBehaviour, SnakeMapInterface
     private Material nextBack;
     private Vector2Int NBposition;
     private SnakeScript SC;
+    private bool inSnake = false;
 
 
     public void doneSnake(int size)
     {
+        inSnake = false;
         Destroy(SC);
         SC = null;
+        foreach(GameObject GO in map)
+        {
+            Destroy(GO);
+        }
+        foreach(MeshRenderer MR in mapM)
+        {
+            Destroy(MR);
+        }
+        map = null;
+        mapM = null;
+        danger = null;
+
+        
+
         snakeScreen.SetActive(false);
+        Debug.Log(size);
+        float toReturn = size / (float)((width - 2) * (height - 2));
+        Debug.Log(toReturn);
+        if (returnTo != null)
+            returnTo.doneSnake(toReturn);
+        else Debug.Log("nothing to returnTo!");
+        
     }
     
     public void beginSnake()
     {
+        if (inSnake) Debug.Log("already snaking");
+        else {
+            inSnake = true;
         print("Begin snake");
         nextBack = null;
         Vector2 topLeft = new Vector2(-500 + ((float)-((width + ((width - 1) * spacing)) / 2)), 0 + ((float)((height + ((height - 1) * spacing)) / 2)));
@@ -63,15 +103,31 @@ public class ArrayScript : MonoBehaviour, SnakeMapInterface
         snakeScreen.SetActive(true);
         // Then begin snake game.
         StartSnake();
+            IEnumerator SS = stopSnakeAt(TimeLimit);
+            StartCoroutine(SS);
+        }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+        //    print("Got K key press");
+        //    beginSnake();
+        //}
+    }
+
+    private IEnumerator stopSnakeAt(float seconds)
+    {
+        float start = seconds;
+        while(seconds > 0)
         {
-            print("Got K key press");
-            beginSnake();
+            timerText.text = "TimeLeft: " + seconds;
+            yield return null;
+            seconds -= Time.deltaTime;
+
         }
+        if (SC != null) SC.doneSnake(0);
     }
 
     void StartSnake()

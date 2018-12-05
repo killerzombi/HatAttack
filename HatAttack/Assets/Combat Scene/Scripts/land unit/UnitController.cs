@@ -175,7 +175,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
             else Debug.Log("ATACKING enemy doesnt have UCI: " + attacker + " NAME: " + attacker.gameObject.name);
         }
         else if (HC != null)
-            HC.setHealth(health / MaxHealth);
+            HC.setHealth(getHP());
         return dTaken;
     }
 	
@@ -203,11 +203,12 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         }
         health += dRecieved;
         if(HC!=null)
-            HC.setHealth(health / MaxHealth);
+            HC.setHealth(getHP());
         return 0;
     }
 
     public int getLVL() { return LeveL; }
+    public float getHP() { return health/MaxHealth; }
 
     //public void respawn() { health = MaxHealth; }
 
