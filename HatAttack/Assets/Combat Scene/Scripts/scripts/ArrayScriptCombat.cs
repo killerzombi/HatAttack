@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
 {
     public GameObject Unit1;
@@ -28,7 +28,9 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
     public GameObject tree;
     public GameObject rock;
     public GameObject bush;
-
+	
+	public ReactivatePlayer rp;
+	public WorldTransferScript wts;
 
 
     const int gridSizeX = 30;
@@ -64,6 +66,8 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
     // Use this for initialization
     void Start()
     {
+		if(rp == null)
+			rp = GameObject.Find("CombatSpawnPoint").GetComponent<ReactivatePlayer>();
         Itimer = 0f;
         //startCombat();
 
@@ -71,6 +75,9 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
 
     private void Update()
     {
+		// if(rp == null)
+			// rp = GameObject.Find("CombatSpawnPoint").GetComponent<ReactivatePlayer>();
+		
         if (!initiated)
         {
             Itimer += Time.deltaTime;
@@ -964,19 +971,17 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
             else Debug.Log("no UCI on deadguy");
         }
         //call endOfCombat for combatInterface
-        endOfCombat(CapturedEnemies, PlayerTeam);
+		rp.reactivate();
+		wts = GameObject.Find("Player").GetComponent<WorldTransferScript>();
+        //endOfCombat(CapturedEnemies, PlayerTeam);
 		//reset ArrayScriptCombat instance
 		instance = null;
+		Debug.Log("Leaving combat for: " + wts.targetScene);
+		wts.sceneImIn = wts.targetScene;
+		SceneManager.LoadScene(wts.targetScene);
     }
     public void startCombat()
     {
-        //disable the player that was dontdestroyonload
-        //disable the camera
-        //black out the screen on the camera
-        //coroutine 2 seconds loading time
-        //camera back to normal, begin combat
-        //set timescale to 0    <-this loading time can be completed by instead waiting to call TickManager.StartTicking()
-
         initiated = true;
         tickDelay = GameSettingsScript.instance.tickDelayCombat;
         noTimer = GameSettingsScript.instance.noTimer;

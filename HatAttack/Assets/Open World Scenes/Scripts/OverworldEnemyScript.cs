@@ -54,7 +54,7 @@ public class OverworldEnemyScript : MonoBehaviour
     }
     public void moveEnemy()
     {
-		if (Vector3.Distance(transform.position, player.transform.position) <= playerDistance && playerInRange())
+		if (Vector3.Distance(transform.position, player.transform.position) <= playerDistance && playerInRange() && Time.timeSinceLevelLoad > 5f)
 		{
 			agent.SetDestination(player.transform.position);
 		}

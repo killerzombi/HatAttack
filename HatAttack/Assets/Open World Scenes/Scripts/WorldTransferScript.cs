@@ -41,7 +41,8 @@ public class WorldTransferScript : MonoBehaviour {
 		}
         if (collision.gameObject.tag == "Enemy") 
         {
-            targetScene = sceneImIn; //use targetScene to leave combat
+			if(sceneImIn != "currentCombatScene")
+				targetScene = sceneImIn; //use targetScene to leave combat
 			sceneImIn = "currentCombatScene";
             //sets the scene we're in to the target scene, will be combat scene in final project (probably)
             StartCoroutine(WaitOnSpawn(sceneImIn)); 
@@ -60,14 +61,10 @@ public class WorldTransferScript : MonoBehaviour {
             if (Array != null)
                 AS = Array.GetComponent<ArrayScriptCombat>();
             else Debug.Log("no Array!");
-            InventoryHandler IH = combatSpawn.GetComponent<InventoryHandler>();
-            Queue<GameObject> pteam = new Queue<GameObject>();
-            if (IH != null) pteam = IH.getPlayerTeam();
+     
             //if (Array == null) AS = combatArray.GetComponent<ArrayScriptCombat>();
             if (AS != null){
-                while (pteam.Count > 0) AS.EnqueuePlayer(pteam.Dequeue());
                 AS.startCombat();
-                if (IH != null) AS.endOfCombat += IH.EndOCombat;
 				//AS.endOfCombat += OnEndOfCombat;		//add this code and a function OnEndOfCombat(Stack<GameObject> capturedUnits)
 			}
             else Debug.Log("no ArrayScriptCombat");
@@ -92,17 +89,26 @@ public class WorldTransferScript : MonoBehaviour {
         if (toLoad == "IceWorld") //checks the scene we're in
 		{
 			iceSpawn = GameObject.Find("IceWorldSpawnPoint");
-            this.gameObject.transform.position = iceSpawn.transform.position; //sets position to the game object of the world we loaded into
+			if(sceneImIn != "currentCombatScene")
+				this.gameObject.transform.position = iceSpawn.transform.position; //sets position to the game object of the world we loaded into
+			//else
+				//this.gameObject.transform.position = combatSpawn.transform.position;
 		}
         else if (toLoad == "FireWorld")//etc
 		{
 			fireSpawn = GameObject.Find("FireWorldSpawnPoint");
-            this.gameObject.transform.position = fireSpawn.transform.position;
+			if(sceneImIn != "currentCombatScene")
+				this.gameObject.transform.position = fireSpawn.transform.position;
+			//else
+				//this.gameObject.transform.position = combatSpawn.transform.position;
 		}
         else if (toLoad == "HubWorld")
 		{
 			hubSpawn = GameObject.Find("HubWorldSpawnPoint");
-            this.gameObject.transform.position = hubSpawn.transform.position;
+			if(sceneImIn != "currentCombatScene")
+				this.gameObject.transform.position = hubSpawn.transform.position;
+			//else
+				//this.gameObject.transform.position = combatSpawn.transform.position;
 		}
 		DoneLoading();
         
