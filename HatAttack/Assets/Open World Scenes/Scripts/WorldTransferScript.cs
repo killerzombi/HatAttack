@@ -33,21 +33,22 @@ public class WorldTransferScript : MonoBehaviour {
             sceneImIn = "HubWorld";
             StartCoroutine(WaitOnSpawn(sceneImIn));
         }	//the if statement below(V V V V V) needs to change to --> if(collision.gameObject.tag == "Enemy")	-->	then tag all enemies "Enemy" -- done
-		if (collision.gameObject.tag == "Fire" || collision.gameObject.tag == "FireA" || collision.gameObject.tag == "FireB")
-		{
-			Debug.Log("Collided with" + collision.gameObject.name);
-			sceneImIn = "HubWorld";
-			StartCoroutine(WaitOnSpawn(sceneImIn));
-		}
-        if (collision.gameObject.tag == "Enemy") 
+		// if (collision.gameObject.tag == "Fire" || collision.gameObject.tag == "FireA" || collision.gameObject.tag == "FireB")
+		// {
+			// Debug.Log("Collided with" + collision.gameObject.name);
+			// sceneImIn = "HubWorld";
+			// StartCoroutine(WaitOnSpawn(sceneImIn));
+		// }
+        if (collision.gameObject.tag == "Enemy" && Time.timeSinceLevelLoad > 5f) 
         {
-			if(sceneImIn != "currentCombatScene")
-				targetScene = sceneImIn; //use targetScene to leave combat
-			sceneImIn = "currentCombatScene";
-            //sets the scene we're in to the target scene, will be combat scene in final project (probably)
-            StartCoroutine(WaitOnSpawn(sceneImIn)); 
-            combatSpawn.transform.position = this.gameObject.transform.position; //if there's any issues with returning to the world where the player was when they entered combat investigate this line
-            //Change the scene name when we move it to live
+				if(sceneImIn != "currentCombatScene") //prevents the infinite loop of loading into combat because targetScene got set to currentCombatScene and we can't break free
+					targetScene = sceneImIn; //use targetScene to leave combat
+				sceneImIn = "currentCombatScene";
+				//sets the scene we're in to the target scene, will be combat scene in final project (probably)
+				StartCoroutine(WaitOnSpawn(sceneImIn)); 
+				combatSpawn.transform.position = this.gameObject.transform.position; //if there's any issues with returning to the world where the player was when they entered combat investigate this line
+				//Change the scene name when we move it to live
+			
         }
     }
 
