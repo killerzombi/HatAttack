@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class InventoryHandler : MonoBehaviour
 {
     public TickManager tm;
+	public WorldTransferScript wts;
     bool isOpen = false;
     public Canvas canvasGO;
     private Queue<GameObject> unitQueue;
@@ -15,7 +16,6 @@ public class InventoryHandler : MonoBehaviour
 
     public GameObject Inventory;
 
-
     void closeInventory()
     {
         Inventory.SetActive(false);
@@ -23,6 +23,11 @@ public class InventoryHandler : MonoBehaviour
 
     void Update()
     {
+		if (tm == null && wts.sceneImIn == "currentCombatScene")
+		{
+			tm = GameObject.Find("Array").GetComponent<TickManager>();
+		}
+		
         if (Input.GetKeyDown("i"))
         {
             if (isOpen)
