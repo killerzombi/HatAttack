@@ -825,7 +825,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
 					//break;
 		}
 		Transform TU = grid[Ux, Uz].GetComponent<cubeScript>().Node.transform;
-        int L = 0;
+        float L = 0f;
         if(!GODic.ContainsKey(spawn))
         {
             UnitControllerInterface spawnUCI = spawn.GetComponent<UnitControllerInterface>();

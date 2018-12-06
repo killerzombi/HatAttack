@@ -9,7 +9,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
     private float health;
     private float attack;
     private float defense;
-    [SerializeField]private float experience;
+    [SerializeField]private float experience = 0f;
     [SerializeField]private int LeveL = 1;
     [SerializeField]private float HeldExperience = 0f;
     [SerializeField]private int HeldLeveL = 1;
@@ -72,8 +72,8 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
 
     public void getEXP(float exp)
     {
+        if (!GameSettingsScript.instance.easyModeEXP && exp != 0f) { HeldExperience += exp * .2f; if (experience < HeldExperience) exp *= 2; }
         experience += exp;
-        if (!GameSettingsScript.instance.easyModeEXP && exp != 0f) { HeldExperience += exp * .2f; }
         while (experience >= nextLVL[LeveL])
             LVLup();
     }
@@ -85,8 +85,8 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
 
     public void ungetEXP(float exp)
     {
+        if (!GameSettingsScript.instance.easyModeEXP && exp != 0f) { HeldExperience -= exp * .2f; if (experience - (2 * exp) < HeldExperience + exp * .2f) exp *= 2; }
         experience -= exp;
-        if (!GameSettingsScript.instance.easyModeEXP && exp != 0f) { HeldExperience -= exp * .2f; }
         while (experience <= nextLVL[LeveL - 1])
             LVLdown();
     }
@@ -95,7 +95,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         MaxHealth = LVLMHealth[LeveL];
         defense = LVLDefense[LeveL];
     }
-    private void setEXP(float newEXP)
+    public void setLVL(float newEXP)
     {
         float oldEXP;
         if (GameSettingsScript.instance.easyModeEXP) { 
@@ -109,7 +109,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         if (newEXP > oldEXP) getEXP(0f);
         else if (newEXP < oldEXP) ungetEXP(0f);
     }
-    private float getEXP()
+    public float getLVL()
     {
         if (GameSettingsScript.instance.easyModeEXP)
             return experience;
@@ -229,7 +229,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         return 0;
     }
 
-    public int getLVL() { return LeveL; }
+    //public int getLVL() { return LeveL; }
     public float getHP() { return health/MaxHealth; }
 
     //public void respawn() { health = MaxHealth; }
@@ -432,10 +432,10 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
         return new Queue<Vector2Int>();
     }
 
-    public void setGrid(MapInterface cgc, Vector2Int pos, int LVL = 0)
+    public void setGrid(MapInterface cgc, Vector2Int pos, float LVL = 0f)
     {
         if(LVL > 0)
-		    LeveL = LVL;
+		    setLVL(LVL);
         MInterface = cgc; position = pos; //Initialize();
     }
 

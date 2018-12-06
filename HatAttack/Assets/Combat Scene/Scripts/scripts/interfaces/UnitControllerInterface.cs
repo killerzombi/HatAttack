@@ -8,7 +8,7 @@ public interface UnitControllerInterface
     void backMove(Queue<Vector2Int> origPath, Vector2Int target);
     void MoveUnit(Queue<Vector2Int> path, int TicksForward = 0);
     void MoveUnit(Vector2Int target, int TicksForward = 0);
-    void setGrid(MapInterface cgc, Vector2Int pos, int LVL = 1);
+    void setGrid(MapInterface cgc, Vector2Int pos, float LVL = 0f);
     void highlightGrid(Color C, int ticksForward = 0);
     void highlightGrid(Color C, Vector2Int pos, int ticksForward = 0);
     void unHighlightGrid();
@@ -19,7 +19,8 @@ public interface UnitControllerInterface
 	float getAttacked(GameObject attacker, float damage);
     void getEXP(float exp);
     void ungetEXP(float exp);
-    int getLVL();
+    float getLVL();
+    void setLVL(float exp);
     float getHP();//float 0-1
     void Initialize();
     void captureEnemy();
