@@ -31,6 +31,7 @@ public class OverworldEnemyScript : MonoBehaviour
     {
 		player = GameObject.Find("Player");
 		wts = player.GetComponent<WorldTransferScript>();
+        if (wts == null) Debug.Log("no worldTransferScript");
         agent = GetComponent<NavMeshAgent>();
         xRangeMaxPos = startPosition.x + xRangePos; //the start position of each enemy gets changed in the unity editor, this code sets the bounds of how far the enemy can move
         xRangeMaxNeg = startPosition.x - xRangeNeg;
@@ -84,12 +85,15 @@ public class OverworldEnemyScript : MonoBehaviour
 	}
     void OnCollisionEnter(Collision collisionInfo)
     {
-        if (collisionInfo.gameObject.name == "Player")
+        if (collisionInfo.gameObject.name == "Player" && Time.timeSinceLevelLoad > 5f)
         {
-            wts.targetScene = wts.sceneImIn;
-            wts.sceneImIn = "currentCombatScene";
-            StartCoroutine(wts.WaitOnSpawn(wts.sceneImIn));
-            wts.combatSpawn.transform.position = GameObject.Find("Player").transform.position;
+            Debug.Log("Enemy hut player");
+            wts = collisionInfo.gameObject.GetComponent<WorldTransferScript>();
+            if (wts != null)
+            {
+                wts.hitEnemy();
+            }
+            else Debug.Log("no WTS");
         }
     }
 

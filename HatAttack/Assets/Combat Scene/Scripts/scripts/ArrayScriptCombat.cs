@@ -58,8 +58,9 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
     public static ArrayScriptCombat instance = null;
     private void Awake()
     {
-        if (instance == null) instance = this;
+        if (instance == null) { instance = this; Debug.Log("set ArrayScriptCombat"); }
         else Destroy(this);
+        Debug.Log("done awake asc");
     }
     #endregion
 
@@ -68,6 +69,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
     {
 		if(rp == null)
 			rp = GameObject.Find("CombatSpawnPoint").GetComponent<ReactivatePlayer>();
+        if (rp == null) Debug.Log("couldn't find rp");
         Itimer = 0f;
         //startCombat();
 
@@ -958,10 +960,15 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
 		//load all CapturedEnemies into player CapturedUnits inventory.
 
         //reset TickManager instance
-        TickManager.instance = null;
+
+        TickManager.resetInstance();
         EnemyManager.instance = null;
         //Destroy(EM);
-        foreach(GameObject g in Dead)
+        for(int i = 0; i < 4; i++) { 
+        if(CurrentUnits[i])
+            PlayerTeam.Enqueue(CurrentUnits[i]);
+        }
+        foreach (GameObject g in Dead)
         {
             UnitControllerInterface tci = g.GetComponent<UnitControllerInterface>();
             if (tci != null)
@@ -973,8 +980,10 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
         //call endOfCombat for combatInterface
 		rp.reactivate();
 		wts = GameObject.Find("Player").GetComponent<WorldTransferScript>();
-      //  endOfCombat(CapturedEnemies, PlayerTeam); //this line seems to throw out a null reference exception and break the player's ability to leave combat
-		//reset ArrayScriptCombat instance
+        if (endOfCombat != null)
+            endOfCombat(CapturedEnemies, PlayerTeam); //this line seems to throw out a null reference exception and break the player's ability to leave combat
+        else Debug.Log("empty endOfCombat");
+        //reset ArrayScriptCombat instance
 		instance = null;
 		wts.sceneImIn = wts.targetScene;
 		SceneManager.LoadScene(wts.targetScene);

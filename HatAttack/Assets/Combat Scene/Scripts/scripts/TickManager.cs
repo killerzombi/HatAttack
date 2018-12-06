@@ -51,7 +51,14 @@ public class TickManager : MonoBehaviour
     //private bool EnemyTurn = false;
     private int roundTracker = 0;
 
-
+    public static void resetInstance()
+    {
+        tick = untick = roundUnTick = roundTick = null;
+        EMtick= null;
+        instance.InitiativeList = new Queue<GameObject>();
+        instance.Initiative = new Dictionary<GameObject, EventDic>();
+        instance = null;
+    }
     // Used for getting the list in the TickManager UI
     public Queue<GameObject> getInitiativeList()
     {

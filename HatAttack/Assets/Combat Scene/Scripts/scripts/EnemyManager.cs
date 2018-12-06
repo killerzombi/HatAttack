@@ -31,7 +31,7 @@ public class EnemyManager : MonoBehaviour
 	
 	private void decideMove(int u)
 	{
-        Debug.Log(u);
+        //Debug.Log(u);
 		switch(u-1)
 		{
 			case 0:

@@ -68,7 +68,7 @@ public class WarningMessageManager : MonoBehaviour {
         positions = new Vector3[15];
         posIndex = new Dictionary<Vector3, int>();
         for (count = 0; count < 15; count++) positions[count] = new Vector3(200f + 25f * count, 325f - ((count % 5) * 50f), 0f);
-        foreach (Vector3 pos in positions) Debug.Log(pos);
+        //foreach (Vector3 pos in positions) Debug.Log(pos);
         count = 0;
 	}
 	

@@ -149,7 +149,7 @@ public class UnitController : MonoBehaviour, UnitControllerInterface, SelectionI
 
     public float AttackUnit(GameObject target)
     {
-        Debug.Log("set to attack " + target.gameObject.name);
+        //Debug.Log("set to attack " + target.gameObject.name);
         UnitControllerInterface eCI = target.GetComponent<UnitControllerInterface>();
         if (eCI != null)
         {

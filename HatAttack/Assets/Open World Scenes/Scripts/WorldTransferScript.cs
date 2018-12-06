@@ -12,6 +12,7 @@ public class WorldTransferScript : MonoBehaviour {
     GameObject iceSpawn;
     GameObject hubSpawn;
     public GameObject combatSpawn;
+    private bool hitAlready = false;
     //public GameObject combatArray;
 
     void OnCollisionEnter(Collision collision)
@@ -41,20 +42,31 @@ public class WorldTransferScript : MonoBehaviour {
 		// }
         if (collision.gameObject.tag == "Enemy" && Time.timeSinceLevelLoad > 5f) 
         {
-				if(sceneImIn != "currentCombatScene") //prevents the infinite loop of loading into combat because targetScene got set to currentCombatScene and we can't break free
-					targetScene = sceneImIn; //use targetScene to leave combat
-				sceneImIn = "currentCombatScene";
-				//sets the scene we're in to the target scene, will be combat scene in final project (probably)
-				StartCoroutine(WaitOnSpawn(sceneImIn)); 
-				combatSpawn.transform.position = this.gameObject.transform.position; //if there's any issues with returning to the world where the player was when they entered combat investigate this line
-				//Change the scene name when we move it to live
+            hitEnemy();
 			
+        }
+    }
+
+    public void hitEnemy()
+    {
+        if (hitAlready) { }
+        else {
+            hitAlready = true;
+        if (sceneImIn != "currentCombatScene") //prevents the infinite loop of loading into combat because targetScene got set to currentCombatScene and we can't break free
+            targetScene = sceneImIn; //use targetScene to leave combat
+        sceneImIn = "currentCombatScene";
+        //sets the scene we're in to the target scene, will be combat scene in final project (probably)
+        StartCoroutine(WaitOnSpawn(sceneImIn));
+        combatSpawn.transform.position = this.gameObject.transform.position; //if there's any issues with returning to the world where the player was when they entered combat investigate this line
+                                                                             //Change the scene name when we move it to live
         }
     }
 
     private void DoneLoading()
     {
-        if(sceneImIn == "currentCombatScene")
+        hitAlready = false;
+
+        if (sceneImIn == "currentCombatScene")
         {
             Debug.Log("spawning combat");
             GameObject Array = GameObject.Find("Array");
@@ -62,29 +74,45 @@ public class WorldTransferScript : MonoBehaviour {
             if (Array != null)
                 AS = Array.GetComponent<ArrayScriptCombat>();
             else Debug.Log("no Array!");
-     
+
             //if (Array == null) AS = combatArray.GetComponent<ArrayScriptCombat>();
-            if (AS != null){
+            if (AS != null)
+            {
                 AS.startCombat();
-				//AS.endOfCombat += OnEndOfCombat;		//add this code and a function OnEndOfCombat(Stack<GameObject> capturedUnits)
-			}
+                InventoryHandler IH = combatSpawn.GetComponent<InventoryHandler>();
+
+                Queue<GameObject> pt = IH.getTeam();
+                while (pt.Count > 0) AS.EnqueuePlayer(pt.Dequeue());
+                AS.endOfCombat += IH.EndOfCombat;
+
+                //AS.endOfCombat += OnEndOfCombat;		//add this code and a function OnEndOfCombat(Stack<GameObject> capturedUnits)
+            }
             else Debug.Log("no ArrayScriptCombat");
 
             Debug.Log("Disabling player and camera");
             this.gameObject.SetActive(false);// --- disables the player and camera upon exiting the overworld and entering the game world, will be re enabled by a controller 
             camera.gameObject.SetActive(false);// --- upon leaving the battle screen
         }
+        else Debug.Log(sceneImIn);
+
     }
 
 
     public IEnumerator WaitOnSpawn(string toLoad) //this function now handles all of loading
     {
-		AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(toLoad);
-		
+
+        AudioListener AL = camera.GetComponent<AudioListener>();
+        if (AL != null) AL.enabled = false;
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(toLoad);
+        Debug.Log("starting load");
+
 		camera.clearFlags = CameraClearFlags.SolidColor;
 		camera.cullingMask = 0;
 		while(!asyncLoad.isDone)
 			yield return new WaitForSeconds(0.1f);
+
+        Debug.Log("doneLoading");
 		camera.clearFlags = CameraClearFlags.Skybox;
 		camera.cullingMask = -1; //-1 is the everything setting
         if (toLoad == "IceWorld") //checks the scene we're in

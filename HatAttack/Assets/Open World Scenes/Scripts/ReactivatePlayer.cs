@@ -19,5 +19,7 @@ public class ReactivatePlayer : MonoBehaviour {
 	{
 		player.SetActive(true);
 		camera.SetActive(true);
+        AudioListener AL = camera.GetComponent<AudioListener>();
+        if (AL != null) AL.enabled = true;
 	}
 }
