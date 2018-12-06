@@ -3298,19 +3298,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tickDelayCombat: 3
   noTimer: 0
-  backTicks: 5
+  backTicks: 2
   tickMode: 0
   TimeLimitSnake: 20
   spacingSnake: 0.25
-  tickDelaySnake: 3
+  tickDelaySnake: 1.25
   easyModeSnake: 0
   easyModeEXP: 0
-  endCombatNow: 58
+  endCombatNow: 59
   clickCombat: 323
   deselectCombat: 102
   tickNowCombat: 32
   backTickCombat: 304
-  selectorRangeCombat: 100
+  selectorRangeCombat: 10
 --- !u!114 &632577916
 MonoBehaviour:
   m_ObjectHideFlags: 0
