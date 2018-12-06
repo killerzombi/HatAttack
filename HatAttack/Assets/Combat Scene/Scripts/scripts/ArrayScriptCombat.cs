@@ -954,9 +954,17 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
         TickManager.instance = null;
         EnemyManager.instance = null;
         //Destroy(EM);
-
+        foreach(GameObject g in Dead)
+        {
+            UnitControllerInterface tci = g.GetComponent<UnitControllerInterface>();
+            if (tci != null)
+            {
+                if (!tci.isEnemy()) PlayerTeam.Enqueue(g);
+            }
+            else Debug.Log("no UCI on deadguy");
+        }
         //call endOfCombat for combatInterface
-        endOfCombat(CapturedEnemies);
+        endOfCombat(CapturedEnemies, PlayerTeam);
 		//reset ArrayScriptCombat instance
 		instance = null;
     }

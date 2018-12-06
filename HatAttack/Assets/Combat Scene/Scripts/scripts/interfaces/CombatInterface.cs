@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void EndCombat(Stack<GameObject> captured);
+public delegate void EndCombat(Stack<GameObject> captured, Queue<GameObject> PTeam);
 public interface CombatInterface {
     void startCombat();
     event EndCombat endOfCombat;

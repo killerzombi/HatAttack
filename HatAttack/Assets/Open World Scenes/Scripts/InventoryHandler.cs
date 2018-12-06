@@ -5,16 +5,26 @@ using UnityEngine.UI;
 
 public class InventoryHandler : MonoBehaviour
 {
-    public TickManager tm;
+    
 	public WorldTransferScript wts;
     bool isOpen = false;
     public Canvas canvasGO;
     private Queue<GameObject> unitQueue;
+    private Queue<GameObject> PlayerTeam;
+    private Stack<GameObject> capturedUnits;
     private GameObject[] unitList;
     private Text text;
 
 
     public GameObject Inventory;
+
+    public Queue<GameObject> getPlayerTeam() { return PlayerTeam; }
+
+    public void EndOCombat(Stack<GameObject> captured, Queue<GameObject> Pteam)
+    {
+        while (captured.Count > 0) capturedUnits.Push(captured.Pop());
+        PlayerTeam = Pteam;
+    }
 
     void closeInventory()
     {
@@ -23,10 +33,7 @@ public class InventoryHandler : MonoBehaviour
 
     void Update()
     {
-		if (tm == null && wts.sceneImIn == "currentCombatScene")
-		{
-			tm = GameObject.Find("Array").GetComponent<TickManager>();
-		}
+		
 		
         if (Input.GetKeyDown("i"))
         {
@@ -39,7 +46,7 @@ public class InventoryHandler : MonoBehaviour
             {
                 Inventory.SetActive(true);
                 isOpen = true;
-                unitQueue = tm.getInitiativeList();
+                unitQueue = PlayerTeam;
                 unitList = new GameObject[unitQueue.Count];
                 unitQueue.CopyTo(unitList, 0);
 

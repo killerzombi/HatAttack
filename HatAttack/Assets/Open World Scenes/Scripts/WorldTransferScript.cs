@@ -60,10 +60,14 @@ public class WorldTransferScript : MonoBehaviour {
             if (Array != null)
                 AS = Array.GetComponent<ArrayScriptCombat>();
             else Debug.Log("no Array!");
-     
+            InventoryHandler IH = combatSpawn.GetComponent<InventoryHandler>();
+            Queue<GameObject> pteam = new Queue<GameObject>();
+            if (IH != null) pteam = IH.getPlayerTeam();
             //if (Array == null) AS = combatArray.GetComponent<ArrayScriptCombat>();
             if (AS != null){
+                while (pteam.Count > 0) AS.EnqueuePlayer(pteam.Dequeue());
                 AS.startCombat();
+                if (IH != null) AS.endOfCombat += IH.EndOCombat;
 				//AS.endOfCombat += OnEndOfCombat;		//add this code and a function OnEndOfCombat(Stack<GameObject> capturedUnits)
 			}
             else Debug.Log("no ArrayScriptCombat");
