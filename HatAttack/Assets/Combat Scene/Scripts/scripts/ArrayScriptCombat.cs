@@ -973,7 +973,7 @@ public class ArrayScriptCombat : MonoBehaviour, MapInterface, CombatInterface
         //call endOfCombat for combatInterface
 		rp.reactivate();
 		wts = GameObject.Find("Player").GetComponent<WorldTransferScript>();
-        endOfCombat(CapturedEnemies, PlayerTeam); //this line seems to throw out a null reference exception and break the player's ability to leave combat
+      //  endOfCombat(CapturedEnemies, PlayerTeam); //this line seems to throw out a null reference exception and break the player's ability to leave combat
 		//reset ArrayScriptCombat instance
 		instance = null;
 		wts.sceneImIn = wts.targetScene;
